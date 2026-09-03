@@ -19,10 +19,6 @@ latest version: `10.5281/zenodo.22274084`). Contents:
   is not part of the protocol) and `KNOWN_ISSUES.md`.
 * Contains no image.
 
-Provenance: this repository supersedes the release lineage previously published under the name
-`cure-fewshot-protocol`. Code and annotations are identical to that lineage's last version; the
-documentation was rewritten and the version numbering restarts at 1.0.0.
-
 ### Procedure for cutting a tag
 
 1. `CITATION.cff`: `version`; then `doi` and `date-released` once Zenodo has archived the tag.

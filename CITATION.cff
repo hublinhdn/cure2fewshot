@@ -32,10 +32,9 @@ authors:
     affiliation: "Faculty of Information Technology, Ho Chi Minh City Open University, Ho Chi Minh City, Vietnam"
     email: "vinh.th@ou.edu.vn"
 
-# TODO(release): dien hai dong duoi day ngay sau khi Zenodo luu tru tag v1.0.0 (Version DOI, khong
-# phai Concept DOI), roi commit mot lan nua. Xem CHANGELOG.md, muc "Procedure for cutting a tag".
-# doi: "10.5281/zenodo.XXXXXXX"
-# date-released: "2026-MM-DD"
+# Version DOI cua tag v1.0.0. Concept DOI (luon tro ban moi nhat): 10.5281/zenodo.22274084
+doi: "10.5281/zenodo.22274085"
+date-released: "2026-09-03"
 
 # TODO(article): khi bai bao di kem co DOI, mo khoi duoi day de cong cu trich dan uu tien tro ve
 # bai bao thay vi phan mem. Ten tap chi de trong cho toi luc do.

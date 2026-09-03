@@ -1,7 +1,6 @@
 # cure2fewshot
 
-<!-- TODO(release): sau khi Zenodo cap DOI cho tag v1.0.0, mo dong badge duoi day va thay XXXXXXX. -->
-<!-- [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX) -->
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.22274085.svg)](https://doi.org/10.5281/zenodo.22274085)
 
 A deterministic protocol that converts a public pill image collection into a few shot retrieval
 benchmark, with a scored fitness rubric that decides whether the converted result is usable.

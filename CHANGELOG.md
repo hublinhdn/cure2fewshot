@@ -1,8 +1,9 @@
 # Changelog
 
-## 1.0.0, unreleased
+## 1.0.0, 2026-09-03
 
-First release under this name. Contents:
+First release under this name. Zenodo DOI `10.5281/zenodo.22274085` (concept DOI, always the
+latest version: `10.5281/zenodo.22274084`). Contents:
 
 * Protocol scripts for phases A to G, the four frozen embedding controls and the conversion
   fitness rubric (`protocol/`).

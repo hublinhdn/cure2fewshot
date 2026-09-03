@@ -1,0 +1,33 @@
+{
+  "dataset": "CURE processed (crops 384, side as class, merged, K=1)",
+  "n_images_total": 8811,
+  "n_classes": 390,
+  "n_classes_with_gallery": 386,
+  "classes_without_gallery": [
+    "47__bottom",
+    "48__bottom",
+    "195__bottom",
+    "195__top"
+  ],
+  "gallery_K1": 386,
+  "query_total": 8423,
+  "query_per_class": {
+    "min": 3,
+    "median": 22.0,
+    "max": 46
+  },
+  "train_fold0_heldout": {
+    "train_images": 7016,
+    "train_consumer": 6708,
+    "train_reference": 308,
+    "train_classes": 310,
+    "query_eval_images": 1715,
+    "query_eval_classes": 80
+  },
+  "eval_sample": 1280,
+  "merged_pairs": {
+    "auto": 0,
+    "manual": 2
+  },
+  "leaked_removed": 0
+}

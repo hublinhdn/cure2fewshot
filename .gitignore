@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.pyc
+
+# du lieu va ket qua sinh ra: KHONG vao git
+data/
+outputs/
+outputs_v2/
+weights/
+*.npy

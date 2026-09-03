@@ -1,0 +1,11 @@
+{
+  "K": 1,
+  "n_gallery": 388,
+  "classes_dropped_no_ref": [
+    "195__bottom",
+    "195__top",
+    "47__bottom",
+    "48__bottom"
+  ],
+  "note": "K=2 bất khả thi: CURE chỉ có 1 reference mỗi (pill, side)"
+}

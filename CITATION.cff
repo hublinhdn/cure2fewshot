@@ -1,0 +1,76 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it together with the accompanying article and the collection authors."
+type: software
+title: "cure2fewshot: a deterministic protocol for converting a pill image collection into a few shot retrieval benchmark"
+abstract: >-
+  Code, frozen annotations and expected outputs for a deterministic protocol that converts a public
+  pill image collection into a few shot retrieval benchmark aligned with the published low shot
+  evaluation protocol of ePillID, together with a scored rubric that decides whether the converted
+  result is fit for use. Contains no image: the collection must be obtained from its original
+  authors and is not redistributed here.
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/hublinhdn/cure2fewshot"
+keywords:
+  - benchmark construction
+  - image retrieval
+  - few shot recognition
+  - pill identification
+  - reproducibility
+authors:
+  - given-names: "Linh"
+    family-names: "Do Nhat"
+    affiliation: "Faculty of Data Science in Business, Ho Chi Minh University of Banking, Ho Chi Minh City, Vietnam"
+    email: "linhdn@hub.edu.vn"
+    # TODO(release): them orcid: "https://orcid.org/0000-0000-0000-0000"
+  - given-names: "Dzi Lam"
+    family-names: "Tran Tuan"
+    affiliation: "Faculty of Information Technology, Ho Chi Minh City Open University, Ho Chi Minh City, Vietnam"
+    email: "dzi.ltt@ou.edu.vn"
+  - given-names: "Vinh"
+    family-names: "Truong Hoang"
+    affiliation: "Faculty of Information Technology, Ho Chi Minh City Open University, Ho Chi Minh City, Vietnam"
+    email: "vinh.th@ou.edu.vn"
+
+# TODO(release): dien hai dong duoi day ngay sau khi Zenodo luu tru tag v1.0.0 (Version DOI, khong
+# phai Concept DOI), roi commit mot lan nua. Xem CHANGELOG.md, muc "Procedure for cutting a tag".
+# doi: "10.5281/zenodo.XXXXXXX"
+# date-released: "2026-MM-DD"
+
+# TODO(article): khi bai bao di kem co DOI, mo khoi duoi day de cong cu trich dan uu tien tro ve
+# bai bao thay vi phan mem. Ten tap chi de trong cho toi luc do.
+# preferred-citation:
+#   type: article
+#   title: "cure2fewshot: converting a public pill image collection into an audited few shot retrieval benchmark"
+#   journal: "TODO"
+#   year: 2026
+#   doi: "TODO"
+#   authors:
+#     - given-names: "Linh"
+#       family-names: "Do Nhat"
+#     - given-names: "Dzi Lam"
+#       family-names: "Tran Tuan"
+#     - given-names: "Vinh"
+#       family-names: "Truong Hoang"
+
+references:
+  - type: conference-paper
+    title: "Few-Shot Pill Recognition"
+    year: 2020
+    doi: "10.1109/CVPR42600.2020.00981"
+    notes: "The CURE image collection converted by this protocol. Obtain the images from these authors; they are not redistributed here."
+    authors:
+      - given-names: "Suiyi"
+        family-names: "Ling"
+      - given-names: "Andreas"
+        family-names: "Pastor"
+      - given-names: "Jing"
+        family-names: "Li"
+      - given-names: "Zhaohui"
+        family-names: "Che"
+      - given-names: "Junle"
+        family-names: "Wang"
+      - given-names: "Jieun"
+        family-names: "Kim"
+      - given-names: "Patrick"
+        family-names: "Le Callet"

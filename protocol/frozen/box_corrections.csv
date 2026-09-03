@@ -1,0 +1,11 @@
+crop_rel,old_x0,old_y0,old_x1,old_y1,old_method,new_x0,new_y0,new_x1,new_y1,new_method,source
+data/processed/cure_crops/129/top/customer/129_top_5640.png,159,188,396,458,sam,181,48,446,438,manual,"cure_review_decisions.csv (decision=redraw, mode=safe_sample)"
+data/processed/cure_crops/164/bottom/customer/164_bottom_7215.png,82,74,535,433,sam,382,143,558,319,manual,"cure_review_decisions.csv (decision=redraw, mode=safe_sample)"
+data/processed/cure_crops/167/bottom/customer/167_bottom_7348.png,0,13,388,545,sam,183,381,405,581,manual,"cure_review_decisions.csv (decision=redraw, mode=safe_sample)"
+data/processed/cure_crops/168/bottom/customer/168_bottom_7380.png,909,1271,1643,1847,sam,963,1144,2215,1855,manual,"cure_review_decisions.csv (decision=redraw, mode=safe_sample)"
+data/processed/cure_crops/168/top/customer/168_top_7368.png,31,142,395,422,sam,57,144,573,400,manual,"cure_review_decisions.csv (decision=redraw, mode=safe_sample)"
+data/processed/cure_crops/42/top/customer/42_top_1810.png,1023,515,1312,1490,sam,1156,520,1744,1547,manual,"cure_review_decisions.csv (decision=redraw, mode=safe_sample)"
+data/processed/cure_crops/52/top/customer/52_top_2273.png,219,52,450,379,sam,218,75,435,577,manual,"cure_review_decisions.csv (decision=redraw, mode=safe_sample)"
+data/processed/cure_crops/55/bottom/customer/55_bottom_2426.png,985,710,1650,1376,sam,700,754,1615,1628,manual,"cure_review_decisions.csv (decision=redraw, mode=safe_sample)"
+data/processed/cure_crops/57/bottom/customer/57_bottom_2529.png,669,833,1511,1706,sam,686,673,1397,1482,manual,"cure_review_decisions.csv (decision=redraw, mode=safe_sample)"
+data/processed/cure_crops/66/top/customer/66_top_2916.png,199,114,587,543,sam,114,0,556,510,manual,"cure_review_decisions.csv (decision=redraw, mode=safe_sample)"

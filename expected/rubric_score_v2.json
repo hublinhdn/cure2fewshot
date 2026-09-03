@@ -1,0 +1,63 @@
+{
+  "items": [
+    {
+      "name": "A1 gallery=reference, query=consumer, mAP trên query",
+      "score": 10,
+      "max": 10,
+      "note": "files split đúng chiều"
+    },
+    {
+      "name": "A2 regime few shot (median ref mỗi lớp = K = 1)",
+      "score": 10,
+      "max": 10,
+      "note": "median ref/class = 1.0 (K=1 là cấu trúc tự nhiên của CURE)"
+    },
+    {
+      "name": "A3 side as class, báo N_classes hai quy ước",
+      "score": 10,
+      "max": 10,
+      "note": "two sided 392 / one sided 196"
+    },
+    {
+      "name": "B1 frozen cross domain top1 dưới ceiling",
+      "score": 15,
+      "max": 15,
+      "note": "cross top1 = 0.165"
+    },
+    {
+      "name": "B2 domain gap đủ lớn (within - cross top1)",
+      "score": 7,
+      "max": 15,
+      "note": "gap = 0.132"
+    },
+    {
+      "name": "C1 leakage đã loại (residual <= 0.02)",
+      "score": 10,
+      "max": 10,
+      "note": "leak trước = 0.0000, đã loại 0 ảnh, sau = 0.0000"
+    },
+    {
+      "name": "C2 nhiễu nhãn đã dedup",
+      "score": 10,
+      "max": 10,
+      "note": "gộp 2 cặp, còn 2 cặp mức review (0.005 so với tổng lớp)"
+    },
+    {
+      "name": "D1 mAP frozen cross domain trong dải khó nhưng học được",
+      "score": 10,
+      "max": 10,
+      "note": "cross mAP = 0.271 (yêu cầu trong (0.05, 0.90))"
+    },
+    {
+      "name": "E1 báo cáo domain AUC + xử lý shortcut nền",
+      "score": 10,
+      "max": 10,
+      "note": "domain AUC = 0.993 > 0.95 nhưng đã có gallery hardened"
+    }
+  ],
+  "report": "expected/fitness_report_v2.json",
+  "total": 92,
+  "group_b": 22,
+  "group_b_capped": false,
+  "verdict": "GO — dùng CURE làm replication chính"
+}

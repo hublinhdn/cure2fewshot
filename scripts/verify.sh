@@ -2,10 +2,15 @@
 # verify.sh — doi chieu ket qua cua ban voi expected/.
 #
 # So tung file JSON do mot lan chay sinh ra voi ban dong bang trong expected/, BO QUA dung cac
-# truong ghi duong dan tuyet doi cua may da sinh ra so (manifest, report, sam_ckpt). Khong bo qua
-# bat ky gia tri do duoc nao. So nguyen, chuoi va diem rubric phai bang nhau tuyet doi; so thuc
-# duoc so voi dung sai FLOAT_TOL (mac dinh 1e-6), vi trich embedding lai tren chinh may tham chieu
-# da cho lech co 1e-7 o vai thong ke cosine ma khong doi bat ky diem rubric nao.
+# truong ghi duong dan tuyet doi cua may da sinh ra so (manifest, report, sam_ckpt, ...) va truong
+# `note` cua rubric (chuoi mo ta cho nguoi doc, chua so do da lam tron 3 chu so; diem cua tung
+# tieu chi van duoc so). Khong bo qua bat ky gia tri do duoc nao. So nguyen, chuoi va diem rubric
+# phai bang nhau tuyet doi; so thuc duoc so voi dung sai FLOAT_TOL, mac dinh 1e-5.
+#
+# Dung sai do tu hai phep do (REPRODUCE.md muc 7): trich embedding lai tren chinh may tham chieu
+# (Apple silicon, MPS) cho lech toi da 5.4e-7; mot ban clone sach tren may CUDA (RTX 3080), voi
+# TF32 tat nhu ma tu 1.0.1, cho lech toi da 1.3e-6 (percentile cosine cua ViT). Mot query doi
+# hang lam mot control doi 1.2e-4, nen 1e-5 tach nhieu so hoc khoi ket qua doi.
 #
 # Chay tu goc repo, sau khi da lam theo REPRODUCE.md:
 #   bash scripts/verify.sh
@@ -18,8 +23,8 @@ OUT="${CURE_FITNESS_OUT:-$PWD/outputs}"
 OUT_V2="${PHASE_F_V2_OUT:-$PWD/outputs_v2}"
 
 PY="${PYTHON:-python3}"
-IGNORE_KEYS="manifest,report,sam_ckpt,out_dir,crops_root,raw_root,gallery"
-FLOAT_TOL="${FLOAT_TOL:-1e-6}"
+IGNORE_KEYS="manifest,report,sam_ckpt,out_dir,crops_root,raw_root,gallery,note"
+FLOAT_TOL="${FLOAT_TOL:-1e-5}"
 
 # expected/<ten>.json  <=>  duong dan file do lan chay sinh ra
 PAIRS=(
@@ -40,7 +45,7 @@ echo "  bo qua truong: $IGNORE_KEYS"
 echo "  dung sai so thuc: $FLOAT_TOL (so nguyen, chuoi va diem rubric: bang tuyet doi)"
 echo
 
-fail=0; missing=0; ok=0
+fail_float=0; fail_hard=0; missing=0; ok=0
 
 for pair in "${PAIRS[@]}"; do
   exp="expected/${pair%%|*}"
@@ -52,37 +57,9 @@ for pair in "${PAIRS[@]}"; do
   if [ ! -f "$got" ]; then
     printf '  %-34s CHUA CO KET QUA (%s)\n' "$name" "$got"; missing=$((missing+1)); continue
   fi
-  if "$PY" - "$exp" "$got" "$IGNORE_KEYS" "$FLOAT_TOL" <<'EOF'
-import json, sys
-
-def strip(o, keys):
-    if isinstance(o, dict):
-        return {k: strip(v, keys) for k, v in o.items() if k not in keys}
-    if isinstance(o, list):
-        return [strip(v, keys) for v in o]
-    return o
-
-def same(a, b, tol):
-    if isinstance(a, dict) and isinstance(b, dict):
-        return a.keys() == b.keys() and all(same(a[k], b[k], tol) for k in a)
-    if isinstance(a, list) and isinstance(b, list):
-        return len(a) == len(b) and all(same(x, y, tol) for x, y in zip(a, b))
-    if isinstance(a, bool) or isinstance(b, bool):
-        return a == b
-    if isinstance(a, float) or isinstance(b, float):
-        return isinstance(a, (int, float)) and isinstance(b, (int, float)) and abs(a - b) <= tol
-    return a == b
-
-exp_p, got_p, ign, tol = sys.argv[1], sys.argv[2], set(sys.argv[3].split(",")), float(sys.argv[4])
-a = strip(json.load(open(exp_p)), ign)
-b = strip(json.load(open(got_p)), ign)
-sys.exit(0 if same(a, b, tol) else 1)
-EOF
-  then
-    printf '  %-34s KHOP\n' "$name"; ok=$((ok+1))
-  else
-    printf '  %-34s LECH\n' "$name"
-    "$PY" - "$exp" "$got" "$IGNORE_KEYS" "$FLOAT_TOL" <<'EOF'
+  # Dong dau: "OK <lech so thuc toi da>" hoac "MISMATCH <lech so thuc toi da> <so truong khac so thuc lech>",
+  # sau do toi da 12 dong chi tiet.
+  res="$("$PY" - "$exp" "$got" "$IGNORE_KEYS" "$FLOAT_TOL" <<'PYEOF'
 import json, sys
 
 def flat(o, p="", out=None):
@@ -97,38 +74,63 @@ def flat(o, p="", out=None):
         out[p] = o
     return out
 
+def is_num(x):
+    return isinstance(x, (int, float)) and not isinstance(x, bool)
+
 ign, tol = set(sys.argv[3].split(",")), float(sys.argv[4])
 a = flat(json.load(open(sys.argv[1])))
 b = flat(json.load(open(sys.argv[2])))
-n = 0
+max_float, hard, lines = 0.0, 0, []
 for k in sorted(set(a) | set(b)):
     if k.split(".")[-1].split("[")[0] in ign:
         continue
     x, y = a.get(k, "<thieu>"), b.get(k, "<thieu>")
-    if (isinstance(x, float) or isinstance(y, float)) and isinstance(x, (int, float)) \
-            and isinstance(y, (int, float)) and not isinstance(x, bool) and not isinstance(y, bool) \
-            and abs(x - y) <= tol:
-        continue
-    if x != y:
-        print(f"      {k}: expected={x!r} got={y!r}")
-        n += 1
-        if n >= 12:
-            print("      ...")
-            break
-EOF
-    fail=$((fail+1))
+    if (isinstance(x, float) or isinstance(y, float)) and is_num(x) and is_num(y):
+        d = abs(x - y)
+        max_float = max(max_float, d)
+        if d <= tol:
+            continue
+        lines.append(f"      {k}: expected={x!r} got={y!r} (lech {d:.3e})")
+    elif x != y:
+        hard += 1
+        lines.append(f"      {k}: expected={x!r} got={y!r}")
+if lines:
+    print(f"MISMATCH {max_float:.3e} {hard}")
+    print("\n".join(lines[:12]))
+    if len(lines) > 12:
+        print("      ...")
+    sys.exit(1)
+print(f"OK {max_float:.3e}")
+PYEOF
+)"
+  head1="${res%%$'\n'*}"
+  set -- $head1
+  if [ "$1" = "OK" ]; then
+    printf '  %-34s KHOP   (lech so thuc toi da %s)\n' "$name" "$2"; ok=$((ok+1))
+  else
+    printf '  %-34s LECH   (lech so thuc toi da %s, truong khac so thuc lech: %s)\n' "$name" "$2" "$3"
+    printf '%s\n' "${res#*$'\n'}"
+    if [ "$3" -gt 0 ]; then fail_hard=$((fail_hard+1)); else fail_float=$((fail_float+1)); fi
   fi
 done
 
+fail=$((fail_float+fail_hard))
 echo
 echo "khop=$ok  lech=$fail  thieu=$missing"
 if [ "$missing" -gt 0 ] && [ "$fail" -eq 0 ]; then
   echo "Chua chay du cac buoc. Xem REPRODUCE.md."
   exit 2
 fi
-if [ "$fail" -gt 0 ]; then
-  echo "CO FILE LECH. Neu chi lech o so pixel cua crop thi kiem phien ban Pillow (ghim 12.0.0);"
-  echo "neu lech o gia tri do duoc thi bao loi kem log nay."
+if [ "$fail_hard" -gt 0 ]; then
+  echo "CO FILE LECH o so nguyen, chuoi, co hoac diem rubric: day la ket qua khac, khong phai nhieu so hoc."
+  echo "Kiem lai thu tu cac buoc trong REPRODUCE.md (nhat la muc 6), roi bao loi kem log nay."
+  exit 1
+fi
+if [ "$fail_float" -gt 0 ]; then
+  echo "CO FILE LECH chi o so thuc do duoc, vuot dung sai FLOAT_TOL=$FLOAT_TOL, moi so nguyen va diem rubric van khop."
+  echo "Lech co 1e-4 den 1e-3 tap trung o cac truong resnet50 la dau hieu embedding trich bang TF32"
+  echo "(GPU Ampere tro len voi ma truoc 1.0.1, hoac cudnn.allow_tf32 bi bat lai): trich lai embedding"
+  echo "bang ma hien tai. Lech nho hon ma vuot dung sai: ghi phien ban torch, timm, GPU va bao loi kem log nay."
   exit 1
 fi
 echo "TAT CA KHOP."

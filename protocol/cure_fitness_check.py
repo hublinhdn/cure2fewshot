@@ -106,6 +106,13 @@ def extract(df, model_names=MODELS, device=None, batch=BATCH):
         device = ("cuda" if torch.cuda.is_available()
                   else "mps" if torch.backends.mps.is_available() else "cpu")
     dev = torch.device(device)
+    # Probe đóng băng phải cho cùng một embedding trên mọi máy. Trên GPU Ampere trở lên, PyTorch
+    # mặc định tính tích chập fp32 bằng TF32 (cudnn.allow_tf32=True): đo ngày 23/09/2026 trên
+    # RTX 3080, embedding ResNet50 lệch tới 7e-3 so với máy tham chiếu và 5/8423 query đổi hạng;
+    # tắt TF32 thì lệch còn 3e-6, cùng mức với ViT. Hai cờ này vô hại trên CPU và MPS.
+    torch.backends.cudnn.allow_tf32 = False
+    torch.backends.cuda.matmul.allow_tf32 = False
+    print(f"[extract] device = {dev.type}; TF32 tắt (fp32 đúng nghĩa) để khớp máy tham chiếu", flush=True)
     df[["crop_rel", "class_id", "domain"]].to_csv(os.path.join(EMB_DIR, "index.csv"), index=False)
 
     for name in model_names:

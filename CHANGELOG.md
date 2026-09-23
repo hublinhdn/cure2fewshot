@@ -2,9 +2,9 @@
 
 ## 1.0.0, 2026-09-23
 
-First public release. Zenodo Version DOI: recorded in the follow up commit once Zenodo has
-archived the tag; the concept DOI, which always resolves to the latest version, goes into
-`CITATION.cff` and the README badge at the same time.
+First public release. Zenodo Version DOI `10.5281/zenodo.22908279`; concept DOI, which always
+resolves to the latest version and is the one in `CITATION.cff` and the README badge:
+`10.5281/zenodo.22908278`.
 
 Contents:
 

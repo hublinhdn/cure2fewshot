@@ -36,10 +36,9 @@ authors:
     affiliation: "Department of Apply Science, Faculty of Science and Technology, Suan Sunandha Rajabhat University, 1 U Thong Nok Rd, Dusit, Dusit District, Bangkok, 10300, Thailand"
     email: "kittikhun.me@ssru.ac.th"
 
-# TODO(release): dien Concept DOI (luon tro ban moi nhat, nen file nay khong lech moi lan cat tag)
-# ngay sau khi Zenodo luu tru tag v1.0.0. Version DOI cua tung tag nam trong CHANGELOG.md; bai bao
-# trich Version DOI cua dung ban no mo ta.
-# doi: "10.5281/zenodo.XXXXXXX"
+# Concept DOI: luon tro ban moi nhat, nen file nay khong lech moi lan cat tag. Version DOI cua tung
+# tag nam trong CHANGELOG.md; bai bao trich Version DOI cua dung ban no mo ta.
+doi: "10.5281/zenodo.22908278"
 date-released: "2026-09-23"
 
 # TODO(article): khi bai bao di kem co DOI, mo khoi duoi day de cong cu trich dan uu tien tro ve

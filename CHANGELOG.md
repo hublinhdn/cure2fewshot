@@ -2,7 +2,7 @@
 
 ## 1.0.1, 2026-09-23
 
-Zenodo Version DOI `PENDING_DOI_101`. Concept DOI unchanged: `10.5281/zenodo.22908278`.
+Zenodo Version DOI `10.5281/zenodo.22910309`. Concept DOI unchanged: `10.5281/zenodo.22908278`.
 
 A fresh clone of 1.0.0 on a second machine (Linux, RTX 3080, CUDA) reproduced all 8811 crops pixel
 for pixel, the fifteen split CSV files byte for byte, the 388 hardened references pixel for pixel,

@@ -1,0 +1,97 @@
+{
+ "config": {
+  "manifest": "outputs_v2/manifest_hardened_v2.csv",
+  "models": [
+   "vit_small_patch14_dinov2.lvd142m"
+  ],
+  "img_size": 224,
+  "seed": 42,
+  "leak_threshold": 0.985,
+  "dedup_centroid_threshold": 0.97
+ },
+ "control1_lowshot": {
+  "n_images": 8811,
+  "n_pill_ids": 196,
+  "n_classes_two_sided": 392,
+  "n_classes_one_sided": 196,
+  "n_reference": 388,
+  "n_consumer": 8423,
+  "ref_per_class": {
+   "min": 0,
+   "median": 1.0,
+   "max": 1
+  },
+  "consumer_per_class": {
+   "min": 3,
+   "median": 22.0,
+   "max": 37
+  },
+  "classes_without_ref": [
+   "195__bottom",
+   "195__top",
+   "47__bottom",
+   "48__bottom"
+  ],
+  "classes_without_consumer": []
+ },
+ "control2_headroom": {
+  "per_model": {
+   "vit_small_patch14_dinov2.lvd142m": {
+    "cross_domain": {
+     "top1": 0.2156486259450378,
+     "mAP": 0.3334728722538398,
+     "recall@5": 0.4520580823232929,
+     "n_query": 8333,
+     "n_gallery_classes": 388
+    },
+    "within_domain": {
+     "top1": 0.32860166853442907,
+     "mAP": 0.42151584483333837,
+     "recall@5": 0.5130120781969867,
+     "n_query": 8031,
+     "n_gallery_classes": 392
+    },
+    "domain_gap_top1": 0.11295304258939126
+   }
+  },
+  "mean": {
+   "cross_top1": 0.2156486259450378,
+   "within_top1": 0.32860166853442907,
+   "cross_mAP": 0.3334728722538398,
+   "within_mAP": 0.42151584483333837,
+   "cross_recall@5": 0.4520580823232929,
+   "within_recall@5": 0.5130120781969867,
+   "domain_gap_top1": 0.11295304258939126
+  }
+ },
+ "control3_domain_sep": {
+  "per_model": {
+   "vit_small_patch14_dinov2.lvd142m": {
+    "auc": 0.9988632622262803
+   }
+  },
+  "mean_auc": 0.9988632622262803
+ },
+ "control4_leakage": {
+  "per_model": {
+   "vit_small_patch14_dinov2.lvd142m": {
+    "threshold": 0.985,
+    "leak_frac": 0.0,
+    "n_leaked": 0,
+    "same_class_cos_p50": 0.7155228853225708,
+    "same_class_cos_p95": 0.8450048327445984,
+    "same_class_cos_max": 0.9519596099853516
+   }
+  },
+  "union_leak_frac": 0.0,
+  "union_n_leaked": 0,
+  "n_query_checked": 8423
+ },
+ "dedup_scan": {
+  "n_flagged_pairs": 22,
+  "n_suggest_merge": 0,
+  "flagged_class_frac": 0.1096938775510204,
+  "centroid_threshold": 0.97,
+  "image_threshold": 0.99
+ }
+}

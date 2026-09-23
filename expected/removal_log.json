@@ -1,0 +1,14 @@
+{
+  "leak_threshold": 0.985,
+  "n_query_before": 8423,
+  "n_leaked_removed": 0,
+  "leak_frac_before": 0.0,
+  "leak_frac_after": 0.0,
+  "n_dedup_pairs_flagged": 4,
+  "n_dedup_pairs_merged": 2,
+  "n_dedup_pairs_merged_manual": 2,
+  "n_classes_before_merge": 392,
+  "n_classes_after_merge": 390,
+  "eval_sample_n": 1280,
+  "query_eval_fold0_n": 1715
+}

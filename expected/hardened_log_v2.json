@@ -1,0 +1,2754 @@
+{
+  "stats": {
+    "n_refs": 388,
+    "noise_fallback": 0,
+    "ellipse_fallback": 5,
+    "hull_repair": 19,
+    "suspect": 5,
+    "solidity_min": 0.9708326728413234,
+    "solidity_p05": 0.9846071022273395,
+    "solidity_median": 0.9963663920832313,
+    "n_solidity_below_097": 0,
+    "n_solidity_below_095": 0,
+    "fg_frac_p05": 0.22483859592013888,
+    "fg_frac_median": 0.4714491102430556,
+    "fg_frac_p95": 0.5741027832031247
+  },
+  "per_class": {
+    "0__bottom": {
+      "thr": 9.0,
+      "frac": 0.40985107421875,
+      "solidity": 0.9974418220828519,
+      "repair": "none",
+      "suspect": false
+    },
+    "0__top": {
+      "thr": 9.0,
+      "frac": 0.4852227105034722,
+      "solidity": 0.9975322756043834,
+      "repair": "none",
+      "suspect": false
+    },
+    "1__bottom": {
+      "thr": 9.0,
+      "frac": 0.71490478515625,
+      "solidity": 1.0,
+      "repair": "none",
+      "suspect": false
+    },
+    "1__top": {
+      "thr": 9.0,
+      "frac": 0.6785074869791666,
+      "solidity": 1.0,
+      "repair": "none",
+      "suspect": false
+    },
+    "10__bottom": {
+      "thr": 9.0,
+      "frac": 0.49261474609375,
+      "solidity": 0.9967889341731505,
+      "repair": "none",
+      "suspect": false
+    },
+    "10__top": {
+      "thr": 9.0,
+      "frac": 0.4994371202256944,
+      "solidity": 0.9966707718125347,
+      "repair": "none",
+      "suspect": false
+    },
+    "100__bottom": {
+      "thr": 9.0,
+      "frac": 0.2906155056423611,
+      "solidity": 0.998718187750536,
+      "repair": "none",
+      "suspect": false
+    },
+    "100__top": {
+      "thr": 9.0,
+      "frac": 0.3141343858506944,
+      "solidity": 0.9997410053309737,
+      "repair": "none",
+      "suspect": false
+    },
+    "101__bottom": {
+      "thr": 9.0,
+      "frac": 0.4806722005208333,
+      "solidity": 0.9964571910586251,
+      "repair": "none",
+      "suspect": false
+    },
+    "101__top": {
+      "thr": 9.0,
+      "frac": 0.4785970052083333,
+      "solidity": 0.9989949464207353,
+      "repair": "none",
+      "suspect": false
+    },
+    "102__bottom": {
+      "thr": 9.0,
+      "frac": 0.4803466796875,
+      "solidity": 0.997633736161582,
+      "repair": "none",
+      "suspect": false
+    },
+    "102__top": {
+      "thr": 9.0,
+      "frac": 0.4800754123263889,
+      "solidity": 0.9975761675262816,
+      "repair": "none",
+      "suspect": false
+    },
+    "103__bottom": {
+      "thr": 9.0,
+      "frac": 0.3086208767361111,
+      "solidity": 0.9876725410191857,
+      "repair": "none",
+      "suspect": false
+    },
+    "103__top": {
+      "thr": 9.0,
+      "frac": 0.2473483615451389,
+      "solidity": 0.9908987176700718,
+      "repair": "none",
+      "suspect": false
+    },
+    "104__bottom": {
+      "thr": 9.0,
+      "frac": 0.4871148003472222,
+      "solidity": 0.997514130570639,
+      "repair": "none",
+      "suspect": false
+    },
+    "104__top": {
+      "thr": 9.0,
+      "frac": 0.4820488823784722,
+      "solidity": 0.9974600768993293,
+      "repair": "none",
+      "suspect": false
+    },
+    "105__bottom": {
+      "thr": 9.0,
+      "frac": 0.4841172960069444,
+      "solidity": 0.9982380579483163,
+      "repair": "none",
+      "suspect": false
+    },
+    "105__top": {
+      "thr": 9.0,
+      "frac": 0.4775119357638889,
+      "solidity": 0.9975066583555279,
+      "repair": "none",
+      "suspect": false
+    },
+    "106__bottom": {
+      "thr": 9.0,
+      "frac": 0.2552693684895833,
+      "solidity": 0.9850828295516998,
+      "repair": "none",
+      "suspect": false
+    },
+    "106__top": {
+      "thr": 9.0,
+      "frac": 0.32293701171875,
+      "solidity": 0.9877821108529704,
+      "repair": "none",
+      "suspect": false
+    },
+    "107__bottom": {
+      "thr": 9.0,
+      "frac": 0.4148966471354167,
+      "solidity": 0.9966441313024355,
+      "repair": "none",
+      "suspect": false
+    },
+    "107__top": {
+      "thr": 9.0,
+      "frac": 0.3533596462673611,
+      "solidity": 0.99907963108546,
+      "repair": "none",
+      "suspect": false
+    },
+    "108__bottom": {
+      "thr": 9.0,
+      "frac": 0.2990519205729167,
+      "solidity": 0.9916569218314294,
+      "repair": "none",
+      "suspect": false
+    },
+    "108__top": {
+      "thr": 9.0,
+      "frac": 0.2932400173611111,
+      "solidity": 0.9844052361980649,
+      "repair": "none",
+      "suspect": false
+    },
+    "109__bottom": {
+      "thr": 9.0,
+      "frac": 0.3337198893229167,
+      "solidity": 0.9980731786467629,
+      "repair": "none",
+      "suspect": false
+    },
+    "109__top": {
+      "thr": 9.0,
+      "frac": 0.2869398328993056,
+      "solidity": 0.9984189909858889,
+      "repair": "none",
+      "suspect": false
+    },
+    "11__bottom": {
+      "thr": 9.0,
+      "frac": 0.4837782118055556,
+      "solidity": 0.9967583277442432,
+      "repair": "none",
+      "suspect": false
+    },
+    "11__top": {
+      "thr": 9.0,
+      "frac": 0.4991726345486111,
+      "solidity": 0.9965475690824657,
+      "repair": "none",
+      "suspect": false
+    },
+    "110__bottom": {
+      "thr": 9.0,
+      "frac": 0.5032891167534722,
+      "solidity": 0.9832401494475211,
+      "repair": "none",
+      "suspect": false
+    },
+    "110__top": {
+      "thr": 9.0,
+      "frac": 0.4795871310763889,
+      "solidity": 0.9949491396654333,
+      "repair": "none",
+      "suspect": false
+    },
+    "111__bottom": {
+      "thr": 9.0,
+      "frac": 0.4816962348090278,
+      "solidity": 0.9973881906901636,
+      "repair": "none",
+      "suspect": false
+    },
+    "111__top": {
+      "thr": 9.0,
+      "frac": 0.4800618489583333,
+      "solidity": 0.9977870181126225,
+      "repair": "none",
+      "suspect": false
+    },
+    "112__bottom": {
+      "thr": 9.0,
+      "frac": 0.2083468967013889,
+      "solidity": 0.9891815313284822,
+      "repair": "none",
+      "suspect": false
+    },
+    "112__top": {
+      "thr": 9.0,
+      "frac": 0.3129001193576389,
+      "solidity": 0.9891733127519081,
+      "repair": "none",
+      "suspect": false
+    },
+    "113__bottom": {
+      "thr": 9.0,
+      "frac": 0.4820488823784722,
+      "solidity": 0.9921970965940815,
+      "repair": "none",
+      "suspect": false
+    },
+    "113__top": {
+      "thr": 9.0,
+      "frac": 0.4804484049479167,
+      "solidity": 0.9955593653827237,
+      "repair": "none",
+      "suspect": false
+    },
+    "114__bottom": {
+      "thr": 9.0,
+      "frac": 0.4726223415798611,
+      "solidity": 0.99368352011863,
+      "repair": "none",
+      "suspect": false
+    },
+    "114__top": {
+      "thr": 9.0,
+      "frac": 0.4764607747395833,
+      "solidity": 0.9946344640126847,
+      "repair": "none",
+      "suspect": false
+    },
+    "115__bottom": {
+      "thr": 9.0,
+      "frac": 0.2940131293402778,
+      "solidity": 0.9973544364949735,
+      "repair": "none",
+      "suspect": false
+    },
+    "115__top": {
+      "thr": 9.0,
+      "frac": 0.2987738715277778,
+      "solidity": 0.9966744338619551,
+      "repair": "none",
+      "suspect": false
+    },
+    "116__bottom": {
+      "thr": 9.0,
+      "frac": 0.3188680013020833,
+      "solidity": 0.9901029712143865,
+      "repair": "none",
+      "suspect": false
+    },
+    "116__top": {
+      "thr": 9.0,
+      "frac": 0.2863362630208333,
+      "solidity": 0.9894544431946006,
+      "repair": "none",
+      "suspect": false
+    },
+    "117__bottom": {
+      "thr": 9.0,
+      "frac": 0.482666015625,
+      "solidity": 0.9976590644668414,
+      "repair": "none",
+      "suspect": false
+    },
+    "117__top": {
+      "thr": 9.0,
+      "frac": 0.4851006401909722,
+      "solidity": 0.9964477753322375,
+      "repair": "none",
+      "suspect": false
+    },
+    "118__bottom": {
+      "thr": 9.0,
+      "frac": 0.4876776801215278,
+      "solidity": 0.99128792578195,
+      "repair": "none",
+      "suspect": false
+    },
+    "118__top": {
+      "thr": 9.0,
+      "frac": 0.4741753472222222,
+      "solidity": 0.9989427665228449,
+      "repair": "none",
+      "suspect": false
+    },
+    "119__bottom": {
+      "thr": 9.0,
+      "frac": 0.4774305555555556,
+      "solidity": 0.9987515605493134,
+      "repair": "none",
+      "suspect": false
+    },
+    "119__top": {
+      "thr": 9.0,
+      "frac": 0.4839680989583333,
+      "solidity": 0.998656591099916,
+      "repair": "none",
+      "suspect": false
+    },
+    "12__bottom": {
+      "thr": 9.0,
+      "frac": 0.4808010525173611,
+      "solidity": 0.996220105106371,
+      "repair": "none",
+      "suspect": false
+    },
+    "12__top": {
+      "thr": 18.0,
+      "frac": 0.3588663736979167,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.9515278643914054
+    },
+    "120__bottom": {
+      "thr": 9.0,
+      "frac": 0.4710761176215278,
+      "solidity": 0.9929243260241859,
+      "repair": "none",
+      "suspect": false
+    },
+    "120__top": {
+      "thr": 9.0,
+      "frac": 0.4812554253472222,
+      "solidity": 0.9962935924074802,
+      "repair": "none",
+      "suspect": false
+    },
+    "121__bottom": {
+      "thr": 36.0,
+      "frac": 0.2907375759548611,
+      "solidity": 0.9708326728413234,
+      "repair": "none",
+      "suspect": false
+    },
+    "121__top": {
+      "thr": 12.0,
+      "frac": 0.2836507161458333,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.9698751972457323
+    },
+    "122__bottom": {
+      "thr": 9.0,
+      "frac": 0.4784613715277778,
+      "solidity": 0.9974269799530636,
+      "repair": "none",
+      "suspect": false
+    },
+    "122__top": {
+      "thr": 9.0,
+      "frac": 0.4761623806423611,
+      "solidity": 0.996324781473493,
+      "repair": "none",
+      "suspect": false
+    },
+    "123__bottom": {
+      "thr": 9.0,
+      "frac": 0.3003336588541667,
+      "solidity": 0.9992553983618764,
+      "repair": "none",
+      "suspect": false
+    },
+    "123__top": {
+      "thr": 9.0,
+      "frac": 0.3146769205729167,
+      "solidity": 0.9996552987052157,
+      "repair": "none",
+      "suspect": false
+    },
+    "124__bottom": {
+      "thr": 9.0,
+      "frac": 0.2850002712673611,
+      "solidity": 0.9989540992179514,
+      "repair": "none",
+      "suspect": false
+    },
+    "124__top": {
+      "thr": 9.0,
+      "frac": 0.3241373697916667,
+      "solidity": 0.9980371685111714,
+      "repair": "none",
+      "suspect": false
+    },
+    "125__bottom": {
+      "thr": 9.0,
+      "frac": 0.4840630425347222,
+      "solidity": 0.9989783208072666,
+      "repair": "none",
+      "suspect": false
+    },
+    "125__top": {
+      "thr": 9.0,
+      "frac": 0.4805026584201389,
+      "solidity": 0.9975923631448524,
+      "repair": "none",
+      "suspect": false
+    },
+    "126__bottom": {
+      "thr": 9.0,
+      "frac": 0.4770711263020833,
+      "solidity": 0.997759024182682,
+      "repair": "none",
+      "suspect": false
+    },
+    "126__top": {
+      "thr": 9.0,
+      "frac": 0.4920450846354167,
+      "solidity": 0.9968947939709539,
+      "repair": "none",
+      "suspect": false
+    },
+    "127__bottom": {
+      "thr": 9.0,
+      "frac": 0.2632514105902778,
+      "solidity": 0.9969693856585166,
+      "repair": "none",
+      "suspect": false
+    },
+    "127__top": {
+      "thr": 9.0,
+      "frac": 0.2499932183159722,
+      "solidity": 0.9970248559759824,
+      "repair": "none",
+      "suspect": false
+    },
+    "128__bottom": {
+      "thr": 9.0,
+      "frac": 0.4867485894097222,
+      "solidity": 0.9968472660101944,
+      "repair": "none",
+      "suspect": false
+    },
+    "128__top": {
+      "thr": 9.0,
+      "frac": 0.5397813585069444,
+      "solidity": 0.9924562650407113,
+      "repair": "none",
+      "suspect": false
+    },
+    "129__bottom": {
+      "thr": 9.0,
+      "frac": 0.3660549587673611,
+      "solidity": 0.983814818190103,
+      "repair": "none",
+      "suspect": false
+    },
+    "129__top": {
+      "thr": 9.0,
+      "frac": 0.30218505859375,
+      "solidity": 0.9825578831312017,
+      "repair": "none",
+      "suspect": false
+    },
+    "13__bottom": {
+      "thr": 9.0,
+      "frac": 0.4265814887152778,
+      "solidity": 0.9963884048788215,
+      "repair": "none",
+      "suspect": false
+    },
+    "13__top": {
+      "thr": 9.0,
+      "frac": 0.2891710069444444,
+      "solidity": 0.9962384056447279,
+      "repair": "none",
+      "suspect": false
+    },
+    "130__bottom": {
+      "thr": 9.0,
+      "frac": 0.30450439453125,
+      "solidity": 0.9974231956816314,
+      "repair": "none",
+      "suspect": false
+    },
+    "130__top": {
+      "thr": 9.0,
+      "frac": 0.2596706814236111,
+      "solidity": 0.9975250748990491,
+      "repair": "none",
+      "suspect": false
+    },
+    "131__bottom": {
+      "thr": 9.0,
+      "frac": 0.4788750542534722,
+      "solidity": 0.9962049603566491,
+      "repair": "none",
+      "suspect": false
+    },
+    "131__top": {
+      "thr": 9.0,
+      "frac": 0.4825032552083333,
+      "solidity": 0.9985123642181492,
+      "repair": "none",
+      "suspect": false
+    },
+    "132__bottom": {
+      "thr": 9.0,
+      "frac": 0.4810248480902778,
+      "solidity": 0.998409414016863,
+      "repair": "none",
+      "suspect": false
+    },
+    "132__top": {
+      "thr": 9.0,
+      "frac": 0.4844699435763889,
+      "solidity": 0.9984904816481704,
+      "repair": "none",
+      "suspect": false
+    },
+    "133__bottom": {
+      "thr": 9.0,
+      "frac": 0.2387152777777778,
+      "solidity": 0.9924438930867261,
+      "repair": "none",
+      "suspect": false
+    },
+    "133__top": {
+      "thr": 9.0,
+      "frac": 0.23402913411458334,
+      "solidity": 0.9915239627629008,
+      "repair": "none",
+      "suspect": false
+    },
+    "134__bottom": {
+      "thr": 9.0,
+      "frac": 0.4783460828993056,
+      "solidity": 0.9954415874001524,
+      "repair": "none",
+      "suspect": false
+    },
+    "134__top": {
+      "thr": 9.0,
+      "frac": 0.5785319010416666,
+      "solidity": 0.9944627723441708,
+      "repair": "none",
+      "suspect": false
+    },
+    "135__bottom": {
+      "thr": 9.0,
+      "frac": 0.4820692274305556,
+      "solidity": 0.999325198223022,
+      "repair": "none",
+      "suspect": false
+    },
+    "135__top": {
+      "thr": 9.0,
+      "frac": 0.4802449544270833,
+      "solidity": 0.9983364583480185,
+      "repair": "none",
+      "suspect": false
+    },
+    "136__bottom": {
+      "thr": 9.0,
+      "frac": 0.4736328125,
+      "solidity": 0.9956518639960082,
+      "repair": "none",
+      "suspect": false
+    },
+    "136__top": {
+      "thr": 9.0,
+      "frac": 0.4264322916666667,
+      "solidity": 0.9962135014813289,
+      "repair": "none",
+      "suspect": false
+    },
+    "137__bottom": {
+      "thr": 9.0,
+      "frac": 0.3518744574652778,
+      "solidity": 0.998614265368182,
+      "repair": "none",
+      "suspect": false
+    },
+    "137__top": {
+      "thr": 9.0,
+      "frac": 0.2634141710069444,
+      "solidity": 0.9989969393791311,
+      "repair": "none",
+      "suspect": false
+    },
+    "138__bottom": {
+      "thr": 9.0,
+      "frac": 0.5998806423611112,
+      "solidity": 0.9904821624526907,
+      "repair": "none",
+      "suspect": false
+    },
+    "138__top": {
+      "thr": 9.0,
+      "frac": 0.6617024739583334,
+      "solidity": 0.995003161265322,
+      "repair": "none",
+      "suspect": false
+    },
+    "139__bottom": {
+      "thr": 9.0,
+      "frac": 0.3153008355034722,
+      "solidity": 0.9893601174643032,
+      "repair": "none",
+      "suspect": false
+    },
+    "139__top": {
+      "thr": 9.0,
+      "frac": 0.20530192057291666,
+      "solidity": 0.9872810879561686,
+      "repair": "none",
+      "suspect": false
+    },
+    "14__bottom": {
+      "thr": 9.0,
+      "frac": 0.4854261610243056,
+      "solidity": 0.9981731976014503,
+      "repair": "none",
+      "suspect": false
+    },
+    "14__top": {
+      "thr": 9.0,
+      "frac": 0.4837443033854167,
+      "solidity": 0.9979155008393956,
+      "repair": "none",
+      "suspect": false
+    },
+    "140__bottom": {
+      "thr": 9.0,
+      "frac": 0.3304511176215278,
+      "solidity": 0.9876760920239182,
+      "repair": "none",
+      "suspect": false
+    },
+    "140__top": {
+      "thr": 9.0,
+      "frac": 0.20123291015625,
+      "solidity": 0.9902883460152183,
+      "repair": "none",
+      "suspect": false
+    },
+    "141__bottom": {
+      "thr": 9.0,
+      "frac": 0.3061387803819444,
+      "solidity": 0.995764768165174,
+      "repair": "none",
+      "suspect": false
+    },
+    "141__top": {
+      "thr": 9.0,
+      "frac": 0.3548719618055556,
+      "solidity": 0.9932804373410273,
+      "repair": "none",
+      "suspect": false
+    },
+    "142__bottom": {
+      "thr": 9.0,
+      "frac": 0.4039103190104167,
+      "solidity": 0.9967699825947248,
+      "repair": "none",
+      "suspect": false
+    },
+    "142__top": {
+      "thr": 9.0,
+      "frac": 0.2717420789930556,
+      "solidity": 0.9929130736445634,
+      "repair": "none",
+      "suspect": false
+    },
+    "143__bottom": {
+      "thr": 9.0,
+      "frac": 0.2993028428819444,
+      "solidity": 0.9949950401298584,
+      "repair": "none",
+      "suspect": false
+    },
+    "143__top": {
+      "thr": 9.0,
+      "frac": 0.3620944552951389,
+      "solidity": 0.9944867663767252,
+      "repair": "none",
+      "suspect": false
+    },
+    "144__bottom": {
+      "thr": 9.0,
+      "frac": 0.4742974175347222,
+      "solidity": 0.9951762311993967,
+      "repair": "none",
+      "suspect": false
+    },
+    "144__top": {
+      "thr": 9.0,
+      "frac": 0.21303304036458334,
+      "solidity": 0.9897287249125681,
+      "repair": "none",
+      "suspect": false
+    },
+    "145__bottom": {
+      "thr": 9.0,
+      "frac": 0.22884114583333334,
+      "solidity": 0.9930255142579677,
+      "repair": "none",
+      "suspect": false
+    },
+    "145__top": {
+      "thr": 9.0,
+      "frac": 0.2226833767361111,
+      "solidity": 0.9925639320476392,
+      "repair": "none",
+      "suspect": false
+    },
+    "146__bottom": {
+      "thr": 9.0,
+      "frac": 0.4147406684027778,
+      "solidity": 0.9955396386130555,
+      "repair": "none",
+      "suspect": false
+    },
+    "146__top": {
+      "thr": 9.0,
+      "frac": 0.4696451822916667,
+      "solidity": 0.9965893882484997,
+      "repair": "none",
+      "suspect": false
+    },
+    "147__bottom": {
+      "thr": 9.0,
+      "frac": 0.2931789822048611,
+      "solidity": 0.9924927682630057,
+      "repair": "none",
+      "suspect": false
+    },
+    "147__top": {
+      "thr": 9.0,
+      "frac": 0.2565036349826389,
+      "solidity": 0.9959711396671582,
+      "repair": "none",
+      "suspect": false
+    },
+    "148__bottom": {
+      "thr": 9.0,
+      "frac": 0.4468112521701389,
+      "solidity": 0.9960843009192066,
+      "repair": "none",
+      "suspect": false
+    },
+    "148__top": {
+      "thr": 9.0,
+      "frac": 0.48223876953125,
+      "solidity": 0.9931285875895588,
+      "repair": "none",
+      "suspect": false
+    },
+    "149__bottom": {
+      "thr": 9.0,
+      "frac": 0.23371717664930555,
+      "solidity": 0.9961844197138314,
+      "repair": "none",
+      "suspect": false
+    },
+    "149__top": {
+      "thr": 9.0,
+      "frac": 0.2768079969618056,
+      "solidity": 0.994832923054425,
+      "repair": "none",
+      "suspect": false
+    },
+    "15__bottom": {
+      "thr": 9.0,
+      "frac": 0.4044731987847222,
+      "solidity": 0.997324504197184,
+      "repair": "none",
+      "suspect": false
+    },
+    "15__top": {
+      "thr": 9.0,
+      "frac": 0.4364963107638889,
+      "solidity": 0.9974584676419539,
+      "repair": "none",
+      "suspect": false
+    },
+    "150__bottom": {
+      "thr": 9.0,
+      "frac": 0.2926228841145833,
+      "solidity": 0.9861276167839839,
+      "repair": "none",
+      "suspect": false
+    },
+    "150__top": {
+      "thr": 9.0,
+      "frac": 0.21879069010416666,
+      "solidity": 0.9843478260869565,
+      "repair": "none",
+      "suspect": false
+    },
+    "151__bottom": {
+      "thr": 9.0,
+      "frac": 0.4871080186631944,
+      "solidity": 0.9980407959092931,
+      "repair": "none",
+      "suspect": false
+    },
+    "151__top": {
+      "thr": 9.0,
+      "frac": 0.20952012803819445,
+      "solidity": 0.9969988382599716,
+      "repair": "none",
+      "suspect": false
+    },
+    "152__bottom": {
+      "thr": 9.0,
+      "frac": 0.4813164605034722,
+      "solidity": 0.9969378151732663,
+      "repair": "none",
+      "suspect": false
+    },
+    "152__top": {
+      "thr": -1.0,
+      "frac": 0.5410563151041666,
+      "solidity": 1.0,
+      "repair": "ellipse",
+      "suspect": true
+    },
+    "153__bottom": {
+      "thr": 9.0,
+      "frac": 0.4773695203993056,
+      "solidity": 0.9950523741536026,
+      "repair": "none",
+      "suspect": false
+    },
+    "153__top": {
+      "thr": 9.0,
+      "frac": 0.4794243706597222,
+      "solidity": 0.997038248899921,
+      "repair": "none",
+      "suspect": false
+    },
+    "154__bottom": {
+      "thr": 9.0,
+      "frac": 0.4833780924479167,
+      "solidity": 0.9966580904972314,
+      "repair": "none",
+      "suspect": false
+    },
+    "154__top": {
+      "thr": 9.0,
+      "frac": 0.4749688042534722,
+      "solidity": 0.9956357329694074,
+      "repair": "none",
+      "suspect": false
+    },
+    "155__bottom": {
+      "thr": 9.0,
+      "frac": 0.4786376953125,
+      "solidity": 0.9977381322627159,
+      "repair": "none",
+      "suspect": false
+    },
+    "155__top": {
+      "thr": 9.0,
+      "frac": 0.5972493489583334,
+      "solidity": 0.9964810645062742,
+      "repair": "none",
+      "suspect": false
+    },
+    "156__bottom": {
+      "thr": 9.0,
+      "frac": 0.455322265625,
+      "solidity": 0.9929896175348301,
+      "repair": "none",
+      "suspect": false
+    },
+    "156__top": {
+      "thr": 9.0,
+      "frac": 0.4157647026909722,
+      "solidity": 0.9932923964290922,
+      "repair": "none",
+      "suspect": false
+    },
+    "157__bottom": {
+      "thr": 9.0,
+      "frac": 0.2805379231770833,
+      "solidity": 0.9962190540410365,
+      "repair": "none",
+      "suspect": false
+    },
+    "157__top": {
+      "thr": 9.0,
+      "frac": 0.4248385959201389,
+      "solidity": 0.9987723605752368,
+      "repair": "none",
+      "suspect": false
+    },
+    "158__bottom": {
+      "thr": 9.0,
+      "frac": 0.3849622938368056,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.8571302739364045
+    },
+    "158__top": {
+      "thr": 9.0,
+      "frac": 0.6448296440972222,
+      "solidity": 0.9922775087660711,
+      "repair": "none",
+      "suspect": false
+    },
+    "159__bottom": {
+      "thr": 9.0,
+      "frac": 0.3131306966145833,
+      "solidity": 0.995794513457557,
+      "repair": "none",
+      "suspect": false
+    },
+    "159__top": {
+      "thr": 9.0,
+      "frac": 0.2068142361111111,
+      "solidity": 0.9936787227109808,
+      "repair": "none",
+      "suspect": false
+    },
+    "16__bottom": {
+      "thr": 9.0,
+      "frac": 0.4627821180555556,
+      "solidity": 0.9923220102373197,
+      "repair": "none",
+      "suspect": false
+    },
+    "16__top": {
+      "thr": 9.0,
+      "frac": 0.46612548828125,
+      "solidity": 0.9870609185168165,
+      "repair": "none",
+      "suspect": false
+    },
+    "160__bottom": {
+      "thr": 9.0,
+      "frac": 0.4812486436631944,
+      "solidity": 0.9978766487611441,
+      "repair": "none",
+      "suspect": false
+    },
+    "160__top": {
+      "thr": 9.0,
+      "frac": 0.4767862955729167,
+      "solidity": 0.9974604165484365,
+      "repair": "none",
+      "suspect": false
+    },
+    "161__bottom": {
+      "thr": 9.0,
+      "frac": 0.4763861762152778,
+      "solidity": 0.9978975480864847,
+      "repair": "none",
+      "suspect": false
+    },
+    "161__top": {
+      "thr": 60.0,
+      "frac": 0.3204684787326389,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.9558141995556025
+    },
+    "162__bottom": {
+      "thr": 9.0,
+      "frac": 0.2442287868923611,
+      "solidity": 0.9927226617415994,
+      "repair": "none",
+      "suspect": false
+    },
+    "162__top": {
+      "thr": 9.0,
+      "frac": 0.2032131618923611,
+      "solidity": 0.9897278372308099,
+      "repair": "none",
+      "suspect": false
+    },
+    "163__bottom": {
+      "thr": 9.0,
+      "frac": 0.5597262912326388,
+      "solidity": 0.9969199178644764,
+      "repair": "none",
+      "suspect": false
+    },
+    "163__top": {
+      "thr": 9.0,
+      "frac": 0.6454942491319444,
+      "solidity": 0.9961590388177793,
+      "repair": "none",
+      "suspect": false
+    },
+    "164__bottom": {
+      "thr": 9.0,
+      "frac": 0.4713202582465278,
+      "solidity": 0.9970876015035437,
+      "repair": "none",
+      "suspect": false
+    },
+    "164__top": {
+      "thr": 9.0,
+      "frac": 0.4839613172743056,
+      "solidity": 0.9959249180099086,
+      "repair": "none",
+      "suspect": false
+    },
+    "165__bottom": {
+      "thr": 9.0,
+      "frac": 0.4686075846354167,
+      "solidity": 0.9962370242214533,
+      "repair": "none",
+      "suspect": false
+    },
+    "165__top": {
+      "thr": 9.0,
+      "frac": 0.4820827907986111,
+      "solidity": 0.9966491412548195,
+      "repair": "none",
+      "suspect": false
+    },
+    "166__bottom": {
+      "thr": 9.0,
+      "frac": 0.2550252278645833,
+      "solidity": 0.9952098660879691,
+      "repair": "none",
+      "suspect": false
+    },
+    "166__top": {
+      "thr": 9.0,
+      "frac": 0.3067762586805556,
+      "solidity": 0.9943507792407623,
+      "repair": "none",
+      "suspect": false
+    },
+    "167__bottom": {
+      "thr": 9.0,
+      "frac": 0.541015625,
+      "solidity": 0.9976863721064019,
+      "repair": "none",
+      "suspect": false
+    },
+    "167__top": {
+      "thr": 9.0,
+      "frac": 0.6258002387152778,
+      "solidity": 0.9939037525311275,
+      "repair": "none",
+      "suspect": false
+    },
+    "168__bottom": {
+      "thr": 9.0,
+      "frac": 0.20439317491319445,
+      "solidity": 0.9885528732616111,
+      "repair": "none",
+      "suspect": false
+    },
+    "168__top": {
+      "thr": 9.0,
+      "frac": 0.21473524305555555,
+      "solidity": 0.9833540372670807,
+      "repair": "none",
+      "suspect": false
+    },
+    "169__bottom": {
+      "thr": 9.0,
+      "frac": 0.3076104058159722,
+      "solidity": 0.9873960555531368,
+      "repair": "none",
+      "suspect": false
+    },
+    "169__top": {
+      "thr": 9.0,
+      "frac": 0.2332492404513889,
+      "solidity": 0.9811998972983768,
+      "repair": "none",
+      "suspect": false
+    },
+    "17__bottom": {
+      "thr": 9.0,
+      "frac": 0.2393731011284722,
+      "solidity": 0.9917952176234229,
+      "repair": "none",
+      "suspect": false
+    },
+    "17__top": {
+      "thr": 9.0,
+      "frac": 0.20900472005208334,
+      "solidity": 0.9725456783110858,
+      "repair": "none",
+      "suspect": false
+    },
+    "170__bottom": {
+      "thr": 9.0,
+      "frac": 0.2803005642361111,
+      "solidity": 0.9968165155315455,
+      "repair": "none",
+      "suspect": false
+    },
+    "170__top": {
+      "thr": 9.0,
+      "frac": 0.3901502821180556,
+      "solidity": 0.9942965779467681,
+      "repair": "none",
+      "suspect": false
+    },
+    "171__bottom": {
+      "thr": 9.0,
+      "frac": 0.4824964735243056,
+      "solidity": 0.995647793109239,
+      "repair": "none",
+      "suspect": false
+    },
+    "171__top": {
+      "thr": 9.0,
+      "frac": 0.4807061089409722,
+      "solidity": 0.9984786803961065,
+      "repair": "none",
+      "suspect": false
+    },
+    "172__bottom": {
+      "thr": 9.0,
+      "frac": 0.5978732638888888,
+      "solidity": 0.9976236279280298,
+      "repair": "none",
+      "suspect": false
+    },
+    "172__top": {
+      "thr": 9.0,
+      "frac": 0.4861111111111111,
+      "solidity": 0.9982452719828426,
+      "repair": "none",
+      "suspect": false
+    },
+    "173__bottom": {
+      "thr": 9.0,
+      "frac": 0.4779391818576389,
+      "solidity": 0.9963524804546675,
+      "repair": "none",
+      "suspect": false
+    },
+    "173__top": {
+      "thr": 9.0,
+      "frac": 0.4833645290798611,
+      "solidity": 0.9962261513732615,
+      "repair": "none",
+      "suspect": false
+    },
+    "174__bottom": {
+      "thr": 9.0,
+      "frac": 0.3256700303819444,
+      "solidity": 0.9912889109074395,
+      "repair": "none",
+      "suspect": false
+    },
+    "174__top": {
+      "thr": -1.0,
+      "frac": 0.23741319444444445,
+      "solidity": 1.0,
+      "repair": "ellipse",
+      "suspect": true
+    },
+    "175__bottom": {
+      "thr": 9.0,
+      "frac": 0.3150431315104167,
+      "solidity": 0.9954145149885363,
+      "repair": "none",
+      "suspect": false
+    },
+    "175__top": {
+      "thr": 9.0,
+      "frac": 0.41278076171875,
+      "solidity": 0.997394553141284,
+      "repair": "none",
+      "suspect": false
+    },
+    "176__bottom": {
+      "thr": 9.0,
+      "frac": 0.2890692816840278,
+      "solidity": 0.9967962209438286,
+      "repair": "none",
+      "suspect": false
+    },
+    "176__top": {
+      "thr": 9.0,
+      "frac": 0.32635498046875,
+      "solidity": 0.9989413376510151,
+      "repair": "none",
+      "suspect": false
+    },
+    "177__bottom": {
+      "thr": 9.0,
+      "frac": 0.5126071506076388,
+      "solidity": 0.9981248927095301,
+      "repair": "none",
+      "suspect": false
+    },
+    "177__top": {
+      "thr": 9.0,
+      "frac": 0.2682766384548611,
+      "solidity": 0.9985611873990307,
+      "repair": "none",
+      "suspect": false
+    },
+    "178__bottom": {
+      "thr": 9.0,
+      "frac": 0.631103515625,
+      "solidity": 0.9974811083123426,
+      "repair": "none",
+      "suspect": false
+    },
+    "178__top": {
+      "thr": 9.0,
+      "frac": 0.4823472764756944,
+      "solidity": 0.9981055290485545,
+      "repair": "none",
+      "suspect": false
+    },
+    "179__bottom": {
+      "thr": 9.0,
+      "frac": 0.4803263346354167,
+      "solidity": 0.9978304053197334,
+      "repair": "none",
+      "suspect": false
+    },
+    "179__top": {
+      "thr": 9.0,
+      "frac": 0.6252509223090278,
+      "solidity": 0.9932666824675185,
+      "repair": "none",
+      "suspect": false
+    },
+    "18__bottom": {
+      "thr": 9.0,
+      "frac": 0.3729248046875,
+      "solidity": 0.9921694572748267,
+      "repair": "none",
+      "suspect": false
+    },
+    "18__top": {
+      "thr": 9.0,
+      "frac": 0.2775404188368056,
+      "solidity": 0.9951125808490979,
+      "repair": "none",
+      "suspect": false
+    },
+    "180__bottom": {
+      "thr": 9.0,
+      "frac": 0.3745998806423611,
+      "solidity": 0.998553789974149,
+      "repair": "none",
+      "suspect": false
+    },
+    "180__top": {
+      "thr": 9.0,
+      "frac": 0.2708536783854167,
+      "solidity": 0.9978762742354588,
+      "repair": "none",
+      "suspect": false
+    },
+    "181__bottom": {
+      "thr": 9.0,
+      "frac": 0.6007961697048612,
+      "solidity": 0.9960312106493974,
+      "repair": "none",
+      "suspect": false
+    },
+    "181__top": {
+      "thr": 9.0,
+      "frac": 0.4870062934027778,
+      "solidity": 0.9961298913872744,
+      "repair": "none",
+      "suspect": false
+    },
+    "182__bottom": {
+      "thr": 9.0,
+      "frac": 0.3711208767361111,
+      "solidity": 0.9855740657361549,
+      "repair": "none",
+      "suspect": false
+    },
+    "182__top": {
+      "thr": 18.0,
+      "frac": 0.2629869249131944,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.9663993398488873
+    },
+    "183__bottom": {
+      "thr": 9.0,
+      "frac": 0.4689263237847222,
+      "solidity": 0.9940340133120571,
+      "repair": "none",
+      "suspect": false
+    },
+    "183__top": {
+      "thr": 9.0,
+      "frac": 0.3678656684027778,
+      "solidity": 0.9953575426170248,
+      "repair": "none",
+      "suspect": false
+    },
+    "184__bottom": {
+      "thr": 12.0,
+      "frac": 0.3697441948784722,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.759028631169641
+    },
+    "184__top": {
+      "thr": 9.0,
+      "frac": 0.5563015407986112,
+      "solidity": 0.9871239470517449,
+      "repair": "none",
+      "suspect": false
+    },
+    "185__bottom": {
+      "thr": 9.0,
+      "frac": 0.6719699435763888,
+      "solidity": 0.997704251162978,
+      "repair": "none",
+      "suspect": false
+    },
+    "185__top": {
+      "thr": 9.0,
+      "frac": 0.5908270941840278,
+      "solidity": 0.996864809199611,
+      "repair": "none",
+      "suspect": false
+    },
+    "186__bottom": {
+      "thr": 9.0,
+      "frac": 0.4870876736111111,
+      "solidity": 0.9960476500852875,
+      "repair": "none",
+      "suspect": false
+    },
+    "186__top": {
+      "thr": 9.0,
+      "frac": 0.4181247287326389,
+      "solidity": 0.9892022846874599,
+      "repair": "none",
+      "suspect": false
+    },
+    "187__bottom": {
+      "thr": 9.0,
+      "frac": 0.3597954644097222,
+      "solidity": 0.9947500656241797,
+      "repair": "none",
+      "suspect": false
+    },
+    "187__top": {
+      "thr": 9.0,
+      "frac": 0.3527899848090278,
+      "solidity": 0.996761831768538,
+      "repair": "none",
+      "suspect": false
+    },
+    "188__bottom": {
+      "thr": 9.0,
+      "frac": 0.4817708333333333,
+      "solidity": 0.9973045822102425,
+      "repair": "none",
+      "suspect": false
+    },
+    "188__top": {
+      "thr": 9.0,
+      "frac": 0.4775865342881944,
+      "solidity": 0.996970426263856,
+      "repair": "none",
+      "suspect": false
+    },
+    "189__bottom": {
+      "thr": 9.0,
+      "frac": 0.4779324001736111,
+      "solidity": 0.9975370852678066,
+      "repair": "none",
+      "suspect": false
+    },
+    "189__top": {
+      "thr": 9.0,
+      "frac": 0.4634941948784722,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.8849513497695516
+    },
+    "19__bottom": {
+      "thr": 9.0,
+      "frac": 0.4817233615451389,
+      "solidity": 0.9982012619271792,
+      "repair": "none",
+      "suspect": false
+    },
+    "19__top": {
+      "thr": 9.0,
+      "frac": 0.4914482964409722,
+      "solidity": 0.9969321777410923,
+      "repair": "none",
+      "suspect": false
+    },
+    "190__bottom": {
+      "thr": 9.0,
+      "frac": 0.47357177734375,
+      "solidity": 0.9939365472479611,
+      "repair": "none",
+      "suspect": false
+    },
+    "190__top": {
+      "thr": 9.0,
+      "frac": 0.5390218098958334,
+      "solidity": 0.9811017984767877,
+      "repair": "none",
+      "suspect": false
+    },
+    "191__bottom": {
+      "thr": 18.0,
+      "frac": 0.4819810655381944,
+      "solidity": 0.9746300791267262,
+      "repair": "none",
+      "suspect": false
+    },
+    "191__top": {
+      "thr": 12.0,
+      "frac": 0.5240410698784722,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.9514448772533745
+    },
+    "192__bottom": {
+      "thr": 9.0,
+      "frac": 0.5523613823784722,
+      "solidity": 0.995623846370115,
+      "repair": "none",
+      "suspect": false
+    },
+    "192__top": {
+      "thr": 9.0,
+      "frac": 0.58575439453125,
+      "solidity": 0.9976091476091477,
+      "repair": "none",
+      "suspect": false
+    },
+    "193__bottom": {
+      "thr": 9.0,
+      "frac": 0.4942152235243056,
+      "solidity": 0.9957505533845271,
+      "repair": "none",
+      "suspect": false
+    },
+    "193__top": {
+      "thr": 9.0,
+      "frac": 0.3154839409722222,
+      "solidity": 0.9963803037117951,
+      "repair": "none",
+      "suspect": false
+    },
+    "194__bottom": {
+      "thr": 9.0,
+      "frac": 0.5882500542534722,
+      "solidity": 0.9894711626209163,
+      "repair": "none",
+      "suspect": false
+    },
+    "194__top": {
+      "thr": 36.0,
+      "frac": 0.3672824435763889,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.8997378042025186
+    },
+    "2__bottom": {
+      "thr": 9.0,
+      "frac": 0.4783935546875,
+      "solidity": 0.9899936846537085,
+      "repair": "none",
+      "suspect": false
+    },
+    "2__top": {
+      "thr": 9.0,
+      "frac": 0.4740668402777778,
+      "solidity": 0.9915460992907802,
+      "repair": "none",
+      "suspect": false
+    },
+    "20__bottom": {
+      "thr": 9.0,
+      "frac": 0.5879787868923612,
+      "solidity": 0.9960136935943388,
+      "repair": "none",
+      "suspect": false
+    },
+    "20__top": {
+      "thr": 9.0,
+      "frac": 0.4887559678819444,
+      "solidity": 0.997895378139625,
+      "repair": "none",
+      "suspect": false
+    },
+    "21__bottom": {
+      "thr": 9.0,
+      "frac": 0.4840291341145833,
+      "solidity": 0.9976795873579446,
+      "repair": "none",
+      "suspect": false
+    },
+    "21__top": {
+      "thr": 9.0,
+      "frac": 0.48394775390625,
+      "solidity": 0.9961611480261321,
+      "repair": "none",
+      "suspect": false
+    },
+    "22__bottom": {
+      "thr": 9.0,
+      "frac": 0.4826999240451389,
+      "solidity": 0.9975613516278679,
+      "repair": "none",
+      "suspect": false
+    },
+    "22__top": {
+      "thr": 9.0,
+      "frac": 0.4820760091145833,
+      "solidity": 0.9981324945940633,
+      "repair": "none",
+      "suspect": false
+    },
+    "23__bottom": {
+      "thr": 9.0,
+      "frac": 0.4820217556423611,
+      "solidity": 0.9979781244295924,
+      "repair": "none",
+      "suspect": false
+    },
+    "23__top": {
+      "thr": 9.0,
+      "frac": 0.47003173828125,
+      "solidity": 0.9933498631275708,
+      "repair": "none",
+      "suspect": false
+    },
+    "24__bottom": {
+      "thr": 9.0,
+      "frac": 0.4812757703993056,
+      "solidity": 0.995399396872151,
+      "repair": "none",
+      "suspect": false
+    },
+    "24__top": {
+      "thr": 9.0,
+      "frac": 0.4848158094618056,
+      "solidity": 0.9955991922568066,
+      "repair": "none",
+      "suspect": false
+    },
+    "25__bottom": {
+      "thr": 18.0,
+      "frac": 0.4829372829861111,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.966255687243723
+    },
+    "25__top": {
+      "thr": 36.0,
+      "frac": 0.2529635959201389,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.9508324173614648
+    },
+    "26__bottom": {
+      "thr": 9.0,
+      "frac": 0.3641493055555556,
+      "solidity": 0.9937998556384298,
+      "repair": "none",
+      "suspect": false
+    },
+    "26__top": {
+      "thr": 9.0,
+      "frac": 0.5407240125868056,
+      "solidity": 0.9931121241561418,
+      "repair": "none",
+      "suspect": false
+    },
+    "27__bottom": {
+      "thr": 9.0,
+      "frac": 0.3062472873263889,
+      "solidity": 0.9932693999648073,
+      "repair": "none",
+      "suspect": false
+    },
+    "27__top": {
+      "thr": 9.0,
+      "frac": 0.4061686197916667,
+      "solidity": 0.9960419091967404,
+      "repair": "none",
+      "suspect": false
+    },
+    "28__bottom": {
+      "thr": 9.0,
+      "frac": 0.4322645399305556,
+      "solidity": 0.9968097084949331,
+      "repair": "none",
+      "suspect": false
+    },
+    "28__top": {
+      "thr": 9.0,
+      "frac": 0.48101806640625,
+      "solidity": 0.9972583094314156,
+      "repair": "none",
+      "suspect": false
+    },
+    "29__bottom": {
+      "thr": 9.0,
+      "frac": 0.4654066297743056,
+      "solidity": 0.9954886999912965,
+      "repair": "none",
+      "suspect": false
+    },
+    "29__top": {
+      "thr": 9.0,
+      "frac": 0.4845445421006944,
+      "solidity": 0.9958881578947368,
+      "repair": "none",
+      "suspect": false
+    },
+    "3__bottom": {
+      "thr": 9.0,
+      "frac": 0.5010308159722222,
+      "solidity": 0.9952312956327289,
+      "repair": "none",
+      "suspect": false
+    },
+    "3__top": {
+      "thr": 9.0,
+      "frac": 0.4988945855034722,
+      "solidity": 0.9958846065331871,
+      "repair": "none",
+      "suspect": false
+    },
+    "30__bottom": {
+      "thr": 9.0,
+      "frac": 0.4767862955729167,
+      "solidity": 0.9960049300862766,
+      "repair": "none",
+      "suspect": false
+    },
+    "30__top": {
+      "thr": 9.0,
+      "frac": 0.4837510850694444,
+      "solidity": 0.9983345229597906,
+      "repair": "none",
+      "suspect": false
+    },
+    "31__bottom": {
+      "thr": 9.0,
+      "frac": 0.4548678927951389,
+      "solidity": 0.9980061600726114,
+      "repair": "none",
+      "suspect": false
+    },
+    "31__top": {
+      "thr": 9.0,
+      "frac": 0.45404052734375,
+      "solidity": 0.997898408155965,
+      "repair": "none",
+      "suspect": false
+    },
+    "32__bottom": {
+      "thr": 9.0,
+      "frac": 0.48358154296875,
+      "solidity": 0.9981522697686138,
+      "repair": "none",
+      "suspect": false
+    },
+    "32__top": {
+      "thr": 9.0,
+      "frac": 0.4820827907986111,
+      "solidity": 0.9974882480881218,
+      "repair": "none",
+      "suspect": false
+    },
+    "33__bottom": {
+      "thr": 9.0,
+      "frac": 0.4762844509548611,
+      "solidity": 0.9969763216171711,
+      "repair": "none",
+      "suspect": false
+    },
+    "33__top": {
+      "thr": 9.0,
+      "frac": 0.4768337673611111,
+      "solidity": 0.9954694755917998,
+      "repair": "none",
+      "suspect": false
+    },
+    "34__bottom": {
+      "thr": 9.0,
+      "frac": 0.4852837456597222,
+      "solidity": 0.9961162075253699,
+      "repair": "none",
+      "suspect": false
+    },
+    "34__top": {
+      "thr": 9.0,
+      "frac": 0.4807603624131944,
+      "solidity": 0.9976778878630939,
+      "repair": "none",
+      "suspect": false
+    },
+    "35__bottom": {
+      "thr": 9.0,
+      "frac": 0.3797132703993056,
+      "solidity": 0.9916229810144517,
+      "repair": "none",
+      "suspect": false
+    },
+    "35__top": {
+      "thr": 9.0,
+      "frac": 0.3763970269097222,
+      "solidity": 0.9940716063976501,
+      "repair": "none",
+      "suspect": false
+    },
+    "36__bottom": {
+      "thr": 9.0,
+      "frac": 0.4854397243923611,
+      "solidity": 0.996159038089539,
+      "repair": "none",
+      "suspect": false
+    },
+    "36__top": {
+      "thr": 9.0,
+      "frac": 0.4803059895833333,
+      "solidity": 0.997858431018936,
+      "repair": "none",
+      "suspect": false
+    },
+    "37__bottom": {
+      "thr": 9.0,
+      "frac": 0.3012424045138889,
+      "solidity": 0.9959864570954505,
+      "repair": "none",
+      "suspect": false
+    },
+    "37__top": {
+      "thr": 9.0,
+      "frac": 0.23927815755208334,
+      "solidity": 0.9778017958097772,
+      "repair": "none",
+      "suspect": false
+    },
+    "38__bottom": {
+      "thr": 9.0,
+      "frac": 0.4839613172743056,
+      "solidity": 0.998195602305153,
+      "repair": "none",
+      "suspect": false
+    },
+    "38__top": {
+      "thr": 9.0,
+      "frac": 0.4849921332465278,
+      "solidity": 0.9973780734418365,
+      "repair": "none",
+      "suspect": false
+    },
+    "39__bottom": {
+      "thr": 9.0,
+      "frac": 0.4715779622395833,
+      "solidity": 0.9966890264877881,
+      "repair": "none",
+      "suspect": false
+    },
+    "39__top": {
+      "thr": 9.0,
+      "frac": 0.4836086697048611,
+      "solidity": 0.998250181981074,
+      "repair": "none",
+      "suspect": false
+    },
+    "4__bottom": {
+      "thr": 12.0,
+      "frac": 0.2629665798611111,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.9425159892717144
+    },
+    "4__top": {
+      "thr": 9.0,
+      "frac": 0.4972941080729167,
+      "solidity": 0.9955739596768719,
+      "repair": "none",
+      "suspect": false
+    },
+    "40__bottom": {
+      "thr": 9.0,
+      "frac": 0.4672173394097222,
+      "solidity": 0.9883510745129545,
+      "repair": "none",
+      "suspect": false
+    },
+    "40__top": {
+      "thr": 9.0,
+      "frac": 0.4613783094618056,
+      "solidity": 0.9882197431874964,
+      "repair": "none",
+      "suspect": false
+    },
+    "41__bottom": {
+      "thr": 9.0,
+      "frac": 0.3833143446180556,
+      "solidity": 0.997863813710432,
+      "repair": "none",
+      "suspect": false
+    },
+    "41__top": {
+      "thr": 9.0,
+      "frac": 0.3843248155381944,
+      "solidity": 0.9978167092173607,
+      "repair": "none",
+      "suspect": false
+    },
+    "42__bottom": {
+      "thr": 9.0,
+      "frac": 0.3896552191840278,
+      "solidity": 0.9973442110744662,
+      "repair": "none",
+      "suspect": false
+    },
+    "42__top": {
+      "thr": 9.0,
+      "frac": 0.6232842339409722,
+      "solidity": 0.9987285925410763,
+      "repair": "none",
+      "suspect": false
+    },
+    "43__bottom": {
+      "thr": 9.0,
+      "frac": 0.3792995876736111,
+      "solidity": 0.9902620396600567,
+      "repair": "none",
+      "suspect": false
+    },
+    "43__top": {
+      "thr": 9.0,
+      "frac": 0.3438381618923611,
+      "solidity": 0.9952105211502601,
+      "repair": "none",
+      "suspect": false
+    },
+    "44__bottom": {
+      "thr": 9.0,
+      "frac": 0.3279147677951389,
+      "solidity": 0.991775033843377,
+      "repair": "none",
+      "suspect": false
+    },
+    "44__top": {
+      "thr": 9.0,
+      "frac": 0.3985663519965278,
+      "solidity": 0.9956630016771986,
+      "repair": "none",
+      "suspect": false
+    },
+    "45__bottom": {
+      "thr": 9.0,
+      "frac": 0.4904378255208333,
+      "solidity": 0.9960608230951463,
+      "repair": "none",
+      "suspect": false
+    },
+    "45__top": {
+      "thr": 9.0,
+      "frac": 0.4964192708333333,
+      "solidity": 0.995769340642897,
+      "repair": "none",
+      "suspect": false
+    },
+    "46__bottom": {
+      "thr": 9.0,
+      "frac": 0.3127916124131944,
+      "solidity": 0.9974481520728358,
+      "repair": "none",
+      "suspect": false
+    },
+    "46__top": {
+      "thr": 9.0,
+      "frac": 0.2924058702256944,
+      "solidity": 0.9977322688881175,
+      "repair": "none",
+      "suspect": false
+    },
+    "47__top": {
+      "thr": 60.0,
+      "frac": 0.24167887369791666,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.9454780144232118
+    },
+    "48__top": {
+      "thr": 9.0,
+      "frac": 0.3559366861979167,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.9599123559112127
+    },
+    "49__bottom": {
+      "thr": 9.0,
+      "frac": 0.3689236111111111,
+      "solidity": 0.9948974926388559,
+      "repair": "none",
+      "suspect": false
+    },
+    "49__top": {
+      "thr": 9.0,
+      "frac": 0.2567816840277778,
+      "solidity": 0.9934146661419389,
+      "repair": "none",
+      "suspect": false
+    },
+    "5__bottom": {
+      "thr": 9.0,
+      "frac": 0.4823947482638889,
+      "solidity": 0.9963441794013419,
+      "repair": "none",
+      "suspect": false
+    },
+    "5__top": {
+      "thr": 9.0,
+      "frac": 0.4877590603298611,
+      "solidity": 0.9965222933466346,
+      "repair": "none",
+      "suspect": false
+    },
+    "50__bottom": {
+      "thr": 9.0,
+      "frac": 0.2870212131076389,
+      "solidity": 0.9894562117173984,
+      "repair": "none",
+      "suspect": false
+    },
+    "50__top": {
+      "thr": 9.0,
+      "frac": 0.21211751302083334,
+      "solidity": 0.9916302073425909,
+      "repair": "none",
+      "suspect": false
+    },
+    "51__bottom": {
+      "thr": 9.0,
+      "frac": 0.2321234809027778,
+      "solidity": 0.9845534301740256,
+      "repair": "none",
+      "suspect": false
+    },
+    "51__top": {
+      "thr": 24.0,
+      "frac": 0.4415011935763889,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.9497557678719548
+    },
+    "52__bottom": {
+      "thr": 9.0,
+      "frac": 0.2740207248263889,
+      "solidity": 0.9861134838316047,
+      "repair": "none",
+      "suspect": false
+    },
+    "52__top": {
+      "thr": -1.0,
+      "frac": 0.3556857638888889,
+      "solidity": 1.0,
+      "repair": "ellipse",
+      "suspect": true
+    },
+    "53__bottom": {
+      "thr": 24.0,
+      "frac": 0.2292141384548611,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.9677505251634664
+    },
+    "53__top": {
+      "thr": 9.0,
+      "frac": 0.2945895724826389,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.9581942494072148
+    },
+    "54__bottom": {
+      "thr": 9.0,
+      "frac": 0.2597927517361111,
+      "solidity": 0.9880580846508988,
+      "repair": "none",
+      "suspect": false
+    },
+    "54__top": {
+      "thr": -1.0,
+      "frac": 0.15709092881944445,
+      "solidity": 1.0,
+      "repair": "ellipse",
+      "suspect": true
+    },
+    "55__bottom": {
+      "thr": 9.0,
+      "frac": 0.3507283528645833,
+      "solidity": 0.9791733722097052,
+      "repair": "none",
+      "suspect": false
+    },
+    "55__top": {
+      "thr": 9.0,
+      "frac": 0.21272108289930555,
+      "solidity": 0.9835073527106262,
+      "repair": "none",
+      "suspect": false
+    },
+    "56__bottom": {
+      "thr": 9.0,
+      "frac": 0.5180935329861112,
+      "solidity": 0.9967122429808997,
+      "repair": "none",
+      "suspect": false
+    },
+    "56__top": {
+      "thr": 9.0,
+      "frac": 0.489990234375,
+      "solidity": 0.9953025773834943,
+      "repair": "none",
+      "suspect": false
+    },
+    "57__bottom": {
+      "thr": 9.0,
+      "frac": 0.3855726453993056,
+      "solidity": 0.9847067788977796,
+      "repair": "none",
+      "suspect": false
+    },
+    "57__top": {
+      "thr": 9.0,
+      "frac": 0.3540445963541667,
+      "solidity": 0.9870115138109012,
+      "repair": "none",
+      "suspect": false
+    },
+    "58__bottom": {
+      "thr": 9.0,
+      "frac": 0.2935384114583333,
+      "solidity": 0.9896200100599022,
+      "repair": "none",
+      "suspect": false
+    },
+    "58__top": {
+      "thr": -1.0,
+      "frac": 0.19715711805555555,
+      "solidity": 1.0,
+      "repair": "ellipse",
+      "suspect": true
+    },
+    "59__bottom": {
+      "thr": 9.0,
+      "frac": 0.47943115234375,
+      "solidity": 0.9956481324995775,
+      "repair": "none",
+      "suspect": false
+    },
+    "59__top": {
+      "thr": 9.0,
+      "frac": 0.4822048611111111,
+      "solidity": 0.9967617579028527,
+      "repair": "none",
+      "suspect": false
+    },
+    "6__bottom": {
+      "thr": 9.0,
+      "frac": 0.4543592664930556,
+      "solidity": 0.9862945133889797,
+      "repair": "none",
+      "suspect": false
+    },
+    "6__top": {
+      "thr": 9.0,
+      "frac": 0.4537624782986111,
+      "solidity": 0.9823814417853473,
+      "repair": "none",
+      "suspect": false
+    },
+    "60__bottom": {
+      "thr": 9.0,
+      "frac": 0.3293185763888889,
+      "solidity": 0.9968386911360184,
+      "repair": "none",
+      "suspect": false
+    },
+    "60__top": {
+      "thr": 9.0,
+      "frac": 0.3831990559895833,
+      "solidity": 0.9975813000953356,
+      "repair": "none",
+      "suspect": false
+    },
+    "61__bottom": {
+      "thr": 9.0,
+      "frac": 0.4904446072048611,
+      "solidity": 0.996912176226514,
+      "repair": "none",
+      "suspect": false
+    },
+    "61__top": {
+      "thr": 9.0,
+      "frac": 0.4837646484375,
+      "solidity": 0.9938834937929305,
+      "repair": "none",
+      "suspect": false
+    },
+    "62__bottom": {
+      "thr": 9.0,
+      "frac": 0.3075018988715278,
+      "solidity": 0.9785695787292817,
+      "repair": "none",
+      "suspect": false
+    },
+    "62__top": {
+      "thr": 9.0,
+      "frac": 0.2531467013888889,
+      "solidity": 0.9803808273145108,
+      "repair": "none",
+      "suspect": false
+    },
+    "63__bottom": {
+      "thr": 9.0,
+      "frac": 0.4808620876736111,
+      "solidity": 0.9904870996130583,
+      "repair": "none",
+      "suspect": false
+    },
+    "63__top": {
+      "thr": 9.0,
+      "frac": 0.4665459526909722,
+      "solidity": 0.9904118858064237,
+      "repair": "none",
+      "suspect": false
+    },
+    "64__bottom": {
+      "thr": 9.0,
+      "frac": 0.3403455946180556,
+      "solidity": 0.9916809927480388,
+      "repair": "none",
+      "suspect": false
+    },
+    "64__top": {
+      "thr": 9.0,
+      "frac": 0.2964816623263889,
+      "solidity": 0.9922378574670904,
+      "repair": "none",
+      "suspect": false
+    },
+    "65__bottom": {
+      "thr": 9.0,
+      "frac": 0.4815809461805556,
+      "solidity": 0.996268133224838,
+      "repair": "none",
+      "suspect": false
+    },
+    "65__top": {
+      "thr": 9.0,
+      "frac": 0.4817097981770833,
+      "solidity": 0.9984397402378342,
+      "repair": "none",
+      "suspect": false
+    },
+    "66__bottom": {
+      "thr": 9.0,
+      "frac": 0.4220241970486111,
+      "solidity": 0.9841069028228038,
+      "repair": "none",
+      "suspect": false
+    },
+    "66__top": {
+      "thr": 9.0,
+      "frac": 0.3072441948784722,
+      "solidity": 0.9899919148657212,
+      "repair": "none",
+      "suspect": false
+    },
+    "67__bottom": {
+      "thr": 9.0,
+      "frac": 0.2876180013020833,
+      "solidity": 0.9935110569715142,
+      "repair": "none",
+      "suspect": false
+    },
+    "67__top": {
+      "thr": 9.0,
+      "frac": 0.286865234375,
+      "solidity": 0.9973357225379011,
+      "repair": "none",
+      "suspect": false
+    },
+    "68__bottom": {
+      "thr": 9.0,
+      "frac": 0.4801432291666667,
+      "solidity": 0.9980968492281667,
+      "repair": "none",
+      "suspect": false
+    },
+    "68__top": {
+      "thr": 9.0,
+      "frac": 0.4788343641493056,
+      "solidity": 0.994674931323519,
+      "repair": "none",
+      "suspect": false
+    },
+    "69__bottom": {
+      "thr": 9.0,
+      "frac": 0.2782660590277778,
+      "solidity": 0.9914703394949861,
+      "repair": "none",
+      "suspect": false
+    },
+    "69__top": {
+      "thr": 9.0,
+      "frac": 0.2114596896701389,
+      "solidity": 0.9885236027010748,
+      "repair": "none",
+      "suspect": false
+    },
+    "7__bottom": {
+      "thr": 9.0,
+      "frac": 0.48028564453125,
+      "solidity": 0.9942301212938005,
+      "repair": "none",
+      "suspect": false
+    },
+    "7__top": {
+      "thr": 9.0,
+      "frac": 0.4794040256076389,
+      "solidity": 0.994471329694446,
+      "repair": "none",
+      "suspect": false
+    },
+    "70__bottom": {
+      "thr": 9.0,
+      "frac": 0.4889187282986111,
+      "solidity": 0.996599391761128,
+      "repair": "none",
+      "suspect": false
+    },
+    "70__top": {
+      "thr": 9.0,
+      "frac": 0.4944186740451389,
+      "solidity": 0.9950184250034121,
+      "repair": "none",
+      "suspect": false
+    },
+    "71__bottom": {
+      "thr": 9.0,
+      "frac": 0.3376736111111111,
+      "solidity": 0.9882894684609583,
+      "repair": "none",
+      "suspect": false
+    },
+    "71__top": {
+      "thr": 9.0,
+      "frac": 0.3906317816840278,
+      "solidity": 0.9981112458845954,
+      "repair": "none",
+      "suspect": false
+    },
+    "72__bottom": {
+      "thr": 9.0,
+      "frac": 0.2076416015625,
+      "solidity": 0.9871042620413953,
+      "repair": "none",
+      "suspect": false
+    },
+    "72__top": {
+      "thr": 9.0,
+      "frac": 0.20994737413194445,
+      "solidity": 0.9885997125977966,
+      "repair": "none",
+      "suspect": false
+    },
+    "73__bottom": {
+      "thr": 9.0,
+      "frac": 0.4823201497395833,
+      "solidity": 0.996231965261241,
+      "repair": "none",
+      "suspect": false
+    },
+    "73__top": {
+      "thr": 9.0,
+      "frac": 0.4919704861111111,
+      "solidity": 0.9963466556791649,
+      "repair": "none",
+      "suspect": false
+    },
+    "74__bottom": {
+      "thr": 9.0,
+      "frac": 0.21891276041666666,
+      "solidity": 0.9895162773588376,
+      "repair": "none",
+      "suspect": false
+    },
+    "74__top": {
+      "thr": 9.0,
+      "frac": 0.2610744900173611,
+      "solidity": 0.99124546180189,
+      "repair": "none",
+      "suspect": false
+    },
+    "75__bottom": {
+      "thr": 9.0,
+      "frac": 0.4702962239583333,
+      "solidity": 0.9915639566473162,
+      "repair": "none",
+      "suspect": false
+    },
+    "75__top": {
+      "thr": 9.0,
+      "frac": 0.4776814778645833,
+      "solidity": 0.9926716180221824,
+      "repair": "none",
+      "suspect": false
+    },
+    "76__bottom": {
+      "thr": 9.0,
+      "frac": 0.4812825520833333,
+      "solidity": 0.9980732719218057,
+      "repair": "none",
+      "suspect": false
+    },
+    "76__top": {
+      "thr": 9.0,
+      "frac": 0.4776679144965278,
+      "solidity": 0.9978466289826738,
+      "repair": "none",
+      "suspect": false
+    },
+    "77__bottom": {
+      "thr": 9.0,
+      "frac": 0.4822184244791667,
+      "solidity": 0.9973770215869721,
+      "repair": "none",
+      "suspect": false
+    },
+    "77__top": {
+      "thr": 9.0,
+      "frac": 0.4783732096354167,
+      "solidity": 0.9966795715940883,
+      "repair": "none",
+      "suspect": false
+    },
+    "78__bottom": {
+      "thr": 9.0,
+      "frac": 0.4824354383680556,
+      "solidity": 0.9966795096322242,
+      "repair": "none",
+      "suspect": false
+    },
+    "78__top": {
+      "thr": 9.0,
+      "frac": 0.48040771484375,
+      "solidity": 0.9972688750299157,
+      "repair": "none",
+      "suspect": false
+    },
+    "79__bottom": {
+      "thr": 9.0,
+      "frac": 0.4780069986979167,
+      "solidity": 0.9967193178443655,
+      "repair": "none",
+      "suspect": false
+    },
+    "79__top": {
+      "thr": 9.0,
+      "frac": 0.4827541775173611,
+      "solidity": 0.9960819981809277,
+      "repair": "none",
+      "suspect": false
+    },
+    "8__bottom": {
+      "thr": 9.0,
+      "frac": 0.48095703125,
+      "solidity": 0.9969915933308966,
+      "repair": "none",
+      "suspect": false
+    },
+    "8__top": {
+      "thr": 9.0,
+      "frac": 0.4906819661458333,
+      "solidity": 0.9968999297317406,
+      "repair": "none",
+      "suspect": false
+    },
+    "80__bottom": {
+      "thr": 9.0,
+      "frac": 0.4791463216145833,
+      "solidity": 0.9972898581410121,
+      "repair": "none",
+      "suspect": false
+    },
+    "80__top": {
+      "thr": 9.0,
+      "frac": 0.4806993272569444,
+      "solidity": 0.9967096012149165,
+      "repair": "none",
+      "suspect": false
+    },
+    "81__bottom": {
+      "thr": 9.0,
+      "frac": 0.3414103190104167,
+      "solidity": 0.9938210675931776,
+      "repair": "none",
+      "suspect": false
+    },
+    "81__top": {
+      "thr": 9.0,
+      "frac": 0.3414645724826389,
+      "solidity": 0.9928617908623035,
+      "repair": "none",
+      "suspect": false
+    },
+    "82__bottom": {
+      "thr": 9.0,
+      "frac": 0.4778035481770833,
+      "solidity": 0.9971834574121776,
+      "repair": "none",
+      "suspect": false
+    },
+    "82__top": {
+      "thr": 9.0,
+      "frac": 0.4828355577256944,
+      "solidity": 0.9984013686528025,
+      "repair": "none",
+      "suspect": false
+    },
+    "83__bottom": {
+      "thr": 9.0,
+      "frac": 0.3576185438368056,
+      "solidity": 0.997937246886946,
+      "repair": "none",
+      "suspect": false
+    },
+    "83__top": {
+      "thr": 9.0,
+      "frac": 0.3655802408854167,
+      "solidity": 0.998943740271292,
+      "repair": "none",
+      "suspect": false
+    },
+    "84__bottom": {
+      "thr": 9.0,
+      "frac": 0.4781697591145833,
+      "solidity": 0.9971433016079535,
+      "repair": "none",
+      "suspect": false
+    },
+    "84__top": {
+      "thr": 9.0,
+      "frac": 0.3789265950520833,
+      "solidity": 0.9930508655315822,
+      "repair": "none",
+      "suspect": false
+    },
+    "85__bottom": {
+      "thr": 9.0,
+      "frac": 0.3698662651909722,
+      "solidity": 0.9968197686107506,
+      "repair": "none",
+      "suspect": false
+    },
+    "85__top": {
+      "thr": 9.0,
+      "frac": 0.3741726345486111,
+      "solidity": 0.9917138491956502,
+      "repair": "none",
+      "suspect": false
+    },
+    "86__bottom": {
+      "thr": 9.0,
+      "frac": 0.4780544704861111,
+      "solidity": 0.9988097936975743,
+      "repair": "none",
+      "suspect": false
+    },
+    "86__top": {
+      "thr": 9.0,
+      "frac": 0.4786716037326389,
+      "solidity": 0.985933789635424,
+      "repair": "none",
+      "suspect": false
+    },
+    "87__bottom": {
+      "thr": 9.0,
+      "frac": 0.5658772786458334,
+      "solidity": 0.9942211683963444,
+      "repair": "none",
+      "suspect": false
+    },
+    "87__top": {
+      "thr": 9.0,
+      "frac": 0.5902031792534722,
+      "solidity": 0.9944580295724113,
+      "repair": "none",
+      "suspect": false
+    },
+    "88__bottom": {
+      "thr": 9.0,
+      "frac": 0.4789021809895833,
+      "solidity": 0.9980919267299865,
+      "repair": "none",
+      "suspect": false
+    },
+    "88__top": {
+      "thr": 9.0,
+      "frac": 0.4832560221354167,
+      "solidity": 0.9977596997997732,
+      "repair": "none",
+      "suspect": false
+    },
+    "89__bottom": {
+      "thr": 36.0,
+      "frac": 0.4357164171006944,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.967190150819468
+    },
+    "89__top": {
+      "thr": 18.0,
+      "frac": 0.4452989366319444,
+      "solidity": 1.0,
+      "repair": "convex_hull",
+      "suspect": false,
+      "solidity_before_repair": 0.9664950808686912
+    },
+    "9__bottom": {
+      "thr": 9.0,
+      "frac": 0.4587470160590278,
+      "solidity": 0.9978904820912256,
+      "repair": "none",
+      "suspect": false
+    },
+    "9__top": {
+      "thr": 9.0,
+      "frac": 0.4846123589409722,
+      "solidity": 0.9968751307841469,
+      "repair": "none",
+      "suspect": false
+    },
+    "90__bottom": {
+      "thr": 9.0,
+      "frac": 0.4820488823784722,
+      "solidity": 0.9971382478782352,
+      "repair": "none",
+      "suspect": false
+    },
+    "90__top": {
+      "thr": 9.0,
+      "frac": 0.4823337131076389,
+      "solidity": 0.9966927787665186,
+      "repair": "none",
+      "suspect": false
+    },
+    "91__bottom": {
+      "thr": 9.0,
+      "frac": 0.4781697591145833,
+      "solidity": 0.9965513829802269,
+      "repair": "none",
+      "suspect": false
+    },
+    "91__top": {
+      "thr": 9.0,
+      "frac": 0.4818996853298611,
+      "solidity": 0.9966199158485274,
+      "repair": "none",
+      "suspect": false
+    },
+    "92__bottom": {
+      "thr": 9.0,
+      "frac": 0.2764960394965278,
+      "solidity": 0.9899237605011412,
+      "repair": "none",
+      "suspect": false
+    },
+    "92__top": {
+      "thr": 9.0,
+      "frac": 0.3006998697916667,
+      "solidity": 0.9928569829149779,
+      "repair": "none",
+      "suspect": false
+    },
+    "93__bottom": {
+      "thr": 9.0,
+      "frac": 0.48065185546875,
+      "solidity": 0.9974807892588735,
+      "repair": "none",
+      "suspect": false
+    },
+    "93__top": {
+      "thr": 9.0,
+      "frac": 0.4793768988715278,
+      "solidity": 0.9995333710407239,
+      "repair": "none",
+      "suspect": false
+    },
+    "94__bottom": {
+      "thr": 9.0,
+      "frac": 0.522705078125,
+      "solidity": 0.9968700690654182,
+      "repair": "none",
+      "suspect": false
+    },
+    "94__top": {
+      "thr": 9.0,
+      "frac": 0.5002916124131944,
+      "solidity": 0.9971344768392739,
+      "repair": "none",
+      "suspect": false
+    },
+    "95__bottom": {
+      "thr": 9.0,
+      "frac": 0.3154568142361111,
+      "solidity": 0.9977477960575706,
+      "repair": "none",
+      "suspect": false
+    },
+    "95__top": {
+      "thr": 9.0,
+      "frac": 0.3106553819444444,
+      "solidity": 0.9984524510124457,
+      "repair": "none",
+      "suspect": false
+    },
+    "96__bottom": {
+      "thr": 9.0,
+      "frac": 0.4748602973090278,
+      "solidity": 0.9954790372339669,
+      "repair": "none",
+      "suspect": false
+    },
+    "96__top": {
+      "thr": 9.0,
+      "frac": 0.4906684027777778,
+      "solidity": 0.9990610328638497,
+      "repair": "none",
+      "suspect": false
+    },
+    "97__bottom": {
+      "thr": 9.0,
+      "frac": 0.2659776475694444,
+      "solidity": 0.9815797377114827,
+      "repair": "none",
+      "suspect": false
+    },
+    "97__top": {
+      "thr": 9.0,
+      "frac": 0.24749755859375,
+      "solidity": 0.9939266844599379,
+      "repair": "none",
+      "suspect": false
+    },
+    "98__bottom": {
+      "thr": 9.0,
+      "frac": 0.4745347764756944,
+      "solidity": 0.9954901123915209,
+      "repair": "none",
+      "suspect": false
+    },
+    "98__top": {
+      "thr": 9.0,
+      "frac": 0.4742974175347222,
+      "solidity": 0.9975040292099896,
+      "repair": "none",
+      "suspect": false
+    },
+    "99__bottom": {
+      "thr": 9.0,
+      "frac": 0.4835544162326389,
+      "solidity": 0.9969519441842256,
+      "repair": "none",
+      "suspect": false
+    },
+    "99__top": {
+      "thr": 9.0,
+      "frac": 0.4782511393229167,
+      "solidity": 0.9974399592656502,
+      "repair": "none",
+      "suspect": false
+    }
+  }
+}

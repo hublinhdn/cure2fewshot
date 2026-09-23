@@ -1,0 +1,41 @@
+{
+  "sam_type": "vit_b",
+  "sam_ckpt": "weights/sam/sam_vit_b.pth",
+  "sam_ckpt_sha256": "ec2df62732614e57411cdcf32a23ffdf28910380d03139ee0f4fcbe91eb8c912",
+  "torch_seed": 0,
+  "pil_version": "12.0.0",
+  "margin": 0.15,
+  "img_size": 384,
+  "png_optimize": false,
+  "letterbox": "_ogyei_dataset.LetterboxResize (fallback: PIL thumbnail LANCZOS + expand fill=(127,127,127))",
+  "reference_method": "classical: |gray - border_median| > 22, largest connected component, +0.15 margin",
+  "customer_method": "SAM point-prompt at image center, multimask, pick max-score mask with 0.005<frac<0.7, largest CC, +0.15 margin",
+  "color_space": "PIL RGB (never OpenCV/BGR)",
+  "counts": {
+    "usable": 8811,
+    "reference": 388,
+    "customer": 8423,
+    "excluded_fallback": 158,
+    "excluded_unreadable": 2,
+    "reused_from_prior": 0,
+    "classes": 196
+  },
+  "schema": [
+    "crop_rel",
+    "src_rel",
+    "pillId",
+    "side",
+    "kind",
+    "method",
+    "orig_w",
+    "orig_h",
+    "x0",
+    "y0",
+    "x1",
+    "y1",
+    "margin",
+    "img_size",
+    "mask_frac",
+    "sam_score"
+  ]
+}

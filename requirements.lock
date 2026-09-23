@@ -1,0 +1,21 @@
+# requirements.lock: exact versions behind the files in expected/.
+#
+# Machine A, macOS 14.6.1 on Apple silicon (CPU and MPS, no CUDA), Python 3.13.3. On 22 September
+# 2026 this environment regenerated every file that scripts/verify.sh checks (splits, hardening
+# log, the four controls, the rubric) and found each identical to expected/. It also re-verified
+# all 8811 crops pixel for pixel. Install with:  pip install -r requirements.lock
+numpy==2.2.5
+pandas==2.2.3
+scipy==1.15.3
+scikit-learn==1.6.1
+pillow==11.2.1
+torch==2.9.1
+torchvision==0.24.1
+timm==1.0.26
+#
+# Machine B, Linux, one NVIDIA GeForce RTX 3080 (10 GB), driver 590.48.01, CUDA 13.0, Python 3.12.3:
+# produced the frozen boxes (SAM vit_b) and the crops themselves under Pillow 12.0.0, which is why
+# requirements.txt pins that version; ran the 27 backbone sweep behind expected/retrieval_baselines.csv
+# and the probe3 reports. Versions read from it on 4 August 2026:
+#   torch==2.11.0+cu130  torchvision==0.26.0+cu130  timm==1.0.26  numpy==2.4.4  scikit-learn==1.8.0
+#   pillow==12.2.0 (12.0.0 when the crops were produced)

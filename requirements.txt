@@ -1,0 +1,11 @@
+# Phien ban da dung de sinh cac so trong expected/. Xem REPRODUCE.md muc "Phien ban".
+numpy>=2.0
+pandas>=2.0
+pillow==12.0.0        # GHIM: letterbox resample bang LANCZOS -> phien ban khac cho lech vai pixel dem
+scipy>=1.15
+scikit-learn>=1.5
+
+# Chi can cho stage `extract` cua cure_fitness_check.py (embedding backbone dong bang)
+torch>=2.4
+torchvision>=0.19
+timm>=1.0.19

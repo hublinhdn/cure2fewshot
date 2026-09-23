@@ -1,0 +1,126 @@
+{
+  "config": {
+    "manifest": "outputs/manifest_hardened.csv",
+    "models": [
+      "resnet50",
+      "vit_base_patch16_224"
+    ],
+    "img_size": 224,
+    "seed": 42,
+    "leak_threshold": 0.985,
+    "dedup_centroid_threshold": 0.97
+  },
+  "control1_lowshot": {
+    "n_images": 8811,
+    "n_pill_ids": 196,
+    "n_classes_two_sided": 392,
+    "n_classes_one_sided": 196,
+    "n_reference": 388,
+    "n_consumer": 8423,
+    "ref_per_class": {
+      "min": 0,
+      "median": 1.0,
+      "max": 1
+    },
+    "consumer_per_class": {
+      "min": 3,
+      "median": 22.0,
+      "max": 37
+    },
+    "classes_without_ref": [
+      "195__bottom",
+      "195__top",
+      "47__bottom",
+      "48__bottom"
+    ],
+    "classes_without_consumer": []
+  },
+  "control2_headroom": {
+    "per_model": {
+      "resnet50": {
+        "cross_domain": {
+          "top1": 0.10740429617184688,
+          "mAP": 0.20320474792385454,
+          "recall@5": 0.2846513860554422,
+          "n_query": 8333,
+          "n_gallery_classes": 388
+        },
+        "within_domain": {
+          "top1": 0.2831527829660067,
+          "mAP": 0.3547764124244105,
+          "recall@5": 0.4202465446395219,
+          "n_query": 8031,
+          "n_gallery_classes": 392
+        },
+        "domain_gap_top1": 0.17574848679415983
+      },
+      "vit_base_patch16_224": {
+        "cross_domain": {
+          "top1": 0.156486259450378,
+          "mAP": 0.25479309127918504,
+          "recall@5": 0.34573382935317415,
+          "n_query": 8333,
+          "n_gallery_classes": 388
+        },
+        "within_domain": {
+          "top1": 0.3115427717594322,
+          "mAP": 0.4002017146082949,
+          "recall@5": 0.48673888681359734,
+          "n_query": 8031,
+          "n_gallery_classes": 392
+        },
+        "domain_gap_top1": 0.15505651230905418
+      }
+    },
+    "mean": {
+      "cross_top1": 0.13194527781111243,
+      "within_top1": 0.29734777736271945,
+      "cross_mAP": 0.2289989196015198,
+      "within_mAP": 0.3774890635163527,
+      "cross_recall@5": 0.3151926077043082,
+      "within_recall@5": 0.4534927157265596,
+      "domain_gap_top1": 0.16540249955160702
+    }
+  },
+  "control3_domain_sep": {
+    "per_model": {
+      "resnet50": {
+        "auc": 0.9935770490960563
+      },
+      "vit_base_patch16_224": {
+        "auc": 0.9945877206617619
+      }
+    },
+    "mean_auc": 0.9940823848789091
+  },
+  "control4_leakage": {
+    "per_model": {
+      "resnet50": {
+        "threshold": 0.985,
+        "leak_frac": 0.0,
+        "n_leaked": 0,
+        "same_class_cos_p50": 0.609026312828064,
+        "same_class_cos_p95": 0.7471283912658692,
+        "same_class_cos_max": 0.9324721097946167
+      },
+      "vit_base_patch16_224": {
+        "threshold": 0.985,
+        "leak_frac": 0.0,
+        "n_leaked": 0,
+        "same_class_cos_p50": 0.5715413093566895,
+        "same_class_cos_p95": 0.7656242966651916,
+        "same_class_cos_max": 0.9204341173171997
+      }
+    },
+    "union_leak_frac": 0.0,
+    "union_n_leaked": 0,
+    "n_query_checked": 8423
+  },
+  "dedup_scan": {
+    "n_flagged_pairs": 4,
+    "n_suggest_merge": 0,
+    "flagged_class_frac": 0.02040816326530612,
+    "centroid_threshold": 0.97,
+    "image_threshold": 0.99
+  }
+}

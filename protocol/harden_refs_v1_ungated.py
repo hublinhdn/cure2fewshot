@@ -26,14 +26,16 @@ from PIL import Image
 THIS = os.path.dirname(os.path.abspath(__file__))
 OUT = os.environ.get("CURE_FITNESS_OUT", os.path.join(THIS, "outputs"))
 HARD_DIR = os.path.join(OUT, "hardened_refs")
+# Duong dan la THAM SO, dung cung ten bien voi harden_refs_v2.py (REPRODUCE.md muc 1):
+#   CURE_CROPS_ROOT : goc chua cac crop 384, tuc goc ma `crop_rel` tinh tuong doi tu do
+#   CURE_RAW_ROOT   : goc chua anh raw dung lam donor, tuc goc cua `src_rel`
+# PILL_PROJ la ten cu, van duoc doc lam gia tri du phong cho ca hai.
 PILL_PROJ = os.environ.get(
     "PILL_PROJ", os.path.join(os.path.dirname(THIS), "data"))
-# PILL_PROJ = goc du lieu: thu muc chua data/raw/CURE_dataset va data/processed/cure_crops.
-# Dat bang bien moi truong PILL_PROJ, xem REPRODUCE.md.
-# crops có thể nằm ngoài project (workspace server độc lập); raw/donor luôn theo PILL_PROJ
 CROPS_ROOT = os.environ.get("CURE_CROPS_ROOT", PILL_PROJ)
+RAW_ROOT = os.environ.get("CURE_RAW_ROOT", PILL_PROJ)
 MANIFEST = os.environ.get(
-    "CURE_MANIFEST", os.path.join(PILL_PROJ, "data", "processed", "cure_crops_manifest.curated.csv"))
+    "CURE_MANIFEST", os.path.join(THIS, "frozen", "cure_crops_manifest.curated.csv"))
 SEED = 42
 BG_TOL = 42          # khoảng cách màu coi là nền đồng nhất
 PAD_TOL = 12         # khoảng cách tới xám letterbox (127,127,127)
@@ -115,7 +117,7 @@ def build_fg_mask(arr):
 
 def donor_patch(row, rng):
     """Cắt cửa sổ nền vuông từ ảnh raw consumer donor, tránh bbox viên. None nếu không có góc sạch."""
-    src = os.path.join(PILL_PROJ, row["src_rel"])
+    src = os.path.join(RAW_ROOT, row["src_rel"])
     if not os.path.exists(src):
         return None
     W, H = int(row["orig_w"]), int(row["orig_h"])

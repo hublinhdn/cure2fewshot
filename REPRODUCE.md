@@ -413,6 +413,12 @@ imaging stack, and the hardened reference values were themselves measured on an 
 rebuilt copy. `scripts/verify.sh` does not check these two files. They anchor this optional
 test only.
 
+Both were produced on machine B in August 2026, before 1.0.1 disabled TF32, so they carry whatever
+that path contributed on that GPU. The probe is a transformer, whose only convolution is the patch
+embedding, and the measured TF32 effect on the ViT probe of the main controls was 1.6e-5, three
+orders below the third decimal these tables report, so no row above changes. The same applies to
+`expected/retrieval_baselines.csv`: that sweep trains its own weights and is outside the protocol.
+
 ## Versions used for the published numbers
 
 Two machines produced the published numbers, and a fresh environment on the second verified them.

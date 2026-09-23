@@ -1,5 +1,36 @@
 # Changelog
 
+## 1.0.2, 2026-09-23
+
+Zenodo Version DOI `PENDING_DOI_102`. Concept DOI unchanged: `10.5281/zenodo.22908278`.
+
+Auditing the accompanying article line by line against this release found two gaps in the release
+itself, and one number that had been inferred rather than counted. No split file, hardened image,
+control value or rubric score changed.
+
+* `protocol/harden_refs_v1_ungated.py` read an undocumented variable, `PILL_PROJ`, for its donor
+  photographs. Following REPRODUCE.md exactly therefore did not reproduce the ungated variant: the
+  donor lookup failed silently and every reference fell back to Gaussian noise. It now reads
+  `CURE_RAW_ROOT` and `CURE_CROPS_ROOT` like the gated script (`KNOWN_ISSUES.md` section 7).
+* New `protocol/measure_mask_damage.py`, with `expected/mask_damage_v1.json` and
+  `expected/mask_damage_v2.json`. The article reports how far the ungated mask cut into the
+  tablets; until now nothing in the release let a reader check it. The measurement does not trust
+  the mask a run used: the pixels identical between the original and the hardened crop are the
+  region the step actually preserved, and their largest component's solidity says whether a convex
+  tablet was bitten into. Ungated minimum solidity 0.818 against 0.973 gated, 126 of 388 masks
+  below 0.98 solidity against 4 (`KNOWN_ISSUES.md` section 8 defines both quantities).
+* The TF32 effect of 1.0.1 is now counted rather than inferred from the rounded score: 138 of the
+  8423 consumer queries retrieved a different nearest reference, and the correct top1 count moved
+  from 1802 to 1797 because the swaps went both ways. With TF32 off all 8423 retrieval decisions
+  match the reference machine exactly.
+* REPRODUCE.md documents `CURE_EMB_REUSE`, gives the ungated variant its own output directory and
+  says why that matters for criterion E1, states the crop footprint as the measured 1.06 GB rather
+  than "about 1.5 GB", and adds step 4b for the new measurement.
+
+Verified on 23 September 2026 on the CUDA machine from a fresh clone: the ungated variant now
+reproduces the frozen log field for field with zero noise fallbacks, and the new measurement
+reproduces the values the article reports.
+
 ## 1.0.1, 2026-09-23
 
 Zenodo Version DOI `10.5281/zenodo.22910309`. Concept DOI unchanged: `10.5281/zenodo.22908278`.

@@ -121,6 +121,20 @@ earlier environment, not to the machine or its GPU, and the pin is what makes Ph
 
 ---
 
+## 4. Fourteen of the 27 baseline backbones train at a resolution other than 384
+
+**Severity: none, reported rather than corrected.**
+
+The baseline sweep holds the evaluation resolution fixed at 384 for every backbone so that scores
+stay directly comparable. Training resolution follows each backbone's own convention: 384 for
+thirteen of the twenty seven, 224 for the twelve compact ones, and 392 for the two whose patch
+size requires it. The shift between training and evaluation resolution therefore applies to
+fourteen backbones, wide for the twelve and slight for the other two, and is reported in the
+article rather than corrected for. The sweep is not part of this protocol and is not needed to
+reproduce any rubric score.
+
+---
+
 ## 5. TF32 convolutions on Ampere GPUs perturbed the ResNet50 probe. RESOLVED in 1.0.1
 
 **Status: fixed on 23 September 2026 in `protocol/cure_fitness_check.py`. `expected/` is unchanged
@@ -143,12 +157,14 @@ PyTorch enables TF32 for fp32 convolutions by default on NVIDIA GPUs of the Ampe
 later (`torch.backends.cudnn.allow_tf32` is `True`), so a convolutional probe computes with 10 bit
 mantissas on such a GPU and with full fp32 everywhere else. Measured against the reference
 machine's embeddings: ResNet50 differed by up to 7.0e-3 (median per image 1.5e-3, minimum cosine
-0.99982) on every one of the 8811 crops, the number of correct cross domain top1 decisions changed
-by five out of 8423, and recall at five by eight. The ViT probe, dominated by matrix products for
-which TF32 is off by default, differed by at most 1.6e-5. Rerunning the extraction on the same
-machine with the two TF32 flags off, and nothing else changed, brought the ResNet50 embeddings to
-within 3.0e-6 of the reference machine and the 42 floats of the direct report to within 1.0e-6,
-with the two `note` strings back to their expected text.
+0.99982) on every one of the 8811 crops. Counted directly rather than inferred from the rounded
+score, **138 of the 8423 consumer queries retrieved a different nearest reference**, and because
+the swaps went both ways the number of correct top1 decisions moved by only five, from 1802 to
+1797. The ViT probe, dominated by matrix products for which TF32 is off by default, differed by at
+most 1.6e-5. Rerunning the extraction on the same machine with the two TF32 flags off, and nothing
+else changed, brought the ResNet50 embeddings to within 3.0e-6 of the reference machine, the 42
+floats of the direct report to within 1.0e-6, the two `note` strings back to their expected text,
+and **all 8423 retrieval decisions to exactly those of the reference machine**.
 
 ### The correction
 
@@ -165,7 +181,8 @@ this pattern in its exit message when it sees it.
 | ResNet50 embeddings, largest difference to the reference machine | 7.0e-3 | 3.0e-6 |
 | direct controls report, largest float deviation | 9.6e-4 | 1.0e-6 |
 | hardened controls report, largest float deviation | 6.0e-4 | 1.1e-5, in control 3, see section 6 |
-| correct cross domain top1 decisions, ResNet50, direct | changed by 5 of 8423 | unchanged |
+| queries retrieving a different nearest reference, direct | 138 of 8423 | 0 of 8423 |
+| correct cross domain top1 decisions, ResNet50, direct | 1797 against 1802 | identical |
 | rubric scores, totals and verdicts | identical | identical |
 | `verify.sh` | 5 of 8 files match | 8 of 8 |
 
@@ -201,14 +218,52 @@ of 5e-5, which covers this while still catching a single query changing rank (1.
 
 ---
 
-## 4. Fourteen of the 27 baseline backbones train at a resolution other than 384
+## 7. The ungated Phase F variant could not be reproduced from REPRODUCE.md. RESOLVED in 1.0.2
 
-**Severity: none, reported rather than corrected.**
+**Status: fixed on 23 September 2026 in `protocol/harden_refs_v1_ungated.py`. The gated variant,
+every split file and every rubric score were never affected.**
 
-The baseline sweep holds the evaluation resolution fixed at 384 for every backbone so that scores
-stay directly comparable. Training resolution follows each backbone's own convention: 384 for
-thirteen of the twenty seven, 224 for the twelve compact ones, and 392 for the two whose patch
-size requires it. The shift between training and evaluation resolution therefore applies to
-fourteen backbones, wide for the twelve and slight for the other two, and is reported in the
-article rather than corrected for. The sweep is not part of this protocol and is not needed to
-reproduce any rubric score.
+`harden_refs_v1_ungated.py` read the environment variable `PILL_PROJ` for the raw photographs it
+cuts donor backgrounds from, and for its default manifest. No other script uses that name and
+REPRODUCE.md never mentions it, so following REPRODUCE.md exactly left it unset. It then defaulted
+to a directory that does not exist in a fresh clone, every donor lookup failed, and the script fell
+back to Gaussian noise for all 388 references while reporting success. The ungated images a reader
+obtained were therefore not the ones the article describes, and nothing said so.
+
+It now reads `CURE_RAW_ROOT` and `CURE_CROPS_ROOT`, the names `harden_refs_v2.py` already used, and
+defaults its manifest to `protocol/frozen/`; `PILL_PROJ` is still honoured as a fallback. Verified
+on 23 September 2026 on the CUDA machine from a fresh clone: 388 references, zero noise fallbacks,
+and the log matches the frozen one field for field.
+
+One trap remains, documented rather than changed, because the file names are what the first release
+published: the ungated script writes `gallery_fewshot_K1_hardened.csv` into `CURE_FITNESS_OUT`,
+which is the exact name `score_rubric.py` looks for when it awards E1. Run it into the directory
+holding the direct conversion's splits and the direct conversion will then score 85 rather than 80.
+REPRODUCE.md section 4 says to give it a directory of its own.
+
+---
+
+## 8. Mask damage is measured from the output images, not from the mask the script used
+
+**Severity: none, stated so that the two solidity numbers in the release are not confused.**
+
+`protocol/measure_mask_damage.py` never sees the mask a hardening run computed. It recovers the
+preserved region by comparing the original crop with the hardened one, which is the honest test:
+it measures what the step actually left alone rather than what it believed it was leaving alone.
+The consequence is that the gated variant has two solidity figures, and they are not the same
+quantity:
+
+| Number | Where | What it is |
+|---|---|---|
+| 0.9708 | `expected/hardened_log_v2.json`, `solidity_min` | the mask the script accepted, measured by the script's own gate |
+| 0.9730 | `expected/mask_damage_v2.json`, `solidity_min` | the region actually preserved in the written image, measured afterwards |
+
+Compare like with like: the ungated variant's 0.8184 in `expected/mask_damage_v1.json` is the
+second kind, so it belongs beside 0.9730, not beside 0.9708.
+
+The exposure figure has the same character. Measured on the gated mask it says how much of the
+**intact** tablet falls inside the band a luminance rule treats as background, 324 of 388
+references above five percent. Measured on the ungated mask it says how much of what **survived**
+falls there, 189 of 388, a smaller number for the worse mask, because the pale pixels it had
+already removed are no longer part of what is measured.
+

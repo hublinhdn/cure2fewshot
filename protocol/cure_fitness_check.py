@@ -108,8 +108,9 @@ def extract(df, model_names=MODELS, device=None, batch=BATCH):
     dev = torch.device(device)
     # Probe đóng băng phải cho cùng một embedding trên mọi máy. Trên GPU Ampere trở lên, PyTorch
     # mặc định tính tích chập fp32 bằng TF32 (cudnn.allow_tf32=True): đo ngày 23/09/2026 trên
-    # RTX 3080, embedding ResNet50 lệch tới 7e-3 so với máy tham chiếu và 5/8423 query đổi hạng;
-    # tắt TF32 thì lệch còn 3e-6, cùng mức với ViT. Hai cờ này vô hại trên CPU và MPS.
+    # RTX 3080, embedding ResNet50 lệch tới 7e-3 so với máy tham chiếu và 138/8423 query đổi ảnh
+    # láng giềng gần nhất (số query đúng top1 chỉ đổi 5, vì đổi cả hai chiều). Tắt TF32 thì lệch
+    # còn 3e-6 và cả 8423 quyết định truy hồi trùng máy tham chiếu. Vô hại trên CPU và MPS.
     torch.backends.cudnn.allow_tf32 = False
     torch.backends.cuda.matmul.allow_tf32 = False
     print(f"[extract] device = {dev.type}; TF32 tắt (fp32 đúng nghĩa) để khớp máy tham chiếu", flush=True)

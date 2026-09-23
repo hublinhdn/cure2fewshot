@@ -55,8 +55,15 @@ export CURE_FITNESS_OUT=$PWD/outputs
 | `CURE_GALLERY` | step 4 only: the cleaned one reference gallery that Phase F rewrites with hardened paths |
 | `PHASE_F_V2_OUT` | step 4 only: where Phase F writes, default `outputs_v2/` |
 
-Two optional variables, `LEAK_COSINE` (default 0.985) and `DEDUP_CENTROID` (default 0.97), override
-the thresholds of step 5. Leave them alone to reproduce `expected/`.
+The ungated variant of step 4 reads the same `CURE_RAW_ROOT` and `CURE_CROPS_ROOT`, and writes to
+`CURE_FITNESS_OUT`. Until 1.0.2 it read a variable named `PILL_PROJ` instead, which this file never
+documented, so it silently produced a different image set; see [KNOWN_ISSUES.md](KNOWN_ISSUES.md)
+section 7.
+
+Three optional variables: `LEAK_COSINE` (default 0.985) and `DEDUP_CENTROID` (default 0.97)
+override the thresholds of step 5, and `CURE_EMB_REUSE` points at the `embeddings/` directory of an
+earlier run so that crops with the same `crop_rel` are copied rather than re-embedded. Leave all
+three alone to reproduce `expected/`.
 
 ## 2. Phase A: check integrity, then regenerate the crops
 
@@ -78,8 +85,8 @@ python protocol/make_crops.py build
 python protocol/make_crops.py verify
 ```
 
-`build` writes 8811 PNGs of 384 x 384 under `CURE_CROPS_ROOT`, about 1.5 GB. `verify` re-crops each
-one in memory and compares every pixel against what is on disk.
+`build` writes 8811 PNGs of 384 x 384 under `CURE_CROPS_ROOT`, 1.06 GB measured under the pinned
+Pillow. `verify` re-crops each one in memory and compares every pixel against what is on disk.
 
 Expect `VERIFY PASS` with all 8811 crops identical. On the reference machine that is exactly what
 this reports, so treat anything less as a problem with your archive or your Pillow version rather
@@ -157,9 +164,54 @@ for pixel and this log field for field (1972 fields). The divergent result recor
 that had not pinned Pillow.
 
 To reproduce the **ungated** variant of the mask, the one whose defect the article reports, run
-`protocol/harden_refs_v1_ungated.py` instead. It writes to its own directory and overwrites
-nothing. It is kept only so the comparison in the article is reproducible; do not use it to build
-a benchmark.
+`protocol/harden_refs_v1_ungated.py`. Give it a `CURE_FITNESS_OUT` of its own:
+
+```bash
+CURE_FITNESS_OUT=$PWD/outputs_v1ungated \
+CURE_GALLERY=$PWD/outputs/gallery_fewshot_K1_clean.csv \
+  python protocol/harden_refs_v1_ungated.py
+```
+
+That directory matters. The ungated script writes `gallery_fewshot_K1_hardened.csv`, the exact
+name step 6 looks for when it awards criterion E1, so pointing it at the directory holding the
+direct conversion's splits makes the direct conversion score 85 instead of 80. Expect 388
+references and zero noise fallbacks; a run reporting noise fallbacks has not found the raw
+photographs. This variant is kept only so the comparison in the article is reproducible; do not
+use it to build a benchmark.
+
+## 4b. How far each mask cut into the tablets
+
+Phase F claims not to touch the tablet. `measure_mask_damage.py` checks that claim without
+trusting the mask the run used: the pixels that are identical between the original crop and the
+hardened one are the region the step actually preserved.
+
+```bash
+CURE_CROPS_ROOT=$CURE_CROPS_ROOT python protocol/measure_mask_damage.py --tag v2 \
+  --hardened outputs_v2/hardened_refs_v2 --out outputs_v2/mask_damage_v2.json
+
+CURE_CROPS_ROOT=$CURE_CROPS_ROOT python protocol/measure_mask_damage.py --tag v1 \
+  --hardened outputs_v1ungated/hardened_refs --out outputs_v1ungated/mask_damage_v1.json
+```
+
+Two quantities per reference. **Solidity** is the area of the largest connected preserved component
+over the area of its convex hull; tablets are convex, so a mask that bit into one drives it down.
+**Exposure** is the share of preserved pixels whose grey level sits within 22 of the background,
+which is the band a luminance rule cannot separate.
+
+Expect, against `expected/mask_damage_v1.json` and `expected/mask_damage_v2.json`:
+
+| Quantity | ungated mask | integrity gated mask |
+|---|---:|---:|
+| solidity, minimum | 0.818 | 0.973 |
+| solidity, median | 0.994 | 0.998 |
+| references below 0.98 solidity | 126 of 388 | 4 of 388 |
+| references with over 5 percent exposure | 189 of 388 | 324 of 388 |
+| worst exposure | 0.965 (`167__top`) | 0.965 (`167__top`) |
+
+The exposure row reads the opposite way from the rest, and that is the point: exposure is measured
+on what survived, so the ungated mask scores lower precisely because it had already deleted the
+pale pixels. Read the gated column for how exposed the collection is, and the solidity rows for
+what each mask did about it. [KNOWN_ISSUES.md](KNOWN_ISSUES.md) section 8 states both definitions.
 
 ## 5. The four controls on frozen embeddings
 
@@ -177,11 +229,11 @@ it takes a few minutes. The embeddings are cached, so `controls` can be re-run f
 convolutions by default on NVIDIA GPUs of the Ampere generation and later, and a frozen probe then
 no longer computes the same function as on a CPU or on Apple silicon. Measured on an RTX 3080 on
 23 September 2026 with the 1.0.0 code, which did not switch it off: the ResNet50 embeddings moved
-by up to 7e-3 (cosine to the reference embedding 0.9998 at worst), the number of correct top1
-decisions changed by five out of 8423, and the ResNet50 control values moved by up to 1e-3, while
+by up to 7e-3 (cosine to the reference embedding 0.9998 at worst), 138 of the 8423 consumer queries
+retrieved a different nearest reference, and the ResNet50 control values moved by up to 1e-3, while
 every rubric score stayed the same. With TF32 off the same machine agrees with the reference
-machine to 3e-6 in the embeddings and 1e-6 in the control values
-([KNOWN_ISSUES.md](KNOWN_ISSUES.md) section 5). Do not re-enable it.
+machine to 3e-6 in the embeddings, to 1e-6 in the control values, and on all 8423 retrieval
+decisions ([KNOWN_ISSUES.md](KNOWN_ISSUES.md) section 5). Do not re-enable it.
 
 Run it twice, once on the direct conversion and once on the hardened references, because the
 article reports both:
@@ -329,6 +381,8 @@ that record local absolute paths.
 | `fitness_report_direct.json` | step 5 on the direct conversion | yes |
 | `rubric_score_direct.json` | step 6 on the direct conversion | yes |
 | `hardened_log_v2.json` | step 4, integrity gated mask | yes |
+| `mask_damage_v2.json` | step 4b, integrity gated mask | no, it needs the hardened images |
+| `mask_damage_v1.json` | step 4b, ungated mask | no, that variant is optional |
 | `fitness_report_v2.json` | step 5 on the hardened references | yes |
 | `rubric_score_v2.json` | step 6 on the hardened references | yes |
 | `fitness_report_v1.json` | step 5 on the **ungated** variant | no, that variant is optional |

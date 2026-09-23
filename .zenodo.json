@@ -1,7 +1,7 @@
 {
   "upload_type": "software",
   "title": "cure2fewshot: a deterministic protocol for converting a pill image collection into a few shot retrieval benchmark, with a conversion fitness rubric",
-  "version": "v1.0.0",
+  "version": "v1.0.1",
   "language": "eng",
   "license": {
     "id": "mit"

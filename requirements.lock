@@ -19,3 +19,9 @@ timm==1.0.26
 # and the probe3 reports. Versions read from it on 4 August 2026:
 #   torch==2.11.0+cu130  torchvision==0.26.0+cu130  timm==1.0.26  numpy==2.4.4  scikit-learn==1.8.0
 #   pillow==12.2.0 (12.0.0 when the crops were produced)
+#
+# Machine B again, new environment created on 23 September 2026 with `pip install -r requirements.txt`
+# (Python 3.12.3, driver 590.48.01, CUDA 13.0, cuDNN 9.24): the environment behind the second machine
+# verification in REPRODUCE.md ("Versions used"), KNOWN_ISSUES.md section 5 and CHANGELOG.md 1.0.1.
+#   torch==2.14.0+cu130  torchvision==0.29.0+cu130  timm==1.0.30  numpy==2.5.3  pandas==3.0.6
+#   scipy==1.18.1  scikit-learn==1.9.1  pillow==12.0.0

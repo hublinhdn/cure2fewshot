@@ -102,7 +102,9 @@ python protocol/build_cure_fewshot.py clean
 ```
 
 This stage is pure CSV work under seed 42, so it reproduces byte for byte on any platform and any
-library version. Check it against the frozen summary:
+library version. Measured: the fifteen CSV files it writes on the CUDA machine of 23 September 2026
+("Versions used", below) are byte identical to the reference machine's. Check it against the frozen
+summary:
 
 ```bash
 diff <(python -m json.tool "$CURE_FITNESS_OUT/cure_processed_summary.json") \
@@ -148,6 +150,12 @@ Expected: 388 references processed, median mask solidity 0.996, minimum 0.971, n
 never used, 19 masks repaired by convex hull, 5 fell back to an ellipse and are recorded as
 suspect.
 
+Phase F reads pixels, so it is the stage most exposed to the imaging stack. Under the pinned
+Pillow 12.0.0 the CUDA machine reproduced, on 23 September 2026, all 388 hardened references pixel
+for pixel and this log field for field (1972 fields). The divergent result recorded in
+[KNOWN_ISSUES.md](KNOWN_ISSUES.md) section 3, thirteen ellipse fallbacks, came from an environment
+that had not pinned Pillow.
+
 To reproduce the **ungated** variant of the mask, the one whose defect the article reports, run
 `protocol/harden_refs_v1_ungated.py` instead. It writes to its own directory and overwrites
 nothing. It is kept only so the comparison in the article is reproducible; do not use it to build
@@ -163,6 +171,17 @@ python protocol/cure_fitness_check.py controls    # controls 1 to 4 plus the dup
 `extract` downloads two pretrained backbones through `timm`, `resnet50` and
 `vit_base_patch16_224`, and embeds all 8811 crops. On a CPU this takes tens of minutes; on any GPU
 it takes a few minutes. The embeddings are cached, so `controls` can be re-run freely.
+
+`extract` switches TF32 off (`torch.backends.cudnn.allow_tf32` and
+`torch.backends.cuda.matmul.allow_tf32`) before loading the probes. PyTorch enables TF32 for fp32
+convolutions by default on NVIDIA GPUs of the Ampere generation and later, and a frozen probe then
+no longer computes the same function as on a CPU or on Apple silicon. Measured on an RTX 3080 on
+23 September 2026 with the 1.0.0 code, which did not switch it off: the ResNet50 embeddings moved
+by up to 7e-3 (cosine to the reference embedding 0.9998 at worst), the number of correct top1
+decisions changed by five out of 8423, and the ResNet50 control values moved by up to 1e-3, while
+every rubric score stayed the same. With TF32 off the same machine agrees with the reference
+machine to 3e-6 in the embeddings and 1e-6 in the control values
+([KNOWN_ISSUES.md](KNOWN_ISSUES.md) section 5). Do not re-enable it.
 
 Run it twice, once on the direct conversion and once on the hardened references, because the
 article reports both:
@@ -328,13 +347,30 @@ are frozen precisely so that the segmentation model never becomes a dependency.
 The files in `expected/` were sanitised before release: fields recording an absolute path on the
 machine that produced them, such as `manifest`, `report` and `sam_ckpt`, were rewritten as
 repository relative paths. No measured value was touched. `scripts/verify.sh` ignores exactly
-those fields, compares integers, strings and rubric scores exactly, and compares measured floats
-to a tolerance of `FLOAT_TOL` (default 1e-6). The tolerance is sized from a measurement: on 22
-September 2026 all 8811 embeddings were re-extracted from scratch on the reference machine (Apple
-silicon, MPS). ResNet50 came back bit for bit; the ViT embeddings moved by at most 3.6e-6 and the
-42 measured floats of the direct controls report by at most 5.4e-7, while all 32 counts, flags and
-strings, and every rubric score, were identical. A stricter comparison would report that as a
-defect.
+those fields and the rubric's `note` strings (a description for the reader that embeds values
+rounded to three decimals; the score beside each note is compared), compares integers, strings,
+flags and rubric scores exactly, and compares measured floats to a tolerance of `FLOAT_TOL`
+(default 1e-5). It prints the largest float deviation of every file, so a run that matches also
+shows how closely.
+
+The tolerance is sized from two measurements. On 22 September 2026 all 8811 embeddings were
+re-extracted from scratch on the reference machine (Apple silicon, MPS): ResNet50 came back bit
+for bit, the ViT embeddings moved by at most 3.6e-6 and the 42 measured floats of the direct
+controls report by at most 5.4e-7, while all 32 counts, flags and strings, and every rubric score,
+were identical. On 23 September 2026 a fresh clone on a CUDA machine (RTX 3080, "Versions used"
+below), with TF32 off as the code now requires, reproduced the direct report to 1.0e-6 and the
+hardened report to 1.1e-5. That largest single deviation is the ResNet50 domain separability AUC of
+control 3, and it belongs to the solver rather than to the data: recomputing that control on the
+reference machine reproduces `expected/` exactly from the reference embeddings and lands within
+6.1e-7 of it from the CUDA machine's embeddings, so the remaining 1.1e-5 comes from scikit-learn
+1.9.1 resolving its logistic regression slightly differently from 1.6.1. An AUC of 0.99196 against
+0.99196 decides nothing differently; criterion E1 turns at 0.95.
+
+One query changing rank moves a control by 1.2e-4, one part in 8423, so the default 5e-5 sits
+between the measured noise and the smallest real change, and every count, flag and rubric score
+must still match exactly. A run whose only mismatches are floats of about 1e-4 to 1e-3 on the
+ResNet50 fields has almost certainly computed the probes with TF32 on (section 5); `verify.sh`
+says so when it sees that pattern.
 
 ## 8. Optional: swap the probe and rescore
 
@@ -379,17 +415,19 @@ test only.
 
 ## Versions used for the published numbers
 
-Two machines produced the published numbers. `requirements.lock` pins the first and records the
-second.
+Two machines produced the published numbers, and a fresh environment on the second verified them.
+`requirements.lock` pins the first and records the other two.
 
 | Numbers | Machine | Versions |
 |---|---|---|
 | everything `verify.sh` checks in `expected/`: splits, hardening log, the four controls, the rubric | A: macOS 14.6.1 on Apple silicon, no CUDA | Python 3.13.3, NumPy 2.2.5, pandas 2.2.3, SciPy 1.15.3, scikit-learn 1.6.1, Pillow 11.2.1, PyTorch 2.9.1, torchvision 0.24.1, timm 1.0.26 |
 | the frozen boxes (SAM `vit_b`) and the crops | B: Linux, one RTX 3080 with 10 GB, CUDA 13.0 | Pillow 12.0.0 at cropping time; the crops reproduce pixel for pixel under 11.2.1 on machine A |
 | `retrieval_baselines.csv`, the 27 backbone sweep, and the probe3 reports | B | Python 3.12.3, PyTorch 2.11.0 (CUDA 13.0), torchvision 0.26.0, timm 1.0.26, NumPy 2.4.4, scikit-learn 1.8.0, Pillow 12.2.0 |
+| verification of every file `verify.sh` checks, from a fresh clone (23 September 2026): all 8811 crops pixel for pixel, the fifteen split CSV files byte for byte, the 388 hardened references pixel for pixel, the hardening log field for field, both rubric files exactly, `verify.sh` 8 of 8 | B, new environment installed from `requirements.txt` | Python 3.12.3, PyTorch 2.14.0 (CUDA 13.0, cuDNN 9.24), torchvision 0.29.0, timm 1.0.30, NumPy 2.5.3, pandas 3.0.6, SciPy 1.18.1, scikit-learn 1.9.1, Pillow 12.0.0 |
 
-The rubric depends only on the frozen backbones and the split files, both of which reproduce
-exactly, so its scores are unaffected by a resampled padding pixel.
+The rubric depends only on the frozen probes and the split files. The split files reproduce byte
+for byte, and with TF32 off the probe embeddings agree across backends to 3e-6, so its scores are
+unaffected by a resampled padding pixel or by the GPU.
 
 ## Optional: the 27 baseline backbones
 

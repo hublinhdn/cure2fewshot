@@ -1,5 +1,33 @@
 # Changelog
 
+## 1.0.1, 2026-09-23
+
+Zenodo Version DOI `PENDING_DOI_101`. Concept DOI unchanged: `10.5281/zenodo.22908278`.
+
+A fresh clone of 1.0.0 on a second machine (Linux, RTX 3080, CUDA) reproduced all 8811 crops pixel
+for pixel, the fifteen split CSV files byte for byte, the 388 hardened references pixel for pixel,
+every rubric score and both verdicts, but not the ResNet50 control values: PyTorch computes fp32
+convolutions in TF32 by default on that GPU generation, which moved the probe's embeddings by up to
+7e-3 and the control values by up to 1e-3 (`KNOWN_ISSUES.md` section 5). Changes:
+
+* `protocol/cure_fitness_check.py`: `extract` disables TF32 before loading the probes. With that,
+  the CUDA machine agrees with the reference machine to 3e-6 in the embeddings and 1e-6 in the
+  control values.
+* `scripts/verify.sh`: default `FLOAT_TOL` 1e-5, sized from the two measurements in REPRODUCE.md
+  section 7 (one query changing rank moves a control by 1.2e-4, so a changed result is still
+  caught); the rubric's `note` strings, which embed values rounded to three decimals, are no longer
+  compared, the scores beside them still are; every file prints its largest float deviation; the
+  exit message separates a changed result from numerical noise and names the TF32 pattern.
+* `REPRODUCE.md`, `KNOWN_ISSUES.md` (sections 3, 5 and 6) and `requirements.lock`: the second
+  machine's environment and every measurement above recorded, including a new section on control
+  3's dependence on the scikit-learn version.
+* No change to `protocol/frozen/`, to `expected/`, or to any split, hardening or rubric output.
+
+Verified before tagging, 23 September 2026, on the CUDA machine with this code: `verify.sh` matches
+8 of 8 files, the largest float deviation being 1.0e-6 in the direct controls report and 1.1e-5 in
+the hardened one, the latter traced to the scikit-learn version rather than to the data
+(`KNOWN_ISSUES.md` section 6). Every count, flag, string and rubric score is identical.
+
 ## 1.0.0, 2026-09-23
 
 First public release. Zenodo Version DOI `10.5281/zenodo.22908279`; concept DOI, which always
@@ -43,6 +71,9 @@ regenerate pixel for pixel under Pillow 11.2.1 as well as 12.0.0.
 3. `README.md`: the badge carries the concept DOI and does not change.
 4. This file: move the entries under a dated version heading, and record the new Version DOI
    there once Zenodo has archived the tag.
+5. The accompanying article cites the Version DOI of the tag it describes (C1 to C3 of its
+   metadata table, the reference list entry and the cover letter), so a new tag means a new
+   submission package.
 
 The GitHub to Zenodo switch must be ON for this repository **before** the release is created; a
 release created before the switch is never archived and gets no DOI. The DOI only exists after the

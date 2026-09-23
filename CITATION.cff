@@ -8,7 +8,7 @@ abstract: >-
   evaluation protocol of ePillID, together with a scored rubric that decides whether the converted
   result is fit for use. Contains no image: the collection must be obtained from its original
   authors and is not redistributed here.
-version: 1.0.0
+version: 1.0.1
 license: MIT
 repository-code: "https://github.com/hublinhdn/cure2fewshot"
 keywords:

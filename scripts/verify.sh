@@ -5,12 +5,14 @@
 # truong ghi duong dan tuyet doi cua may da sinh ra so (manifest, report, sam_ckpt, ...) va truong
 # `note` cua rubric (chuoi mo ta cho nguoi doc, chua so do da lam tron 3 chu so; diem cua tung
 # tieu chi van duoc so). Khong bo qua bat ky gia tri do duoc nao. So nguyen, chuoi va diem rubric
-# phai bang nhau tuyet doi; so thuc duoc so voi dung sai FLOAT_TOL, mac dinh 1e-5.
+# phai bang nhau tuyet doi; so thuc duoc so voi dung sai FLOAT_TOL, mac dinh 5e-5.
 #
-# Dung sai do tu hai phep do (REPRODUCE.md muc 7): trich embedding lai tren chinh may tham chieu
-# (Apple silicon, MPS) cho lech toi da 5.4e-7; mot ban clone sach tren may CUDA (RTX 3080), voi
-# TF32 tat nhu ma tu 1.0.1, cho lech toi da 1.3e-6 (percentile cosine cua ViT). Mot query doi
-# hang lam mot control doi 1.2e-4, nen 1e-5 tach nhieu so hoc khoi ket qua doi.
+# Dung sai do tu do dac, khong chon bang cam tinh (REPRODUCE.md muc 7). Can duoi: trich embedding
+# lai tren chinh may tham chieu cho lech toi da 5.4e-7; mot ban clone sach tren may CUDA (RTX 3080)
+# voi TF32 tat nhu ma tu 1.0.1 cho lech toi da 1.0e-6 o ban truc tiep va 1.1e-5 o ban hardened, chu
+# yeu do bo giai lbfgs cua scikit-learn 1.9.1 so voi 1.6.1 trong control 3 (cung embedding, cung
+# phien ban thi lech chi 6.1e-7). Can tren: mot query doi hang lam mot control doi 1.2e-4. Vay 5e-5
+# nam giua, phu duoc nhieu so hoc do do va van bat duoc mot ket qua that su doi.
 #
 # Chay tu goc repo, sau khi da lam theo REPRODUCE.md:
 #   bash scripts/verify.sh
@@ -24,7 +26,7 @@ OUT_V2="${PHASE_F_V2_OUT:-$PWD/outputs_v2}"
 
 PY="${PYTHON:-python3}"
 IGNORE_KEYS="manifest,report,sam_ckpt,out_dir,crops_root,raw_root,gallery,note"
-FLOAT_TOL="${FLOAT_TOL:-1e-5}"
+FLOAT_TOL="${FLOAT_TOL:-5e-5}"
 
 # expected/<ten>.json  <=>  duong dan file do lan chay sinh ra
 PAIRS=(

@@ -2,7 +2,7 @@
 
 ## 1.0.2, 2026-09-23
 
-Zenodo Version DOI `PENDING_DOI_102`. Concept DOI unchanged: `10.5281/zenodo.22908278`.
+Zenodo Version DOI `10.5281/zenodo.22910727`. Concept DOI unchanged: `10.5281/zenodo.22908278`.
 
 Auditing the accompanying article line by line against this release found two gaps in the release
 itself, and one number that had been inferred rather than counted. No split file, hardened image,

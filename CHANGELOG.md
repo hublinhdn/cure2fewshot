@@ -2,7 +2,7 @@
 
 ## 1.0.3, 2026-09-27
 
-Zenodo Version DOI `PENDING_DOI_103`. Concept DOI unchanged: `10.5281/zenodo.22908278`.
+Zenodo Version DOI `10.5281/zenodo.22994539`. Concept DOI unchanged: `10.5281/zenodo.22908278`.
 
 Author records only. No script, frozen annotation or expected output changed; every number in
 `expected/` is the one 1.0.2 shipped, and `scripts/verify.sh` compares against the same files.

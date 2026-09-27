@@ -1,5 +1,20 @@
 # Changelog
 
+## 1.0.3, 2026-09-27
+
+Zenodo Version DOI `PENDING_DOI_103`. Concept DOI unchanged: `10.5281/zenodo.22908278`.
+
+Author records only. No script, frozen annotation or expected output changed; every number in
+`expected/` is the one 1.0.2 shipped, and `scripts/verify.sh` compares against the same files.
+
+* `CITATION.cff`, `.zenodo.json` and `LICENSE`: Bay Nguyen Van (Faculty of Information
+  Technology, Ho Chi Minh City Open University) joins the authors, third in the order, matching
+  the accompanying article. Linh Do Nhat's affiliation is now the same faculty, and the contact
+  address is linhdn.ai25@gmail.com.
+* `CITATION.cff`: the commented `preferred-citation` block still split Dzi Lam Tran Tuan's name
+  the old way; corrected to given name Dzi, family name Lam Tran Tuan, and the new author added
+  there too.
+
 ## 1.0.2, 2026-09-23
 
 Zenodo Version DOI `10.5281/zenodo.22910727`. Concept DOI unchanged: `10.5281/zenodo.22908278`.

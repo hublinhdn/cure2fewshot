@@ -8,7 +8,7 @@ abstract: >-
   evaluation protocol of ePillID, together with a scored rubric that decides whether the converted
   result is fit for use. Contains no image: the collection must be obtained from its original
   authors and is not redistributed here.
-version: 1.0.2
+version: 1.0.3
 license: MIT
 repository-code: "https://github.com/hublinhdn/cure2fewshot"
 keywords:
@@ -20,13 +20,17 @@ keywords:
 authors:
   - given-names: "Linh"
     family-names: "Do Nhat"
-    affiliation: "Faculty of Data Science in Business, Ho Chi Minh University of Banking, Ho Chi Minh City, Vietnam"
-    email: "linhdn@hub.edu.vn"
+    affiliation: "Faculty of Information Technology, Ho Chi Minh City Open University, Ho Chi Minh City, Vietnam"
+    email: "linhdn.ai25@gmail.com"
     # TODO(release): them orcid: "https://orcid.org/0000-0000-0000-0000"
   - given-names: "Dzi"
     family-names: "Lam Tran Tuan"
     affiliation: "Faculty of Information Technology, Ho Chi Minh City Open University, Ho Chi Minh City, Vietnam"
     email: "dzi.ltt@ou.edu.vn"
+  - given-names: "Bay"
+    family-names: "Nguyen Van"
+    affiliation: "Faculty of Information Technology, Ho Chi Minh City Open University, Ho Chi Minh City, Vietnam"
+    email: "bay.nv@ou.edu.vn"
   - given-names: "Vinh"
     family-names: "Truong Hoang"
     affiliation: "Faculty of Information Technology, Ho Chi Minh City Open University, Ho Chi Minh City, Vietnam"
@@ -39,7 +43,7 @@ authors:
 # Concept DOI: luon tro ban moi nhat, nen file nay khong lech moi lan cat tag. Version DOI cua tung
 # tag nam trong CHANGELOG.md; bai bao trich Version DOI cua dung ban no mo ta.
 doi: "10.5281/zenodo.22908278"
-date-released: "2026-09-23"
+date-released: "2026-09-27"
 
 # TODO(article): khi bai bao di kem co DOI, mo khoi duoi day de cong cu trich dan uu tien tro ve
 # bai bao thay vi phan mem. Ten tap chi de trong cho toi luc do.
@@ -52,8 +56,10 @@ date-released: "2026-09-23"
 #   authors:
 #     - given-names: "Linh"
 #       family-names: "Do Nhat"
-#     - given-names: "Dzi Lam"
-#       family-names: "Tran Tuan"
+#     - given-names: "Dzi"
+#       family-names: "Lam Tran Tuan"
+#     - given-names: "Bay"
+#       family-names: "Nguyen Van"
 #     - given-names: "Vinh"
 #       family-names: "Truong Hoang"
 #     - given-names: "Kittikhun"

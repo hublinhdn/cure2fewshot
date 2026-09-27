@@ -84,6 +84,7 @@ REPRODUCE.md                   step by step reproduction, and what the protocol 
 TRAINING_RECIPE.md             the recipe behind the 27 baseline scores (the sweep is not shipped)
 KNOWN_ISSUES.md                defects known at the time of release
 CHANGELOG.md                   what changed per version
+LICENSE, LICENSE.txt           MIT; NOTICE.md says the licence covers the code and the annotations, not the CURE images
 ```
 
 `protocol/frozen/` holds our own measurements about publicly distributed files: bounding box

@@ -2,7 +2,7 @@
 
 ## 1.0.4, 2026-09-30
 
-Zenodo Version DOI `PENDING_DOI_104`. Concept DOI unchanged: `10.5281/zenodo.22908278`.
+Zenodo Version DOI `10.5281/zenodo.23051213`. Concept DOI unchanged: `10.5281/zenodo.22908278`.
 
 Author records only, again. No script, frozen annotation or expected output changed; every
 number in `expected/` is the one 1.0.2 shipped.

@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.0.4, 2026-09-30
+
+Zenodo Version DOI `PENDING_DOI_104`. Concept DOI unchanged: `10.5281/zenodo.22908278`.
+
+Author records only, again. No script, frozen annotation or expected output changed; every
+number in `expected/` is the one 1.0.2 shipped.
+
+* `CITATION.cff`, `.zenodo.json` and `LICENSE`: the author list is Linh Do Nhat, Dzi Lam Tran
+  Tuan, Bay Nguyen Van and Vinh Truong Hoang, matching the accompanying article. The fifth name
+  recorded in 1.0.3 was withdrawn at the authors' request.
+
 ## 1.0.3, 2026-09-27
 
 Zenodo Version DOI `10.5281/zenodo.22994539`. Concept DOI unchanged: `10.5281/zenodo.22908278`.

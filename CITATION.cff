@@ -8,7 +8,7 @@ abstract: >-
   evaluation protocol of ePillID, together with a scored rubric that decides whether the converted
   result is fit for use. Contains no image: the collection must be obtained from its original
   authors and is not redistributed here.
-version: 1.0.3
+version: 1.0.4
 license: MIT
 repository-code: "https://github.com/hublinhdn/cure2fewshot"
 keywords:
@@ -35,15 +35,11 @@ authors:
     family-names: "Truong Hoang"
     affiliation: "Faculty of Information Technology, Ho Chi Minh City Open University, Ho Chi Minh City, Vietnam"
     email: "vinh.th@ou.edu.vn"
-  - given-names: "Kittikhun"
-    family-names: "Meethongjan"
-    affiliation: "Department of Apply Science, Faculty of Science and Technology, Suan Sunandha Rajabhat University, 1 U Thong Nok Rd, Dusit, Dusit District, Bangkok, 10300, Thailand"
-    email: "kittikhun.me@ssru.ac.th"
 
 # Concept DOI: luon tro ban moi nhat, nen file nay khong lech moi lan cat tag. Version DOI cua tung
 # tag nam trong CHANGELOG.md; bai bao trich Version DOI cua dung ban no mo ta.
 doi: "10.5281/zenodo.22908278"
-date-released: "2026-09-27"
+date-released: "2026-09-30"
 
 # TODO(article): khi bai bao di kem co DOI, mo khoi duoi day de cong cu trich dan uu tien tro ve
 # bai bao thay vi phan mem. Ten tap chi de trong cho toi luc do.
@@ -62,8 +58,6 @@ date-released: "2026-09-27"
 #       family-names: "Nguyen Van"
 #     - given-names: "Vinh"
 #       family-names: "Truong Hoang"
-#     - given-names: "Kittikhun"
-#       family-names: "Meethongjan"
 
 references:
   - type: conference-paper

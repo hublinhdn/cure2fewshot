@@ -335,8 +335,9 @@ seed study of 1.1 (`expected/baseline_seeds.csv`) trains on the corrected set.
 
 ## 10. The solidity gate cannot see a straight cut, and the released gated mask had them. RESOLVED in 1.1
 
-**Status: found on 14 November 2026 with an independent mask; 29 of 388 gated masks replaced after
-a check by eye. The gated gallery of 1.0.4 is superseded.**
+**Status: found on 14 November 2026 with an independent mask; after the reference boxes of
+section 12 were corrected, 34 of 388 gated masks were replaced after a check by eye. The gated
+gallery of 1.0.4 is superseded.**
 
 ### What was wrong
 
@@ -349,43 +350,57 @@ The measurement that shows it (`measure_mask_damage.py --masks`) compares the re
 preserved with a mask obtained by a different mechanism: the segmentation model that produced the
 frozen boxes (SAM ViT-B, same weights, SHA256 in `expected/cure_crops_meta.json`), prompted on the
 original reference crop with a positive point at the centre and negative points on the synthetic
-field, candidates that touch the field's border rejected (`reference_masks.py`). The quantity
-reported is the share of that mask's core, the mask eroded by three pixels so that a boundary
-disagreement between two mechanisms does not count, that the hardened image replaced.
+field, candidates that touch the field's border rejected and the largest remaining candidate
+taken (`reference_masks.py`). The quantity reported is the share of that mask's core, the mask
+eroded by three pixels so that a boundary disagreement between two mechanisms does not count,
+that the hardened image replaced.
 
-Against that mask, the gated variant of 1.0.4 replaced more than one percent of the core in 47
-references and more than a fifth in 16. The ungated variant: 209 and 70. The cause in every real
-case is a luminance gradient across the tablet: the colour distance threshold, taken from the
-border, falls below the darker or the brighter half, the largest connected component is that half,
-and its hull is convex.
+Against that mask, the gated variant of 1.0.4 (uncorrected boxes, and a first picker that took
+the best scoring candidate) replaced more than one percent of the core in 47 references and more
+than a fifth in 16. On the corrected crops of section 12 the colour rule alone replaces more than
+one percent in 59 and more than a fifth in 13; the ungated variant, 209 and 61. The cause in
+every real case is a luminance gradient across the tablet: the colour distance threshold, taken
+from the border, falls below the darker or the brighter half, the largest connected component is
+that half, and its hull is convex. In two references (both faces of pill 1) the rule kept the
+whole square crop region, convex as well; only the share of field the preserved region holds
+(`bg_kept_frac`, 0.52) reveals it.
 
 ### The check by eye, and the repair
 
-An automatic mask is not evidence on its own: SAM merged the tablet with the field for 22 of the
-388 references (pale tablets on a pale field), and the measurement then flags an intact reference.
-Every reference the measurement flagged, and every reference for which SAM had no candidate inside
-the field's border, 58 in all, was laid out as original crop, region preserved by the colour rule,
-SAM mask, hardened image, and judged by eye. The decisions, one line each with the reason, are in
+An automatic mask is not evidence on its own: for a pale tablet on a pale field the segmentation
+model takes a strip of the field with the tablet, or the field alone, and the measurement then
+flags an intact reference. Every reference flagged above one percent of the core, every
+reference whose preserved region held more than a fifth of what the independent mask calls
+field, and every suspect reference, 63 in all, was laid out as original crop, region preserved
+by the colour rule, independent mask, hardened image, and judged by eye. A first pass of this
+check, on the uncorrected crops (58 references, 29 replaced), is what exposed the box defect of
+section 12; the decisions below are the second pass, on the corrected crops, and replace the
+first entirely. The decisions, one line each with the reason, are in
 `protocol/frozen/reference_mask_review.csv`:
 
 | Decision | References | What was seen |
 |---|---:|---|
-| `use_sam` | 29 | the colour rule had cut the tablet (24, straight cuts and lost rims), or the ellipse fallback had clipped it or kept field around it (5); the SAM mask fits |
-| `keep_rule` | 29 | the SAM mask is the field or includes a strip of it (15), or the two masks agree to within their boundary (14) |
+| `use_sam` | 34 | the colour rule had cut the tablet (27: straight cuts, lost rims, bites), the ellipse fallback had clipped it or kept field around it (5), or the rule had kept the whole crop region (2); the independent mask fits |
+| `keep_rule` | 29 | the independent mask is the field or includes a strip of it (25), covers only part of the tablet (2), or the two masks agree to within their boundary (2) |
 
 `harden_refs_v2.py` reads that file: for `use_sam` it uses the mask stored under
 `protocol/frozen/reference_masks/`, dilated by two pixels exactly as the colour rule mask is, and
 logs `repair: independent_mask`. The masks are binary silhouettes, derived annotations like the
-boxes; no pixel of the collection is redistributed. The other 359 references are hardened exactly
-as in 1.0.4 and are pixel identical to it.
+boxes; no pixel of the collection is redistributed. The other 354 references are hardened by the
+colour rule exactly as in 1.0.4, and those whose box did not change are pixel identical to it.
+One reference, 53__top, keeps its ellipse fallback and its suspect flag, because its independent
+mask includes a strip of field; the gallery without suspect references
+(`gallery_fewshot_K1_hardened_v2_nosuspect.csv`, 385 rows) drops it.
 
 ### What changed, and what did not
 
-The gated gallery differs from 1.0.4 in 29 of 386 entries. Every number measured on the hardened
-references was regenerated and is recorded in CHANGELOG.md under 1.1.0: the hardening log, the
-four controls, the rubric, the sensitivity sweep and the mask damage statistics. The measurement
-against the independent mask now reports zero core removal for the 29 repaired references by
-construction; its value lies in the other 359 and in the ungated variant, where it is unchanged.
+The gated gallery differs from 1.0.4 in the 34 replaced masks and the 49 corrected crops. Every
+number measured on the hardened references was regenerated and is recorded in CHANGELOG.md under
+1.1.0: the hardening log, the four controls (cross domain top1 0.170, gap 0.128, domain AUC
+0.993), the rubric (92, unchanged), the sensitivity sweep and the mask damage statistics. The
+measurement against the independent mask reports zero core removal for the 34 repaired
+references by construction; after the review it flags 27 references, all among the 29 whose
+colour rule mask was kept, and its value lies there and in the ungated variant.
 
 ---
 
@@ -448,9 +463,10 @@ distance to the border median at threshold 18, takes the largest component after
 opening, and compares its bounds with the recorded box. 49 of the 388 boxes, all 49 from the
 classical rule and none of the 58 drawn by hand, do not contain the tablet: 25 cut it by more
 than 50 pixels of the raw photograph, and the worst three (42__top, 66__bottom, 144__bottom)
-held one half of a two colour capsule. Several of the masks that section 10 lists as "the
-segmentation model merged the tablet with the field" were references whose tablet touched the
-crop border because the box had cut it.
+held one half of a two colour capsule. Several of the references for which the first pass of section 10 found no independent mask
+inside the crop border were cut by the box, not merged with the field; after the correction every
+reference has a candidate inside the border, and the picker takes the largest valid one rather
+than the best scoring one, which on a two colour capsule had kept one half.
 
 ### The correction
 
@@ -468,7 +484,7 @@ them into the manifest with `method = audit` and appended one row per box to
 | reference boxes from the classical rule / corrected by the audit / drawn by hand | 330 / 0 / 58 | 281 / 49 / 58 |
 | crops that differ from 1.0.4 | | 49, all reference crops |
 | consumer crops, splits, folds, class counts | | unchanged |
-| embeddings, controls, hardened references, masks, rubric | | regenerated; CHANGELOG.md 1.1.0 lists the values |
+| embeddings, controls, hardened references, masks, rubric | | regenerated; the mask review of section 10 was redone on the corrected crops; CHANGELOG.md 1.1.0 lists the values |
 
 The consumer photographs were localised by the segmentation model and reviewed by hand (886
 corrections) and are not affected; the ten consumer box corrections of section 1 stand.

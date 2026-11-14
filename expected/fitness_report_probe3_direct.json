@@ -1,6 +1,6 @@
 {
   "config": {
-    "manifest": "protocol/frozen/cure_crops_manifest.curated.csv",
+    "manifest": "/root/LinhDo/workspace/cure2fewshot/protocol/frozen/cure_crops_manifest.curated.csv",
     "models": [
       "vit_small_patch14_dinov2.lvd142m"
     ],
@@ -40,9 +40,9 @@
     "per_model": {
       "vit_small_patch14_dinov2.lvd142m": {
         "cross_domain": {
-          "top1": 0.3234129365174607,
-          "mAP": 0.4587137279760479,
-          "recall@5": 0.6133445337813512,
+          "top1": 0.32689307572302895,
+          "mAP": 0.4639040798579232,
+          "recall@5": 0.6203048121924877,
           "n_query": 8333,
           "n_gallery_classes": 388
         },
@@ -53,17 +53,17 @@
           "n_query": 8031,
           "n_gallery_classes": 392
         },
-        "domain_gap_top1": 0.03295613333685382
+        "domain_gap_top1": 0.0294759941312856
       }
     },
     "mean": {
-      "cross_top1": 0.3234129365174607,
+      "cross_top1": 0.32689307572302895,
       "within_top1": 0.35636906985431455,
-      "cross_mAP": 0.4587137279760479,
+      "cross_mAP": 0.4639040798579232,
       "within_mAP": 0.4498311506183635,
-      "cross_recall@5": 0.6133445337813512,
+      "cross_recall@5": 0.6203048121924877,
       "within_recall@5": 0.5446395218528203,
-      "domain_gap_top1": 0.03295613333685382
+      "domain_gap_top1": 0.0294759941312856
     }
   },
   "control3_domain_sep": {
@@ -80,8 +80,8 @@
         "threshold": 0.985,
         "leak_frac": 0.0,
         "n_leaked": 0,
-        "same_class_cos_p50": 0.7327642440795898,
-        "same_class_cos_p95": 0.8426670551300048,
+        "same_class_cos_p50": 0.7354190349578857,
+        "same_class_cos_p95": 0.8431064367294311,
         "same_class_cos_max": 0.9419779181480408
       }
     },

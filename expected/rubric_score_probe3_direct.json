@@ -22,13 +22,13 @@
       "name": "B1 frozen cross domain top1 dưới ceiling",
       "score": 15,
       "max": 15,
-      "note": "cross top1 = 0.323"
+      "note": "cross top1 = 0.327"
     },
     {
       "name": "B2 domain gap đủ lớn (within - cross top1)",
       "score": 0,
       "max": 15,
-      "note": "gap = 0.033"
+      "note": "gap = 0.029"
     },
     {
       "name": "C1 leakage đã loại (residual <= 0.02)",
@@ -46,7 +46,7 @@
       "name": "D1 mAP frozen cross domain trong dải khó nhưng học được",
       "score": 10,
       "max": 10,
-      "note": "cross mAP = 0.459 (yêu cầu trong (0.05, 0.9))"
+      "note": "cross mAP = 0.464 (yêu cầu trong (0.05, 0.9))"
     },
     {
       "name": "E1 báo cáo domain AUC + xử lý shortcut nền",

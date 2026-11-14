@@ -1,6 +1,6 @@
 {
   "config": {
-    "manifest": "protocol/frozen/cure_crops_manifest.curated.csv",
+    "manifest": "/root/LinhDo/workspace/cure2fewshot/protocol/frozen/cure_crops_manifest.curated.csv",
     "models": [
       "resnet50",
       "vit_base_patch16_224"
@@ -41,9 +41,9 @@
     "per_model": {
       "resnet50": {
         "cross_domain": {
-          "top1": 0.2156486259450378,
-          "mAP": 0.32883620807216646,
-          "recall@5": 0.437777511100444,
+          "top1": 0.21588863554542181,
+          "mAP": 0.3313564157178528,
+          "recall@5": 0.44305772230889234,
           "n_query": 8333,
           "n_gallery_classes": 388
         },
@@ -54,13 +54,13 @@
           "n_query": 8031,
           "n_gallery_classes": 392
         },
-        "domain_gap_top1": 0.0675041570209689
+        "domain_gap_top1": 0.0672641474205849
       },
       "vit_base_patch16_224": {
         "cross_domain": {
-          "top1": 0.2872914916596664,
-          "mAP": 0.41189902390337235,
-          "recall@5": 0.5492619704788192,
+          "top1": 0.2906516260650426,
+          "mAP": 0.41638854025997757,
+          "recall@5": 0.5543021720868835,
           "n_query": 8333,
           "n_gallery_classes": 388
         },
@@ -71,29 +71,29 @@
           "n_query": 8031,
           "n_gallery_classes": 392
         },
-        "domain_gap_top1": 0.024251280099765793
+        "domain_gap_top1": 0.0208911456943896
       }
     },
     "mean": {
-      "cross_top1": 0.25147005880235207,
+      "cross_top1": 0.2532701308052322,
       "within_top1": 0.29734777736271945,
-      "cross_mAP": 0.3703676159877694,
+      "cross_mAP": 0.3738724779889152,
       "within_mAP": 0.3774890677397179,
-      "cross_recall@5": 0.49351974078963157,
+      "cross_recall@5": 0.4986799471978879,
       "within_recall@5": 0.4534927157265596,
-      "domain_gap_top1": 0.04587771856036735
+      "domain_gap_top1": 0.04407764655748725
     }
   },
   "control3_domain_sep": {
     "per_model": {
       "resnet50": {
-        "auc": 0.9999788869700171
+        "auc": 0.9999807228856679
       },
       "vit_base_patch16_224": {
-        "auc": 0.9999106521049996
+        "auc": 0.9998971887235613
       }
     },
-    "mean_auc": 0.9999447695375083
+    "mean_auc": 0.9999389558046146
   },
   "control4_leakage": {
     "per_model": {
@@ -101,16 +101,16 @@
         "threshold": 0.985,
         "leak_frac": 0.0,
         "n_leaked": 0,
-        "same_class_cos_p50": 0.6708949208259583,
-        "same_class_cos_p95": 0.7950754404067993,
-        "same_class_cos_max": 0.8981552124023438
+        "same_class_cos_p50": 0.672223687171936,
+        "same_class_cos_p95": 0.7950275778770447,
+        "same_class_cos_max": 0.909935712814331
       },
       "vit_base_patch16_224": {
         "threshold": 0.985,
         "leak_frac": 0.0,
         "n_leaked": 0,
-        "same_class_cos_p50": 0.6688075065612793,
-        "same_class_cos_p95": 0.8297500848770141,
+        "same_class_cos_p50": 0.6723376512527466,
+        "same_class_cos_p95": 0.830971324443817,
         "same_class_cos_max": 0.928246021270752
       }
     },

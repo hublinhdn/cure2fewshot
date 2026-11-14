@@ -1,6 +1,6 @@
 {
   "config": {
-    "manifest": "outputs_v1ungated/manifest_hardened.csv",
+    "manifest": "/root/LinhDo/workspace/cure2fewshot/outputs_v1ungated/manifest_hardened.csv",
     "models": [
       "resnet50",
       "vit_base_patch16_224"
@@ -41,9 +41,9 @@
     "per_model": {
       "resnet50": {
         "cross_domain": {
-          "top1": 0.10740429617184688,
-          "mAP": 0.20320474792385454,
-          "recall@5": 0.2846513860554422,
+          "top1": 0.11280451218048722,
+          "mAP": 0.20860641143373396,
+          "recall@5": 0.29017160686427457,
           "n_query": 8333,
           "n_gallery_classes": 388
         },
@@ -54,13 +54,13 @@
           "n_query": 8031,
           "n_gallery_classes": 392
         },
-        "domain_gap_top1": 0.17574848679415983
+        "domain_gap_top1": 0.1703482707855195
       },
       "vit_base_patch16_224": {
         "cross_domain": {
-          "top1": 0.156366254650186,
-          "mAP": 0.25473303785664003,
-          "recall@5": 0.34573382935317415,
+          "top1": 0.15408616344653786,
+          "mAP": 0.2556173481591897,
+          "recall@5": 0.3484939397575903,
           "n_query": 8333,
           "n_gallery_classes": 388
         },
@@ -71,29 +71,29 @@
           "n_query": 8031,
           "n_gallery_classes": 392
         },
-        "domain_gap_top1": 0.15517651710924618
+        "domain_gap_top1": 0.15745660831289432
       }
     },
     "mean": {
-      "cross_top1": 0.13188527541101644,
+      "cross_top1": 0.13344533781351253,
       "within_top1": 0.29734777736271945,
-      "cross_mAP": 0.2289688928902473,
+      "cross_mAP": 0.2321118797964618,
       "within_mAP": 0.3774890677397179,
-      "cross_recall@5": 0.3151926077043082,
+      "cross_recall@5": 0.31933277331093246,
       "within_recall@5": 0.4534927157265596,
-      "domain_gap_top1": 0.165462501951703
+      "domain_gap_top1": 0.1639024395492069
     }
   },
   "control3_domain_sep": {
     "per_model": {
       "resnet50": {
-        "auc": 0.9937073991072555
+        "auc": 0.9936156033247208
       },
       "vit_base_patch16_224": {
-        "auc": 0.9945864967179948
+        "auc": 0.9946538136251868
       }
     },
-    "mean_auc": 0.9941469479126251
+    "mean_auc": 0.9941347084749538
   },
   "control4_leakage": {
     "per_model": {
@@ -101,16 +101,16 @@
         "threshold": 0.985,
         "leak_frac": 0.0,
         "n_leaked": 0,
-        "same_class_cos_p50": 0.6090267896652222,
-        "same_class_cos_p95": 0.7471282720565796,
+        "same_class_cos_p50": 0.6108116507530212,
+        "same_class_cos_p95": 0.7493324518203736,
         "same_class_cos_max": 0.9324719905853271
       },
       "vit_base_patch16_224": {
         "threshold": 0.985,
         "leak_frac": 0.0,
         "n_leaked": 0,
-        "same_class_cos_p50": 0.5715404152870178,
-        "same_class_cos_p95": 0.7656243562698364,
+        "same_class_cos_p50": 0.5752421021461487,
+        "same_class_cos_p95": 0.7645381569862365,
         "same_class_cos_max": 0.9204342365264893
       }
     },

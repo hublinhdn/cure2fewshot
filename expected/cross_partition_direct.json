@@ -30,7 +30,7 @@
       }
     }
   },
-  "splits_dir": "outputs",
+  "splits_dir": "/root/LinhDo/workspace/cure2fewshot/outputs",
   "top_pairs": [
     {
       "eval_crop": "data/processed/cure_crops/30/bottom/customer/30_bottom_1351.png",

@@ -9,10 +9,11 @@ The 27 checkpoints of the baseline sweep are a separate Zenodo record, `10.5281/
 The peer review of the article asked for four things the 1.0 release could not show: a
 sensitivity analysis of the rubric, an independent check of the integrity gate, a duplicate
 check across the training and evaluation partitions, and the training scripts behind the
-baselines. Doing them found three defects in 1.0.4, each recorded in `KNOWN_ISSUES.md` (sections
-9 to 11) with its measured effect. Every number in `expected/` was regenerated on machine B
-(REPRODUCE.md, "Versions used"); the direct conversion's control values and all three rubric
-verdicts are unchanged.
+baselines. Doing them found four defects in 1.0.4, each recorded in `KNOWN_ISSUES.md` (sections
+9 to 12) with its measured effect. Every number in `expected/` was regenerated on machine B
+(REPRODUCE.md, "Versions used") on the corrected crops; all three rubric verdicts are
+unchanged, and the direct conversion's control values moved in the third decimal with the 49
+corrected reference crops (cross domain top1 0.2533, gap 0.0441).
 
 Found and fixed:
 
@@ -33,13 +34,16 @@ Found and fixed:
 * **The solidity gate let straight cuts through, and the 1.0.4 gated gallery had them**
   (section 10). Measured against an independent mask from the segmentation model
   (`reference_masks.py`, `measure_mask_damage.py --masks`), the 1.0.4 gated mask had replaced
-  more than a fifth of the tablet core in 16 references and more than one percent in 47; the
-  ungated mask, 65 and 199. Every flagged reference was judged by eye against the independent
-  mask (`protocol/frozen/reference_mask_review.csv`, 58 rows): 29 masks replaced, 29 kept because
-  the independent mask was wrong or no better. The gated gallery differs from 1.0.4 in those 29
-  entries; its controls moved in the fourth decimal (cross domain top1 0.1654, gap 0.1319) and
-  its rubric is unchanged at 92. After the repair the measurement flags 18 references, all of
-  them cases where the independent mask is the field and the colour rule mask was kept.
+  more than a fifth of the tablet core in 16 references and more than one percent in 47; on the
+  corrected crops of section 12 the colour rule alone replaces 13 and 59, the ungated mask 61
+  and 209. Every flagged reference was judged by eye against the independent mask
+  (`protocol/frozen/reference_mask_review.csv`, 63 rows, decided on the corrected crops): 34
+  masks replaced, 29 kept because the independent mask was the field, included a strip of it,
+  or was no better. The gated gallery differs from 1.0.4 in those 34 entries and in the 49
+  corrected crops; its controls moved in the third decimal (cross domain top1 0.1698, gap
+  0.1275) and its rubric is unchanged at 92. After the repair the measurement flags 27
+  references, all among the 29 whose colour rule mask was kept; one reference (53__top) stays
+  flagged suspect and is dropped from the gallery without suspect references (385 entries).
 * **The 27 backbone sweep had run on data that is not the released benchmark** (section 11): a
   crop directory predating most manual box corrections and a hardened set in which 58
   references had lost the tablet. The 1.0 statement that the sweep saw "eight pre correction
@@ -55,7 +59,7 @@ Added:
 * `protocol/rubric_sensitivity.py` and `expected/rubric_sensitivity.json`: every threshold of
   the rubric moved on its own, totals and verdict classes recorded, margins of every measured
   quantity. Three of 35 moves change a verdict, all on the direct conversion: the partial gap
-  threshold lowered from 0.05 to 0.04 or 0.03 (the measured gap is 0.046), and the cap rule
+  threshold lowered from 0.05 to 0.04 or 0.03 (the measured gap is 0.044), and the cap rule
   switched off. `score_rubric.py` keeps its thresholds in one table and writes them into the
   score file.
 * `cure_fitness_check.py partitions` and `expected/cross_partition_direct.json`: every

@@ -2,19 +2,19 @@
   "stats": {
     "n_refs": 388,
     "noise_fallback": 0,
-    "ellipse_fallback": 0,
-    "hull_repair": 7,
-    "suspect": 0,
-    "independent_mask": 29,
-    "reviewed": 58,
+    "ellipse_fallback": 1,
+    "hull_repair": 8,
+    "suspect": 1,
+    "independent_mask": 34,
+    "reviewed": 63,
     "solidity_min": 0.9708326728413234,
-    "solidity_p05": 0.9864369807434049,
-    "solidity_median": 0.9965016789264544,
+    "solidity_p05": 0.9870439756915742,
+    "solidity_median": 0.9963845731565263,
     "n_solidity_below_097": 0,
     "n_solidity_below_095": 0,
-    "fg_frac_p05": 0.22483859592013888,
-    "fg_frac_median": 0.4762234157986111,
-    "fg_frac_p95": 0.5971876356336806
+    "fg_frac_p05": 0.22095099555121528,
+    "fg_frac_median": 0.47412109375,
+    "fg_frac_p95": 0.5894673665364583
   },
   "per_class": {
     "0__bottom": {
@@ -33,17 +33,21 @@
     },
     "1__bottom": {
       "thr": 9.0,
-      "frac": 0.71490478515625,
-      "solidity": 1.0,
-      "repair": "none",
-      "suspect": false
+      "frac": 0.3564181857638889,
+      "solidity": 0.9977598055966891,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "1__top": {
       "thr": 9.0,
-      "frac": 0.6785074869791666,
-      "solidity": 1.0,
-      "repair": "none",
-      "suspect": false
+      "frac": 0.3321261935763889,
+      "solidity": 0.9976369932776533,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "10__bottom": {
       "thr": 9.0,
@@ -216,8 +220,8 @@
     },
     "110__bottom": {
       "thr": 9.0,
-      "frac": 0.5187038845486112,
-      "solidity": 0.9985638936759099,
+      "frac": 0.5449964735243056,
+      "solidity": 0.9882802892419696,
       "repair": "independent_mask",
       "suspect": false,
       "review": "use_sam",
@@ -263,7 +267,8 @@
       "frac": 0.4820488823784722,
       "solidity": 0.9921970965940815,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "113__top": {
       "thr": 9.0,
@@ -392,7 +397,8 @@
       "frac": 0.2907375759548611,
       "solidity": 0.9708326728413234,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "121__top": {
       "thr": 12.0,
@@ -495,8 +501,8 @@
     },
     "128__top": {
       "thr": 9.0,
-      "frac": 0.5397813585069444,
-      "solidity": 0.9924562650407113,
+      "frac": 0.4811740451388889,
+      "solidity": 0.9919472094843977,
       "repair": "none",
       "suspect": false
     },
@@ -591,7 +597,8 @@
       "frac": 0.4783460828993056,
       "solidity": 0.9954415874001524,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "134__top": {
       "thr": 9.0,
@@ -640,7 +647,8 @@
       "frac": 0.2634141710069444,
       "solidity": 0.9989969393791311,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "138__bottom": {
       "thr": 9.0,
@@ -686,10 +694,11 @@
     },
     "140__bottom": {
       "thr": 9.0,
-      "frac": 0.3304511176215278,
-      "solidity": 0.9876760920239182,
+      "frac": 0.2876654730902778,
+      "solidity": 0.9895949981336319,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "140__top": {
       "thr": 9.0,
@@ -700,11 +709,10 @@
     },
     "141__bottom": {
       "thr": 9.0,
-      "frac": 0.3061387803819444,
-      "solidity": 0.995764768165174,
+      "frac": 0.2603827582465278,
+      "solidity": 0.9956951323876455,
       "repair": "none",
-      "suspect": false,
-      "review": "keep_rule"
+      "suspect": false
     },
     "141__top": {
       "thr": 9.0,
@@ -743,8 +751,8 @@
     },
     "144__bottom": {
       "thr": 9.0,
-      "frac": 0.4742974175347222,
-      "solidity": 0.9951762311993967,
+      "frac": 0.2628377278645833,
+      "solidity": 0.9922935122126069,
       "repair": "none",
       "suspect": false
     },
@@ -753,7 +761,8 @@
       "frac": 0.21303304036458334,
       "solidity": 0.9897287249125681,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "145__bottom": {
       "thr": 9.0,
@@ -778,11 +787,10 @@
     },
     "146__top": {
       "thr": 9.0,
-      "frac": 0.4696451822916667,
-      "solidity": 0.9965893882484997,
+      "frac": 0.2839626736111111,
+      "solidity": 0.9965252986815174,
       "repair": "none",
-      "suspect": false,
-      "review": "keep_rule"
+      "suspect": false
     },
     "147__bottom": {
       "thr": 9.0,
@@ -803,7 +811,8 @@
       "frac": 0.4468112521701389,
       "solidity": 0.9960843009192066,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "148__top": {
       "thr": 9.0,
@@ -828,19 +837,17 @@
     },
     "15__bottom": {
       "thr": 9.0,
-      "frac": 0.4044731987847222,
-      "solidity": 0.997324504197184,
+      "frac": 0.4770914713541667,
+      "solidity": 0.9963742458148033,
       "repair": "none",
-      "suspect": false,
-      "review": "keep_rule"
+      "suspect": false
     },
     "15__top": {
       "thr": 9.0,
-      "frac": 0.4364963107638889,
-      "solidity": 0.9974584676419539,
+      "frac": 0.4804416232638889,
+      "solidity": 0.9965115624824171,
       "repair": "none",
-      "suspect": false,
-      "review": "keep_rule"
+      "suspect": false
     },
     "150__bottom": {
       "thr": 9.0,
@@ -865,8 +872,8 @@
     },
     "151__top": {
       "thr": 9.0,
-      "frac": 0.20952012803819445,
-      "solidity": 0.9969988382599716,
+      "frac": 0.4563259548611111,
+      "solidity": 0.9905199316964023,
       "repair": "none",
       "suspect": false
     },
@@ -879,8 +886,8 @@
     },
     "152__top": {
       "thr": -1.0,
-      "frac": 0.58984375,
-      "solidity": 0.9979118382707267,
+      "frac": 0.5918375651041666,
+      "solidity": 0.996380741434231,
       "repair": "independent_mask",
       "suspect": false,
       "review": "use_sam",
@@ -898,7 +905,8 @@
       "frac": 0.4794243706597222,
       "solidity": 0.997038248899921,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "154__bottom": {
       "thr": 9.0,
@@ -919,7 +927,8 @@
       "frac": 0.4786376953125,
       "solidity": 0.9977381322627159,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "155__top": {
       "thr": 9.0,
@@ -959,8 +968,8 @@
     },
     "158__bottom": {
       "thr": 9.0,
-      "frac": 0.6739366319444444,
-      "solidity": 0.9973004164784987,
+      "frac": 0.6744520399305556,
+      "solidity": 0.9967527261064785,
       "repair": "independent_mask",
       "suspect": false,
       "solidity_before_repair": 0.8571302739364045,
@@ -983,16 +992,15 @@
     },
     "159__top": {
       "thr": 9.0,
-      "frac": 0.2068142361111111,
-      "solidity": 0.9936787227109808,
+      "frac": 0.2239040798611111,
+      "solidity": 0.9864650870955213,
       "repair": "none",
-      "suspect": false,
-      "review": "keep_rule"
+      "suspect": false
     },
     "16__bottom": {
       "thr": 9.0,
-      "frac": 0.4814249674479167,
-      "solidity": 0.9987619061018332,
+      "frac": 0.4850599500868056,
+      "solidity": 0.9983668797632673,
       "repair": "independent_mask",
       "suspect": false,
       "review": "use_sam",
@@ -1000,11 +1008,12 @@
     },
     "16__top": {
       "thr": 9.0,
-      "frac": 0.46612548828125,
-      "solidity": 0.9870609185168165,
-      "repair": "none",
+      "frac": 0.4783460828993056,
+      "solidity": 0.9980332229674279,
+      "repair": "independent_mask",
       "suspect": false,
-      "review": "keep_rule"
+      "review": "use_sam",
+      "solidity_rule_mask": 0.9870609185168165
     },
     "160__bottom": {
       "thr": 9.0,
@@ -1028,12 +1037,12 @@
       "suspect": false
     },
     "161__top": {
-      "thr": 60.0,
-      "frac": 0.5196058485243056,
-      "solidity": 0.9989309135474114,
+      "thr": 18.0,
+      "frac": 0.4649929470486111,
+      "solidity": 0.9977590221187427,
       "repair": "independent_mask",
       "suspect": false,
-      "solidity_before_repair": 0.9558141995556025,
+      "solidity_before_repair": 0.6602354008203987,
       "review": "use_sam",
       "solidity_rule_mask": 1.0
     },
@@ -1151,11 +1160,10 @@
     },
     "17__bottom": {
       "thr": 9.0,
-      "frac": 0.2393731011284722,
-      "solidity": 0.9917952176234229,
+      "frac": 0.2749498155381944,
+      "solidity": 0.994627349001521,
       "repair": "none",
-      "suspect": false,
-      "review": "keep_rule"
+      "suspect": false
     },
     "17__top": {
       "thr": 9.0,
@@ -1227,12 +1235,13 @@
       "frac": 0.3256700303819444,
       "solidity": 0.9912889109074395,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "174__top": {
       "thr": -1.0,
-      "frac": 0.2803887261284722,
-      "solidity": 0.9961210427408086,
+      "frac": 0.2960069444444444,
+      "solidity": 0.9954387885422368,
       "repair": "independent_mask",
       "suspect": false,
       "review": "use_sam",
@@ -1247,11 +1256,10 @@
     },
     "175__top": {
       "thr": 9.0,
-      "frac": 0.41278076171875,
-      "solidity": 0.997394553141284,
+      "frac": 0.3012830946180556,
+      "solidity": 0.9964784783437634,
       "repair": "none",
-      "suspect": false,
-      "review": "keep_rule"
+      "suspect": false
     },
     "176__bottom": {
       "thr": 9.0,
@@ -1314,15 +1322,15 @@
       "frac": 0.3729248046875,
       "solidity": 0.9921694572748267,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "18__top": {
       "thr": 9.0,
-      "frac": 0.2775404188368056,
-      "solidity": 0.9951125808490979,
+      "frac": 0.2805650499131944,
+      "solidity": 0.9908984215946923,
       "repair": "none",
-      "suspect": false,
-      "review": "keep_rule"
+      "suspect": false
     },
     "180__bottom": {
       "thr": 9.0,
@@ -1383,8 +1391,8 @@
     },
     "184__bottom": {
       "thr": 12.0,
-      "frac": 0.5343967013888888,
-      "solidity": 0.9979989361432661,
+      "frac": 0.5426839192708334,
+      "solidity": 0.9920902553930077,
       "repair": "independent_mask",
       "suspect": false,
       "solidity_before_repair": 0.759028631169641,
@@ -1420,12 +1428,14 @@
       "suspect": false
     },
     "186__top": {
-      "thr": 9.0,
-      "frac": 0.4181247287326389,
-      "solidity": 0.9892022846874599,
-      "repair": "none",
+      "thr": 36.0,
+      "frac": 0.4651082356770833,
+      "solidity": 0.9985876528829354,
+      "repair": "independent_mask",
       "suspect": false,
-      "review": "keep_rule"
+      "solidity_before_repair": 0.9635526712948989,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "187__bottom": {
       "thr": 9.0,
@@ -1464,8 +1474,8 @@
     },
     "189__top": {
       "thr": 9.0,
-      "frac": 0.5466240776909722,
-      "solidity": 0.9988970405988202,
+      "frac": 0.5472073025173612,
+      "solidity": 0.9987745704807645,
       "repair": "independent_mask",
       "suspect": false,
       "solidity_before_repair": 0.8849513497695516,
@@ -1504,8 +1514,8 @@
     },
     "191__bottom": {
       "thr": 18.0,
-      "frac": 0.5844184027777778,
-      "solidity": 0.9981698983019436,
+      "frac": 0.5881008572048612,
+      "solidity": 0.996735744744434,
       "repair": "independent_mask",
       "suspect": false,
       "review": "use_sam",
@@ -1513,8 +1523,8 @@
     },
     "191__top": {
       "thr": 12.0,
-      "frac": 0.6010403103298612,
-      "solidity": 0.9986253366235113,
+      "frac": 0.6033867730034722,
+      "solidity": 0.9969522102078547,
       "repair": "independent_mask",
       "suspect": false,
       "solidity_before_repair": 0.9514448772533745,
@@ -1537,34 +1547,35 @@
     },
     "193__bottom": {
       "thr": 9.0,
-      "frac": 0.4942152235243056,
-      "solidity": 0.9957505533845271,
+      "frac": 0.2805853949652778,
+      "solidity": 0.9963636363636363,
       "repair": "none",
       "suspect": false
     },
     "193__top": {
       "thr": 9.0,
-      "frac": 0.3154839409722222,
-      "solidity": 0.9963803037117951,
+      "frac": 0.2795003255208333,
+      "solidity": 0.995819943460507,
       "repair": "none",
       "suspect": false
     },
     "194__bottom": {
       "thr": 9.0,
-      "frac": 0.6210598415798612,
-      "solidity": 0.9985389203275435,
+      "frac": 0.4698486328125,
+      "solidity": 0.9932333629612639,
       "repair": "independent_mask",
       "suspect": false,
+      "solidity_before_repair": 0.9660603933953252,
       "review": "use_sam",
-      "solidity_rule_mask": 0.9894711626209163
+      "solidity_rule_mask": 1.0
     },
     "194__top": {
-      "thr": 36.0,
-      "frac": 0.6595119900173612,
-      "solidity": 0.9988188652890185,
+      "thr": 9.0,
+      "frac": 0.4715983072916667,
+      "solidity": 0.9914739513530468,
       "repair": "independent_mask",
       "suspect": false,
-      "solidity_before_repair": 0.8997378042025186,
+      "solidity_before_repair": 0.9172717842323651,
       "review": "use_sam",
       "solidity_rule_mask": 1.0
     },
@@ -1647,15 +1658,15 @@
     },
     "24__top": {
       "thr": 9.0,
-      "frac": 0.4848158094618056,
-      "solidity": 0.9955991922568066,
+      "frac": 0.47515869140625,
+      "solidity": 0.9955101518875833,
       "repair": "none",
       "suspect": false
     },
     "25__bottom": {
       "thr": 18.0,
-      "frac": 0.5942518446180556,
-      "solidity": 0.9985299982906957,
+      "frac": 0.5956217447916666,
+      "solidity": 0.9980454545454546,
       "repair": "independent_mask",
       "suspect": false,
       "solidity_before_repair": 0.966255687243723,
@@ -1674,16 +1685,18 @@
     },
     "26__bottom": {
       "thr": 9.0,
-      "frac": 0.3641493055555556,
-      "solidity": 0.9937998556384298,
-      "repair": "none",
+      "frac": 0.4715237087673611,
+      "solidity": 0.9978186306166674,
+      "repair": "independent_mask",
       "suspect": false,
-      "review": "keep_rule"
+      "solidity_before_repair": 0.969832420939849,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "26__top": {
       "thr": 9.0,
-      "frac": 0.6144883897569444,
-      "solidity": 0.9987874779541446,
+      "frac": 0.6152750651041666,
+      "solidity": 0.9987450462351387,
       "repair": "independent_mask",
       "suspect": false,
       "review": "use_sam",
@@ -1706,16 +1719,15 @@
     },
     "28__bottom": {
       "thr": 9.0,
-      "frac": 0.4322645399305556,
-      "solidity": 0.9968097084949331,
+      "frac": 0.4718153211805556,
+      "solidity": 0.996533646546538,
       "repair": "none",
-      "suspect": false,
-      "review": "keep_rule"
+      "suspect": false
     },
     "28__top": {
       "thr": 9.0,
-      "frac": 0.48101806640625,
-      "solidity": 0.9972583094314156,
+      "frac": 0.4718017578125,
+      "solidity": 0.9961625476101835,
       "repair": "none",
       "suspect": false
     },
@@ -1742,8 +1754,8 @@
     },
     "3__top": {
       "thr": 9.0,
-      "frac": 0.4988945855034722,
-      "solidity": 0.9958846065331871,
+      "frac": 0.4745279947916667,
+      "solidity": 0.9953201234690829,
       "repair": "none",
       "suspect": false
     },
@@ -1763,23 +1775,22 @@
     },
     "31__bottom": {
       "thr": 9.0,
-      "frac": 0.4548678927951389,
-      "solidity": 0.9980061600726114,
+      "frac": 0.4750637478298611,
+      "solidity": 0.9980765394808081,
       "repair": "none",
       "suspect": false
     },
     "31__top": {
       "thr": 9.0,
-      "frac": 0.45404052734375,
-      "solidity": 0.997898408155965,
+      "frac": 0.4777628580729167,
+      "solidity": 0.997338505315911,
       "repair": "none",
-      "suspect": false,
-      "review": "keep_rule"
+      "suspect": false
     },
     "32__bottom": {
       "thr": 9.0,
-      "frac": 0.48358154296875,
-      "solidity": 0.9981522697686138,
+      "frac": 0.4766642252604167,
+      "solidity": 0.9972191876055219,
       "repair": "none",
       "suspect": false
     },
@@ -1788,12 +1799,13 @@
       "frac": 0.4820827907986111,
       "solidity": 0.9974882480881218,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "33__bottom": {
       "thr": 9.0,
-      "frac": 0.4762844509548611,
-      "solidity": 0.9969763216171711,
+      "frac": 0.4712660047743056,
+      "solidity": 0.9960296984290792,
       "repair": "none",
       "suspect": false
     },
@@ -1827,8 +1839,8 @@
     },
     "35__top": {
       "thr": 9.0,
-      "frac": 0.3763970269097222,
-      "solidity": 0.9940716063976501,
+      "frac": 0.3811170789930556,
+      "solidity": 0.9927221338986045,
       "repair": "none",
       "suspect": false
     },
@@ -1848,20 +1860,19 @@
     },
     "37__bottom": {
       "thr": 9.0,
-      "frac": 0.3012424045138889,
-      "solidity": 0.9959864570954505,
+      "frac": 0.3033786349826389,
+      "solidity": 0.995859397609136,
       "repair": "none",
-      "suspect": false,
-      "review": "keep_rule"
+      "suspect": false
     },
     "37__top": {
       "thr": 9.0,
-      "frac": 0.24884033203125,
-      "solidity": 0.9881507015323298,
+      "frac": 0.2741427951388889,
+      "solidity": 0.9986659419931815,
       "repair": "independent_mask",
       "suspect": false,
       "review": "use_sam",
-      "solidity_rule_mask": 0.9778017958097772
+      "solidity_rule_mask": 0.9776501005458201
     },
     "38__bottom": {
       "thr": 9.0,
@@ -1917,8 +1928,8 @@
     },
     "40__top": {
       "thr": 9.0,
-      "frac": 0.4764336480034722,
-      "solidity": 0.9988483521483209,
+      "frac": 0.4772135416666667,
+      "solidity": 0.9982126138394757,
       "repair": "independent_mask",
       "suspect": false,
       "review": "use_sam",
@@ -1947,18 +1958,17 @@
     },
     "42__top": {
       "thr": 9.0,
-      "frac": 0.6232842339409722,
-      "solidity": 0.9987285925410763,
+      "frac": 0.2665676540798611,
+      "solidity": 0.9978422014622258,
       "repair": "none",
       "suspect": false
     },
     "43__bottom": {
       "thr": 9.0,
-      "frac": 0.3792995876736111,
-      "solidity": 0.9902620396600567,
+      "frac": 0.2857326931423611,
+      "solidity": 0.989781056192445,
       "repair": "none",
-      "suspect": false,
-      "review": "keep_rule"
+      "suspect": false
     },
     "43__top": {
       "thr": 9.0,
@@ -2021,13 +2031,12 @@
     },
     "48__top": {
       "thr": 9.0,
-      "frac": 0.3933241102430556,
-      "solidity": 0.9945640058304038,
-      "repair": "independent_mask",
+      "frac": 0.2677273220486111,
+      "solidity": 1.0,
+      "repair": "convex_hull",
       "suspect": false,
-      "solidity_before_repair": 0.9599123559112127,
-      "review": "use_sam",
-      "solidity_rule_mask": 1.0
+      "solidity_before_repair": 0.9528598206596078,
+      "review": "keep_rule"
     },
     "49__bottom": {
       "thr": 9.0,
@@ -2038,11 +2047,10 @@
     },
     "49__top": {
       "thr": 9.0,
-      "frac": 0.2567816840277778,
-      "solidity": 0.9934146661419389,
+      "frac": 0.2528618706597222,
+      "solidity": 0.9921766897285791,
       "repair": "none",
-      "suspect": false,
-      "review": "keep_rule"
+      "suspect": false
     },
     "5__bottom": {
       "thr": 9.0,
@@ -2074,8 +2082,8 @@
     },
     "51__bottom": {
       "thr": 9.0,
-      "frac": 0.2321234809027778,
-      "solidity": 0.9845534301740256,
+      "frac": 0.24608018663194445,
+      "solidity": 0.9832804921009132,
       "repair": "none",
       "suspect": false,
       "review": "keep_rule"
@@ -2090,15 +2098,17 @@
     },
     "52__bottom": {
       "thr": 9.0,
-      "frac": 0.2740207248263889,
-      "solidity": 0.9861134838316047,
-      "repair": "none",
-      "suspect": false
+      "frac": 0.2855767144097222,
+      "solidity": 0.9953670874107692,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 0.9861134838316047
     },
     "52__top": {
       "thr": -1.0,
-      "frac": 0.12413194444444445,
-      "solidity": 0.9952694252623566,
+      "frac": 0.2162814670138889,
+      "solidity": 0.989451476793249,
       "repair": "independent_mask",
       "suspect": false,
       "review": "use_sam",
@@ -2114,12 +2124,11 @@
       "review": "keep_rule"
     },
     "53__top": {
-      "thr": 9.0,
-      "frac": 0.2945895724826389,
+      "thr": -1.0,
+      "frac": 0.2130669487847222,
       "solidity": 1.0,
-      "repair": "convex_hull",
-      "suspect": false,
-      "solidity_before_repair": 0.9581942494072148,
+      "repair": "ellipse",
+      "suspect": true,
       "review": "keep_rule"
     },
     "54__bottom": {
@@ -2130,20 +2139,19 @@
       "suspect": false
     },
     "54__top": {
-      "thr": -1.0,
-      "frac": 0.1853366427951389,
-      "solidity": 0.9941794899778094,
-      "repair": "independent_mask",
-      "suspect": false,
-      "review": "use_sam",
-      "solidity_rule_mask": 1.0
+      "thr": 9.0,
+      "frac": 0.21138509114583334,
+      "solidity": 0.988112220637185,
+      "repair": "none",
+      "suspect": false
     },
     "55__bottom": {
       "thr": 9.0,
-      "frac": 0.3507283528645833,
-      "solidity": 0.9791733722097052,
+      "frac": 0.22001817491319445,
+      "solidity": 0.9785546238764553,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "55__top": {
       "thr": 9.0,
@@ -2189,8 +2197,8 @@
     },
     "58__top": {
       "thr": -1.0,
-      "frac": 0.1936984592013889,
-      "solidity": 0.9940832521230684,
+      "frac": 0.1948920355902778,
+      "solidity": 0.9950486479000035,
       "repair": "independent_mask",
       "suspect": false,
       "review": "use_sam",
@@ -2221,8 +2229,8 @@
     },
     "6__top": {
       "thr": 9.0,
-      "frac": 0.4677191840277778,
-      "solidity": 0.9987979898915295,
+      "frac": 0.4681260850694444,
+      "solidity": 0.9979038063984502,
       "repair": "independent_mask",
       "suspect": false,
       "review": "use_sam",
@@ -2233,12 +2241,13 @@
       "frac": 0.3293185763888889,
       "solidity": 0.9968386911360184,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "60__top": {
       "thr": 9.0,
-      "frac": 0.3831990559895833,
-      "solidity": 0.9975813000953356,
+      "frac": 0.2766181098090278,
+      "solidity": 0.9968473532430715,
       "repair": "none",
       "suspect": false
     },
@@ -2257,12 +2266,12 @@
       "suspect": false
     },
     "62__bottom": {
-      "thr": 9.0,
-      "frac": 0.3075018988715278,
-      "solidity": 0.9785695787292817,
-      "repair": "none",
+      "thr": 24.0,
+      "frac": 0.2369113498263889,
+      "solidity": 1.0,
+      "repair": "convex_hull",
       "suspect": false,
-      "review": "keep_rule"
+      "solidity_before_repair": 0.9681399209938741
     },
     "62__top": {
       "thr": 9.0,
@@ -2296,11 +2305,10 @@
     },
     "64__top": {
       "thr": 9.0,
-      "frac": 0.2964816623263889,
-      "solidity": 0.9922378574670904,
+      "frac": 0.2727322048611111,
+      "solidity": 0.9924240554746687,
       "repair": "none",
-      "suspect": false,
-      "review": "keep_rule"
+      "suspect": false
     },
     "65__bottom": {
       "thr": 9.0,
@@ -2317,11 +2325,13 @@
       "suspect": false
     },
     "66__bottom": {
-      "thr": 9.0,
-      "frac": 0.4220241970486111,
-      "solidity": 0.9841069028228038,
-      "repair": "none",
-      "suspect": false
+      "thr": -1.0,
+      "frac": 0.19090440538194445,
+      "solidity": 0.9850923852183651,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "66__top": {
       "thr": 9.0,
@@ -2339,11 +2349,10 @@
     },
     "67__top": {
       "thr": 9.0,
-      "frac": 0.286865234375,
-      "solidity": 0.9973357225379011,
+      "frac": 0.2836778428819444,
+      "solidity": 0.9959760946689207,
       "repair": "none",
-      "suspect": false,
-      "review": "keep_rule"
+      "suspect": false
     },
     "68__bottom": {
       "thr": 9.0,
@@ -2364,7 +2373,8 @@
       "frac": 0.2782660590277778,
       "solidity": 0.9914703394949861,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "69__top": {
       "thr": 9.0,
@@ -2410,8 +2420,8 @@
     },
     "71__top": {
       "thr": 9.0,
-      "frac": 0.3906317816840278,
-      "solidity": 0.9981112458845954,
+      "frac": 0.2950439453125,
+      "solidity": 0.9979584814772336,
       "repair": "none",
       "suspect": false
     },
@@ -2579,8 +2589,8 @@
     },
     "82__top": {
       "thr": 9.0,
-      "frac": 0.4828355577256944,
-      "solidity": 0.9984013686528025,
+      "frac": 0.4729682074652778,
+      "solidity": 0.9979823419143425,
       "repair": "none",
       "suspect": false
     },
@@ -2687,15 +2697,15 @@
     },
     "9__bottom": {
       "thr": 9.0,
-      "frac": 0.4587470160590278,
-      "solidity": 0.9978904820912256,
+      "frac": 0.4672783745659722,
+      "solidity": 0.997062483720661,
       "repair": "none",
       "suspect": false
     },
     "9__top": {
       "thr": 9.0,
-      "frac": 0.4846123589409722,
-      "solidity": 0.9968751307841469,
+      "frac": 0.4721544053819444,
+      "solidity": 0.996151149647308,
       "repair": "none",
       "suspect": false
     },
@@ -2774,19 +2784,21 @@
       "frac": 0.3154568142361111,
       "solidity": 0.9977477960575706,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "95__top": {
       "thr": 9.0,
       "frac": 0.3106553819444444,
       "solidity": 0.9984524510124457,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "96__bottom": {
       "thr": 9.0,
-      "frac": 0.4748602973090278,
-      "solidity": 0.9954790372339669,
+      "frac": 0.4762708875868056,
+      "solidity": 0.9975568528856125,
       "repair": "none",
       "suspect": false
     },
@@ -2816,7 +2828,8 @@
       "frac": 0.4745347764756944,
       "solidity": 0.9954901123915209,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "98__top": {
       "thr": 9.0,

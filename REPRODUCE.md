@@ -183,9 +183,10 @@ print("MATCH" if got==exp else "DIFFERS")
 EOF
 ```
 
-Expected: 388 references processed, 29 of them masked by the reviewed independent mask of
-step 4c (`independent_mask: 29`, `reviewed: 58`), 7 repaired by convex hull, no ellipse fallback
-and no suspect, median solidity 0.997, minimum 0.971, noise fallback never used. The script
+Expected: 388 references processed, 34 of them masked by the reviewed independent mask of
+step 4c (`independent_mask: 34`, `reviewed: 63`), 8 repaired by convex hull, one ellipse fallback
+that stays flagged suspect (53__top, dropped from the gallery without suspect references), median
+solidity 0.996, minimum 0.971, noise fallback never used. The script
 reads `protocol/frozen/reference_mask_review.csv` and the masks under
 `protocol/frozen/reference_masks/`; without them it would reproduce the 1.0.4 gallery instead
 (19 hull repairs, 5 ellipse fallbacks), which `KNOWN_ISSUES.md` section 10 explains is not the
@@ -260,8 +261,8 @@ hardened image replaced (`fg_removed_frac`), the same after eroding the mask by 
 that a boundary disagreement does not count (`fg_removed_core_frac`, the figure the article
 reports), and the share of the preserved region lying outside the mask (`bg_kept_frac`). The
 statistics block counts references above one, five and twenty percent of core removal. For the
-29 references masked by the reviewed independent mask the core removal is zero by construction;
-the figure is informative for the other 359 and for the ungated variant.
+34 references masked by the reviewed independent mask the core removal is zero by construction;
+the figure is informative for the other 354 and for the ungated variant.
 
 ## 4c. An independent mask for every reference, and the check by eye
 
@@ -276,12 +277,13 @@ boxes, prompted with a positive point at the centre and negative points on the s
 and rejects any candidate that touches the field's border (the tablet never does, every box
 carries a 15 percent margin). It runs on the GPU when one is free, falls back to the CPU when the
 GPU is full (about half an hour for 388 references), and `CURE_SAM_DEVICE=cpu` forces the CPU. It writes one binary PNG per reference under
-`outputs_v2/reference_masks/` and `reference_masks.csv`; expect 22 references for which no
-candidate passed and the best scoring one was taken, listed with `touches_border` set.
+`outputs_v2/reference_masks/` and `reference_masks.csv`; among the candidates inside the border
+it takes the largest, and every reference has one (`n_border_or_band_fallback: 0` in
+`reference_masks_meta.json`).
 
-The masks are a check, not a truth. The review that decided which mask to trust for the 58
+The masks are a check, not a truth. The review that decided which mask to trust for the 63
 references the check flagged is frozen in `protocol/frozen/reference_mask_review.csv`, and the
-29 masks it adopted are under `protocol/frozen/reference_masks/`. To lay the evidence out again:
+34 masks it adopted are under `protocol/frozen/reference_masks/`. To lay the evidence out again:
 
 ```bash
 python protocol/reference_masks.py sheet --out outputs_v2 --damage outputs_v2/mask_damage_v2.json \
@@ -424,7 +426,7 @@ Expected verdicts:
 
 | Variant | Score | Verdict |
 |---|---|---|
-| direct conversion | 80 / 100 | **capped to the middle band**, usable only as a mild domain shift probe: B2 is zero (gap 0.046, below 0.05) and E1 is at half, both traced to the uniform composed background |
+| direct conversion | 80 / 100 | **capped to the middle band**, usable only as a mild domain shift probe: B2 is zero (gap 0.044, below 0.05) and E1 is at half, both traced to the uniform composed background |
 | hardened, integrity gated mask | 92 / 100 | accepted as a primary benchmark |
 | hardened, ungated mask | 100 / 100 | **do not use**, the mask cut into pale tablets |
 
@@ -469,7 +471,7 @@ duplicate labels were merged) and `fold`.
 | `cross_partition.json`, `nearest_pairs_for_review.csv` | | the evaluation queries against the training images, and the pairs to check by eye |
 | `removal_log.json` | | what was removed, at which threshold, and how much remained |
 | `phaseD_log.json` | | the classes dropped for want of a reference image |
-| `outputs_v2/hardened_v2_log.json` | 388 | per reference: accepted threshold, mask solidity, repair applied (`independent_mask` for the 29 reviewed ones), suspect flag |
+| `outputs_v2/hardened_v2_log.json` | 388 | per reference: accepted threshold, mask solidity, repair applied (`independent_mask` for the 34 reviewed ones), suspect flag |
 | `outputs_v2/reference_masks.csv`, `mask_damage_*.json` | 388 | the independent mask of each reference and how much of it each hardening replaced |
 | `rubric_sensitivity.json` | | the verdicts under every threshold of the grid, and each quantity's margin |
 
@@ -592,8 +594,8 @@ and the two `rubric_score_probe3_*.json` files:
 
 | Quantity | published, two probes | third probe |
 |---|---|---|
-| direct gap in top1 | 0.046 | 0.033, B2 still zero |
-| hardened gap in top1 | 0.132 | 0.110, B2 still the middle band |
+| direct gap in top1 | 0.044 | 0.029, B2 still zero |
+| hardened gap in top1 | 0.128 | 0.107, B2 still the middle band |
 | leakage at 0.985 | 0, max same class cosine 0.928 | 0, max 0.942 direct, 0.946 hardened |
 | class pairs flagged | 5 (4 by centroid, 1 by shared images) | 27, C2 falls to 5 of 10 |
 | totals | 80 and 92 | 75 and 87 |

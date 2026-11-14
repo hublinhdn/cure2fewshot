@@ -1,6 +1,6 @@
 {
   "config": {
-    "manifest": "outputs_v2/manifest_hardened_v2.csv",
+    "manifest": "/root/LinhDo/workspace/cure2fewshot/outputs_v2/manifest_hardened_v2.csv",
     "models": [
       "vit_small_patch14_dinov2.lvd142m"
     ],
@@ -40,9 +40,9 @@
     "per_model": {
       "vit_small_patch14_dinov2.lvd142m": {
         "cross_domain": {
-          "top1": 0.24588983559342373,
-          "mAP": 0.3725524652489762,
-          "recall@5": 0.5053402136085443,
+          "top1": 0.249729989199568,
+          "mAP": 0.37612373703943064,
+          "recall@5": 0.5081003240129606,
           "n_query": 8333,
           "n_gallery_classes": 388
         },
@@ -53,26 +53,26 @@
           "n_query": 8031,
           "n_gallery_classes": 392
         },
-        "domain_gap_top1": 0.11047923426089082
+        "domain_gap_top1": 0.10663908065474656
       }
     },
     "mean": {
-      "cross_top1": 0.24588983559342373,
+      "cross_top1": 0.249729989199568,
       "within_top1": 0.35636906985431455,
-      "cross_mAP": 0.3725524652489762,
+      "cross_mAP": 0.37612373703943064,
       "within_mAP": 0.4498311506183635,
-      "cross_recall@5": 0.5053402136085443,
+      "cross_recall@5": 0.5081003240129606,
       "within_recall@5": 0.5446395218528203,
-      "domain_gap_top1": 0.11047923426089082
+      "domain_gap_top1": 0.10663908065474656
     }
   },
   "control3_domain_sep": {
     "per_model": {
       "vit_small_patch14_dinov2.lvd142m": {
-        "auc": 0.9992120861999115
+        "auc": 0.9993500858596552
       }
     },
-    "mean_auc": 0.9992120861999115
+    "mean_auc": 0.9993500858596552
   },
   "control4_leakage": {
     "per_model": {
@@ -80,8 +80,8 @@
         "threshold": 0.985,
         "leak_frac": 0.0,
         "n_leaked": 0,
-        "same_class_cos_p50": 0.7418733835220337,
-        "same_class_cos_p95": 0.8562143564224243,
+        "same_class_cos_p50": 0.7454363107681274,
+        "same_class_cos_p95": 0.8568629026412964,
         "same_class_cos_max": 0.9463105201721191
       }
     },

@@ -16,7 +16,7 @@ Three journeys, in increasing order of effort:
 1. **Inspect, no images needed, minutes.** The frozen annotations are the release:
    `protocol/frozen/` holds the 8811 bounding boxes, the near duplicate list, the flagged label
    pairs, the merge decisions, the resolution of the ten photographs the collection files under
-   both faces of one pill, the review of 58 reference masks with the 29 it adopted, and the
+   both faces of one pill, the review of 63 reference masks with the 34 it adopted, and the
    record of the ten boxes corrected before release. `expected/` holds the value every
    measurement should produce, so each number in the accompanying article can be checked
    against a file rather than taken on trust. `KNOWN_ISSUES.md` says what we know is imperfect,
@@ -68,8 +68,8 @@ The broken variant scored 100 out of 100; the corrected one scores 92.
 So every step that edits an image is gated on the integrity of the object it claims not to touch.
 Tablets are convex, so solidity against the convex hull catches a bite. It does not catch a
 straight cut, because half a tablet is still convex, and the first release's gated mask had
-exactly that defect in 29 of 388 references, found when the article's reviewers asked for an
-independent check (`KNOWN_ISSUES.md` section 10). Since 1.1 a second gate compares the region the
+exactly that defect in dozens of references (27 of 388 on the corrected crops), found when the
+article's reviewers asked for an independent check (`KNOWN_ISSUES.md` section 10). Since 1.1 a second gate compares the region the
 colour rule preserved with a mask from a different mechanism, every reference it flags is judged
 by eye, and the decisions are frozen. Both mask versions ship here (`harden_refs_v2.py` and
 `harden_refs_v1_ungated.py`) so the comparison is reproducible.
@@ -106,8 +106,9 @@ LICENSE, LICENSE.txt           MIT; NOTICE.md says the licence covers the code a
 
 `protocol/frozen/` holds our own measurements about publicly distributed files: bounding box
 coordinates obtained by segmentation and manual correction, the near duplicate list, the flagged
-label pairs and the merge decisions, the duplicate photograph decisions, and the mask review with
-29 binary silhouettes. No pixel of the collection is in this repository.
+label pairs and the merge decisions, the duplicate photograph decisions, the corrected reference
+boxes with the old ones on record, and the mask review with 34 binary silhouettes. No pixel of
+the collection is in this repository.
 
 ## Quickstart
 

@@ -90,9 +90,16 @@ Pillow. `verify` re-crops each one in memory and compares every pixel against wh
 
 Expect `VERIFY PASS` with all 8811 crops identical. On the reference machine that is exactly what
 this reports, so treat anything less as a problem with your archive or your Pillow version rather
-than with the manifest. Ten boxes were corrected before the first release, for exactly this reason;
-every old and new value is in `protocol/frozen/box_corrections.csv` and the episode is described in
-[KNOWN_ISSUES.md](KNOWN_ISSUES.md).
+than with the manifest. Ten consumer boxes were corrected before the first release and 49
+reference boxes in 1.1, after an audit against the raw photographs; every old and new value is in
+`protocol/frozen/box_corrections.csv` and both episodes are described in
+[KNOWN_ISSUES.md](KNOWN_ISSUES.md), sections 1 and 12. To rerun that audit:
+
+```bash
+python protocol/audit_reference_boxes.py audit --out outputs/reference_box_audit.json
+```
+
+Expect no box flagged against the corrected manifest; against the 1.0.4 manifest it flags 49.
 
 ## 2b. Photographs the collection files twice
 

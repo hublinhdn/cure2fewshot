@@ -16,6 +16,13 @@ verdicts are unchanged.
 
 Found and fixed:
 
+* **Forty nine reference boxes cut the tablet** (`KNOWN_ISSUES.md` section 12). The classical
+  localisation rule of the first release took the darker part of a pale tablet, or one half of a
+  two colour capsule, and the box followed. Found when an author checked the repaired references
+  of section 10 by eye; `protocol/audit_reference_boxes.py` audits every reference box against
+  the raw photograph and corrected the 49, with the old and new boxes appended to
+  `protocol/frozen/box_corrections.csv`. The 49 crops are regenerated; no consumer crop, split or
+  class count changes.
 * **Ten photographs of pill 81 are filed under both faces of the collection as distributed**
   (`KNOWN_ISSUES.md` section 9). The 1.0 label scan could not see them because it tested image
   pairs only after the class centroids agreed. 1.1 hashes every source file

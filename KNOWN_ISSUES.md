@@ -55,7 +55,7 @@ Every old and new value is recorded in `protocol/frozen/box_corrections.csv`.
 | crops regenerating pixel identically | 8801 of 8811 | **8811 of 8811** |
 | consumer boxes from the segmentation model | 7547 | 7537 |
 | consumer boxes corrected by hand | 876 | 886 |
-| reference boxes, classical rule and hand corrected | 330 and 58 | unchanged |
+| reference boxes, classical rule and hand corrected | 330 and 58 | unchanged in 1.0; 49 of the 330 corrected in 1.1, section 12 |
 | total crops, classes, gallery, queries | 8811, 390, 386, 8423 | unchanged |
 
 Nothing measured moved. The box coordinates are read only when regenerating crops and when Phase F
@@ -424,3 +424,51 @@ replaced by the donor background; eleven of those 58 are gallery entries of eval
   backbone is the one with the best score on the evaluation queries themselves, measured every
   ten epochs and in the last five. `train_baseline.py` keeps the same rule, because it is the
   sweep's rule, and reports the last epoch's score beside it; the seed study lists both.
+
+---
+
+## 12. Forty nine reference boxes cut the tablet. RESOLVED in 1.1
+
+**Status: found on 14 November 2026 when an author checked the repaired references by eye;
+corrected in the frozen manifest, with every old and new box in `protocol/frozen/box_corrections.csv`.**
+
+### What was wrong
+
+The 330 reference boxes that the first release attributed to a classical rule were produced by
+thresholding the grey level against the border median at 22 and taking the largest connected
+component. On the uniform synthetic field that rule is right for most tablets and wrong for two
+kinds: tablets whose pale part sits within 22 grey levels of the field, where the component is
+the darker part only, and two colour capsules, where the component is one half. The box then
+cuts the tablet, and every crop, mask, hardened image and embedding downstream carried the cut.
+Four of the references an author flagged on the review sheet of section 10 (26__bottom,
+51__bottom among them) turned out to be cut by the box rather than by the mask.
+
+`protocol/audit_reference_boxes.py` finds the tablet on the raw photograph by the summed RGB
+distance to the border median at threshold 18, takes the largest component after a two step
+opening, and compares its bounds with the recorded box. 49 of the 388 boxes, all 49 from the
+classical rule and none of the 58 drawn by hand, do not contain the tablet: 25 cut it by more
+than 50 pixels of the raw photograph, and the worst three (42__top, 66__bottom, 144__bottom)
+held one half of a two colour capsule. Several of the masks that section 10 lists as "the
+segmentation model merged the tablet with the field" were references whose tablet touched the
+crop border because the box had cut it.
+
+### The correction
+
+For each of the 49 the new box is the tablet's bounds plus the manifest's 15 percent margin on
+each side (the convention the audit recovers from the 336 boxes that did contain the tablet:
+median margins of 0.147 and 0.142 of the tablet size). `audit_reference_boxes.py apply` wrote
+them into the manifest with `method = audit` and appended one row per box to
+`box_corrections.csv`, so the 1.0 boxes remain on record. The 49 crops were regenerated and
+`make_crops.py verify` confirms all 8811 crops against the corrected manifest.
+
+### What changed, and what did not
+
+| Quantity | 1.0.4 | 1.1 |
+|---|---|---|
+| reference boxes from the classical rule / corrected by the audit / drawn by hand | 330 / 0 / 58 | 281 / 49 / 58 |
+| crops that differ from 1.0.4 | | 49, all reference crops |
+| consumer crops, splits, folds, class counts | | unchanged |
+| embeddings, controls, hardened references, masks, rubric | | regenerated; CHANGELOG.md 1.1.0 lists the values |
+
+The consumer photographs were localised by the segmentation model and reviewed by hand (886
+corrections) and are not affected; the ten consumer box corrections of section 1 stand.

@@ -56,15 +56,17 @@ def touches_border(mask, valid, px=BORDER_PX):
 
 
 def pick_mask(masks, scores, lo=AREA_LO, hi=AREA_HI, valid=None):
-    """Chỉ số mặt nạ có điểm cao nhất trong số mặt nạ có diện tích trong [lo, hi] của ảnh và,
-    khi có `valid`, không chạm biên vùng hợp lệ; None nếu không có. Mặt nạ phủ gần hết ảnh hay
-    chạm biên là nền, mặt nạ tí hon là chữ in hoặc bóng."""
+    """Chỉ số mặt nạ LỚN NHẤT trong số mặt nạ có diện tích trong [lo, hi] của ảnh và, khi có
+    `valid`, không chạm biên vùng hợp lệ; điểm SAM chỉ phân thắng bại khi diện tích bằng nhau;
+    None nếu không có. Lấy lớn nhất chứ không lấy điểm cao nhất vì với viên nang hai màu SAM hay
+    chấm điểm cao nhất cho một nửa (nắp hoặc thân) trong khi viên là cả hai; mặt nạ phủ gần hết
+    ảnh hay chạm biên là nền, mặt nạ tí hon là chữ in hoặc bóng."""
     fr = masks.reshape(len(masks), -1).mean(axis=1)
     ok = [i for i in range(len(masks)) if lo <= fr[i] <= hi
           and (valid is None or not touches_border(masks[i].astype(bool), valid))]
     if not ok:
         return None
-    return int(max(ok, key=lambda i: scores[i]))
+    return int(max(ok, key=lambda i: (round(float(fr[i]), 6), scores[i])))
 
 
 def largest_component(mask):

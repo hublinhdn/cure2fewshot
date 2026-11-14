@@ -83,3 +83,15 @@ def test_classes_for_sheet_from_damage_ranking(tmp_path):
     p = tmp_path / "d.json"; p.write_text(json.dumps(dmg))
     assert RM.classes_by_damage(str(p), worst=2) == ["a", "c"]
     assert RM.classes_by_damage(str(p), worst=10, above=0.01) == ["a", "c"]
+
+
+def test_pick_mask_prefers_the_largest_valid_candidate_over_the_best_scored_part():
+    """A two colour capsule: SAM proposes the cap, the body and the whole capsule, often with the
+    highest score on a part. The tablet is the largest candidate that stays inside the field."""
+    h = w = 60
+    valid = np.zeros((h, w), bool); valid[5:55, 3:57] = True
+    cap = np.zeros((h, w), bool); cap[15:30, 20:40] = True
+    body = np.zeros((h, w), bool); body[30:45, 20:40] = True
+    whole = cap | body
+    masks = np.stack([cap, body, whole]); scores = np.array([0.98, 0.90, 0.80])
+    assert RM.pick_mask(masks, scores, lo=0.02, hi=0.90, valid=valid) == 2

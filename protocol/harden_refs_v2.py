@@ -235,10 +235,19 @@ REVIEW_MASKS = os.path.join(HERE, "frozen", "reference_masks")
 REVIEW_DECISIONS = ("use_sam", "keep_rule", "suspect")
 
 
-def load_review(csv_path=REVIEW_CSV, mask_dir=REVIEW_MASKS):
+def review_csv_path():
+    """File quyết định; CURE_MASK_REVIEW trỏ sang file khác, hoặc rỗng để tắt (dựng lại gallery
+    1.0.4 làm đối chứng)."""
+    return os.environ.get("CURE_MASK_REVIEW", REVIEW_CSV)
+
+
+def load_review(csv_path=None, mask_dir=REVIEW_MASKS):
     """{class_id: (decision, mask_bool_or_None)} từ file quyết định của người kiểm. Thiếu file
-    thì trả {} (chạy như 1.0). Một dòng use_sam không có mặt nạ kèm theo là lỗi, không bỏ qua."""
-    if not os.path.exists(csv_path):
+    hay CURE_MASK_REVIEW rỗng thì trả {} (chạy như 1.0). Một dòng use_sam không có mặt nạ kèm
+    theo là lỗi, không bỏ qua."""
+    if csv_path is None:
+        csv_path = review_csv_path()
+    if not csv_path or not os.path.exists(csv_path):
         return {}
     d = pd.read_csv(csv_path)
     out = {}

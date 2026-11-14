@@ -1,4 +1,5 @@
 """harden_refs_v2.py: the suspect references are flagged and an alternative gallery without them is written."""
+import os
 import pandas as pd
 
 import harden_refs_v2 as H
@@ -45,3 +46,11 @@ def test_load_review_refuses_a_use_sam_row_without_a_mask(tmp_path):
         tmp_path / "r.csv", index=False)
     with pytest.raises(SystemExit):
         H.load_review(str(tmp_path / "r.csv"), str(tmp_path / "masks"))
+
+
+def test_review_can_be_switched_off_by_environment(tmp_path, monkeypatch):
+    monkeypatch.setenv("CURE_MASK_REVIEW", "")
+    assert H.review_csv_path() == ""
+    assert H.load_review(H.review_csv_path(), str(tmp_path)) == {}
+    monkeypatch.delenv("CURE_MASK_REVIEW")
+    assert H.review_csv_path().endswith(os.path.join("frozen", "reference_mask_review.csv"))

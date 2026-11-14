@@ -19,7 +19,7 @@ What 1.1 reports instead:
 
 | File | What it is |
 |---|---|
-| `expected/retrieval_baselines.csv` | the 27 deposited checkpoints scored by `eval_baseline.py` on the released benchmark: released crops, the gated gallery of 1.1 |
+| `expected/retrieval_baselines.csv` | the 27 deposited checkpoints (`10.5281/zenodo.24217212`) scored by `eval_baseline.py` on the released benchmark: released crops, the gated gallery of 1.1 |
 | `expected/retrieval_baselines_sweep_2026-07.csv` | the July figures, for the record |
 | `expected/baseline_seeds.csv` | resnet18, efficientnet_b0, levit_128s and convnext_small retrained on the released benchmark, seeds 42, 123 and 223 |
 

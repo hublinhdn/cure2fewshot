@@ -32,9 +32,9 @@ Three journeys, in increasing order of effort:
    section 8), or apply the protocol to another collection: supply a localisation manifest and
    a class convention, and the audits, the hardening step and the rubric run unchanged. The
    training stack behind the baselines ships under `training/`
-   ([TRAINING_RECIPE.md](TRAINING_RECIPE.md)); the 27 deposited checkpoints score on the
-   released benchmark as `expected/retrieval_baselines.csv` says, and no rubric score depends
-   on any of it.
+   ([TRAINING_RECIPE.md](TRAINING_RECIPE.md)); the 27 deposited checkpoints (Zenodo `10.5281/zenodo.24217212`)
+   score on the released benchmark as `expected/retrieval_baselines.csv` says, and no rubric
+   score depends on any of it.
 
 ## What the protocol does
 

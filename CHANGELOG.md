@@ -3,6 +3,8 @@
 ## 1.1.0, 2026-11 (revision of the accompanying article)
 
 Zenodo Version DOI: to be recorded after the release. Concept DOI unchanged: `10.5281/zenodo.22908278`.
+The 27 checkpoints of the baseline sweep are a separate Zenodo record, `10.5281/zenodo.24217212`
+(5.6 GB, state_dicts with SHA256 checksums and their scores on the released benchmark).
 
 The peer review of the article asked for four things the 1.0 release could not show: a
 sensitivity analysis of the rubric, an independent check of the integrity gate, a duplicate

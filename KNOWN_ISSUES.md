@@ -412,7 +412,7 @@ replaced by the donor background; eleven of those 58 are gallery entries of eval
 * `training/` holds the training and evaluation scripts, ported from the sweep's stack and
   checked against it: on the sweep's own data, `eval_baseline.py` reproduces every published
   figure of resnet18 to four decimals.
-* The 27 checkpoints are deposited (CHANGELOG.md gives the record) and
+* The 27 checkpoints are deposited at `10.5281/zenodo.24217212` and
   `expected/retrieval_baselines.csv` now carries their scores on the released benchmark, computed
   by `eval_baseline.py`; the July figures are kept beside them in `expected/retrieval_baselines_sweep_2026-07.csv`
   for the record. The checkpoints were trained on the sweep's data, so these are scores of models

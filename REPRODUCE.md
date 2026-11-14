@@ -267,7 +267,8 @@ python protocol/reference_masks.py masks --out outputs_v2
 This segments the tablet in each original reference crop with the model that produced the frozen
 boxes, prompted with a positive point at the centre and negative points on the synthetic field,
 and rejects any candidate that touches the field's border (the tablet never does, every box
-carries a 15 percent margin). It writes one binary PNG per reference under
+carries a 15 percent margin). It runs on the GPU when one is free, falls back to the CPU when the
+GPU is full (about half an hour for 388 references), and `CURE_SAM_DEVICE=cpu` forces the CPU. It writes one binary PNG per reference under
 `outputs_v2/reference_masks/` and `reference_masks.csv`; expect 22 references for which no
 candidate passed and the best scoring one was taken, listed with `touches_border` set.
 

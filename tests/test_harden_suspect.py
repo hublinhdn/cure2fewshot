@@ -54,3 +54,14 @@ def test_review_can_be_switched_off_by_environment(tmp_path, monkeypatch):
     assert H.load_review(H.review_csv_path(), str(tmp_path)) == {}
     monkeypatch.delenv("CURE_MASK_REVIEW")
     assert H.review_csv_path().endswith(os.path.join("frozen", "reference_mask_review.csv"))
+
+
+def test_ungated_variant_reads_the_gallery_named_by_the_environment(tmp_path, monkeypatch):
+    import harden_refs_v1_ungated as U
+    g = tmp_path / "outputs" / "gallery_fewshot_K1_clean.csv"; g.parent.mkdir()
+    g.write_text("crop_rel,label,fold\n")
+    monkeypatch.setenv("CURE_GALLERY", str(g))
+    assert U.gallery_base_path(str(tmp_path / "elsewhere")) == str(g)
+    monkeypatch.delenv("CURE_GALLERY")
+    out = tmp_path / "elsewhere"; out.mkdir(); (out / "gallery_fewshot_K1.csv").write_text("crop_rel,label\n")
+    assert U.gallery_base_path(str(out)) == str(out / "gallery_fewshot_K1.csv")

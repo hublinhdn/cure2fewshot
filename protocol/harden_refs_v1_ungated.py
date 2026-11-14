@@ -134,6 +134,20 @@ def donor_patch(row, rng):
     return np.asarray(img)
 
 
+def gallery_base_path(out_dir):
+    """Gallery K=1 làm cơ sở: CURE_GALLERY nếu đặt (như harden_refs_v2.py và REPRODUCE.md), nếu
+    không thì gallery_fewshot_K1_clean.csv rồi gallery_fewshot_K1.csv trong thư mục đầu ra."""
+    env = os.environ.get("CURE_GALLERY")
+    if env:
+        return env
+    for name in ("gallery_fewshot_K1_clean.csv", "gallery_fewshot_K1.csv"):
+        p = os.path.join(out_dir, name)
+        if os.path.exists(p):
+            return p
+    raise SystemExit(f"[harden v1] không thấy gallery K=1: đặt CURE_GALLERY hoặc chép "
+                     f"gallery_fewshot_K1_clean.csv vào {out_dir}")
+
+
 def main():
     os.makedirs(HARD_DIR, exist_ok=True)
     m = pd.read_csv(MANIFEST)
@@ -173,11 +187,8 @@ def main():
     m2["crop_rel"] = m2["crop_rel"].map(lambda c: hard_path.get(c, c))
     m2.to_csv(os.path.join(OUT, "manifest_hardened.csv"), index=False)
 
-    # gallery K=1 hardened (khớp lựa chọn của gallery_fewshot_K1_clean nếu có, else K1 gốc)
-    base_p = os.path.join(OUT, "gallery_fewshot_K1_clean.csv")
-    if not os.path.exists(base_p):
-        base_p = os.path.join(OUT, "gallery_fewshot_K1.csv")
-    g = pd.read_csv(base_p)
+    # gallery K=1 hardened, từ CURE_GALLERY hoặc từ thư mục đầu ra (xem gallery_base_path)
+    g = pd.read_csv(gallery_base_path(OUT))
     g["crop_rel"] = g["crop_rel"].map(lambda c: hard_path.get(c, c))
     g.to_csv(os.path.join(OUT, "gallery_fewshot_K1_hardened.csv"), index=False)
 

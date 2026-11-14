@@ -134,7 +134,9 @@ def stage_masks(out_dir):
     sha = hashlib.sha256(open(SAM_CKPT, "rb").read()).hexdigest()
     torch.backends.cudnn.allow_tf32 = False
     torch.backends.cuda.matmul.allow_tf32 = False
-    dev = "cuda" if torch.cuda.is_available() else "cpu"
+    # CURE_SAM_DEVICE=cpu ép chạy CPU (chậm, chừng nửa giờ cho 388 ảnh); mặc định cuda nếu có,
+    # và tự rơi về CPU khi GPU hết bộ nhớ vì bị tiến trình khác chiếm.
+    dev = os.environ.get("CURE_SAM_DEVICE") or ("cuda" if torch.cuda.is_available() else "cpu")
     sam = sam_model_registry["vit_b"](checkpoint=SAM_CKPT).to(dev).eval()
     pred = SamPredictor(sam)
     mask_dir = os.path.join(out_dir, "reference_masks")
@@ -161,7 +163,16 @@ def stage_masks(out_dir):
         ring = corners + [[xm, ya], [xm, yb], [xa, ym], [xb, ym],
                           [(xa + xm) / 2, ya], [(xm + xb) / 2, yb], [xa, (ya + ym) / 2], [xb, (ym + yb) / 2]]
         centre = [[W / 2, H / 2]]
-        pred.set_image(arr)
+        try:
+            pred.set_image(arr)
+        except torch.OutOfMemoryError:
+            if dev == "cpu":
+                raise
+            print("[ref masks] GPU hết bộ nhớ (tiến trình khác đang chiếm): chuyển sang CPU", flush=True)
+            dev = "cpu"
+            sam = sam.to(dev); pred = SamPredictor(sam)
+            torch.cuda.empty_cache()
+            pred.set_image(arr)
         cands, cscores = [], []
         for pts, box in ((centre + corners, None), (centre + ring, None),
                          (centre + ring, np.array([x0, y0, x1, y1]))):

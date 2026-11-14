@@ -578,30 +578,25 @@ a forward pass over 8811 crops per variant: minutes on a GPU, about an hour per 
 CPU. Then score each report with the same directory assembly as step 6, swapping in these
 reports and output directories.
 
-What to expect, measured on 5 August 2026. Reference copies sit in
-`expected/fitness_report_probe3_direct.json` and `expected/fitness_report_probe3_hardened.json`:
+What to expect, measured on 14 November 2026 with the 1.1 code on machine B. Reference copies
+sit in `expected/fitness_report_probe3_direct.json`, `expected/fitness_report_probe3_hardened.json`
+and the two `rubric_score_probe3_*.json` files:
 
 | Quantity | published, two probes | third probe |
 |---|---|---|
-| direct gap in top1 | 0.046 | 0.021, B2 still zero |
-| hardened gap in top1 | 0.132 | 0.113, B2 still the middle band |
-| leakage at 0.985 | 0, max same class cosine 0.928 | 0, max 0.952 |
-| duplicate label scan at 0.97 | 4 pairs flagged | 22 flagged, C2 falls to 5 of 10 |
+| direct gap in top1 | 0.046 | 0.033, B2 still zero |
+| hardened gap in top1 | 0.132 | 0.110, B2 still the middle band |
+| leakage at 0.985 | 0, max same class cosine 0.928 | 0, max 0.942 direct, 0.946 hardened |
+| class pairs flagged | 5 (4 by centroid, 1 by shared images) | 27, C2 falls to 5 of 10 |
 | totals | 80 and 92 | 75 and 87 |
 | verdicts | middle band cap; accepted as primary | both unchanged |
 
 Both verdicts survive, and the whole difference in the totals sits in C2, whose centroid
 threshold is calibrated to the supervised probe pair. Expect the bands and the criterion scores
 to reproduce exactly; the third decimal of the measurements can move with your torch, timm and
-imaging stack, and the hardened reference values were themselves measured on an independently
-rebuilt copy. `scripts/verify.sh` does not check these two files. They anchor this optional
-test only.
-
-Both were produced on machine B in August 2026, before 1.0.1 disabled TF32, so they carry whatever
-that path contributed on that GPU. The probe is a transformer, whose only convolution is the patch
-embedding, and the measured TF32 effect on the ViT probe of the main controls was 1.6e-5, three
-orders below the third decimal these tables report, so no row above changes. The same applies to
-`expected/retrieval_baselines.csv`: that sweep trains its own weights and is outside the protocol.
+imaging stack. `scripts/verify.sh` does not check these files. They anchor this optional test
+only. The August 2026 run of 1.0 (TF32 on, the 1.0.4 gallery) gave gaps of 0.021 and 0.113 and 22
+flagged pairs; the verdicts were the same.
 
 ## Versions used for the published numbers
 

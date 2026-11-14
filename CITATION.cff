@@ -8,7 +8,7 @@ abstract: >-
   evaluation protocol of ePillID, together with a scored rubric that decides whether the converted
   result is fit for use. Contains no image: the collection must be obtained from its original
   authors and is not redistributed here.
-version: 1.0.4
+version: 1.1.0
 license: MIT
 repository-code: "https://github.com/hublinhdn/cure2fewshot"
 keywords:
@@ -39,7 +39,7 @@ authors:
 # Concept DOI: luon tro ban moi nhat, nen file nay khong lech moi lan cat tag. Version DOI cua tung
 # tag nam trong CHANGELOG.md; bai bao trich Version DOI cua dung ban no mo ta.
 doi: "10.5281/zenodo.22908278"
-date-released: "2026-09-30"
+date-released: 2026-11-TBD
 
 # TODO(article): khi bai bao di kem co DOI, mo khoi duoi day de cong cu trich dan uu tien tro ve
 # bai bao thay vi phan mem. Ten tap chi de trong cho toi luc do.

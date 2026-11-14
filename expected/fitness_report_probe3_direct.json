@@ -1,97 +1,290 @@
 {
- "config": {
-  "manifest": "protocol/frozen/cure_crops_manifest.curated.csv",
-  "models": [
-   "vit_small_patch14_dinov2.lvd142m"
-  ],
-  "img_size": 224,
-  "seed": 42,
-  "leak_threshold": 0.985,
-  "dedup_centroid_threshold": 0.97
- },
- "control1_lowshot": {
-  "n_images": 8811,
-  "n_pill_ids": 196,
-  "n_classes_two_sided": 392,
-  "n_classes_one_sided": 196,
-  "n_reference": 388,
-  "n_consumer": 8423,
-  "ref_per_class": {
-   "min": 0,
-   "median": 1.0,
-   "max": 1
+  "config": {
+    "manifest": "protocol/frozen/cure_crops_manifest.curated.csv",
+    "models": [
+      "vit_small_patch14_dinov2.lvd142m"
+    ],
+    "img_size": 224,
+    "seed": 42,
+    "leak_threshold": 0.985,
+    "dedup_centroid_threshold": 0.97,
+    "near_duplicate_threshold": 0.99,
+    "dropped_reference_classes": []
   },
-  "consumer_per_class": {
-   "min": 3,
-   "median": 22.0,
-   "max": 37
-  },
-  "classes_without_ref": [
-   "195__bottom",
-   "195__top",
-   "47__bottom",
-   "48__bottom"
-  ],
-  "classes_without_consumer": []
- },
- "control2_headroom": {
-  "per_model": {
-   "vit_small_patch14_dinov2.lvd142m": {
-    "cross_domain": {
-     "top1": 0.3078123124924997,
-     "mAP": 0.4372072277790963,
-     "recall@5": 0.5819032761310452,
-     "n_query": 8333,
-     "n_gallery_classes": 388
+  "control1_lowshot": {
+    "n_images": 8811,
+    "n_pill_ids": 196,
+    "n_classes_two_sided": 392,
+    "n_classes_one_sided": 196,
+    "n_reference": 388,
+    "n_consumer": 8423,
+    "ref_per_class": {
+      "min": 0,
+      "median": 1.0,
+      "max": 1
     },
-    "within_domain": {
-     "top1": 0.32860166853442907,
-     "mAP": 0.42151584483333837,
-     "recall@5": 0.5130120781969867,
-     "n_query": 8031,
-     "n_gallery_classes": 392
+    "consumer_per_class": {
+      "min": 3,
+      "median": 22.0,
+      "max": 37
     },
-    "domain_gap_top1": 0.020789356041929385
-   }
+    "classes_without_ref": [
+      "195__bottom",
+      "195__top",
+      "47__bottom",
+      "48__bottom"
+    ],
+    "classes_without_consumer": []
   },
-  "mean": {
-   "cross_top1": 0.3078123124924997,
-   "within_top1": 0.32860166853442907,
-   "cross_mAP": 0.4372072277790963,
-   "within_mAP": 0.42151584483333837,
-   "cross_recall@5": 0.5819032761310452,
-   "within_recall@5": 0.5130120781969867,
-   "domain_gap_top1": 0.020789356041929385
+  "control2_headroom": {
+    "per_model": {
+      "vit_small_patch14_dinov2.lvd142m": {
+        "cross_domain": {
+          "top1": 0.3234129365174607,
+          "mAP": 0.4587137279760479,
+          "recall@5": 0.6133445337813512,
+          "n_query": 8333,
+          "n_gallery_classes": 388
+        },
+        "within_domain": {
+          "top1": 0.35636906985431455,
+          "mAP": 0.4498311506183635,
+          "recall@5": 0.5446395218528203,
+          "n_query": 8031,
+          "n_gallery_classes": 392
+        },
+        "domain_gap_top1": 0.03295613333685382
+      }
+    },
+    "mean": {
+      "cross_top1": 0.3234129365174607,
+      "within_top1": 0.35636906985431455,
+      "cross_mAP": 0.4587137279760479,
+      "within_mAP": 0.4498311506183635,
+      "cross_recall@5": 0.6133445337813512,
+      "within_recall@5": 0.5446395218528203,
+      "domain_gap_top1": 0.03295613333685382
+    }
+  },
+  "control3_domain_sep": {
+    "per_model": {
+      "vit_small_patch14_dinov2.lvd142m": {
+        "auc": 1.0
+      }
+    },
+    "mean_auc": 1.0
+  },
+  "control4_leakage": {
+    "per_model": {
+      "vit_small_patch14_dinov2.lvd142m": {
+        "threshold": 0.985,
+        "leak_frac": 0.0,
+        "n_leaked": 0,
+        "same_class_cos_p50": 0.7327642440795898,
+        "same_class_cos_p95": 0.8426670551300048,
+        "same_class_cos_max": 0.9419779181480408
+      }
+    },
+    "union_leak_frac": 0.0,
+    "union_n_leaked": 0,
+    "n_query_checked": 8423
+  },
+  "near_duplicate_scan": {
+    "threshold": 0.99,
+    "n_pairs": 109,
+    "n_pairs_cross_class": 11,
+    "n_pairs_same_class": 98,
+    "per_model": {
+      "vit_small_patch14_dinov2.lvd142m": {
+        "n_pairs": 109,
+        "n_pairs_cross_class": 11
+      }
+    },
+    "class_pairs": [
+      {
+        "class_a": "81__bottom",
+        "class_b": "81__top",
+        "n_pairs": 11
+      }
+    ],
+    "n_classes_in_cross_class_pairs": 2,
+    "cross_class_pairs": [
+      {
+        "crops": [
+          "81_bottom_3604.png",
+          "81_top_3581.png"
+        ],
+        "classes": [
+          "81__bottom",
+          "81__top"
+        ],
+        "domains": [
+          "consumer",
+          "consumer"
+        ],
+        "cos_vit_small_patch14_dinov2.lvd142m": 1.0
+      },
+      {
+        "crops": [
+          "81_bottom_3609.png",
+          "81_top_3586.png"
+        ],
+        "classes": [
+          "81__bottom",
+          "81__top"
+        ],
+        "domains": [
+          "consumer",
+          "consumer"
+        ],
+        "cos_vit_small_patch14_dinov2.lvd142m": 1.0
+      },
+      {
+        "crops": [
+          "81_bottom_3601.png",
+          "81_top_3578.png"
+        ],
+        "classes": [
+          "81__bottom",
+          "81__top"
+        ],
+        "domains": [
+          "consumer",
+          "consumer"
+        ],
+        "cos_vit_small_patch14_dinov2.lvd142m": 1.0
+      },
+      {
+        "crops": [
+          "81_bottom_3606.png",
+          "81_top_3583.png"
+        ],
+        "classes": [
+          "81__bottom",
+          "81__top"
+        ],
+        "domains": [
+          "consumer",
+          "consumer"
+        ],
+        "cos_vit_small_patch14_dinov2.lvd142m": 1.0
+      },
+      {
+        "crops": [
+          "81_bottom_3610.png",
+          "81_top_3587.png"
+        ],
+        "classes": [
+          "81__bottom",
+          "81__top"
+        ],
+        "domains": [
+          "consumer",
+          "consumer"
+        ],
+        "cos_vit_small_patch14_dinov2.lvd142m": 1.0
+      },
+      {
+        "crops": [
+          "81_bottom_3611.png",
+          "81_top_3588.png"
+        ],
+        "classes": [
+          "81__bottom",
+          "81__top"
+        ],
+        "domains": [
+          "consumer",
+          "consumer"
+        ],
+        "cos_vit_small_patch14_dinov2.lvd142m": 1.0
+      },
+      {
+        "crops": [
+          "81_bottom_3603.png",
+          "81_top_3580.png"
+        ],
+        "classes": [
+          "81__bottom",
+          "81__top"
+        ],
+        "domains": [
+          "consumer",
+          "consumer"
+        ],
+        "cos_vit_small_patch14_dinov2.lvd142m": 1.0
+      },
+      {
+        "crops": [
+          "81_bottom_3607.png",
+          "81_top_3584.png"
+        ],
+        "classes": [
+          "81__bottom",
+          "81__top"
+        ],
+        "domains": [
+          "consumer",
+          "consumer"
+        ],
+        "cos_vit_small_patch14_dinov2.lvd142m": 1.0
+      },
+      {
+        "crops": [
+          "81_bottom_3608.png",
+          "81_top_3585.png"
+        ],
+        "classes": [
+          "81__bottom",
+          "81__top"
+        ],
+        "domains": [
+          "consumer",
+          "consumer"
+        ],
+        "cos_vit_small_patch14_dinov2.lvd142m": 1.0
+      },
+      {
+        "crops": [
+          "81_ref_bottom.png",
+          "81_ref_top.png"
+        ],
+        "classes": [
+          "81__bottom",
+          "81__top"
+        ],
+        "domains": [
+          "reference",
+          "reference"
+        ],
+        "cos_vit_small_patch14_dinov2.lvd142m": 0.999815
+      },
+      {
+        "crops": [
+          "81_bottom_3605.png",
+          "81_top_3582.png"
+        ],
+        "classes": [
+          "81__bottom",
+          "81__top"
+        ],
+        "domains": [
+          "consumer",
+          "consumer"
+        ],
+        "cos_vit_small_patch14_dinov2.lvd142m": 0.990306
+      }
+    ]
+  },
+  "dedup_scan": {
+    "n_flagged_pairs": 27,
+    "n_suggest_merge": 0,
+    "n_suggest_resolve_images": 1,
+    "n_trigger_centroid": 26,
+    "n_trigger_images": 1,
+    "flagged_class_frac": 0.13520408163265307,
+    "centroid_threshold": 0.97,
+    "image_threshold": 0.99,
+    "min_pairs": 3
   }
- },
- "control3_domain_sep": {
-  "per_model": {
-   "vit_small_patch14_dinov2.lvd142m": {
-    "auc": 0.9999158538660099
-   }
-  },
-  "mean_auc": 0.9999158538660099
- },
- "control4_leakage": {
-  "per_model": {
-   "vit_small_patch14_dinov2.lvd142m": {
-    "threshold": 0.985,
-    "leak_frac": 0.0,
-    "n_leaked": 0,
-    "same_class_cos_p50": 0.7173252105712891,
-    "same_class_cos_p95": 0.8393787145614624,
-    "same_class_cos_max": 0.9402897357940674
-   }
-  },
-  "union_leak_frac": 0.0,
-  "union_n_leaked": 0,
-  "n_query_checked": 8423
- },
- "dedup_scan": {
-  "n_flagged_pairs": 22,
-  "n_suggest_merge": 0,
-  "flagged_class_frac": 0.1096938775510204,
-  "centroid_threshold": 0.97,
-  "image_threshold": 0.99
- }
 }

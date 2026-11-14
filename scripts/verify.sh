@@ -14,6 +14,10 @@
 # phien ban thi lech chi 6.1e-7). Can tren: mot query doi hang lam mot control doi 1.2e-4. Vay 5e-5
 # nam giua, phu duoc nhieu so hoc do do va van bat duoc mot ket qua that su doi.
 #
+# Tu 1.1 co them: source_duplicates.json (buoc 2b), cross_partition_direct.json (buoc 5b),
+# rubric_sensitivity.json (buoc 6c). mask_damage_*.json va baseline_seeds.csv khong nam trong danh
+# sach vi can anh hardened hoac GPU nhieu gio; REPRODUCE.md noi cach doi chieu tay.
+#
 # Chay tu goc repo, sau khi da lam theo REPRODUCE.md:
 #   bash scripts/verify.sh
 #
@@ -25,19 +29,22 @@ OUT="${CURE_FITNESS_OUT:-$PWD/outputs}"
 OUT_V2="${PHASE_F_V2_OUT:-$PWD/outputs_v2}"
 
 PY="${PYTHON:-python3}"
-IGNORE_KEYS="manifest,report,sam_ckpt,out_dir,crops_root,raw_root,gallery,note"
+IGNORE_KEYS="manifest,report,sam_ckpt,out_dir,crops_root,raw_root,gallery,note,splits_dir,data_dir,hardened_dir,checkpoint,checkpoints,device,versions"
 FLOAT_TOL="${FLOAT_TOL:-5e-5}"
 
 # expected/<ten>.json  <=>  duong dan file do lan chay sinh ra
 PAIRS=(
+  "source_duplicates.json|$OUT/source_duplicates.json"
   "cure_processed_summary.json|$OUT/cure_processed_summary.json"
   "phaseD_log.json|$OUT/phaseD_log.json"
   "removal_log.json|$OUT/removal_log.json"
   "fitness_report_direct.json|$OUT/fitness_report.json"
+  "cross_partition_direct.json|$OUT/cross_partition.json"
   "rubric_score_direct.json|$OUT/rubric_score_direct.json"
   "hardened_log_v2.json|$OUT_V2/hardened_v2_log.json"
   "fitness_report_v2.json|$OUT_V2/fitness_v2/fitness_report.json"
   "rubric_score_v2.json|$OUT_V2/rubric_v2/rubric_score_v2.json"
+  "rubric_sensitivity.json|$OUT/rubric_sensitivity.json"
 )
 
 echo "verify.sh — doi chieu voi expected/"

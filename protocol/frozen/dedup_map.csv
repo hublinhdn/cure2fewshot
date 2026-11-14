@@ -1,5 +1,6 @@
-class_a,class_b,centroid_cos_resnet50,centroid_cos_vit_base_patch16_224,n_near_dup_images,suggest
-127__bottom,127__top,0.978825569152832,0.9838805794715881,0,review
-141__bottom,141__top,0.9780447483062744,0.9793074131011963,0,review
-180__bottom,180__top,0.9822053909301758,0.9824695587158203,0,review
-191__top,20__top,0.9709441065788269,0.9708584547042847,0,review
+class_a,class_b,centroid_cos_resnet50,centroid_cos_vit_base_patch16_224,n_near_dup_images,trigger,suggest
+127__bottom,127__top,0.9788257479667664,0.9838804006576538,0,centroid,review
+141__bottom,141__top,0.9780449271202087,0.9793072938919067,0,centroid,review
+180__bottom,180__top,0.9822054505348206,0.9824696779251099,0,centroid,review
+191__top,20__top,0.9709441661834717,0.9708586931228638,0,centroid,review
+81__bottom,81__top,0.9164602160453796,0.9436700940132141,10,images,resolve_images

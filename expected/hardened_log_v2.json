@@ -2,17 +2,19 @@
   "stats": {
     "n_refs": 388,
     "noise_fallback": 0,
-    "ellipse_fallback": 5,
-    "hull_repair": 19,
-    "suspect": 5,
+    "ellipse_fallback": 0,
+    "hull_repair": 7,
+    "suspect": 0,
+    "independent_mask": 29,
+    "reviewed": 58,
     "solidity_min": 0.9708326728413234,
-    "solidity_p05": 0.9846071022273395,
-    "solidity_median": 0.9963663920832313,
+    "solidity_p05": 0.9864369807434049,
+    "solidity_median": 0.9965016789264544,
     "n_solidity_below_097": 0,
     "n_solidity_below_095": 0,
     "fg_frac_p05": 0.22483859592013888,
-    "fg_frac_median": 0.4714491102430556,
-    "fg_frac_p95": 0.5741027832031247
+    "fg_frac_median": 0.4762234157986111,
+    "fg_frac_p95": 0.5971876356336806
   },
   "per_class": {
     "0__bottom": {
@@ -174,7 +176,8 @@
       "frac": 0.2990519205729167,
       "solidity": 0.9916569218314294,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "108__top": {
       "thr": 9.0,
@@ -213,10 +216,12 @@
     },
     "110__bottom": {
       "thr": 9.0,
-      "frac": 0.5032891167534722,
-      "solidity": 0.9832401494475211,
-      "repair": "none",
-      "suspect": false
+      "frac": 0.5187038845486112,
+      "solidity": 0.9985638936759099,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 0.9832401494475211
     },
     "110__top": {
       "thr": 9.0,
@@ -360,11 +365,13 @@
     },
     "12__top": {
       "thr": 18.0,
-      "frac": 0.3588663736979167,
-      "solidity": 1.0,
-      "repair": "convex_hull",
+      "frac": 0.6538357204861112,
+      "solidity": 0.9982501734295566,
+      "repair": "independent_mask",
       "suspect": false,
-      "solidity_before_repair": 0.9515278643914054
+      "solidity_before_repair": 0.9515278643914054,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "120__bottom": {
       "thr": 9.0,
@@ -519,14 +526,16 @@
       "frac": 0.2891710069444444,
       "solidity": 0.9962384056447279,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "130__bottom": {
       "thr": 9.0,
       "frac": 0.30450439453125,
       "solidity": 0.9974231956816314,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "130__top": {
       "thr": 9.0,
@@ -694,7 +703,8 @@
       "frac": 0.3061387803819444,
       "solidity": 0.995764768165174,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "141__top": {
       "thr": 9.0,
@@ -771,7 +781,8 @@
       "frac": 0.4696451822916667,
       "solidity": 0.9965893882484997,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "147__bottom": {
       "thr": 9.0,
@@ -820,14 +831,16 @@
       "frac": 0.4044731987847222,
       "solidity": 0.997324504197184,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "15__top": {
       "thr": 9.0,
       "frac": 0.4364963107638889,
       "solidity": 0.9974584676419539,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "150__bottom": {
       "thr": 9.0,
@@ -866,10 +879,12 @@
     },
     "152__top": {
       "thr": -1.0,
-      "frac": 0.5410563151041666,
-      "solidity": 1.0,
-      "repair": "ellipse",
-      "suspect": true
+      "frac": 0.58984375,
+      "solidity": 0.9979118382707267,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "153__bottom": {
       "thr": 9.0,
@@ -918,7 +933,8 @@
       "frac": 0.455322265625,
       "solidity": 0.9929896175348301,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "156__top": {
       "thr": 9.0,
@@ -943,11 +959,13 @@
     },
     "158__bottom": {
       "thr": 9.0,
-      "frac": 0.3849622938368056,
-      "solidity": 1.0,
-      "repair": "convex_hull",
+      "frac": 0.6739366319444444,
+      "solidity": 0.9973004164784987,
+      "repair": "independent_mask",
       "suspect": false,
-      "solidity_before_repair": 0.8571302739364045
+      "solidity_before_repair": 0.8571302739364045,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "158__top": {
       "thr": 9.0,
@@ -968,21 +986,25 @@
       "frac": 0.2068142361111111,
       "solidity": 0.9936787227109808,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "16__bottom": {
       "thr": 9.0,
-      "frac": 0.4627821180555556,
-      "solidity": 0.9923220102373197,
-      "repair": "none",
-      "suspect": false
+      "frac": 0.4814249674479167,
+      "solidity": 0.9987619061018332,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 0.9923220102373197
     },
     "16__top": {
       "thr": 9.0,
       "frac": 0.46612548828125,
       "solidity": 0.9870609185168165,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "160__bottom": {
       "thr": 9.0,
@@ -1007,11 +1029,13 @@
     },
     "161__top": {
       "thr": 60.0,
-      "frac": 0.3204684787326389,
-      "solidity": 1.0,
-      "repair": "convex_hull",
+      "frac": 0.5196058485243056,
+      "solidity": 0.9989309135474114,
+      "repair": "independent_mask",
       "suspect": false,
-      "solidity_before_repair": 0.9558141995556025
+      "solidity_before_repair": 0.9558141995556025,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "162__bottom": {
       "thr": 9.0,
@@ -1130,14 +1154,17 @@
       "frac": 0.2393731011284722,
       "solidity": 0.9917952176234229,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "17__top": {
       "thr": 9.0,
-      "frac": 0.20900472005208334,
-      "solidity": 0.9725456783110858,
-      "repair": "none",
-      "suspect": false
+      "frac": 0.2966105143229167,
+      "solidity": 0.9962416290829575,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 0.9725456783110858
     },
     "170__bottom": {
       "thr": 9.0,
@@ -1204,10 +1231,12 @@
     },
     "174__top": {
       "thr": -1.0,
-      "frac": 0.23741319444444445,
-      "solidity": 1.0,
-      "repair": "ellipse",
-      "suspect": true
+      "frac": 0.2803887261284722,
+      "solidity": 0.9961210427408086,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "175__bottom": {
       "thr": 9.0,
@@ -1221,7 +1250,8 @@
       "frac": 0.41278076171875,
       "solidity": 0.997394553141284,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "176__bottom": {
       "thr": 9.0,
@@ -1291,7 +1321,8 @@
       "frac": 0.2775404188368056,
       "solidity": 0.9951125808490979,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "180__bottom": {
       "thr": 9.0,
@@ -1352,11 +1383,13 @@
     },
     "184__bottom": {
       "thr": 12.0,
-      "frac": 0.3697441948784722,
-      "solidity": 1.0,
-      "repair": "convex_hull",
+      "frac": 0.5343967013888888,
+      "solidity": 0.9979989361432661,
+      "repair": "independent_mask",
       "suspect": false,
-      "solidity_before_repair": 0.759028631169641
+      "solidity_before_repair": 0.759028631169641,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "184__top": {
       "thr": 9.0,
@@ -1391,7 +1424,8 @@
       "frac": 0.4181247287326389,
       "solidity": 0.9892022846874599,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "187__bottom": {
       "thr": 9.0,
@@ -1430,11 +1464,13 @@
     },
     "189__top": {
       "thr": 9.0,
-      "frac": 0.4634941948784722,
-      "solidity": 1.0,
-      "repair": "convex_hull",
+      "frac": 0.5466240776909722,
+      "solidity": 0.9988970405988202,
+      "repair": "independent_mask",
       "suspect": false,
-      "solidity_before_repair": 0.8849513497695516
+      "solidity_before_repair": 0.8849513497695516,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "19__bottom": {
       "thr": 9.0,
@@ -1459,25 +1495,31 @@
     },
     "190__top": {
       "thr": 9.0,
-      "frac": 0.5390218098958334,
-      "solidity": 0.9811017984767877,
-      "repair": "none",
-      "suspect": false
+      "frac": 0.5970730251736112,
+      "solidity": 0.9985709100807549,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 0.9811017984767877
     },
     "191__bottom": {
       "thr": 18.0,
-      "frac": 0.4819810655381944,
-      "solidity": 0.9746300791267262,
-      "repair": "none",
-      "suspect": false
+      "frac": 0.5844184027777778,
+      "solidity": 0.9981698983019436,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 0.9746300791267262
     },
     "191__top": {
       "thr": 12.0,
-      "frac": 0.5240410698784722,
-      "solidity": 1.0,
-      "repair": "convex_hull",
+      "frac": 0.6010403103298612,
+      "solidity": 0.9986253366235113,
+      "repair": "independent_mask",
       "suspect": false,
-      "solidity_before_repair": 0.9514448772533745
+      "solidity_before_repair": 0.9514448772533745,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "192__bottom": {
       "thr": 9.0,
@@ -1509,18 +1551,22 @@
     },
     "194__bottom": {
       "thr": 9.0,
-      "frac": 0.5882500542534722,
-      "solidity": 0.9894711626209163,
-      "repair": "none",
-      "suspect": false
+      "frac": 0.6210598415798612,
+      "solidity": 0.9985389203275435,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 0.9894711626209163
     },
     "194__top": {
       "thr": 36.0,
-      "frac": 0.3672824435763889,
-      "solidity": 1.0,
-      "repair": "convex_hull",
+      "frac": 0.6595119900173612,
+      "solidity": 0.9988188652890185,
+      "repair": "independent_mask",
       "suspect": false,
-      "solidity_before_repair": 0.8997378042025186
+      "solidity_before_repair": 0.8997378042025186,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "2__bottom": {
       "thr": 9.0,
@@ -1608,40 +1654,48 @@
     },
     "25__bottom": {
       "thr": 18.0,
-      "frac": 0.4829372829861111,
-      "solidity": 1.0,
-      "repair": "convex_hull",
+      "frac": 0.5942518446180556,
+      "solidity": 0.9985299982906957,
+      "repair": "independent_mask",
       "suspect": false,
-      "solidity_before_repair": 0.966255687243723
+      "solidity_before_repair": 0.966255687243723,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "25__top": {
       "thr": 36.0,
-      "frac": 0.2529635959201389,
-      "solidity": 1.0,
-      "repair": "convex_hull",
+      "frac": 0.5324571397569444,
+      "solidity": 0.998626338683829,
+      "repair": "independent_mask",
       "suspect": false,
-      "solidity_before_repair": 0.9508324173614648
+      "solidity_before_repair": 0.9508324173614648,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "26__bottom": {
       "thr": 9.0,
       "frac": 0.3641493055555556,
       "solidity": 0.9937998556384298,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "26__top": {
       "thr": 9.0,
-      "frac": 0.5407240125868056,
-      "solidity": 0.9931121241561418,
-      "repair": "none",
-      "suspect": false
+      "frac": 0.6144883897569444,
+      "solidity": 0.9987874779541446,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 0.9931121241561418
     },
     "27__bottom": {
       "thr": 9.0,
       "frac": 0.3062472873263889,
       "solidity": 0.9932693999648073,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "27__top": {
       "thr": 9.0,
@@ -1655,7 +1709,8 @@
       "frac": 0.4322645399305556,
       "solidity": 0.9968097084949331,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "28__top": {
       "thr": 9.0,
@@ -1718,7 +1773,8 @@
       "frac": 0.45404052734375,
       "solidity": 0.997898408155965,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "32__bottom": {
       "thr": 9.0,
@@ -1795,14 +1851,17 @@
       "frac": 0.3012424045138889,
       "solidity": 0.9959864570954505,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "37__top": {
       "thr": 9.0,
-      "frac": 0.23927815755208334,
-      "solidity": 0.9778017958097772,
-      "repair": "none",
-      "suspect": false
+      "frac": 0.24884033203125,
+      "solidity": 0.9881507015323298,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 0.9778017958097772
     },
     "38__bottom": {
       "thr": 9.0,
@@ -1834,11 +1893,13 @@
     },
     "4__bottom": {
       "thr": 12.0,
-      "frac": 0.2629665798611111,
-      "solidity": 1.0,
-      "repair": "convex_hull",
+      "frac": 0.5579833984375,
+      "solidity": 0.9986769757364633,
+      "repair": "independent_mask",
       "suspect": false,
-      "solidity_before_repair": 0.9425159892717144
+      "solidity_before_repair": 0.9425159892717144,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "4__top": {
       "thr": 9.0,
@@ -1856,10 +1917,12 @@
     },
     "40__top": {
       "thr": 9.0,
-      "frac": 0.4613783094618056,
-      "solidity": 0.9882197431874964,
-      "repair": "none",
-      "suspect": false
+      "frac": 0.4764336480034722,
+      "solidity": 0.9988483521483209,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 0.9882197431874964
     },
     "41__bottom": {
       "thr": 9.0,
@@ -1894,7 +1957,8 @@
       "frac": 0.3792995876736111,
       "solidity": 0.9902620396600567,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "43__top": {
       "thr": 9.0,
@@ -1947,19 +2011,23 @@
     },
     "47__top": {
       "thr": 60.0,
-      "frac": 0.24167887369791666,
-      "solidity": 1.0,
-      "repair": "convex_hull",
+      "frac": 0.3256022135416667,
+      "solidity": 0.9966165023352361,
+      "repair": "independent_mask",
       "suspect": false,
-      "solidity_before_repair": 0.9454780144232118
+      "solidity_before_repair": 0.9454780144232118,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "48__top": {
       "thr": 9.0,
-      "frac": 0.3559366861979167,
-      "solidity": 1.0,
-      "repair": "convex_hull",
+      "frac": 0.3933241102430556,
+      "solidity": 0.9945640058304038,
+      "repair": "independent_mask",
       "suspect": false,
-      "solidity_before_repair": 0.9599123559112127
+      "solidity_before_repair": 0.9599123559112127,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "49__bottom": {
       "thr": 9.0,
@@ -1973,7 +2041,8 @@
       "frac": 0.2567816840277778,
       "solidity": 0.9934146661419389,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "5__bottom": {
       "thr": 9.0,
@@ -2008,7 +2077,8 @@
       "frac": 0.2321234809027778,
       "solidity": 0.9845534301740256,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "51__top": {
       "thr": 24.0,
@@ -2027,10 +2097,12 @@
     },
     "52__top": {
       "thr": -1.0,
-      "frac": 0.3556857638888889,
-      "solidity": 1.0,
-      "repair": "ellipse",
-      "suspect": true
+      "frac": 0.12413194444444445,
+      "solidity": 0.9952694252623566,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "53__bottom": {
       "thr": 24.0,
@@ -2038,7 +2110,8 @@
       "solidity": 1.0,
       "repair": "convex_hull",
       "suspect": false,
-      "solidity_before_repair": 0.9677505251634664
+      "solidity_before_repair": 0.9677505251634664,
+      "review": "keep_rule"
     },
     "53__top": {
       "thr": 9.0,
@@ -2046,7 +2119,8 @@
       "solidity": 1.0,
       "repair": "convex_hull",
       "suspect": false,
-      "solidity_before_repair": 0.9581942494072148
+      "solidity_before_repair": 0.9581942494072148,
+      "review": "keep_rule"
     },
     "54__bottom": {
       "thr": 9.0,
@@ -2057,10 +2131,12 @@
     },
     "54__top": {
       "thr": -1.0,
-      "frac": 0.15709092881944445,
-      "solidity": 1.0,
-      "repair": "ellipse",
-      "suspect": true
+      "frac": 0.1853366427951389,
+      "solidity": 0.9941794899778094,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "55__bottom": {
       "thr": 9.0,
@@ -2113,10 +2189,12 @@
     },
     "58__top": {
       "thr": -1.0,
-      "frac": 0.19715711805555555,
-      "solidity": 1.0,
-      "repair": "ellipse",
-      "suspect": true
+      "frac": 0.1936984592013889,
+      "solidity": 0.9940832521230684,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 1.0
     },
     "59__bottom": {
       "thr": 9.0,
@@ -2134,17 +2212,21 @@
     },
     "6__bottom": {
       "thr": 9.0,
-      "frac": 0.4543592664930556,
-      "solidity": 0.9862945133889797,
-      "repair": "none",
-      "suspect": false
+      "frac": 0.48162841796875,
+      "solidity": 0.9983271950293795,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 0.9862945133889797
     },
     "6__top": {
       "thr": 9.0,
-      "frac": 0.4537624782986111,
-      "solidity": 0.9823814417853473,
-      "repair": "none",
-      "suspect": false
+      "frac": 0.4677191840277778,
+      "solidity": 0.9987979898915295,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 0.9823814417853473
     },
     "60__bottom": {
       "thr": 9.0,
@@ -2179,7 +2261,8 @@
       "frac": 0.3075018988715278,
       "solidity": 0.9785695787292817,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "62__top": {
       "thr": 9.0,
@@ -2197,10 +2280,12 @@
     },
     "63__top": {
       "thr": 9.0,
-      "frac": 0.4665459526909722,
-      "solidity": 0.9904118858064237,
-      "repair": "none",
-      "suspect": false
+      "frac": 0.4775661892361111,
+      "solidity": 0.9977472052593548,
+      "repair": "independent_mask",
+      "suspect": false,
+      "review": "use_sam",
+      "solidity_rule_mask": 0.9904118858064237
     },
     "64__bottom": {
       "thr": 9.0,
@@ -2214,7 +2299,8 @@
       "frac": 0.2964816623263889,
       "solidity": 0.9922378574670904,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "65__bottom": {
       "thr": 9.0,
@@ -2256,7 +2342,8 @@
       "frac": 0.286865234375,
       "solidity": 0.9973357225379011,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "68__bottom": {
       "thr": 9.0,
@@ -2333,7 +2420,8 @@
       "frac": 0.2076416015625,
       "solidity": 0.9871042620413953,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "72__top": {
       "thr": 9.0,
@@ -2501,7 +2589,8 @@
       "frac": 0.3576185438368056,
       "solidity": 0.997937246886946,
       "repair": "none",
-      "suspect": false
+      "suspect": false,
+      "review": "keep_rule"
     },
     "83__top": {
       "thr": 9.0,

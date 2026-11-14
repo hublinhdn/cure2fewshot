@@ -94,15 +94,37 @@ than with the manifest. Ten boxes were corrected before the first release, for e
 every old and new value is in `protocol/frozen/box_corrections.csv` and the episode is described in
 [KNOWN_ISSUES.md](KNOWN_ISSUES.md).
 
+## 2b. Photographs the collection files twice
+
+Before any embedding, hash the bytes of every photograph the manifest uses:
+
+```bash
+mkdir -p "$CURE_FITNESS_OUT"
+python protocol/make_crops.py duplicates            # add --archive to hash all 8581 consumer files
+```
+
+Expect ten groups of byte identical files, all of them photographs of pill 81 stored under both
+faces (`KNOWN_ISSUES.md` section 9), written to `$CURE_FITNESS_OUT/source_duplicates.json` and
+checked by `verify.sh`. The decision taken on each group is frozen in
+`protocol/frozen/duplicate_resolution.csv`; it was generated from that scan by
+
+```bash
+python protocol/make_duplicate_resolution.py "$CURE_FITNESS_OUT/source_duplicates.json" \
+    protocol/frozen/duplicate_resolution.csv
+```
+
+and need not be regenerated. Regenerating it reproduces the frozen file byte for byte.
+
 ## 3. Phases B to E and G: splits, cleaning, evaluation sample
 
-`build_cure_fewshot.py` runs in two stages. The `clean` stage consumes the frozen leakage list and
-the frozen label merge decisions, so copy them into the output directory first:
+`build_cure_fewshot.py` runs in two stages. The `clean` stage consumes the frozen leakage list,
+the frozen label merge decisions and the frozen duplicate resolution, so copy them into the
+output directory first:
 
 ```bash
 mkdir -p "$CURE_FITNESS_OUT"
 cp protocol/frozen/leak_list.csv protocol/frozen/dedup_map.csv \
-   protocol/frozen/manual_merges.csv "$CURE_FITNESS_OUT"/
+   protocol/frozen/manual_merges.csv protocol/frozen/duplicate_resolution.csv "$CURE_FITNESS_OUT"/
 
 python protocol/build_cure_fewshot.py splits
 python protocol/build_cure_fewshot.py clean
@@ -125,7 +147,8 @@ Expected counts:
 | classes after merging duplicated labels | 390 |
 | gallery entries, one reference per class | 386 |
 | evaluation queries, fold 0 | 1715 |
-| training images, folds 1 to 4 | 7016 |
+| duplicated photographs dropped (section 2b) | 10 |
+| training images, folds 1 to 4 | 7006 |
 | fixed evaluation sample | 1280 |
 | reference images available to harden | 388 |
 
@@ -153,9 +176,15 @@ print("MATCH" if got==exp else "DIFFERS")
 EOF
 ```
 
-Expected: 388 references processed, median mask solidity 0.996, minimum 0.971, noise fallback
-never used, 19 masks repaired by convex hull, 5 fell back to an ellipse and are recorded as
-suspect.
+Expected: 388 references processed, 29 of them masked by the reviewed independent mask of
+step 4c (`independent_mask: 29`, `reviewed: 58`), 7 repaired by convex hull, no ellipse fallback
+and no suspect, median solidity 0.997, minimum 0.971, noise fallback never used. The script
+reads `protocol/frozen/reference_mask_review.csv` and the masks under
+`protocol/frozen/reference_masks/`; without them it would reproduce the 1.0.4 gallery instead
+(19 hull repairs, 5 ellipse fallbacks), which `KNOWN_ISSUES.md` section 10 explains is not the
+gallery to use. It also writes `suspect_refs_v2.csv` (empty since 1.1) and
+`gallery_fewshot_K1_hardened_v2_nosuspect.csv`, the gallery without any suspect reference, for
+anyone who prefers to drop rather than repair.
 
 Phase F reads pixels, so it is the stage most exposed to the imaging stack. Under the pinned
 Pillow 12.0.0 the CUDA machine reproduced, on 23 September 2026, all 388 hardened references pixel
@@ -183,15 +212,21 @@ use it to build a benchmark.
 
 Phase F claims not to touch the tablet. `measure_mask_damage.py` checks that claim without
 trusting the mask the run used: the pixels that are identical between the original crop and the
-hardened one are the region the step actually preserved.
+hardened one are the region the step actually preserved. Since 1.1 it also compares that region
+with an independent mask (step 4c), because solidity alone cannot see a straight cut:
 
 ```bash
 CURE_CROPS_ROOT=$CURE_CROPS_ROOT python protocol/measure_mask_damage.py --tag v2 \
-  --hardened outputs_v2/hardened_refs_v2 --out outputs_v2/mask_damage_v2.json
+  --hardened outputs_v2/hardened_refs_v2 --masks outputs_v2/reference_masks \
+  --out outputs_v2/mask_damage_v2.json
 
 CURE_CROPS_ROOT=$CURE_CROPS_ROOT python protocol/measure_mask_damage.py --tag v1 \
-  --hardened outputs_v1ungated/hardened_refs --out outputs_v1ungated/mask_damage_v1.json
+  --hardened outputs_v1ungated/hardened_refs --masks outputs_v2/reference_masks \
+  --out outputs_v1ungated/mask_damage_v1.json
 ```
+
+Run step 4c first so that `outputs_v2/reference_masks` exists; without `--masks` the script
+reports solidity and exposure only, as in 1.0.
 
 Two quantities per reference. **Solidity** is the area of the largest connected preserved component
 over the area of its convex hull; tablets are convex, so a mask that bit into one drives it down.
@@ -213,12 +248,54 @@ on what survived, so the ungated mask scores lower precisely because it had alre
 pale pixels. Read the gated column for how exposed the collection is, and the solidity rows for
 what each mask did about it. [KNOWN_ISSUES.md](KNOWN_ISSUES.md) section 8 states both definitions.
 
+With `--masks`, three more quantities per reference: the share of the independent mask the
+hardened image replaced (`fg_removed_frac`), the same after eroding the mask by three pixels so
+that a boundary disagreement does not count (`fg_removed_core_frac`, the figure the article
+reports), and the share of the preserved region lying outside the mask (`bg_kept_frac`). The
+statistics block counts references above one, five and twenty percent of core removal. For the
+29 references masked by the reviewed independent mask the core removal is zero by construction;
+the figure is informative for the other 359 and for the ungated variant.
+
+## 4c. An independent mask for every reference, and the check by eye
+
+```bash
+pip install segment-anything          # the one dependency the protocol does not otherwise need
+export CURE_SAM_CKPT=/path/to/sam_vit_b.pth   # SHA256 ec2df627..., see expected/cure_crops_meta.json
+python protocol/reference_masks.py masks --out outputs_v2
+```
+
+This segments the tablet in each original reference crop with the model that produced the frozen
+boxes, prompted with a positive point at the centre and negative points on the synthetic field,
+and rejects any candidate that touches the field's border (the tablet never does, every box
+carries a 15 percent margin). It writes one binary PNG per reference under
+`outputs_v2/reference_masks/` and `reference_masks.csv`; expect 22 references for which no
+candidate passed and the best scoring one was taken, listed with `touches_border` set.
+
+The masks are a check, not a truth. The review that decided which mask to trust for the 58
+references the check flagged is frozen in `protocol/frozen/reference_mask_review.csv`, and the
+29 masks it adopted are under `protocol/frozen/reference_masks/`. To lay the evidence out again:
+
+```bash
+python protocol/reference_masks.py sheet --out outputs_v2 --damage outputs_v2/mask_damage_v2.json \
+    --above 0.01 --name review_damage
+```
+
+Each row shows the original crop, the region the colour rule preserved, the independent mask and
+the hardened image. The masks regenerate deterministically on the same weights and GPU class; a
+different GPU may move a boundary pixel, which changes no decision in the review file.
+
 ## 5. The four controls on frozen embeddings
 
 ```bash
 python protocol/cure_fitness_check.py extract     # embeddings, cached as .npy, run once
-python protocol/cure_fitness_check.py controls    # controls 1 to 4 plus the duplicate label scan
+python protocol/cure_fitness_check.py controls    # controls 1 to 4 plus the two duplicate scans
 ```
+
+`controls` runs, besides the four controls, the image level near duplicate scan (every pair of
+crops with cosine at least 0.99 in either probe, no gate; `near_duplicates.csv`) and the class
+pair scan with its two triggers, centroid and shared images (`dedup_map.csv`,
+`KNOWN_ISSUES.md` section 9). Expect 46 near duplicate pairs in the direct conversion, 10 of them
+across classes and all of pill 81, and 5 flagged class pairs, one of them `resolve_images`.
 
 `extract` downloads two pretrained backbones through `timm`, `resnet50` and
 `vit_base_patch16_224`, and embeds all 8811 crops. On a CPU this takes tens of minutes; on any GPU
@@ -247,6 +324,28 @@ CURE_MANIFEST=$PWD/outputs_v2/manifest_hardened_v2.csv \
 CURE_FITNESS_OUT=$PWD/outputs_v2/fitness_v2 \
   python protocol/cure_fitness_check.py all
 ```
+
+## 5b. Every evaluation query against every training image
+
+After step 3 has written the split files and step 5 the embeddings:
+
+```bash
+python protocol/cure_fitness_check.py partitions
+```
+
+This scores each of the 1715 evaluation queries against all 7006 training images, reports the
+largest cosine and the number of queries at or above 0.985, 0.97, 0.95 and 0.90 for each probe
+(`cross_partition.json`, checked by `verify.sh`), and writes the twenty nearest query to training
+pairs and the twenty nearest query to own reference pairs to `nearest_pairs_for_review.csv` for a
+check by eye; `review_sheet.py` lays them out:
+
+```bash
+python protocol/review_sheet.py "$CURE_FITNESS_OUT/nearest_pairs_for_review.csv" \
+    --crops-root $CURE_CROPS_ROOT --out "$CURE_FITNESS_OUT/nearest_pairs_sheet.png"
+```
+
+Expect no pair at or above 0.985 in either probe, a largest cosine of 0.973 (ResNet50), and
+nearest pairs that are different pills of similar appearance.
 
 ## 6. Score the rubric
 
@@ -292,6 +391,27 @@ CURE_FITNESS_OUT=$PWD/outputs_v2/rubric_v2 \
 The copy that renames `gallery_fewshot_K1_hardened_v2.csv` is the step that is easy to
 miss, and it is worth five rubric points.
 
+Every threshold the rubric uses is in `THRESHOLDS` at the top of `score_rubric.py` and is written
+into the score file; the article states why each was chosen. The rubric treats the group B
+criteria as a condition rather than a weight: a zero in B1 or B2 caps the verdict at the middle
+band whatever the total, because a benchmark that does not separate its two image sources
+measures nothing about the domain shift.
+
+### 6c. Sensitivity of the verdicts to the thresholds
+
+```bash
+python protocol/rubric_sensitivity.py \
+    --variant direct=outputs/fitness_report.json:outputs/rubric_score_direct.json \
+    --variant v2=outputs_v2/rubric_v2/fitness_report.json:outputs_v2/rubric_v2/rubric_score_v2.json \
+    --variant v1=outputs_v1ungated/rubric_v1/fitness_report.json:outputs_v1ungated/rubric_v1/rubric_score_v1.json \
+    --removal-log outputs/removal_log.json --out outputs/rubric_sensitivity.json --tex outputs/rubric_sensitivity.tex
+```
+
+Each threshold is moved on its own over the grid in `GRID`, the others held at their defaults,
+and the total and verdict class recorded for each variant; the file also records, for every
+measured quantity, its distance to the nearest threshold, and lists every point at which a
+verdict changes class. `verify.sh` checks it. The ungated variant needs step 4's optional run.
+
 Expected verdicts:
 
 | Variant | Score | Verdict |
@@ -315,7 +435,7 @@ name close to a file you are meant to use. **Read this table before loading anyt
 |---|---:|---|
 | `outputs_v2/gallery_fewshot_K1_hardened_v2.csv` | 386 | the gallery: one hardened reference image per class |
 | `query_eval_fold0.csv` | 1715 | evaluation queries, the consumer photographs of the held out fold |
-| `train_clean.csv` | 7016 | training images: consumer photographs of folds 1 to 4, plus the reference images of the training pills |
+| `train_clean.csv` | 7006 | training images: consumer photographs of folds 1 to 4, plus the reference images of the training pills |
 | `eval_sample_1280.csv` | 1280 | fixed class balanced subset, for measurements too expensive to repeat on all queries |
 
 Columns are `crop_rel` (path relative to `CURE_CROPS_ROOT`), `label` (the class after
@@ -325,7 +445,7 @@ duplicate labels were merged) and `fold`.
 
 | File | Rows | Content |
 |---|---:|---|
-| `manifest_dedup.csv` | 8811 | every crop with its final class label and its fold |
+| `manifest_dedup.csv` | 8801 | every crop that survived cleaning, with its final class label and its fold |
 | `outputs_v2/manifest_hardened_v2.csv` | 8811 | the same, with reference rows pointing at the hardened images |
 | `folds.csv` | 392 | the fold assigned to each pill and side |
 
@@ -334,10 +454,16 @@ duplicate labels were merged) and `fold`.
 | File | Rows | Content |
 |---|---:|---|
 | `leak_list.csv` | 8423 | cosine of every query to its own class in both backbones, and the leak flag |
-| `dedup_map.csv` | 4 | class pairs the centroid scan flagged, with the decision taken on each |
+| `dedup_map.csv` | 5 | class pairs either scan flagged, with the trigger and the suggestion for each |
+| `near_duplicates.csv` | 46 | every pair of crops at cosine 0.99 or above in either probe |
+| `source_duplicates.json` | | the byte identical source photographs and their classes |
+| `duplicate_resolution.csv` | 10 | which copy of each duplicated photograph was kept, and the rule |
+| `cross_partition.json`, `nearest_pairs_for_review.csv` | | the evaluation queries against the training images, and the pairs to check by eye |
 | `removal_log.json` | | what was removed, at which threshold, and how much remained |
 | `phaseD_log.json` | | the classes dropped for want of a reference image |
-| `outputs_v2/hardened_v2_log.json` | 388 | per reference: accepted threshold, mask solidity, repair applied, suspect flag |
+| `outputs_v2/hardened_v2_log.json` | 388 | per reference: accepted threshold, mask solidity, repair applied (`independent_mask` for the 29 reviewed ones), suspect flag |
+| `outputs_v2/reference_masks.csv`, `mask_damage_*.json` | 388 | the independent mask of each reference and how much of it each hardening replaced |
+| `rubric_sensitivity.json` | | the verdicts under every threshold of the grid, and each quantity's margin |
 
 ### Measurements and the decision
 
@@ -375,16 +501,20 @@ that record local absolute paths.
 
 | File | Produced by | Checked by `verify.sh` |
 |---|---|---|
+| `source_duplicates.json` | step 2b | yes |
 | `cure_processed_summary.json` | step 3 | yes |
 | `phaseD_log.json` | step 3, the few shot gallery | yes |
 | `removal_log.json` | step 3, leakage and label merges | yes |
 | `fitness_report_direct.json` | step 5 on the direct conversion | yes |
+| `cross_partition_direct.json` | step 5b | yes |
 | `rubric_score_direct.json` | step 6 on the direct conversion | yes |
 | `hardened_log_v2.json` | step 4, integrity gated mask | yes |
 | `mask_damage_v2.json` | step 4b, integrity gated mask | no, it needs the hardened images |
 | `mask_damage_v1.json` | step 4b, ungated mask | no, that variant is optional |
 | `fitness_report_v2.json` | step 5 on the hardened references | yes |
 | `rubric_score_v2.json` | step 6 on the hardened references | yes |
+| `rubric_sensitivity.json` | step 6c | yes |
+| `baseline_seeds.csv`, `retrieval_baselines.csv`, `retrieval_baselines_sweep_2026-07.csv` | section 9 | no, GPU hours |
 | `fitness_report_v1.json` | step 5 on the **ungated** variant | no, that variant is optional |
 | `rubric_score_v1.json` | step 6 on the **ungated** variant | no, that variant is optional |
 | `fitness_report_probe3_direct.json` | section 8, third probe on the direct conversion | no, optional test |
@@ -482,16 +612,44 @@ Two machines produced the published numbers, and a fresh environment on the seco
 |---|---|---|
 | everything `verify.sh` checks in `expected/`: splits, hardening log, the four controls, the rubric | A: macOS 14.6.1 on Apple silicon, no CUDA | Python 3.13.3, NumPy 2.2.5, pandas 2.2.3, SciPy 1.15.3, scikit-learn 1.6.1, Pillow 11.2.1, PyTorch 2.9.1, torchvision 0.24.1, timm 1.0.26 |
 | the frozen boxes (SAM `vit_b`) and the crops | B: Linux, one RTX 3080 with 10 GB, CUDA 13.0 | Pillow 12.0.0 at cropping time; the crops reproduce pixel for pixel under 11.2.1 on machine A |
-| `retrieval_baselines.csv`, the 27 backbone sweep, and the probe3 reports | B | Python 3.12.3, PyTorch 2.11.0 (CUDA 13.0), torchvision 0.26.0, timm 1.0.26, NumPy 2.4.4, scikit-learn 1.8.0, Pillow 12.2.0 |
+| the 27 backbone sweep of July 2026 (`retrieval_baselines_sweep_2026-07.csv`) and the probe3 reports | B | Python 3.12.3, PyTorch 2.11.0 (CUDA 13.0), torchvision 0.26.0, timm 1.0.26, NumPy 2.4.4, scikit-learn 1.8.0, Pillow 12.2.0 |
+| 1.1: every file `verify.sh` checks, the independent masks, `retrieval_baselines.csv` (the deposited checkpoints scored on the released benchmark) and `baseline_seeds.csv` (November 2026) | B, the environment of the row below plus `segment-anything` 1.0 and `pytorch-metric-learning` 2.9 | as the row below |
 | verification of every file `verify.sh` checks, from a fresh clone (23 September 2026): all 8811 crops pixel for pixel, the fifteen split CSV files byte for byte, the 388 hardened references pixel for pixel, the hardening log field for field, both rubric files exactly, `verify.sh` 8 of 8 | B, new environment installed from `requirements.txt` | Python 3.12.3, PyTorch 2.14.0 (CUDA 13.0, cuDNN 9.24), torchvision 0.29.0, timm 1.0.30, NumPy 2.5.3, pandas 3.0.6, SciPy 1.18.1, scikit-learn 1.9.1, Pillow 12.0.0 |
 
 The rubric depends only on the frozen probes and the split files. The split files reproduce byte
 for byte, and with TF32 off the probe embeddings agree across backends to 3e-6, so its scores are
 unaffected by a resampled padding pixel or by the GPU.
 
-## Optional: the 27 baseline backbones
+## 9. Training and scoring the baselines
 
-`expected/retrieval_baselines.csv` holds the scores of 27 backbones from `timm` trained on the
-converted benchmark with one shared recipe and seed 42. That sweep is not part of this protocol
-and is not required to reproduce any rubric score. The recipe is stated in full in
-[TRAINING_RECIPE.md](TRAINING_RECIPE.md).
+The scripts under `training/` are the training stack of the sweep, ported and checked
+(`KNOWN_ISSUES.md` section 11). They need `training/requirements.txt` on top of the protocol's.
+
+Score a checkpoint on the benchmark:
+
+```bash
+python training/eval_baseline.py --backbone resnet18_tv --checkpoint best_resnet18_tv_seed42.pth \
+    --data-dir "$CURE_FITNESS_OUT" --gallery outputs_v2/gallery_fewshot_K1_hardened_v2.csv \
+    --crops-root $CURE_CROPS_ROOT --out eval_resnet18.json
+```
+
+Train one backbone with the sweep's recipe and one seed (`recipe_for` in `training/common.py`
+holds every setting per backbone group; `--epochs` overrides the count):
+
+```bash
+python training/train_baseline.py --backbone resnet18_tv --seed 42 --data-dir "$CURE_FITNESS_OUT" \
+    --gallery outputs_v2/gallery_fewshot_K1_hardened_v2.csv --hardened-dir outputs_v2/hardened_refs_v2 \
+    --crops-root $CURE_CROPS_ROOT --out-dir runs
+python training/summarize_seeds.py runs runs/baseline_seeds.csv --sweep expected/retrieval_baselines.csv
+```
+
+Training references are swapped for their hardened image, as in the sweep. The run writes the
+score of every evaluated epoch, the checkpoint the sweep's rule selects (best score on the
+evaluation queries among the epochs scored) and the last epoch's checkpoint, with both scores.
+`expected/baseline_seeds.csv` holds three seeds for four backbones; a rerun lands within the
+standard deviation reported there, not on the same digits, because the data loader's augmentation
+and the mining of triplets are not bit reproducible across driver and library versions.
+
+The 27 checkpoints of the sweep are deposited separately (CHANGELOG.md, 1.1.0 gives the record);
+`eval_baseline.py` on each of them against the released benchmark reproduces
+`expected/retrieval_baselines.csv`.

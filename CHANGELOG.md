@@ -1,5 +1,81 @@
 # Changelog
 
+## 1.1.0, 2026-11 (revision of the accompanying article)
+
+Zenodo Version DOI: to be recorded after the release. Concept DOI unchanged: `10.5281/zenodo.22908278`.
+
+The peer review of the article asked for four things the 1.0 release could not show: a
+sensitivity analysis of the rubric, an independent check of the integrity gate, a duplicate
+check across the training and evaluation partitions, and the training scripts behind the
+baselines. Doing them found three defects in 1.0.4, each recorded in `KNOWN_ISSUES.md` (sections
+9 to 11) with its measured effect. Every number in `expected/` was regenerated on machine B
+(REPRODUCE.md, "Versions used"); the direct conversion's control values and all three rubric
+verdicts are unchanged.
+
+Found and fixed:
+
+* **Ten photographs of pill 81 are filed under both faces of the collection as distributed**
+  (`KNOWN_ISSUES.md` section 9). The 1.0 label scan could not see them because it tested image
+  pairs only after the class centroids agreed. 1.1 hashes every source file
+  (`make_crops.py duplicates`), scans every image pair without a gate (`near_duplicate_scan`),
+  adds a shared image trigger to the class pair scan, and resolves the ten groups at the clean
+  stage from `protocol/frozen/duplicate_resolution.csv`: training images 7016 to 7006, consumer
+  photographs 8423 to 8413, nothing else moved.
+* **The solidity gate let straight cuts through, and the 1.0.4 gated gallery had them**
+  (section 10). Measured against an independent mask from the segmentation model
+  (`reference_masks.py`, `measure_mask_damage.py --masks`), the 1.0.4 gated mask had replaced
+  more than a fifth of the tablet core in 16 references and more than one percent in 47; the
+  ungated mask, 65 and 199. Every flagged reference was judged by eye against the independent
+  mask (`protocol/frozen/reference_mask_review.csv`, 58 rows): 29 masks replaced, 29 kept because
+  the independent mask was wrong or no better. The gated gallery differs from 1.0.4 in those 29
+  entries; its controls moved in the fourth decimal (cross domain top1 0.1654, gap 0.1319) and
+  its rubric is unchanged at 92. After the repair the measurement flags 18 references, all of
+  them cases where the independent mask is the field and the colour rule mask was kept.
+* **The 27 backbone sweep had run on data that is not the released benchmark** (section 11): a
+  crop directory predating most manual box corrections and a hardened set in which 58
+  references had lost the tablet. The 1.0 statement that the sweep saw "eight pre correction
+  crops" was wrong. `training/` now ships the stack (`train_baseline.py`, `eval_baseline.py`,
+  `summarize_seeds.py`, `common.py`), checked by reproducing the July figures to four decimals
+  on the July data; `expected/retrieval_baselines.csv` is replaced by the deposited checkpoints'
+  scores on the released benchmark, the July table kept as
+  `expected/retrieval_baselines_sweep_2026-07.csv`, and `expected/baseline_seeds.csv` adds four
+  backbones retrained on the released benchmark with three seeds.
+
+Added:
+
+* `protocol/rubric_sensitivity.py` and `expected/rubric_sensitivity.json`: every threshold of
+  the rubric moved on its own, totals and verdict classes recorded, margins of every measured
+  quantity. Three of 35 moves change a verdict, all on the direct conversion: the partial gap
+  threshold lowered from 0.05 to 0.04 or 0.03 (the measured gap is 0.046), and the cap rule
+  switched off. `score_rubric.py` keeps its thresholds in one table and writes them into the
+  score file.
+* `cure_fitness_check.py partitions` and `expected/cross_partition_direct.json`: every
+  evaluation query against every training image; largest cosine 0.973, none at or above the
+  leakage threshold; the twenty nearest pairs of each kind for a check by eye, with
+  `review_sheet.py` to lay them out.
+* `cure_fitness_check.py controls --drop-refs` and `harden_refs_v2.py`'s
+  `gallery_fewshot_K1_hardened_v2_nosuspect.csv`: the controls and the gallery without chosen
+  references, for anyone who prefers to drop a flagged reference rather than repair it. Since
+  the repair, no reference is flagged suspect and the file equals the gallery.
+* `tests/`: 38 unit tests on synthetic inputs, no image of the collection needed
+  (`python -m pytest tests`).
+* `scripts/verify.sh` checks three more files; `IGNORE_KEYS` covers the new path fields.
+
+Changed:
+
+* `expected/` regenerated on machine B. Against the 1.0.4 files the direct controls differ only
+  in the duplicate scan section; the hardened controls in the fourth decimal; every rubric score
+  and verdict is the same. `protocol/frozen/dedup_map.csv` has five rows and two new columns
+  (`trigger`, `suggest` now includes `resolve_images`); `protocol/frozen/leak_list.csv` was
+  regenerated with the same flags.
+* `eval_sample_1280.csv` is re-drawn: the per class permutations after `81__top` in sort order
+  shift once ten rows are gone.
+* `measure_mask_damage.py` reports three more quantities when given `--masks`; the solidity and
+  exposure figures of 1.0.2 are unchanged in meaning.
+* `harden_refs_v2.py` can be imported without environment variables; `main()` reads them.
+
+Verified before tagging: see the entry's closing note once the fresh clone verification has run.
+
 ## 1.0.4, 2026-09-30
 
 Zenodo Version DOI `10.5281/zenodo.23051213`. Concept DOI unchanged: `10.5281/zenodo.22908278`.

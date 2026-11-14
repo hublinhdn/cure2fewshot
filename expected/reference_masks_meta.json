@@ -1,0 +1,14 @@
+{
+  "sam_type": "vit_b",
+  "sam_ckpt_sha256": "ec2df62732614e57411cdcf32a23ffdf28910380d03139ee0f4fcbe91eb8c912",
+  "n_masks": 388,
+  "n_outside_area_band": 22,
+  "area_band": [
+    0.05,
+    0.9
+  ],
+  "prompt": "centre point positive; negatives at the four corners of the non letterbox region (set A) or at twelve points around its inner rim (set B), set C = B plus the region's box; multimask: nine candidates",
+  "selection": "largest 4 connected component inside the non letterbox region, holes filled; candidates touching the region's border or outside the area band rejected; best SAM score among the rest",
+  "border_px": 2,
+  "n_border_or_band_fallback": 22
+}

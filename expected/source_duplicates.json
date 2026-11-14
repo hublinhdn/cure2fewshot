@@ -1,0 +1,189 @@
+{
+  "n_files_hashed": 8811,
+  "n_groups": 10,
+  "n_files_in_groups": 20,
+  "n_groups_cross_class": 10,
+  "n_groups_cross_kind": 0,
+  "groups": [
+    {
+      "files": [
+        "data/raw/CURE_dataset/Pill_Images/81/bottom/Customer/81_bottom_3601.jpg",
+        "data/raw/CURE_dataset/Pill_Images/81/top/Customer/81_top_3578.jpg"
+      ],
+      "classes": [
+        "81__bottom",
+        "81__top"
+      ],
+      "kinds": [
+        "customer",
+        "customer"
+      ],
+      "crops": [
+        "data/processed/cure_crops/81/bottom/customer/81_bottom_3601.png",
+        "data/processed/cure_crops/81/top/customer/81_top_3578.png"
+      ]
+    },
+    {
+      "files": [
+        "data/raw/CURE_dataset/Pill_Images/81/bottom/Customer/81_bottom_3603.jpg",
+        "data/raw/CURE_dataset/Pill_Images/81/top/Customer/81_top_3580.jpg"
+      ],
+      "classes": [
+        "81__bottom",
+        "81__top"
+      ],
+      "kinds": [
+        "customer",
+        "customer"
+      ],
+      "crops": [
+        "data/processed/cure_crops/81/bottom/customer/81_bottom_3603.png",
+        "data/processed/cure_crops/81/top/customer/81_top_3580.png"
+      ]
+    },
+    {
+      "files": [
+        "data/raw/CURE_dataset/Pill_Images/81/bottom/Customer/81_bottom_3604.jpg",
+        "data/raw/CURE_dataset/Pill_Images/81/top/Customer/81_top_3581.jpg"
+      ],
+      "classes": [
+        "81__bottom",
+        "81__top"
+      ],
+      "kinds": [
+        "customer",
+        "customer"
+      ],
+      "crops": [
+        "data/processed/cure_crops/81/bottom/customer/81_bottom_3604.png",
+        "data/processed/cure_crops/81/top/customer/81_top_3581.png"
+      ]
+    },
+    {
+      "files": [
+        "data/raw/CURE_dataset/Pill_Images/81/bottom/Customer/81_bottom_3605.jpg",
+        "data/raw/CURE_dataset/Pill_Images/81/top/Customer/81_top_3582.jpg"
+      ],
+      "classes": [
+        "81__bottom",
+        "81__top"
+      ],
+      "kinds": [
+        "customer",
+        "customer"
+      ],
+      "crops": [
+        "data/processed/cure_crops/81/bottom/customer/81_bottom_3605.png",
+        "data/processed/cure_crops/81/top/customer/81_top_3582.png"
+      ]
+    },
+    {
+      "files": [
+        "data/raw/CURE_dataset/Pill_Images/81/bottom/Customer/81_bottom_3606.jpg",
+        "data/raw/CURE_dataset/Pill_Images/81/top/Customer/81_top_3583.jpg"
+      ],
+      "classes": [
+        "81__bottom",
+        "81__top"
+      ],
+      "kinds": [
+        "customer",
+        "customer"
+      ],
+      "crops": [
+        "data/processed/cure_crops/81/bottom/customer/81_bottom_3606.png",
+        "data/processed/cure_crops/81/top/customer/81_top_3583.png"
+      ]
+    },
+    {
+      "files": [
+        "data/raw/CURE_dataset/Pill_Images/81/bottom/Customer/81_bottom_3607.jpg",
+        "data/raw/CURE_dataset/Pill_Images/81/top/Customer/81_top_3584.jpg"
+      ],
+      "classes": [
+        "81__bottom",
+        "81__top"
+      ],
+      "kinds": [
+        "customer",
+        "customer"
+      ],
+      "crops": [
+        "data/processed/cure_crops/81/bottom/customer/81_bottom_3607.png",
+        "data/processed/cure_crops/81/top/customer/81_top_3584.png"
+      ]
+    },
+    {
+      "files": [
+        "data/raw/CURE_dataset/Pill_Images/81/bottom/Customer/81_bottom_3608.jpg",
+        "data/raw/CURE_dataset/Pill_Images/81/top/Customer/81_top_3585.jpg"
+      ],
+      "classes": [
+        "81__bottom",
+        "81__top"
+      ],
+      "kinds": [
+        "customer",
+        "customer"
+      ],
+      "crops": [
+        "data/processed/cure_crops/81/bottom/customer/81_bottom_3608.png",
+        "data/processed/cure_crops/81/top/customer/81_top_3585.png"
+      ]
+    },
+    {
+      "files": [
+        "data/raw/CURE_dataset/Pill_Images/81/bottom/Customer/81_bottom_3609.jpg",
+        "data/raw/CURE_dataset/Pill_Images/81/top/Customer/81_top_3586.jpg"
+      ],
+      "classes": [
+        "81__bottom",
+        "81__top"
+      ],
+      "kinds": [
+        "customer",
+        "customer"
+      ],
+      "crops": [
+        "data/processed/cure_crops/81/bottom/customer/81_bottom_3609.png",
+        "data/processed/cure_crops/81/top/customer/81_top_3586.png"
+      ]
+    },
+    {
+      "files": [
+        "data/raw/CURE_dataset/Pill_Images/81/bottom/Customer/81_bottom_3610.jpg",
+        "data/raw/CURE_dataset/Pill_Images/81/top/Customer/81_top_3587.jpg"
+      ],
+      "classes": [
+        "81__bottom",
+        "81__top"
+      ],
+      "kinds": [
+        "customer",
+        "customer"
+      ],
+      "crops": [
+        "data/processed/cure_crops/81/bottom/customer/81_bottom_3610.png",
+        "data/processed/cure_crops/81/top/customer/81_top_3587.png"
+      ]
+    },
+    {
+      "files": [
+        "data/raw/CURE_dataset/Pill_Images/81/bottom/Customer/81_bottom_3611.jpg",
+        "data/raw/CURE_dataset/Pill_Images/81/top/Customer/81_top_3588.jpg"
+      ],
+      "classes": [
+        "81__bottom",
+        "81__top"
+      ],
+      "kinds": [
+        "customer",
+        "customer"
+      ],
+      "crops": [
+        "data/processed/cure_crops/81/bottom/customer/81_bottom_3611.png",
+        "data/processed/cure_crops/81/top/customer/81_top_3588.png"
+      ]
+    }
+  ]
+}

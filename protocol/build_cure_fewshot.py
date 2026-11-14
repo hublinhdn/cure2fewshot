@@ -15,6 +15,8 @@ Thực thi các phase của protocol, theo đúng thứ tự mô tả trong bài
 
   stage clean (cần outputs/leak_list.csv + dedup_map.csv từ cure_fitness_check.py controls):
     Phase E  query_clean.csv                  (loại ảnh consumer là ảnh gốc của reference tổng hợp)
+             (E.3) ảnh trùng: cùng một ảnh gốc xếp dưới hai lớp -> giữ một bản theo
+                   outputs/duplicate_resolution.csv (bản đóng băng ở protocol/frozen/), nếu có
              manifest_dedup.csv               (cột class_id_merged sau khi gộp các cặp suggest=merge)
              query_eval_fold0.csv             (query fold 0 sau làm sạch)
              removal_log.json
@@ -120,6 +122,23 @@ def stage_clean():
     # E.1 — de leak: loại ảnh consumer vượt ngưỡng cosine với reference cùng lớp
     leaked_set = set(leak.loc[leak["leaked"], "crop_rel"])
     df = df[~((df["domain"] == "consumer") & df["crop_rel"].isin(leaked_set))].copy()
+    n_qry_after_leak = int((df["domain"] == "consumer").sum())
+
+    # E.3 — ảnh trùng: cùng một ảnh gốc được xếp dưới hai lớp (lỗi của bộ sưu tập như được phân
+    # phối, viên 81). Quyết định giữ bản nào nằm trong file đóng băng, không tính lại ở đây.
+    dup_p = os.path.join(OUT, "duplicate_resolution.csv")
+    dup_cols = ["group", "keep_crop_rel", "drop_crop_rel", "keep_class", "drop_class", "rule", "note"]
+    dup = pd.read_csv(dup_p) if os.path.exists(dup_p) else pd.DataFrame(columns=dup_cols)
+    have = set(df["crop_rel"])
+    for _, r in dup.iterrows():
+        for col in ("keep_crop_rel", "drop_crop_rel"):
+            if r[col] not in have:
+                raise SystemExit(f"[build] duplicate_resolution.csv: {col} {r[col]} không có trong "
+                                 f"manifest sau bước leak — file quyết định không khớp dữ liệu")
+    n_before_dup = len(df)
+    df = df[~df["crop_rel"].isin(set(dup["drop_crop_rel"]))].copy()
+    n_dup_dropped = n_before_dup - len(df)
+    dup_rule = str(dup["rule"].iloc[0]) if len(dup) else ""
 
     # E.2 — dedup: union find trên cặp suggest=merge (tự động) + manual_merges.csv (quyết định tay)
     parent = {}
@@ -193,12 +212,17 @@ def stage_clean():
     log = {
         "leak_threshold": float(F.LEAK_THR),
         "n_query_before": n_qry_before,
-        "n_leaked_removed": int(n_qry_before - len(qry)),
-        "leak_frac_before": float((n_qry_before - len(qry)) / max(n_qry_before, 1)),
+        "n_leaked_removed": int(n_qry_before - n_qry_after_leak),
+        "leak_frac_before": float((n_qry_before - n_qry_after_leak) / max(n_qry_before, 1)),
         "leak_frac_after": 0.0,   # theo cấu trúc: mọi ảnh vượt ngưỡng đã bị loại
         "n_dedup_pairs_flagged": int(len(dedup)),
         "n_dedup_pairs_merged": int(len(auto) + len(manual)),
         "n_dedup_pairs_merged_manual": int(len(manual)),
+        "n_dedup_pairs_resolved_images": int(
+            (dedup["suggest"] == "resolve_images").sum()) if "suggest" in dedup else 0,
+        "n_duplicate_groups": int(len(dup)),
+        "n_duplicate_images_dropped": int(n_dup_dropped),
+        "duplicate_rule": dup_rule,
         "n_classes_before_merge": int(df["class_id"].nunique()),
         "n_classes_after_merge": int(df["class_id_merged"].nunique()),
         "eval_sample_n": int(len(es)),
@@ -232,10 +256,12 @@ def stage_clean():
         "eval_sample": int(len(es)),
         "merged_pairs": {"auto": int(len(auto)), "manual": int(len(manual))},
         "leaked_removed": log["n_leaked_removed"],
+        "duplicates_dropped": int(n_dup_dropped),
     }
     with open(os.path.join(OUT, "cure_processed_summary.json"), "w") as f:
         json.dump(summary, f, indent=2, ensure_ascii=False)
-    print(f"[build] clean xong: loại {log['n_leaked_removed']} ảnh leak, gộp "
+    print(f"[build] clean xong: loại {log['n_leaked_removed']} ảnh leak, bỏ {n_dup_dropped} bản "
+          f"ảnh trùng ({len(dup)} nhóm), gộp "
           f"{log['n_dedup_pairs_merged']} cặp lớp ({len(manual)} tay), "
           f"{log['n_classes_before_merge']} -> {log['n_classes_after_merge']} lớp, "
           f"gallery K=1 = {len(k1)}", flush=True)

@@ -40,13 +40,13 @@
       "name": "C2 nhiễu nhãn đã dedup",
       "score": 10,
       "max": 10,
-      "note": "gộp 2 cặp, còn 2 cặp mức review (0.005 so với tổng lớp)"
+      "note": "gộp 2 cặp, xử lý mức ảnh 1 cặp, còn 2 cặp mức review (0.005 so với tổng lớp)"
     },
     {
       "name": "D1 mAP frozen cross domain trong dải khó nhưng học được",
       "score": 10,
       "max": 10,
-      "note": "cross mAP = 0.229 (yêu cầu trong (0.05, 0.90))"
+      "note": "cross mAP = 0.229 (yêu cầu trong (0.05, 0.9))"
     },
     {
       "name": "E1 báo cáo domain AUC + xử lý shortcut nền",
@@ -55,9 +55,26 @@
       "note": "domain AUC = 0.994 > 0.95 nhưng đã có gallery hardened"
     }
   ],
-  "report": "expected/fitness_report_v1.json",
   "total": 100,
   "group_b": 30,
   "group_b_capped": false,
-  "verdict": "ACCEPT: suitable as a primary few shot retrieval benchmark"
+  "verdict": "ACCEPT: suitable as a primary few shot retrieval benchmark",
+  "verdict_class": "ACCEPT",
+  "thresholds": {
+    "b1_full": 0.75,
+    "b1_half": 0.9,
+    "b2_full": 0.15,
+    "b2_half": 0.05,
+    "c1_full": 0.02,
+    "c1_half": 0.05,
+    "c2_full": 0.05,
+    "c2_half": 0.1,
+    "d1_lo": 0.05,
+    "d1_hi": 0.9,
+    "e1_auc": 0.95,
+    "accept": 80,
+    "reserve": 60,
+    "cap_rule": true
+  },
+  "report": "outputs_v1ungated/rubric_v1/fitness_report.json"
 }

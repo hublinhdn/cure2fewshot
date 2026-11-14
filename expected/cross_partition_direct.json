@@ -1,0 +1,216 @@
+{
+  "n_train": 7006,
+  "n_eval": 1715,
+  "class_overlap": 0,
+  "thresholds": [
+    0.985,
+    0.97,
+    0.95,
+    0.9
+  ],
+  "per_model": {
+    "resnet50": {
+      "max": 0.9726477265357971,
+      "median": 0.8621402978897095,
+      "n_at_or_above": {
+        "0.985": 0,
+        "0.97": 1,
+        "0.95": 39,
+        "0.9": 496
+      }
+    },
+    "vit_base_patch16_224": {
+      "max": 0.9637781381607056,
+      "median": 0.8504061102867126,
+      "n_at_or_above": {
+        "0.985": 0,
+        "0.97": 0,
+        "0.95": 7,
+        "0.9": 267
+      }
+    }
+  },
+  "splits_dir": "outputs",
+  "top_pairs": [
+    {
+      "eval_crop": "data/processed/cure_crops/30/bottom/customer/30_bottom_1351.png",
+      "train_crop": "data/processed/cure_crops/76/bottom/customer/76_bottom_3389.png",
+      "eval_label": "30__bottom",
+      "train_label": "76__bottom",
+      "cos_resnet50": 0.9726476669311523,
+      "cos_vit_base_patch16_224": 0.9501079320907593,
+      "cos_max": 0.9726476669311523
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/9/bottom/customer/9_bottom_427.png",
+      "train_crop": "data/processed/cure_crops/111/bottom/customer/111_bottom_4909.png",
+      "eval_label": "9__bottom",
+      "train_label": "111__bottom",
+      "cos_resnet50": 0.9680228233337402,
+      "cos_vit_base_patch16_224": 0.7362898588180542,
+      "cos_max": 0.9680228233337402
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/9/top/customer/9_top_401.png",
+      "train_crop": "data/processed/cure_crops/111/top/customer/111_top_4888.png",
+      "eval_label": "9__top",
+      "train_label": "111__top",
+      "cos_resnet50": 0.965571403503418,
+      "cos_vit_base_patch16_224": 0.9031484127044678,
+      "cos_max": 0.965571403503418
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/9/top/customer/9_top_399.png",
+      "train_crop": "data/processed/cure_crops/111/top/customer/111_top_4888.png",
+      "eval_label": "9__top",
+      "train_label": "111__top",
+      "cos_resnet50": 0.9641947150230408,
+      "cos_vit_base_patch16_224": 0.8836280107498169,
+      "cos_max": 0.9641947150230408
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/30/top/customer/30_top_1318.png",
+      "train_crop": "data/processed/cure_crops/19/top/customer/19_top_827.png",
+      "eval_label": "30__top",
+      "train_label": "19__top",
+      "cos_resnet50": 0.8657147288322449,
+      "cos_vit_base_patch16_224": 0.9637781381607056,
+      "cos_max": 0.9637781381607056
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/30/bottom/customer/30_bottom_1354.png",
+      "train_crop": "data/processed/cure_crops/76/bottom/customer/76_bottom_3386.png",
+      "eval_label": "30__bottom",
+      "train_label": "76__bottom",
+      "cos_resnet50": 0.9628095030784607,
+      "cos_vit_base_patch16_224": 0.9210350513458252,
+      "cos_max": 0.9628095030784607
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/30/bottom/customer/30_bottom_1347.png",
+      "train_crop": "data/processed/cure_crops/76/bottom/customer/76_bottom_3390.png",
+      "eval_label": "30__bottom",
+      "train_label": "76__bottom",
+      "cos_resnet50": 0.9627262949943542,
+      "cos_vit_base_patch16_224": 0.9435009956359863,
+      "cos_max": 0.9627262949943542
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/9/top/customer/9_top_400.png",
+      "train_crop": "data/processed/cure_crops/111/top/customer/111_top_4888.png",
+      "eval_label": "9__top",
+      "train_label": "111__top",
+      "cos_resnet50": 0.9622701406478882,
+      "cos_vit_base_patch16_224": 0.900808572769165,
+      "cos_max": 0.9622701406478882
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/6/top/customer/6_top_269.png",
+      "train_crop": "data/processed/cure_crops/113/top/customer/113_top_4978.png",
+      "eval_label": "6__top",
+      "train_label": "113__top",
+      "cos_resnet50": 0.9616982340812683,
+      "cos_vit_base_patch16_224": 0.8860470652580261,
+      "cos_max": 0.9616982340812683
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/30/top/customer/30_top_1330.png",
+      "train_crop": "data/processed/cure_crops/76/top/customer/76_top_3362.png",
+      "eval_label": "30__top",
+      "train_label": "76__top",
+      "cos_resnet50": 0.9616346955299377,
+      "cos_vit_base_patch16_224": 0.9268724918365479,
+      "cos_max": 0.9616346955299377
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/9/bottom/customer/9_bottom_419.png",
+      "train_crop": "data/processed/cure_crops/111/bottom/customer/111_bottom_4911.png",
+      "eval_label": "9__bottom",
+      "train_label": "111__bottom",
+      "cos_resnet50": 0.9602128863334656,
+      "cos_vit_base_patch16_224": 0.7761964797973633,
+      "cos_max": 0.9602128863334656
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/30/top/customer/30_top_1326.png",
+      "train_crop": "data/processed/cure_crops/76/top/customer/76_top_3358.png",
+      "eval_label": "30__top",
+      "train_label": "76__top",
+      "cos_resnet50": 0.9430023431777954,
+      "cos_vit_base_patch16_224": 0.9599777460098267,
+      "cos_max": 0.9599777460098267
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/29/top/customer/29_top_1281.png",
+      "train_crop": "data/processed/cure_crops/68/bottom/customer/68_bottom_3007.png",
+      "eval_label": "29__top",
+      "train_label": "68__bottom",
+      "cos_resnet50": 0.9599376320838928,
+      "cos_vit_base_patch16_224": 0.8489482402801514,
+      "cos_max": 0.9599376320838928
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/9/top/customer/9_top_397.png",
+      "train_crop": "data/processed/cure_crops/111/top/customer/111_top_4888.png",
+      "eval_label": "9__top",
+      "train_label": "111__top",
+      "cos_resnet50": 0.9599146842956543,
+      "cos_vit_base_patch16_224": 0.8951162099838257,
+      "cos_max": 0.9599146842956543
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/30/top/customer/30_top_1326.png",
+      "train_crop": "data/processed/cure_crops/76/top/customer/76_top_3359.png",
+      "eval_label": "30__top",
+      "train_label": "76__top",
+      "cos_resnet50": 0.9565980434417725,
+      "cos_vit_base_patch16_224": 0.9599093198776245,
+      "cos_max": 0.9599093198776245
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/30/bottom/customer/30_bottom_1350.png",
+      "train_crop": "data/processed/cure_crops/76/bottom/customer/76_bottom_3386.png",
+      "eval_label": "30__bottom",
+      "train_label": "76__bottom",
+      "cos_resnet50": 0.959677517414093,
+      "cos_vit_base_patch16_224": 0.9329551458358765,
+      "cos_max": 0.959677517414093
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/9/bottom/customer/9_bottom_420.png",
+      "train_crop": "data/processed/cure_crops/111/bottom/customer/111_bottom_4903.png",
+      "eval_label": "9__bottom",
+      "train_label": "111__bottom",
+      "cos_resnet50": 0.9595057368278503,
+      "cos_vit_base_patch16_224": 0.9112020134925842,
+      "cos_max": 0.9595057368278503
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/9/bottom/customer/9_bottom_425.png",
+      "train_crop": "data/processed/cure_crops/111/bottom/customer/111_bottom_4904.png",
+      "eval_label": "9__bottom",
+      "train_label": "111__bottom",
+      "cos_resnet50": 0.9590834379196167,
+      "cos_vit_base_patch16_224": 0.9041553139686584,
+      "cos_max": 0.9590834379196167
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/31/bottom/customer/31_bottom_1387.png",
+      "train_crop": "data/processed/cure_crops/171/top/customer/171_top_7491.png",
+      "eval_label": "31__bottom",
+      "train_label": "171__top",
+      "cos_resnet50": 0.9589561820030212,
+      "cos_vit_base_patch16_224": 0.8964881896972656,
+      "cos_max": 0.9589561820030212
+    },
+    {
+      "eval_crop": "data/processed/cure_crops/9/bottom/customer/9_bottom_417.png",
+      "train_crop": "data/processed/cure_crops/111/bottom/customer/111_bottom_4909.png",
+      "eval_label": "9__bottom",
+      "train_label": "111__bottom",
+      "cos_resnet50": 0.9583950042724609,
+      "cos_vit_base_patch16_224": 0.8017680048942566,
+      "cos_max": 0.9583950042724609
+    }
+  ]
+}

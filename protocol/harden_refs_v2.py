@@ -21,6 +21,16 @@ v2 sửa đúng ba chỗ đó:
      luôn **bao lồi** của mask, hợp lý vì viên thuốc lồi. Ảnh nào vẫn không đạt thì bị đánh dấu
      `suspect` và ghi vào log, chứ không im lặng cho qua như v1.
 
+Cổng thứ hai, từ 1.1 (KNOWN_ISSUES.md mục 10). Solidity không nhìn thấy một vết cắt THẲNG: nửa
+viên bị thay nền vẫn lồi, solidity 1.000, qua cổng. Phép đo độc lập (`measure_mask_damage.py
+--masks`, mặt nạ SAM từ `reference_masks.py`) bắt được điều đó, và với mỗi reference nó bắt,
+một người xem ba thứ cạnh nhau (ảnh gốc, vùng luật màu giữ lại, mặt nạ SAM) rồi quyết định,
+ghi vào `protocol/frozen/reference_mask_review.csv`: `use_sam` khi luật màu cắt viên và mặt nạ
+SAM đúng (mặt nạ đó nằm trong `protocol/frozen/reference_masks/`), `keep_rule` khi SAM sai,
+`suspect` khi cả hai đều không ổn. Script này đọc file đó và thay mask theo quyết định; log ghi
+`repair: independent_mask` và `review` cho từng ảnh để kiểm được. Không có file đó thì chạy y
+như 1.0.
+
 GIỮ NGUYÊN so với v1: hàm chọn donor, seed 42, và **thứ tự rút số ngẫu nhiên**. Nhờ vậy mỗi
 reference nhận đúng miếng nền donor như v1, và khác biệt duy nhất giữa v1 và v2 là cái mask.
 Đây là thay đổi có kiểm soát, so sánh được.
@@ -43,6 +53,7 @@ ROOT = os.path.dirname(HERE)
 
 
 def _need(var, what):
+    """Đọc lúc chạy, không lúc import: module này còn được import để dùng hàm con."""
     v = os.environ.get(var)
     if not v:
         raise SystemExit(f"[phase F v2] thieu bien moi truong {var} ({what})")
@@ -55,9 +66,9 @@ def _need(var, what):
 #   CURE_GALLERY    : file gallery K=1 lam co so de ghi lai duong dan reference
 #   CURE_MANIFEST   : manifest bbox dong bang (mac dinh: frozen/ canh script)
 #   PHASE_F_V2_OUT  : thu muc ghi ket qua (mac dinh: <repo>/outputs_v2)
-CROPS_ROOT = _need("CURE_CROPS_ROOT", "goc cua crop_rel")
-RAW_ROOT = _need("CURE_RAW_ROOT", "goc cua src_rel, anh raw lam donor")
-GALLERY = _need("CURE_GALLERY", "gallery K=1 lam co so")
+CROPS_ROOT = os.environ.get("CURE_CROPS_ROOT")
+RAW_ROOT = os.environ.get("CURE_RAW_ROOT")
+GALLERY = os.environ.get("CURE_GALLERY")
 MANIFEST = os.environ.get("CURE_MANIFEST",
                           os.path.join(HERE, "frozen", "cure_crops_manifest.curated.csv"))
 
@@ -219,25 +230,96 @@ def donor_patch(row, rng):
     return np.asarray(img)
 
 
+REVIEW_CSV = os.path.join(HERE, "frozen", "reference_mask_review.csv")
+REVIEW_MASKS = os.path.join(HERE, "frozen", "reference_masks")
+REVIEW_DECISIONS = ("use_sam", "keep_rule", "suspect")
+
+
+def load_review(csv_path=REVIEW_CSV, mask_dir=REVIEW_MASKS):
+    """{class_id: (decision, mask_bool_or_None)} từ file quyết định của người kiểm. Thiếu file
+    thì trả {} (chạy như 1.0). Một dòng use_sam không có mặt nạ kèm theo là lỗi, không bỏ qua."""
+    if not os.path.exists(csv_path):
+        return {}
+    d = pd.read_csv(csv_path)
+    out = {}
+    for _, r in d.iterrows():
+        cid, dec = str(r["class_id"]), str(r["decision"])
+        if dec not in REVIEW_DECISIONS:
+            raise SystemExit(f"[phase F v2] {csv_path}: quyết định lạ '{dec}' ở {cid}")
+        m = None
+        if dec == "use_sam":
+            p = os.path.join(mask_dir, f"{cid}.png")
+            if not os.path.exists(p):
+                raise SystemExit(f"[phase F v2] {csv_path}: {cid} là use_sam nhưng không có {p}")
+            m = np.asarray(Image.open(p).convert("L")) > 127
+        out[cid] = (dec, m)
+    return out
+
+
+def apply_review(cid, mask, info, review):
+    """Áp quyết định của người kiểm cho một reference. use_sam: mặt nạ SAM (giãn 2 px như mặt
+    nạ luật màu) thay mặt nạ luật màu; keep_rule: giữ; suspect: giữ và gắn cờ. Trả (mask, info)."""
+    if cid not in review:
+        return mask, info
+    dec, sam = review[cid]
+    info = dict(info, review=dec)
+    if dec == "use_sam":
+        m = ndimage.binary_dilation(sam, iterations=2)
+        info.update({"repair": "independent_mask", "suspect": False, "frac": float(m.mean()),
+                     "solidity": _solidity(m), "solidity_rule_mask": info.get("solidity")})
+        return m, info
+    if dec == "suspect":
+        info["suspect"] = True
+    return mask, info
+
+
+def split_gallery_by_suspect(gallery, per_class):
+    """Tách gallery hardened thành (giữ, suspect) theo cờ `suspect` của log; hàng gallery nhận
+    diện qua tên file hardened <class_id>.png. Trả (DataFrame gallery không suspect, DataFrame
+    suspect với class_id, fold, repair, solidity, frac)."""
+    cid_of = gallery["crop_rel"].map(lambda c: os.path.splitext(os.path.basename(str(c)))[0])
+    is_sus = cid_of.map(lambda c: bool(per_class.get(c, {}).get("suspect", False)))
+    sus = gallery[is_sus]
+    sus_df = pd.DataFrame({
+        "class_id": cid_of[is_sus].to_numpy(),
+        "fold": sus["fold"].to_numpy() if "fold" in sus else [None] * len(sus),
+        "repair": [per_class[c]["repair"] for c in cid_of[is_sus]],
+        "solidity": [per_class[c]["solidity"] for c in cid_of[is_sus]],
+        "frac": [per_class[c]["frac"] for c in cid_of[is_sus]],
+    }, columns=["class_id", "fold", "repair", "solidity", "frac"])
+    return gallery[~is_sus].reset_index(drop=True), sus_df.reset_index(drop=True)
+
+
 def main():
+    global CROPS_ROOT, RAW_ROOT, GALLERY
+    CROPS_ROOT = _need("CURE_CROPS_ROOT", "goc cua crop_rel")
+    RAW_ROOT = _need("CURE_RAW_ROOT", "goc cua src_rel, anh raw lam donor")
+    GALLERY = _need("CURE_GALLERY", "gallery K=1 lam co so")
     os.makedirs(HARD_DIR, exist_ok=True)
     m = pd.read_csv(MANIFEST)
     refs = m[m["kind"] == "ref"].sort_values("crop_rel").reset_index(drop=True)
     cons = m[m["kind"] == "customer"].sort_values("crop_rel").reset_index(drop=True)
     rng = np.random.default_rng(SEED)      # thứ tự rút số y v1 -> donor trùng v1
 
+    review = load_review()
+    if review:
+        print(f"[harden v2] quyết định của người kiểm: {len(review)} reference "
+              f"({sum(1 for d, _ in review.values() if d == 'use_sam')} use_sam)", flush=True)
     per = {}
     stats = {"n_refs": len(refs), "noise_fallback": 0, "ellipse_fallback": 0,
-             "hull_repair": 0, "suspect": 0}
+             "hull_repair": 0, "suspect": 0, "independent_mask": 0, "reviewed": len(review)}
     hard_path = {}
     for i, r in refs.iterrows():
         cid = f"{r['pillId']}__{r['side']}"
         arr = np.asarray(Image.open(os.path.join(CROPS_ROOT, r["crop_rel"])).convert("RGB"))
         fg, info = build_fg_mask_v2(arr)
+        fg, info = apply_review(cid, fg, info, review)
         if info["repair"] == "ellipse":
             stats["ellipse_fallback"] += 1
         if info["repair"] == "convex_hull":
             stats["hull_repair"] += 1
+        if info["repair"] == "independent_mask":
+            stats["independent_mask"] += 1
         if info["suspect"]:
             stats["suspect"] += 1
         patch = None
@@ -266,6 +348,11 @@ def main():
     g = pd.read_csv(GALLERY)
     g["crop_rel"] = g["crop_rel"].map(lambda c: hard_path.get(c, c))
     g.to_csv(os.path.join(OUT, "gallery_fewshot_K1_hardened_v2.csv"), index=False)
+    # Công tắc cho người dùng không muốn giữ các reference suspect (mask rơi về ellipse):
+    # gallery không có chúng, và danh sách chúng kèm fold để biết lớp nào mất reference.
+    kept, sus = split_gallery_by_suspect(g, per)
+    kept.to_csv(os.path.join(OUT, "gallery_fewshot_K1_hardened_v2_nosuspect.csv"), index=False)
+    sus.to_csv(os.path.join(OUT, "suspect_refs_v2.csv"), index=False)
 
     pick = refs.iloc[np.linspace(0, len(refs) - 1, 12, dtype=int)]
     grid = Image.new("RGB", (6 * 192, 4 * 192), (32, 32, 32))
@@ -295,6 +382,8 @@ def main():
           f"ellipse {stats['ellipse_fallback']} | suspect {stats['suspect']} | "
           f"solidity min {stats['solidity_min']:.3f} median {stats['solidity_median']:.3f}",
           flush=True)
+    print(f"[harden v2] gallery không suspect: {len(kept)} hàng -> gallery_fewshot_K1_hardened_v2_nosuspect.csv; "
+          f"suspect: {list(sus['class_id'])} -> suspect_refs_v2.csv", flush=True)
 
 
 if __name__ == "__main__":

@@ -24,6 +24,12 @@ Ba chế độ:
 
   all        inventory, rồi build, rồi verify.
 
+  duplicates Băm SHA256 từng ảnh gốc mà manifest dùng và ghi các nhóm trùng byte ra
+             `$CURE_FITNESS_OUT/source_duplicates.json` (mặc định ./outputs). Một ảnh được xếp
+             dưới hai nhãn là lỗi của bộ sưu tập như được phân phối; phép băm bắt nó mà không
+             cần embedding hay ngưỡng nào. Thêm `--archive` để băm cả cây Pill_Images (mọi file,
+             kể cả file manifest không dùng) và ghi thêm `source_duplicates_archive.json`.
+
 Biến môi trường (xem REPRODUCE.md):
   CURE_MANIFEST     manifest bbox đóng băng. Mặc định: protocol/frozen/cure_crops_manifest.curated.csv
   CURE_RAW_ROOT     gốc chứa `src_rel`, tức thư mục có data/raw/CURE_dataset/
@@ -42,6 +48,7 @@ splits hay điểm rubric, vốn chỉ phụ thuộc manifest và embedding.
 import os
 import csv
 import sys
+import json
 import argparse
 from collections import Counter
 
@@ -209,9 +216,72 @@ def stage_verify(rows):
     print("[crops] VERIFY PASS — Phase A tái lập trùng tới từng pixel", flush=True)
 
 
+# -------------------------------------------------------------------------- duplicates
+def hash_groups(items, chunk=1 << 20):
+    """items: dãy (khóa, đường dẫn tuyệt đối). Trả danh sách các nhóm khóa có nội dung file
+    trùng nhau từng byte (SHA256), chỉ nhóm có >= 2 phần tử, mỗi nhóm và danh sách đều sắp xếp."""
+    import hashlib
+    by_hash = {}
+    for key, path in items:
+        h = hashlib.sha256()
+        with open(path, "rb") as f:
+            for block in iter(lambda: f.read(chunk), b""):
+                h.update(block)
+        by_hash.setdefault(h.hexdigest(), []).append(key)
+    return sorted(sorted(v) for v in by_hash.values() if len(v) > 1)
+
+
+def stage_duplicates(rows, raw_root, out_path):
+    """Băm mọi `src_rel` của manifest, ghi JSON các nhóm trùng byte kèm lớp và loại ảnh."""
+    print(f"[crops] duplicates: băm {len(rows)} ảnh gốc", flush=True)
+    meta = {r["src_rel"]: r for r in rows}
+    groups = hash_groups((r["src_rel"], os.path.join(raw_root, r["src_rel"])) for r in rows)
+    out_groups = []
+    for g in groups:
+        classes = [f"{meta[s]['pillId']}__{meta[s]['side']}" for s in g]
+        kinds = [meta[s]["kind"] for s in g]
+        out_groups.append({"files": g, "classes": classes, "kinds": kinds,
+                           "crops": [meta[s]["crop_rel"] for s in g]})
+    summary = {
+        "n_files_hashed": len(rows),
+        "n_groups": len(groups),
+        "n_files_in_groups": sum(len(g) for g in groups),
+        "n_groups_cross_class": sum(1 for g in out_groups if len(set(g["classes"])) > 1),
+        "n_groups_cross_kind": sum(1 for g in out_groups if len(set(g["kinds"])) > 1),
+        "groups": out_groups,
+    }
+    os.makedirs(os.path.dirname(os.path.abspath(out_path)), exist_ok=True)
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(summary, f, indent=2, ensure_ascii=False)
+    print(f"[crops] duplicates: {summary['n_groups']} nhóm trùng byte, "
+          f"{summary['n_groups_cross_class']} nhóm nằm dưới hai lớp -> {out_path}", flush=True)
+    return summary
+
+
+def stage_duplicates_archive(raw_root, out_path):
+    """Băm MỌI file dưới data/raw/CURE_dataset/Pill_Images, kể cả file manifest không dùng."""
+    base = os.path.join(raw_root, "data", "raw", "CURE_dataset", "Pill_Images")
+    items = []
+    for dp, _, fns in os.walk(base):
+        for fn in fns:
+            if fn.lower().endswith((".jpg", ".jpeg", ".png")):
+                full = os.path.join(dp, fn)
+                items.append((os.path.relpath(full, raw_root), full))
+    print(f"[crops] duplicates --archive: băm {len(items)} file dưới Pill_Images", flush=True)
+    groups = hash_groups(sorted(items))
+    summary = {"n_files_hashed": len(items), "n_groups": len(groups),
+               "n_files_in_groups": sum(len(g) for g in groups), "groups": groups}
+    with open(out_path, "w", encoding="utf-8") as f:
+        json.dump(summary, f, indent=2, ensure_ascii=False)
+    print(f"[crops] duplicates --archive: {len(groups)} nhóm -> {out_path}", flush=True)
+    return summary
+
+
 def main():
     ap = argparse.ArgumentParser(description="Phase A: sinh lại crop 384 từ manifest bbox")
-    ap.add_argument("stage", choices=["inventory", "build", "verify", "all"])
+    ap.add_argument("stage", choices=["inventory", "build", "verify", "all", "duplicates"])
+    ap.add_argument("--archive", action="store_true",
+                    help="duplicates: băm cả cây Pill_Images, không chỉ 8811 file của manifest")
     args = ap.parse_args()
     _need_roots()
     rows = _rows()
@@ -224,6 +294,11 @@ def main():
         stage_build(rows)
     if args.stage in ("verify", "all"):
         stage_verify(rows)
+    if args.stage == "duplicates":
+        out_dir = os.environ.get("CURE_FITNESS_OUT", os.path.join(os.path.dirname(THIS), "outputs"))
+        stage_duplicates(rows, RAW_ROOT, os.path.join(out_dir, "source_duplicates.json"))
+        if args.archive:
+            stage_duplicates_archive(RAW_ROOT, os.path.join(out_dir, "source_duplicates_archive.json"))
 
 
 if __name__ == "__main__":

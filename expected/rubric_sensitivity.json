@@ -1,0 +1,777 @@
+{
+  "grid": {
+    "b1_full": [
+      0.6,
+      0.65,
+      0.7,
+      0.75,
+      0.8,
+      0.85,
+      0.9
+    ],
+    "b2_full": [
+      0.1,
+      0.12,
+      0.14,
+      0.15,
+      0.16,
+      0.18,
+      0.2
+    ],
+    "b2_half": [
+      0.03,
+      0.04,
+      0.05,
+      0.06,
+      0.08
+    ],
+    "c1_full": [
+      0.01,
+      0.02,
+      0.03,
+      0.05
+    ],
+    "d1_hi": [
+      0.8,
+      0.85,
+      0.9,
+      0.95
+    ],
+    "e1_auc": [
+      0.9,
+      0.95,
+      0.98,
+      0.995
+    ],
+    "accept": [
+      75,
+      80,
+      85
+    ],
+    "cap_rule": [
+      true,
+      false
+    ]
+  },
+  "variants": {
+    "direct": {
+      "baseline": {
+        "total": 80,
+        "verdict_class": "CAPPED"
+      },
+      "margins": {
+        "B1": {
+          "measured": 0.25147005880235207,
+          "nearest_threshold": 0.75,
+          "margin": -0.49852994119764793
+        },
+        "B2": {
+          "measured": 0.04587771856036735,
+          "nearest_threshold": 0.05,
+          "margin": -0.004122281439632655
+        },
+        "C1": {
+          "measured": 0.0,
+          "nearest_threshold": 0.02,
+          "margin": -0.02
+        },
+        "D1": {
+          "measured": 0.3703676159877694,
+          "nearest_threshold": 0.05,
+          "margin": 0.3203676159877694
+        },
+        "E1": {
+          "measured": 0.9999447695375083,
+          "nearest_threshold": 0.95,
+          "margin": 0.04994476953750837
+        }
+      },
+      "sweeps": {
+        "b1_full": [
+          {
+            "value": 0.6,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.65,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.7,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.75,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.8,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.85,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.9,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          }
+        ],
+        "b2_full": [
+          {
+            "value": 0.1,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.12,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.14,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.15,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.16,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.18,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.2,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          }
+        ],
+        "b2_half": [
+          {
+            "value": 0.03,
+            "total": 87,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.04,
+            "total": 87,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.05,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.06,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.08,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          }
+        ],
+        "c1_full": [
+          {
+            "value": 0.01,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.02,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.03,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.05,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          }
+        ],
+        "d1_hi": [
+          {
+            "value": 0.8,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.85,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.9,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.95,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          }
+        ],
+        "e1_auc": [
+          {
+            "value": 0.9,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.95,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.98,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 0.995,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          }
+        ],
+        "accept": [
+          {
+            "value": 75,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 80,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": 85,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          }
+        ],
+        "cap_rule": [
+          {
+            "value": true,
+            "total": 80,
+            "verdict_class": "CAPPED"
+          },
+          {
+            "value": false,
+            "total": 80,
+            "verdict_class": "ACCEPT"
+          }
+        ]
+      }
+    },
+    "v1": {
+      "baseline": {
+        "total": 100,
+        "verdict_class": "ACCEPT"
+      },
+      "margins": {
+        "B1": {
+          "measured": 0.13188527541101644,
+          "nearest_threshold": 0.75,
+          "margin": -0.6181147245889835
+        },
+        "B2": {
+          "measured": 0.165462501951703,
+          "nearest_threshold": 0.15,
+          "margin": 0.015462501951703012
+        },
+        "C1": {
+          "measured": 0.0,
+          "nearest_threshold": 0.02,
+          "margin": -0.02
+        },
+        "D1": {
+          "measured": 0.2289688928902473,
+          "nearest_threshold": 0.05,
+          "margin": 0.1789688928902473
+        },
+        "E1": {
+          "measured": 0.9941469479126251,
+          "nearest_threshold": 0.95,
+          "margin": 0.04414694791262519
+        }
+      },
+      "sweeps": {
+        "b1_full": [
+          {
+            "value": 0.6,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.65,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.7,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.75,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.8,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.85,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.9,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          }
+        ],
+        "b2_full": [
+          {
+            "value": 0.1,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.12,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.14,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.15,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.16,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.18,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.2,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          }
+        ],
+        "b2_half": [
+          {
+            "value": 0.03,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.04,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.05,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.06,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.08,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          }
+        ],
+        "c1_full": [
+          {
+            "value": 0.01,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.02,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.03,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.05,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          }
+        ],
+        "d1_hi": [
+          {
+            "value": 0.8,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.85,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.9,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.95,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          }
+        ],
+        "e1_auc": [
+          {
+            "value": 0.9,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.95,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.98,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.995,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          }
+        ],
+        "accept": [
+          {
+            "value": 75,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 80,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 85,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          }
+        ],
+        "cap_rule": [
+          {
+            "value": true,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": false,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          }
+        ]
+      }
+    },
+    "v2": {
+      "baseline": {
+        "total": 92,
+        "verdict_class": "ACCEPT"
+      },
+      "margins": {
+        "B1": {
+          "measured": 0.1654266170646826,
+          "nearest_threshold": 0.75,
+          "margin": -0.5845733829353175
+        },
+        "B2": {
+          "measured": 0.13192116029803685,
+          "nearest_threshold": 0.15,
+          "margin": -0.01807883970196314
+        },
+        "C1": {
+          "measured": 0.0,
+          "nearest_threshold": 0.02,
+          "margin": -0.02
+        },
+        "D1": {
+          "measured": 0.2710802487728532,
+          "nearest_threshold": 0.05,
+          "margin": 0.2210802487728532
+        },
+        "E1": {
+          "measured": 0.9927556298353428,
+          "nearest_threshold": 0.95,
+          "margin": 0.04275562983534287
+        }
+      },
+      "sweeps": {
+        "b1_full": [
+          {
+            "value": 0.6,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.65,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.7,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.75,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.8,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.85,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.9,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          }
+        ],
+        "b2_full": [
+          {
+            "value": 0.1,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.12,
+            "total": 100,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.14,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.15,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.16,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.18,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.2,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          }
+        ],
+        "b2_half": [
+          {
+            "value": 0.03,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.04,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.05,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.06,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.08,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          }
+        ],
+        "c1_full": [
+          {
+            "value": 0.01,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.02,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.03,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.05,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          }
+        ],
+        "d1_hi": [
+          {
+            "value": 0.8,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.85,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.9,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.95,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          }
+        ],
+        "e1_auc": [
+          {
+            "value": 0.9,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.95,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.98,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 0.995,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          }
+        ],
+        "accept": [
+          {
+            "value": 75,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 80,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": 85,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          }
+        ],
+        "cap_rule": [
+          {
+            "value": true,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          },
+          {
+            "value": false,
+            "total": 92,
+            "verdict_class": "ACCEPT"
+          }
+        ]
+      }
+    }
+  },
+  "verdict_changes": [
+    {
+      "variant": "direct",
+      "parameter": "b2_half",
+      "value": 0.03,
+      "from": "CAPPED",
+      "to": "ACCEPT",
+      "total": 87
+    },
+    {
+      "variant": "direct",
+      "parameter": "b2_half",
+      "value": 0.04,
+      "from": "CAPPED",
+      "to": "ACCEPT",
+      "total": 87
+    },
+    {
+      "variant": "direct",
+      "parameter": "cap_rule",
+      "value": false,
+      "from": "CAPPED",
+      "to": "ACCEPT",
+      "total": 80
+    }
+  ]
+}

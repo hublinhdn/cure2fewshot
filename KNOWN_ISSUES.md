@@ -67,20 +67,27 @@ measurement was computed on the corrected crop files, so every control value, ev
 criterion and every verdict is unaffected. The only numbers that moved are the two provenance
 counts above, which were wrong before and are right now.
 
-One provenance nuance is recorded here because it is the kind of detail this protocol exists to
-surface. The 27 backbone baseline sweep ran on a machine that had rebuilt its crops from the
-manifest, so it saw the ten pre-correction crops: eight among its 7016 training images and two
-among its 1715 evaluation queries. The gallery was untouched, since all ten are consumer
-photographs and Phase F donor windows are cut from raw photographs. Even if both affected queries
-flipped rank, a backbone's top1 would move by at most 0.0012, three orders below the reported
-0.55 to 0.84 spread, so no conclusion drawn from the sweep changes. It is noted so that anyone
-rerunning the sweep from the corrected manifest knows why ten crops differ.
+One provenance nuance was recorded here in 1.0: that the 27 backbone sweep had seen the ten
+pre-correction crops. Re-examined on 14 November 2026 while answering the reviewers, that
+statement was wrong by an order of magnitude. The sweep read the crop directory of the training
+project on the machine it ran on, and that directory predates most of the manual box corrections,
+not only the last ten: 150 of the 1715 evaluation queries and about an eighth of the training
+photographs differ from the crops this manifest regenerates, by more than five percent of their
+pixels. The sweep also read a hardened reference set that is not the one this protocol produces.
+Section 11 records what was measured, how the published numbers were reproduced to the fourth
+decimal from that data, and what 1.1 replaces them with.
 
 ---
 
-## 2. Five hardened reference masks fall back to an inscribed ellipse
+## 2. Five hardened reference masks fall back to an inscribed ellipse. SUPERSEDED in 1.1
 
-**Severity: low, reported by design.**
+**Severity: low in 1.0, reported by design; resolved by section 10 in 1.1.**
+
+Update, 1.1: all five were examined against an independent mask (section 10). In each case the
+inscribed ellipse either clipped the tablet or kept a ring of the synthetic field around it, and in
+each case the independent mask fitted the tablet. They now carry that mask, recorded as
+`use_sam` in `protocol/frozen/reference_mask_review.csv`, and no reference of the gated variant is
+flagged `suspect` any more. The paragraph below describes 1.0.
 
 Phase F resolves the foreground mask by trying colour distance thresholds in ascending order and
 accepting the first whose mask has a plausible area and a solidity of at least 0.97. For five of
@@ -267,3 +274,153 @@ references above five percent. Measured on the ungated mask it says how much of 
 falls there, 189 of 388, a smaller number for the worse mask, because the pale pixels it had
 already removed are no longer part of what is measured.
 
+---
+
+## 9. The collection files ten photographs of pill 81 under both faces. RESOLVED in 1.1
+
+**Status: found on 14 November 2026 by the image level duplicate scan that 1.1 adds; handled at the
+clean stage from a frozen decision file. No evaluation query and no rubric score is affected.**
+
+### What was found
+
+Hashing the bytes of every consumer photograph the manifest uses (`make_crops.py duplicates`)
+finds ten groups of byte identical files, every one of them a photograph of pill 81 stored once
+under `81/top/Customer` and once under `81/bottom/Customer` (file numbers 3578 to 3588 against
+3601 to 3611). The whole archive holds eleven such groups; one of the eleven photographs had been
+excluded from the manifest at localisation. Nine of the ten pairs localise to identical boxes and
+therefore identical crops; the tenth pair was boxed by hand on both copies and the two boxes
+differ by a few pixels. This is a property of the collection as distributed: the file bytes are
+identical, the names are not.
+
+### Why the 1.0 scan missed it
+
+The 1.0 duplicate label scan tested class pairs, and it tested a pair only after the centroids of
+their consumer photographs agreed to cosine 0.97 in both probes. The two faces of pill 81 each
+hold twelve photographs of their own besides the ten shared ones, and those twelve differ enough
+that the centroids agree only to 0.916 and 0.944. The pair was never counted, so the ten image
+pairs at cosine 1.000 were never seen. The reviewer's remark that "no detected samples above a
+threshold does not establish the absence of leakage" was right in a way the 1.0 release could not
+show.
+
+### The correction
+
+1.1 scans at the image level and without a gate: every pair of crops with cosine at least 0.99 in
+either probe (`near_duplicate_scan`, 46 pairs in the direct conversion, 10 across classes, all
+pill 81), and every pair of byte identical source files. The class pair scan keeps its centroid
+trigger and gains an image trigger, three or more cross class image pairs, whose suggestion is
+`resolve_images` rather than `merge`: the two classes are distinct, they share photographs.
+
+The two reference photographs of pill 81 are themselves near identical under both probes
+(cosine 0.9996, the highest of the 196 pills; the next is 0.934), so the face of a shared
+photograph cannot be settled from the image. One copy of each is kept, under the face that sorts
+first in the merge step's canonical order (bottom before top); the rule and every pair are in
+`protocol/frozen/duplicate_resolution.csv`, generated by `make_duplicate_resolution.py` from the
+scan's output and applied at the clean stage. Pill 81 lies entirely in fold 1.
+
+### What changed, and what did not
+
+| Quantity | 1.0.4 | 1.1 |
+|---|---|---|
+| consumer photographs after cleaning | 8423 | 8413 |
+| training images (folds 1 to 4) | 7016 | 7006 |
+| evaluation queries, gallery entries, classes | 1715, 386, 390 | unchanged |
+| control values, rubric scores and verdicts | | unchanged (the controls measure the collection as distributed, before cleaning, like the leakage check) |
+| class pairs flagged by the label scan | 4 | 5, the new one `resolve_images` |
+| fixed evaluation sample of 1280 | | re-drawn: the per class permutations after `81__top` in sort order shift |
+
+The 27 backbone sweep of 1.0 trained on the ten duplicated photographs under both labels; the
+seed study of 1.1 (`expected/baseline_seeds.csv`) trains on the corrected set.
+
+---
+
+## 10. The solidity gate cannot see a straight cut, and the released gated mask had them. RESOLVED in 1.1
+
+**Status: found on 14 November 2026 with an independent mask; 29 of 388 gated masks replaced after
+a check by eye. The gated gallery of 1.0.4 is superseded.**
+
+### What was wrong
+
+The integrity gate of Phase F accepts a mask when its solidity, area over convex hull area, is at
+least 0.97. A convex tablet whose lower half has been replaced by background is still convex:
+solidity 1.000, gate passed. The 1.0 article stated the gate as evidence that the gated mask
+"does not cut into the tablet". It is evidence only against bites.
+
+The measurement that shows it (`measure_mask_damage.py --masks`) compares the region Phase F
+preserved with a mask obtained by a different mechanism: the segmentation model that produced the
+frozen boxes (SAM ViT-B, same weights, SHA256 in `expected/cure_crops_meta.json`), prompted on the
+original reference crop with a positive point at the centre and negative points on the synthetic
+field, candidates that touch the field's border rejected (`reference_masks.py`). The quantity
+reported is the share of that mask's core, the mask eroded by three pixels so that a boundary
+disagreement between two mechanisms does not count, that the hardened image replaced.
+
+Against that mask, the gated variant of 1.0.4 replaced more than one percent of the core in 47
+references and more than a fifth in 16. The ungated variant: 209 and 70. The cause in every real
+case is a luminance gradient across the tablet: the colour distance threshold, taken from the
+border, falls below the darker or the brighter half, the largest connected component is that half,
+and its hull is convex.
+
+### The check by eye, and the repair
+
+An automatic mask is not evidence on its own: SAM merged the tablet with the field for 22 of the
+388 references (pale tablets on a pale field), and the measurement then flags an intact reference.
+Every reference the measurement flagged, and every reference for which SAM had no candidate inside
+the field's border, 58 in all, was laid out as original crop, region preserved by the colour rule,
+SAM mask, hardened image, and judged by eye. The decisions, one line each with the reason, are in
+`protocol/frozen/reference_mask_review.csv`:
+
+| Decision | References | What was seen |
+|---|---:|---|
+| `use_sam` | 29 | the colour rule had cut the tablet (24, straight cuts and lost rims), or the ellipse fallback had clipped it or kept field around it (5); the SAM mask fits |
+| `keep_rule` | 29 | the SAM mask is the field or includes a strip of it (15), or the two masks agree to within their boundary (14) |
+
+`harden_refs_v2.py` reads that file: for `use_sam` it uses the mask stored under
+`protocol/frozen/reference_masks/`, dilated by two pixels exactly as the colour rule mask is, and
+logs `repair: independent_mask`. The masks are binary silhouettes, derived annotations like the
+boxes; no pixel of the collection is redistributed. The other 359 references are hardened exactly
+as in 1.0.4 and are pixel identical to it.
+
+### What changed, and what did not
+
+The gated gallery differs from 1.0.4 in 29 of 386 entries. Every number measured on the hardened
+references was regenerated and is recorded in CHANGELOG.md under 1.1.0: the hardening log, the
+four controls, the rubric, the sensitivity sweep and the mask damage statistics. The measurement
+against the independent mask now reports zero core removal for the 29 repaired references by
+construction; its value lies in the other 359 and in the ungated variant, where it is unchanged.
+
+---
+
+## 11. The 27 backbone sweep did not run on the benchmark this protocol produces. RESOLVED in 1.1
+
+**Status: found on 14 November 2026 while releasing the training scripts. The numbers in the 1.0
+article's baseline table were reproduced to the fourth decimal from the data the sweep actually
+used, and that data is not the released benchmark.**
+
+### What was found
+
+`TRAINING_RECIPE.md` of 1.0 described the sweep as trained and evaluated on the files of
+REPRODUCE.md section 6b. Scoring the sweep's own resnet18 checkpoint with the 1.1 evaluation script
+on those files gave mAP 0.7561 against the published 0.7087. The published value is recovered
+exactly, 0.7087, 0.5592, 0.8810, only with two substitutions: the crop directory of the training
+project on the sweep machine, which differs from the released crops in 150 of the 1715 evaluation
+queries and about an eighth of the training photographs (section 1), and a hardened reference set
+produced in July 2026 by the pre-protocol version of the ungated script, in which 58 of the 388
+references kept between 0.1 and 1.9 percent of their pixels, that is, the tablet itself had been
+replaced by the donor background; eleven of those 58 are gallery entries of evaluation classes.
+
+### What 1.1 does
+
+* `training/` holds the training and evaluation scripts, ported from the sweep's stack and
+  checked against it: on the sweep's own data, `eval_baseline.py` reproduces every published
+  figure of resnet18 to four decimals.
+* The 27 checkpoints are deposited (CHANGELOG.md gives the record) and
+  `expected/retrieval_baselines.csv` now carries their scores on the released benchmark, computed
+  by `eval_baseline.py`; the July figures are kept beside them in `expected/retrieval_baselines_sweep_2026-07.csv`
+  for the record. The checkpoints were trained on the sweep's data, so these are scores of models
+  trained on a near relative of the benchmark and tested on the benchmark.
+* Four representative backbones (resnet18, efficientnet_b0, levit_128s, convnext_small) were
+  retrained on the released benchmark with three seeds each, `expected/baseline_seeds.csv`; the
+  article reports mean and standard deviation.
+* One more property of the sweep is stated rather than hidden: the checkpoint it kept for each
+  backbone is the one with the best score on the evaluation queries themselves, measured every
+  ten epochs and in the last five. `train_baseline.py` keeps the same rule, because it is the
+  sweep's rule, and reports the last epoch's score beside it; the seed study lists both.

@@ -25,7 +25,11 @@ What 1.1 reports instead:
 
 A score in the first file is that of a model trained on a near relative of the benchmark and
 tested on the benchmark. The third file is the clean measurement; the article reports it with
-mean and standard deviation.
+mean and standard deviation. The score file inside the Zenodo deposit
+(`scores_on_released_benchmark.csv`) was computed on the gallery as it stood on 14 November 2026,
+before the reference box correction and the second mask review (`KNOWN_ISSUES.md` sections 10 and
+12); `expected/retrieval_baselines.csv` is the current table, and the two differ by up to 0.02 mAP
+in the same direction for every backbone.
 
 ## What is trained
 

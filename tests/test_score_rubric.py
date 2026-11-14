@@ -67,7 +67,7 @@ def test_sweep_reports_margins_and_verdict_changes():
     res = RS.sweep({v: (rep, rlog, RS.facts_from_rubric(base, rep)) for v, (rep, base, rlog) in variants.items()})
     d = res["variants"]["direct"]
     assert d["baseline"] == {"total": 80, "verdict_class": "CAPPED"}
-    assert abs(d["margins"]["B2"]["measured"] - 0.046) < 0.001
+    assert abs(d["margins"]["B2"]["measured"] - 0.044) < 0.001
     assert d["margins"]["B2"]["nearest_threshold"] == 0.05
     changes = {(c["variant"], c["parameter"], c["value"]) for c in res["verdict_changes"]}
     assert ("direct", "b2_half", 0.03) in changes

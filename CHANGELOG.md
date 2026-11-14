@@ -70,7 +70,7 @@ Added:
   `gallery_fewshot_K1_hardened_v2_nosuspect.csv`: the controls and the gallery without chosen
   references, for anyone who prefers to drop a flagged reference rather than repair it. Since
   the repair, no reference is flagged suspect and the file equals the gallery.
-* `tests/`: 38 unit tests on synthetic inputs, no image of the collection needed
+* `tests/`: 46 unit tests on synthetic inputs, no image of the collection needed (one needs torch and is skipped without it)
   (`python -m pytest tests`).
 * `scripts/verify.sh` checks three more files; `IGNORE_KEYS` covers the new path fields.
 

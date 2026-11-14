@@ -1,0 +1,11 @@
+group,keep_crop_rel,drop_crop_rel,keep_class,drop_class,rule,note
+1,data/processed/cure_crops/81/bottom/customer/81_bottom_3601.png,data/processed/cure_crops/81/top/customer/81_top_3578.png,81__bottom,81__top,keep the copy under the class that sorts first,same photograph filed under two classes
+2,data/processed/cure_crops/81/bottom/customer/81_bottom_3603.png,data/processed/cure_crops/81/top/customer/81_top_3580.png,81__bottom,81__top,keep the copy under the class that sorts first,same photograph filed under two classes
+3,data/processed/cure_crops/81/bottom/customer/81_bottom_3604.png,data/processed/cure_crops/81/top/customer/81_top_3581.png,81__bottom,81__top,keep the copy under the class that sorts first,same photograph filed under two classes
+4,data/processed/cure_crops/81/bottom/customer/81_bottom_3605.png,data/processed/cure_crops/81/top/customer/81_top_3582.png,81__bottom,81__top,keep the copy under the class that sorts first,same photograph filed under two classes
+5,data/processed/cure_crops/81/bottom/customer/81_bottom_3606.png,data/processed/cure_crops/81/top/customer/81_top_3583.png,81__bottom,81__top,keep the copy under the class that sorts first,same photograph filed under two classes
+6,data/processed/cure_crops/81/bottom/customer/81_bottom_3607.png,data/processed/cure_crops/81/top/customer/81_top_3584.png,81__bottom,81__top,keep the copy under the class that sorts first,same photograph filed under two classes
+7,data/processed/cure_crops/81/bottom/customer/81_bottom_3608.png,data/processed/cure_crops/81/top/customer/81_top_3585.png,81__bottom,81__top,keep the copy under the class that sorts first,same photograph filed under two classes
+8,data/processed/cure_crops/81/bottom/customer/81_bottom_3609.png,data/processed/cure_crops/81/top/customer/81_top_3586.png,81__bottom,81__top,keep the copy under the class that sorts first,same photograph filed under two classes
+9,data/processed/cure_crops/81/bottom/customer/81_bottom_3610.png,data/processed/cure_crops/81/top/customer/81_top_3587.png,81__bottom,81__top,keep the copy under the class that sorts first,same photograph filed under two classes
+10,data/processed/cure_crops/81/bottom/customer/81_bottom_3611.png,data/processed/cure_crops/81/top/customer/81_top_3588.png,81__bottom,81__top,keep the copy under the class that sorts first,same photograph filed under two classes

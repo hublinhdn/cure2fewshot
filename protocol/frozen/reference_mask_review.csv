@@ -1,59 +1,64 @@
 class_id,decision,reason
 4__bottom,use_sam,"colour rule kept the upper half only, straight cut, solidity 1.000"
-6__bottom,use_sam,colour rule removed the lower rim
-6__top,use_sam,colour rule removed a sliver of the lower rim
-12__top,use_sam,"colour rule kept the upper half only, straight cut"
-16__bottom,use_sam,colour rule removed a sliver of the lower rim
-17__top,use_sam,colour rule removed the lower rim of the tablet
-25__bottom,use_sam,colour rule removed the lower rim
 25__top,use_sam,"colour rule kept the upper half only, straight cut"
-26__top,use_sam,colour rule removed the lower rim
-37__top,use_sam,colour rule removed the lower rim
-40__top,use_sam,colour rule removed the lower rim
-47__top,use_sam,colour rule removed the lower rim of the tablet
-48__top,use_sam,colour rule removed a sliver along the lower edge of the capsule
-52__top,use_sam,ellipse fallback kept background around the capsule; SAM mask fits
-54__top,use_sam,ellipse fallback kept background around the capsule; SAM mask fits
-58__top,use_sam,ellipse fallback kept background around the capsule; SAM mask fits
-63__top,use_sam,colour rule removed a sliver of the lower rim
-110__bottom,use_sam,colour rule bit into the lower edge
-152__top,use_sam,ellipse fallback clipped the tablet edge; SAM mask fits
+12__top,use_sam,"colour rule kept the upper half only, straight cut"
 158__bottom,use_sam,"colour rule kept the left half only, straight cut"
-161__top,use_sam,colour rule cut the tablet diagonally
-174__top,use_sam,"ellipse fallback, smaller than the capsule; SAM mask fits"
-184__bottom,use_sam,"colour rule kept the upper left half only, straight cut"
-189__top,use_sam,colour rule removed the lower part of the tablet
-190__top,use_sam,colour rule bit into the right edge of the tablet
-191__bottom,use_sam,colour rule removed the lower right part of the tablet
-191__top,use_sam,colour rule removed the lower right part of the tablet
-194__bottom,use_sam,colour rule bit into the lower right edge
 194__top,use_sam,"colour rule kept the upper left half only, straight cut"
+184__bottom,use_sam,"colour rule kept the upper left half only, straight cut"
+161__top,use_sam,colour rule cut the tablet diagonally
+17__top,use_sam,colour rule removed the lower rim of the tablet
+47__top,use_sam,colour rule removed the lower rim of the tablet
+194__bottom,use_sam,"colour rule cut off the lower right part of the tablet, straight cut"
+186__top,use_sam,colour rule removed the lower part of the tablet; SAM mask fits after the box correction
+191__bottom,use_sam,colour rule removed the lower right part of the tablet
+25__bottom,use_sam,colour rule removed the lower rim
+37__top,use_sam,colour rule removed the lower rim and kept scattered field pixels; SAM mask fits
+189__top,use_sam,colour rule removed the lower part of the tablet
+26__bottom,use_sam,colour rule removed the lower rim; the tablet is whole after the box correction
+191__top,use_sam,colour rule removed the lower right part of the tablet
+174__top,use_sam,ellipse fallback narrower than the capsule shaped tablet and longer than it; SAM mask fits
+152__top,use_sam,ellipse fallback clipped the tablet edge; SAM mask fits
+26__top,use_sam,colour rule removed the lower rim
+190__top,use_sam,colour rule bit into the right edge of the tablet
+52__top,use_sam,ellipse fallback kept background around the capsule; SAM mask fits both halves
+52__bottom,use_sam,colour rule removed a sliver of the lower end of the capsule; SAM mask fits
+110__bottom,use_sam,"colour rule bit into the lower rim; SAM mask fits apart from a few ragged field pixels at the upper left edge, accepted"
+6__bottom,use_sam,colour rule removed the lower rim
+16__bottom,use_sam,colour rule removed a sliver of the lower rim
+6__top,use_sam,colour rule removed a sliver of the lower rim
+40__top,use_sam,colour rule bit into the lower rim
+16__top,use_sam,colour rule removed a sliver of the lower rim; SAM mask fits (it was the field in the first review)
+63__top,use_sam,colour rule removed a sliver of the lower rim
+58__top,use_sam,ellipse fallback kept background around the capsule; SAM mask fits
+66__bottom,use_sam,ellipse fallback clipped the capsule corners and kept field at its ends; SAM mask fits
+1__bottom,use_sam,"colour rule kept the whole crop region, a square with solidity 1.000; SAM mask fits the tablet"
+1__top,use_sam,"colour rule kept the whole crop region, a square with solidity 1.000; SAM mask fits the tablet"
 13__top,keep_rule,SAM mask is the field; colour rule mask intact
-15__bottom,keep_rule,both masks fit
-15__top,keep_rule,both masks fit
-16__top,keep_rule,"SAM mask is the field; colour rule mask intact (a few pixels of the lower rim lost, accepted)"
-17__bottom,keep_rule,SAM mask includes field to the left; colour rule mask intact
-18__top,keep_rule,both masks fit
-26__bottom,keep_rule,both masks fit; the tablet is cut by the crop itself
-27__bottom,keep_rule,both masks fit; difference is boundary width
-28__bottom,keep_rule,both masks fit
-31__top,keep_rule,both masks fit
-37__bottom,keep_rule,SAM mask is the field; colour rule mask intact
-43__bottom,keep_rule,both masks fit
-49__top,keep_rule,both masks fit
-51__bottom,keep_rule,SAM mask is the field; colour rule mask intact
-53__bottom,keep_rule,both masks fit; difference is boundary width
-53__top,keep_rule,both masks fit
-62__bottom,keep_rule,SAM mask covers only the lower half of the capsule; colour rule mask intact
-64__top,keep_rule,both masks fit
-67__top,keep_rule,SAM mask merged the tablet with the field; colour rule mask intact
-72__bottom,keep_rule,SAM mask includes a strip of field; colour rule mask intact
-83__bottom,keep_rule,SAM mask includes a strip of field; colour rule mask intact
-108__bottom,keep_rule,SAM mask includes a strip of field; colour rule mask intact
+60__bottom,keep_rule,SAM mask includes a strip of field above the tablet; colour rule mask intact
+174__bottom,keep_rule,SAM mask includes a strip of field above the tablet; colour rule mask intact
+48__top,keep_rule,"SAM mask includes a block of field at the upper left; colour rule loses a thin sliver along the lower edge, accepted"
+18__bottom,keep_rule,SAM mask includes a strip of field; colour rule mask intact
 130__bottom,keep_rule,SAM mask includes a strip of field; colour rule mask intact
-141__bottom,keep_rule,"SAM mask is the synthetic field, not the tablet; colour rule mask intact"
-146__top,keep_rule,both masks fit
+53__top,keep_rule,SAM mask includes a strip of field above the tablet; ellipse fallback kept and still flagged suspect
+137__top,keep_rule,SAM mask includes a strip of field; colour rule mask intact
+55__bottom,keep_rule,SAM mask includes a strip of field; colour rule mask intact
+108__bottom,keep_rule,SAM mask includes a strip of field; colour rule mask intact
 156__bottom,keep_rule,SAM mask includes a strip of field; colour rule mask intact
-159__top,keep_rule,SAM mask includes a strip of field above the tablet; colour rule mask intact
-175__top,keep_rule,both masks fit
-186__top,keep_rule,SAM mask includes a strip of field; colour rule mask intact
+53__bottom,keep_rule,both masks fit; difference is boundary width
+83__bottom,keep_rule,SAM mask includes a strip of field; colour rule mask intact
+51__bottom,keep_rule,SAM mask includes a strip of field at the upper left; colour rule mask intact after the box correction
+144__top,keep_rule,SAM mask includes a strip of field; colour rule mask intact
+140__bottom,keep_rule,"SAM mask includes a block of field at the upper left; colour rule mask intact, a few scattered field pixels accepted"
+95__bottom,keep_rule,SAM mask includes a strip of field; colour rule mask intact
+134__bottom,keep_rule,"SAM mask includes a block of field at the upper left; colour rule mask intact, a few scattered field pixels accepted"
+98__bottom,keep_rule,SAM mask includes a strip of field; colour rule mask intact
+72__bottom,keep_rule,SAM mask includes a strip of field; colour rule mask intact
+155__bottom,keep_rule,SAM mask includes a strip of field; colour rule mask intact
+95__top,keep_rule,SAM mask includes a strip of field; colour rule mask intact
+32__top,keep_rule,SAM mask includes a strip of field; colour rule mask intact
+121__bottom,keep_rule,SAM mask includes a strip of field; colour rule mask intact
+113__bottom,keep_rule,SAM mask includes a strip of field; colour rule mask intact
+27__bottom,keep_rule,both masks fit; difference is boundary width
+148__bottom,keep_rule,SAM mask includes a strip of field; colour rule mask intact
+153__top,keep_rule,SAM mask covers only the lower part of the tablet; colour rule mask intact
+69__bottom,keep_rule,SAM mask covers only the upper half of the capsule; colour rule mask intact

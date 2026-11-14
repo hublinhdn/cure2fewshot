@@ -1433,7 +1433,7 @@ data/processed/cure_crops/128/top/customer/128_top_5596.png,data/raw/CURE_datase
 data/processed/cure_crops/128/top/customer/128_top_5597.png,data/raw/CURE_dataset/Pill_Images/128/top/Customer/128_top_5597.jpg,128,top,customer,sam,640,640,250,172,523,448,0.15,384,0.086013,1.015892
 data/processed/cure_crops/128/top/customer/128_top_5598.png,data/raw/CURE_dataset/Pill_Images/128/top/Customer/128_top_5598.jpg,128,top,customer,sam,640,640,192,134,466,408,0.15,384,0.086353,1.019327
 data/processed/cure_crops/128/top/customer/128_top_5599.png,data/raw/CURE_dataset/Pill_Images/128/top/Customer/128_top_5599.jpg,128,top,customer,sam,640,640,138,220,411,495,0.15,384,0.086074,1.007308
-data/processed/cure_crops/128/top/ref/128_ref_top.png,data/raw/CURE_dataset/Pill_Images/128/top/Reference/128_ref_top.bmp,128,top,ref,classical,2976,2976,1263,1250,1752,1633,0.15,384,0.003244,
+data/processed/cure_crops/128/top/ref/128_ref_top.png,data/raw/CURE_dataset/Pill_Images/128/top/Reference/128_ref_top.bmp,128,top,ref,audit,2976,2976,1201,1228,1767,1792,0.15,384,0.003244,
 data/processed/cure_crops/129/bottom/customer/129_bottom_5647.png,data/raw/CURE_dataset/Pill_Images/129/bottom/Customer/129_bottom_5647.jpg,129,bottom,customer,sam,2976,2976,1169,1091,1555,1613,0.15,384,0.012396,0.977859
 data/processed/cure_crops/129/bottom/customer/129_bottom_5648.png,data/raw/CURE_dataset/Pill_Images/129/bottom/Customer/129_bottom_5648.jpg,129,bottom,customer,manual,2976,2976,1215,1070,1789,1893,0.15,384,0.011845,0.977355
 data/processed/cure_crops/129/bottom/customer/129_bottom_5649.png,data/raw/CURE_dataset/Pill_Images/129/bottom/Customer/129_bottom_5649.jpg,129,bottom,customer,sam,2976,2976,1225,1398,1604,1921,0.15,384,0.01181,1.003203
@@ -2095,7 +2095,7 @@ data/processed/cure_crops/140/bottom/customer/140_bottom_6188.png,data/raw/CURE_
 data/processed/cure_crops/140/bottom/customer/140_bottom_6189.png,data/raw/CURE_dataset/Pill_Images/140/bottom/Customer/140_bottom_6189.jpg,140,bottom,customer,sam,640,640,0,128,538,640,0.15,384,0.238965,1.005787
 data/processed/cure_crops/140/bottom/customer/140_bottom_6190.png,data/raw/CURE_dataset/Pill_Images/140/bottom/Customer/140_bottom_6190.jpg,140,bottom,customer,sam,640,640,4,3,640,503,0.15,384,0.249348,1.002175
 data/processed/cure_crops/140/bottom/customer/140_bottom_6191.png,data/raw/CURE_dataset/Pill_Images/140/bottom/Customer/140_bottom_6191.jpg,140,bottom,customer,sam,640,640,45,0,539,562,0.15,384,0.242307,1.005245
-data/processed/cure_crops/140/bottom/ref/140_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/140/bottom/Reference/140_ref_bottom.bmp,140,bottom,ref,classical,2976,2976,1009,1035,2037,1905,0.15,384,0.011094,
+data/processed/cure_crops/140/bottom/ref/140_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/140/bottom/Reference/140_ref_bottom.bmp,140,bottom,ref,audit,2976,2976,988,1001,2070,2152,0.15,384,0.011094,
 data/processed/cure_crops/140/top/customer/140_top_6138.png,data/raw/CURE_dataset/Pill_Images/140/top/Customer/140_top_6138.jpg,140,top,customer,sam,2976,2976,642,1027,2335,1797,0.15,384,0.061396,0.977288
 data/processed/cure_crops/140/top/customer/140_top_6139.png,data/raw/CURE_dataset/Pill_Images/140/top/Customer/140_top_6139.jpg,140,top,customer,sam,2976,2976,591,798,2161,2091,0.15,384,0.067758,0.989106
 data/processed/cure_crops/140/top/customer/140_top_6140.png,data/raw/CURE_dataset/Pill_Images/140/top/Customer/140_top_6140.jpg,140,top,customer,sam,2976,2976,650,837,2180,2096,0.15,384,0.064347,0.995418
@@ -2151,7 +2151,7 @@ data/processed/cure_crops/141/bottom/customer/141_bottom_6239.png,data/raw/CURE_
 data/processed/cure_crops/141/bottom/customer/141_bottom_6240.png,data/raw/CURE_dataset/Pill_Images/141/bottom/Customer/141_bottom_6240.jpg,141,bottom,customer,sam,640,640,90,166,457,589,0.15,384,0.13488,1.016396
 data/processed/cure_crops/141/bottom/customer/141_bottom_6241.png,data/raw/CURE_dataset/Pill_Images/141/bottom/Customer/141_bottom_6241.jpg,141,bottom,customer,sam,640,640,147,99,540,518,0.15,384,0.139214,1.021063
 data/processed/cure_crops/141/bottom/customer/141_bottom_6242.png,data/raw/CURE_dataset/Pill_Images/141/bottom/Customer/141_bottom_6242.jpg,141,bottom,customer,sam,640,640,156,16,501,448,0.15,384,0.132507,1.013209
-data/processed/cure_crops/141/bottom/ref/141_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/141/bottom/Reference/141_ref_bottom.bmp,141,bottom,ref,classical,2976,2976,876,1146,1946,1773,0.15,384,0.026757,
+data/processed/cure_crops/141/bottom/ref/141_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/141/bottom/Reference/141_ref_bottom.bmp,141,bottom,ref,audit,2976,2976,866,1135,2029,1866,0.15,384,0.026757,
 data/processed/cure_crops/141/top/customer/141_top_6192.png,data/raw/CURE_dataset/Pill_Images/141/top/Customer/141_top_6192.jpg,141,top,customer,sam,2976,2976,966,1024,2054,1872,0.15,384,0.036781,0.82897
 data/processed/cure_crops/141/top/customer/141_top_6193.png,data/raw/CURE_dataset/Pill_Images/141/top/Customer/141_top_6193.jpg,141,top,customer,sam,2976,2976,1112,899,1864,1971,0.15,384,0.034527,1.000349
 data/processed/cure_crops/141/top/customer/141_top_6194.png,data/raw/CURE_dataset/Pill_Images/141/top/Customer/141_top_6194.jpg,141,top,customer,sam,2976,2976,966,1108,1767,1994,0.15,384,0.027355,0.930661
@@ -2297,7 +2297,7 @@ data/processed/cure_crops/144/bottom/customer/144_bottom_6377.png,data/raw/CURE_
 data/processed/cure_crops/144/bottom/customer/144_bottom_6378.png,data/raw/CURE_dataset/Pill_Images/144/bottom/Customer/144_bottom_6378.jpg,144,bottom,customer,sam,640,640,188,238,472,565,0.15,384,0.089622,0.989731
 data/processed/cure_crops/144/bottom/customer/144_bottom_6379.png,data/raw/CURE_dataset/Pill_Images/144/bottom/Customer/144_bottom_6379.jpg,144,bottom,customer,manual,640,640,195,75,482,527,0.15,384,0.079565,0.986033
 data/processed/cure_crops/144/bottom/customer/144_bottom_6380.png,data/raw/CURE_dataset/Pill_Images/144/bottom/Customer/144_bottom_6380.jpg,144,bottom,customer,manual,640,640,178,67,460,511,0.15,384,0.075991,0.998692
-data/processed/cure_crops/144/bottom/ref/144_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/144/bottom/Reference/144_ref_bottom.bmp,144,bottom,ref,classical,2976,2976,1203,1289,2123,2159,0.15,384,0.030913,
+data/processed/cure_crops/144/bottom/ref/144_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/144/bottom/Reference/144_ref_bottom.bmp,144,bottom,ref,audit,2976,2976,712,941,2188,2206,0.15,384,0.030913,
 data/processed/cure_crops/144/top/customer/144_top_6333.png,data/raw/CURE_dataset/Pill_Images/144/top/Customer/144_top_6333.jpg,144,top,customer,manual,2976,2976,996,1273,2046,1963,0.15,384,0.018859,0.914581
 data/processed/cure_crops/144/top/customer/144_top_6334.png,data/raw/CURE_dataset/Pill_Images/144/top/Customer/144_top_6334.jpg,144,top,customer,manual,2976,2976,855,1099,2132,1843,0.15,384,0.027317,0.970575
 data/processed/cure_crops/144/top/customer/144_top_6335.png,data/raw/CURE_dataset/Pill_Images/144/top/Customer/144_top_6335.jpg,144,top,customer,manual,2976,2976,888,992,1719,1922,0.15,384,0.017799,0.925465
@@ -2414,7 +2414,7 @@ data/processed/cure_crops/146/top/customer/146_top_6445.png,data/raw/CURE_datase
 data/processed/cure_crops/146/top/customer/146_top_6446.png,data/raw/CURE_dataset/Pill_Images/146/top/Customer/146_top_6446.jpg,146,top,customer,sam,640,640,178,199,373,470,0.15,384,0.053777,1.008026
 data/processed/cure_crops/146/top/customer/146_top_6447.png,data/raw/CURE_dataset/Pill_Images/146/top/Customer/146_top_6447.jpg,146,top,customer,sam,640,640,204,182,358,461,0.15,384,0.05197,1.012125
 data/processed/cure_crops/146/top/customer/146_top_6448.png,data/raw/CURE_dataset/Pill_Images/146/top/Customer/146_top_6448.jpg,146,top,customer,sam,640,640,226,143,389,423,0.15,384,0.053496,1.018481
-data/processed/cure_crops/146/top/ref/146_ref_top.png,data/raw/CURE_dataset/Pill_Images/146/top/Reference/146_ref_top.bmp,146,top,ref,classical,2976,2976,1120,1220,1714,1638,0.15,384,0.00795,
+data/processed/cure_crops/146/top/ref/146_ref_top.png,data/raw/CURE_dataset/Pill_Images/146/top/Reference/146_ref_top.bmp,146,top,ref,audit,2976,2976,1088,1208,1953,1737,0.15,384,0.00795,
 data/processed/cure_crops/147/bottom/customer/147_bottom_6496.png,data/raw/CURE_dataset/Pill_Images/147/bottom/Customer/147_bottom_6496.jpg,147,bottom,customer,sam,2976,2976,914,1114,1964,1735,0.15,384,0.029486,1.007824
 data/processed/cure_crops/147/bottom/customer/147_bottom_6497.png,data/raw/CURE_dataset/Pill_Images/147/bottom/Customer/147_bottom_6497.jpg,147,bottom,customer,sam,2976,2976,1048,934,1812,2040,0.15,384,0.035895,1.019171
 data/processed/cure_crops/147/bottom/customer/147_bottom_6498.png,data/raw/CURE_dataset/Pill_Images/147/bottom/Customer/147_bottom_6498.jpg,147,bottom,customer,sam,2976,2976,1012,1121,2029,1915,0.15,384,0.031455,0.878993
@@ -2595,7 +2595,7 @@ data/processed/cure_crops/15/bottom/customer/15_bottom_694.png,data/raw/CURE_dat
 data/processed/cure_crops/15/bottom/customer/15_bottom_695.png,data/raw/CURE_dataset/Pill_Images/15/bottom/Customer/15_bottom_695.jpg,15,bottom,customer,sam,640,640,236,155,476,391,0.15,384,0.064504,1.004228
 data/processed/cure_crops/15/bottom/customer/15_bottom_696.png,data/raw/CURE_dataset/Pill_Images/15/bottom/Customer/15_bottom_696.jpg,15,bottom,customer,sam,640,640,218,251,456,488,0.15,384,0.064062,1.01506
 data/processed/cure_crops/15/bottom/customer/15_bottom_697.png,data/raw/CURE_dataset/Pill_Images/15/bottom/Customer/15_bottom_697.jpg,15,bottom,customer,sam,640,640,201,217,428,457,0.15,384,0.061794,0.998626
-data/processed/cure_crops/15/bottom/ref/15_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/15/bottom/Reference/15_ref_bottom.bmp,15,bottom,ref,classical,2448,2448,1029,968,1534,1310,0.15,384,0.012618,
+data/processed/cure_crops/15/bottom/ref/15_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/15/bottom/Reference/15_ref_bottom.bmp,15,bottom,ref,audit,2448,2448,1027,949,1537,1462,0.15,384,0.012618,
 data/processed/cure_crops/15/top/customer/15_top_657.png,data/raw/CURE_dataset/Pill_Images/15/top/Customer/15_top_657.jpg,15,top,customer,sam,2448,2448,914,842,1456,1381,0.15,384,0.022776,0.950103
 data/processed/cure_crops/15/top/customer/15_top_658.png,data/raw/CURE_dataset/Pill_Images/15/top/Customer/15_top_658.jpg,15,top,customer,sam,2448,2448,975,808,1553,1384,0.15,384,0.025946,0.984983
 data/processed/cure_crops/15/top/customer/15_top_659.png,data/raw/CURE_dataset/Pill_Images/15/top/Customer/15_top_659.jpg,15,top,customer,sam,2448,2448,920,915,1541,1534,0.15,384,0.029988,0.985915
@@ -2617,7 +2617,7 @@ data/processed/cure_crops/15/top/customer/15_top_674.png,data/raw/CURE_dataset/P
 data/processed/cure_crops/15/top/customer/15_top_675.png,data/raw/CURE_dataset/Pill_Images/15/top/Customer/15_top_675.jpg,15,top,customer,sam,640,640,188,262,450,524,0.15,384,0.077734,1.014375
 data/processed/cure_crops/15/top/customer/15_top_676.png,data/raw/CURE_dataset/Pill_Images/15/top/Customer/15_top_676.jpg,15,top,customer,sam,640,640,0,115,575,542,0.15,384,0.177905,0.509838
 data/processed/cure_crops/15/top/customer/15_top_677.png,data/raw/CURE_dataset/Pill_Images/15/top/Customer/15_top_677.jpg,15,top,customer,manual,640,640,258,304,471,511,0.15,384,0.166475,0.468396
-data/processed/cure_crops/15/top/ref/15_ref_top.png,data/raw/CURE_dataset/Pill_Images/15/top/Reference/15_ref_top.bmp,15,top,ref,classical,2448,2448,859,1009,1376,1373,0.15,384,0.012572,
+data/processed/cure_crops/15/top/ref/15_ref_top.png,data/raw/CURE_dataset/Pill_Images/15/top/Reference/15_ref_top.bmp,15,top,ref,audit,2448,2448,843,989,1383,1528,0.15,384,0.012572,
 data/processed/cure_crops/150/bottom/customer/150_bottom_6634.png,data/raw/CURE_dataset/Pill_Images/150/bottom/Customer/150_bottom_6634.jpg,150,bottom,customer,sam,2976,2976,908,1230,2080,1806,0.15,384,0.030732,0.992813
 data/processed/cure_crops/150/bottom/customer/150_bottom_6635.png,data/raw/CURE_dataset/Pill_Images/150/bottom/Customer/150_bottom_6635.jpg,150,bottom,customer,sam,2976,2976,1054,1356,2193,1896,0.15,384,0.028932,1.000741
 data/processed/cure_crops/150/bottom/customer/150_bottom_6636.png,data/raw/CURE_dataset/Pill_Images/150/bottom/Customer/150_bottom_6636.jpg,150,bottom,customer,sam,2976,2976,1110,1003,1583,2102,0.15,384,0.026941,0.990732
@@ -2657,7 +2657,7 @@ data/processed/cure_crops/151/top/customer/151_top_6648.png,data/raw/CURE_datase
 data/processed/cure_crops/151/top/customer/151_top_6649.png,data/raw/CURE_dataset/Pill_Images/151/top/Customer/151_top_6649.jpg,151,top,customer,sam,2976,2976,1304,1164,1826,2027,0.15,384,0.020636,0.91186
 data/processed/cure_crops/151/top/customer/151_top_6650.png,data/raw/CURE_dataset/Pill_Images/151/top/Customer/151_top_6650.jpg,151,top,customer,sam,2976,2976,1226,1243,2004,2026,0.15,384,0.032081,0.998883
 data/processed/cure_crops/151/top/customer/151_top_6651.png,data/raw/CURE_dataset/Pill_Images/151/top/Customer/151_top_6651.jpg,151,top,customer,sam,2976,2976,1003,1249,1976,1857,0.15,384,0.025742,0.898001
-data/processed/cure_crops/151/top/ref/151_ref_top.png,data/raw/CURE_dataset/Pill_Images/151/top/Reference/151_ref_top.bmp,151,top,ref,classical,2976,2976,1042,1433,1756,1696,0.15,384,0.005766,
+data/processed/cure_crops/151/top/ref/151_ref_top.png,data/raw/CURE_dataset/Pill_Images/151/top/Reference/151_ref_top.bmp,151,top,ref,audit,2976,2976,1030,1031,1778,1750,0.15,384,0.005766,
 data/processed/cure_crops/152/bottom/customer/152_bottom_6681.png,data/raw/CURE_dataset/Pill_Images/152/bottom/Customer/152_bottom_6681.jpg,152,bottom,customer,sam,2976,2976,1161,1199,1761,1797,0.15,384,0.018784,1.001594
 data/processed/cure_crops/152/bottom/customer/152_bottom_6682.png,data/raw/CURE_dataset/Pill_Images/152/bottom/Customer/152_bottom_6682.jpg,152,bottom,customer,sam,2976,2976,1073,1116,1745,1796,0.15,384,0.023903,0.987683
 data/processed/cure_crops/152/bottom/customer/152_bottom_6683.png,data/raw/CURE_dataset/Pill_Images/152/bottom/Customer/152_bottom_6683.jpg,152,bottom,customer,sam,2976,2976,1056,1047,1779,1764,0.15,384,0.027513,1.00459
@@ -3031,7 +3031,7 @@ data/processed/cure_crops/159/top/customer/159_top_6996.png,data/raw/CURE_datase
 data/processed/cure_crops/159/top/customer/159_top_6997.png,data/raw/CURE_dataset/Pill_Images/159/top/Customer/159_top_6997.jpg,159,top,customer,sam,640,640,17,145,640,461,0.15,384,0.260525,0.933534
 data/processed/cure_crops/159/top/customer/159_top_6998.png,data/raw/CURE_dataset/Pill_Images/159/top/Customer/159_top_6998.jpg,159,top,customer,sam,640,640,0,161,640,492,0.15,384,0.262422,1.008853
 data/processed/cure_crops/159/top/customer/159_top_6999.png,data/raw/CURE_dataset/Pill_Images/159/top/Customer/159_top_6999.jpg,159,top,customer,sam,640,640,36,133,640,449,0.15,384,0.25804,0.915375
-data/processed/cure_crops/159/top/ref/159_ref_top.png,data/raw/CURE_dataset/Pill_Images/159/top/Reference/159_ref_top.bmp,159,top,ref,classical,2976,2976,1206,654,1746,2377,0.15,384,0.020088,
+data/processed/cure_crops/159/top/ref/159_ref_top.png,data/raw/CURE_dataset/Pill_Images/159/top/Reference/159_ref_top.bmp,159,top,ref,audit,2976,2976,1187,654,1886,2380,0.15,384,0.020088,
 data/processed/cure_crops/16/bottom/customer/16_bottom_719.png,data/raw/CURE_dataset/Pill_Images/16/bottom/Customer/16_bottom_719.jpg,16,bottom,customer,sam,2448,2448,937,920,1528,1513,0.15,384,0.027319,0.938152
 data/processed/cure_crops/16/bottom/customer/16_bottom_720.png,data/raw/CURE_dataset/Pill_Images/16/bottom/Customer/16_bottom_720.jpg,16,bottom,customer,sam,2448,2448,913,893,1535,1517,0.15,384,0.030323,0.970057
 data/processed/cure_crops/16/bottom/customer/16_bottom_721.png,data/raw/CURE_dataset/Pill_Images/16/bottom/Customer/16_bottom_721.jpg,16,bottom,customer,sam,2448,2448,960,1007,1599,1650,0.15,384,0.031899,0.981435
@@ -3158,7 +3158,7 @@ data/processed/cure_crops/161/top/customer/161_top_7075.png,data/raw/CURE_datase
 data/processed/cure_crops/161/top/customer/161_top_7076.png,data/raw/CURE_dataset/Pill_Images/161/top/Customer/161_top_7076.jpg,161,top,customer,sam,640,640,203,42,545,385,0.15,384,0.134226,1.001056
 data/processed/cure_crops/161/top/customer/161_top_7077.png,data/raw/CURE_dataset/Pill_Images/161/top/Customer/161_top_7077.jpg,161,top,customer,sam,640,640,143,82,494,433,0.15,384,0.140813,1.013574
 data/processed/cure_crops/161/top/customer/161_top_7078.png,data/raw/CURE_dataset/Pill_Images/161/top/Customer/161_top_7078.jpg,161,top,customer,sam,640,640,116,117,470,471,0.15,384,0.143101,1.016484
-data/processed/cure_crops/161/top/ref/161_ref_top.png,data/raw/CURE_dataset/Pill_Images/161/top/Reference/161_ref_top.bmp,161,top,ref,classical,2976,2976,1340,1218,1862,1917,0.15,384,0.017131,
+data/processed/cure_crops/161/top/ref/161_ref_top.png,data/raw/CURE_dataset/Pill_Images/161/top/Reference/161_ref_top.bmp,161,top,ref,audit,2976,2976,1028,1087,1904,1954,0.15,384,0.017131,
 data/processed/cure_crops/162/bottom/customer/162_bottom_7120.png,data/raw/CURE_dataset/Pill_Images/162/bottom/Customer/162_bottom_7120.jpg,162,bottom,customer,sam,2976,2976,873,1151,2067,1781,0.15,384,0.031354,0.989093
 data/processed/cure_crops/162/bottom/customer/162_bottom_7121.png,data/raw/CURE_dataset/Pill_Images/162/bottom/Customer/162_bottom_7121.jpg,162,bottom,customer,sam,2976,2976,1027,805,1999,1829,0.15,384,0.032557,1.004415
 data/processed/cure_crops/162/bottom/customer/162_bottom_7122.png,data/raw/CURE_dataset/Pill_Images/162/bottom/Customer/162_bottom_7122.jpg,162,bottom,customer,sam,2976,2976,842,1131,2147,1649,0.15,384,0.035521,1.001861
@@ -3526,7 +3526,7 @@ data/processed/cure_crops/17/bottom/customer/17_bottom_777.png,data/raw/CURE_dat
 data/processed/cure_crops/17/bottom/customer/17_bottom_778.png,data/raw/CURE_dataset/Pill_Images/17/bottom/Customer/17_bottom_778.jpg,17,bottom,customer,sam,640,640,154,234,482,423,0.15,384,0.069263,1.02449
 data/processed/cure_crops/17/bottom/customer/17_bottom_779.png,data/raw/CURE_dataset/Pill_Images/17/bottom/Customer/17_bottom_779.jpg,17,bottom,customer,sam,640,640,292,123,520,419,0.15,384,0.065801,1.003616
 data/processed/cure_crops/17/bottom/customer/17_bottom_780.png,data/raw/CURE_dataset/Pill_Images/17/bottom/Customer/17_bottom_780.jpg,17,bottom,customer,sam,640,640,223,179,493,450,0.15,384,0.068027,1.016835
-data/processed/cure_crops/17/bottom/ref/17_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/17/bottom/Reference/17_ref_bottom.bmp,17,bottom,ref,classical,2448,2448,798,1033,1479,1306,0.15,384,0.008814,
+data/processed/cure_crops/17/bottom/ref/17_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/17/bottom/Reference/17_ref_bottom.bmp,17,bottom,ref,audit,2448,2448,789,1018,1484,1416,0.15,384,0.008814,
 data/processed/cure_crops/17/top/customer/17_top_739.png,data/raw/CURE_dataset/Pill_Images/17/top/Customer/17_top_739.jpg,17,top,customer,sam,2448,2448,774,1044,1384,1631,0.15,384,0.022708,1.010026
 data/processed/cure_crops/17/top/customer/17_top_740.png,data/raw/CURE_dataset/Pill_Images/17/top/Customer/17_top_740.jpg,17,top,customer,sam,2448,2448,913,884,1433,1579,0.15,384,0.024213,0.982664
 data/processed/cure_crops/17/top/customer/17_top_741.png,data/raw/CURE_dataset/Pill_Images/17/top/Customer/17_top_741.jpg,17,top,customer,manual,2448,2448,760,953,1265,1546,0.15,384,0.011395,0.321491
@@ -3768,7 +3768,7 @@ data/processed/cure_crops/174/top/customer/174_top_7620.png,data/raw/CURE_datase
 data/processed/cure_crops/174/top/customer/174_top_7621.png,data/raw/CURE_dataset/Pill_Images/174/top/Customer/174_top_7621.jpg,174,top,customer,sam,640,640,220,194,518,447,0.15,384,0.069932,1.01361
 data/processed/cure_crops/174/top/customer/174_top_7622.png,data/raw/CURE_dataset/Pill_Images/174/top/Customer/174_top_7622.jpg,174,top,customer,sam,640,640,134,225,461,411,0.15,384,0.072231,1.006262
 data/processed/cure_crops/174/top/customer/174_top_7623.png,data/raw/CURE_dataset/Pill_Images/174/top/Customer/174_top_7623.jpg,174,top,customer,sam,640,640,153,139,433,393,0.15,384,0.06426,1.021707
-data/processed/cure_crops/174/top/ref/174_ref_top.png,data/raw/CURE_dataset/Pill_Images/174/top/Reference/174_ref_top.bmp,174,top,ref,classical,2976,2976,1426,1148,1750,1899,0.15,384,0.008597,
+data/processed/cure_crops/174/top/ref/174_ref_top.png,data/raw/CURE_dataset/Pill_Images/174/top/Reference/174_ref_top.bmp,174,top,ref,audit,2976,2976,1355,1113,1761,1910,0.15,384,0.008597,
 data/processed/cure_crops/175/bottom/customer/175_bottom_7664.png,data/raw/CURE_dataset/Pill_Images/175/bottom/Customer/175_bottom_7664.jpg,175,bottom,customer,sam,2976,2976,1133,836,1901,2141,0.15,384,0.054888,0.848454
 data/processed/cure_crops/175/bottom/customer/175_bottom_7665.png,data/raw/CURE_dataset/Pill_Images/175/bottom/Customer/175_bottom_7665.jpg,175,bottom,customer,sam,2976,2976,786,956,2232,2024,0.15,384,0.072253,0.863389
 data/processed/cure_crops/175/bottom/customer/175_bottom_7666.png,data/raw/CURE_dataset/Pill_Images/175/bottom/Customer/175_bottom_7666.jpg,175,bottom,customer,sam,2976,2976,871,749,2081,2184,0.15,384,0.076698,0.86531
@@ -3812,7 +3812,7 @@ data/processed/cure_crops/175/top/customer/175_top_7660.png,data/raw/CURE_datase
 data/processed/cure_crops/175/top/customer/175_top_7661.png,data/raw/CURE_dataset/Pill_Images/175/top/Customer/175_top_7661.jpg,175,top,customer,sam,640,640,118,25,478,571,0.15,384,0.221606,1.003083
 data/processed/cure_crops/175/top/customer/175_top_7662.png,data/raw/CURE_dataset/Pill_Images/175/top/Customer/175_top_7662.jpg,175,top,customer,sam,640,640,174,40,496,574,0.15,384,0.210332,0.965367
 data/processed/cure_crops/175/top/customer/175_top_7663.png,data/raw/CURE_dataset/Pill_Images/175/top/Customer/175_top_7663.jpg,175,top,customer,sam,640,640,42,139,477,488,0.15,384,0.153843,1.012947
-data/processed/cure_crops/175/top/ref/175_ref_top.png,data/raw/CURE_dataset/Pill_Images/175/top/Reference/175_ref_top.bmp,175,top,ref,classical,2976,2976,1265,1356,2229,1907,0.15,384,0.016555,
+data/processed/cure_crops/175/top/ref/175_ref_top.png,data/raw/CURE_dataset/Pill_Images/175/top/Reference/175_ref_top.bmp,175,top,ref,audit,2976,2976,1093,1256,2253,1922,0.15,384,0.016555,
 data/processed/cure_crops/176/bottom/customer/176_bottom_7706.png,data/raw/CURE_dataset/Pill_Images/176/bottom/Customer/176_bottom_7706.jpg,176,bottom,customer,manual,2976,2976,954,1008,1967,2116,0.15,384,0.0664,1.016087
 data/processed/cure_crops/176/bottom/customer/176_bottom_7707.png,data/raw/CURE_dataset/Pill_Images/176/bottom/Customer/176_bottom_7707.jpg,176,bottom,customer,sam,2976,2976,1152,774,1937,2267,0.15,384,0.064093,1.010024
 data/processed/cure_crops/176/bottom/customer/176_bottom_7708.png,data/raw/CURE_dataset/Pill_Images/176/bottom/Customer/176_bottom_7708.jpg,176,bottom,customer,sam,2976,2976,941,926,2262,2280,0.15,384,0.073884,1.015901
@@ -4032,7 +4032,7 @@ data/processed/cure_crops/18/top/customer/18_top_798.png,data/raw/CURE_dataset/P
 data/processed/cure_crops/18/top/customer/18_top_799.png,data/raw/CURE_dataset/Pill_Images/18/top/Customer/18_top_799.jpg,18,top,customer,sam,640,640,247,103,431,417,0.15,384,0.067998,1.011292
 data/processed/cure_crops/18/top/customer/18_top_800.png,data/raw/CURE_dataset/Pill_Images/18/top/Customer/18_top_800.jpg,18,top,customer,manual,640,640,305,177,491,462,0.15,384,0.248589,0.501984
 data/processed/cure_crops/18/top/customer/18_top_801.png,data/raw/CURE_dataset/Pill_Images/18/top/Customer/18_top_801.jpg,18,top,customer,sam,640,640,218,190,528,463,0.15,384,0.07908,1.011416
-data/processed/cure_crops/18/top/ref/18_ref_top.png,data/raw/CURE_dataset/Pill_Images/18/top/Reference/18_ref_top.bmp,18,top,ref,classical,2448,2448,898,1069,1611,1378,0.15,384,0.018246,
+data/processed/cure_crops/18/top/ref/18_ref_top.png,data/raw/CURE_dataset/Pill_Images/18/top/Reference/18_ref_top.bmp,18,top,ref,audit,2448,2448,890,1061,1615,1440,0.15,384,0.018246,
 data/processed/cure_crops/180/bottom/customer/180_bottom_7875.png,data/raw/CURE_dataset/Pill_Images/180/bottom/Customer/180_bottom_7875.jpg,180,bottom,customer,sam,2976,2976,1148,1223,1741,1825,0.15,384,0.015189,0.883188
 data/processed/cure_crops/180/bottom/customer/180_bottom_7876.png,data/raw/CURE_dataset/Pill_Images/180/bottom/Customer/180_bottom_7876.jpg,180,bottom,customer,sam,2976,2976,667,1136,2346,2027,0.15,384,0.080288,0.89636
 data/processed/cure_crops/180/bottom/customer/180_bottom_7877.png,data/raw/CURE_dataset/Pill_Images/180/bottom/Customer/180_bottom_7877.jpg,180,bottom,customer,sam,2976,2976,736,760,2239,2414,0.15,384,0.105392,1.015488
@@ -4370,7 +4370,7 @@ data/processed/cure_crops/186/top/customer/186_top_8151.png,data/raw/CURE_datase
 data/processed/cure_crops/186/top/customer/186_top_8152.png,data/raw/CURE_dataset/Pill_Images/186/top/Customer/186_top_8152.jpg,186,top,customer,sam,640,640,221,182,399,359,0.15,384,0.036118,0.998598
 data/processed/cure_crops/186/top/customer/186_top_8153.png,data/raw/CURE_dataset/Pill_Images/186/top/Customer/186_top_8153.jpg,186,top,customer,sam,640,640,206,194,378,365,0.15,384,0.034155,1.008202
 data/processed/cure_crops/186/top/customer/186_top_8154.png,data/raw/CURE_dataset/Pill_Images/186/top/Customer/186_top_8154.jpg,186,top,customer,sam,640,640,215,233,401,419,0.15,384,0.039766,0.995823
-data/processed/cure_crops/186/top/ref/186_ref_top.png,data/raw/CURE_dataset/Pill_Images/186/top/Reference/186_ref_top.bmp,186,top,ref,classical,2976,2976,1241,1210,1816,1619,0.15,384,0.010192,
+data/processed/cure_crops/186/top/ref/186_ref_top.png,data/raw/CURE_dataset/Pill_Images/186/top/Reference/186_ref_top.bmp,186,top,ref,audit,2976,2976,1239,1191,1819,1764,0.15,384,0.010192,
 data/processed/cure_crops/187/bottom/customer/187_bottom_8200.png,data/raw/CURE_dataset/Pill_Images/187/bottom/Customer/187_bottom_8200.jpg,187,bottom,customer,sam,2976,2976,1313,1039,1729,1808,0.15,384,0.017041,0.933223
 data/processed/cure_crops/187/bottom/customer/187_bottom_8201.png,data/raw/CURE_dataset/Pill_Images/187/bottom/Customer/187_bottom_8201.jpg,187,bottom,customer,sam,2976,2976,1186,1206,1980,1654,0.15,384,0.018244,0.947719
 data/processed/cure_crops/187/bottom/customer/187_bottom_8202.png,data/raw/CURE_dataset/Pill_Images/187/bottom/Customer/187_bottom_8202.jpg,187,bottom,customer,sam,2976,2976,1320,1067,1715,1823,0.15,384,0.015938,0.916887
@@ -4716,7 +4716,7 @@ data/processed/cure_crops/193/bottom/customer/193_bottom_8481.png,data/raw/CURE_
 data/processed/cure_crops/193/bottom/customer/193_bottom_8482.png,data/raw/CURE_dataset/Pill_Images/193/bottom/Customer/193_bottom_8482.jpg,193,bottom,customer,sam,640,640,213,136,505,472,0.15,384,0.097153,1.002149
 data/processed/cure_crops/193/bottom/customer/193_bottom_8483.png,data/raw/CURE_dataset/Pill_Images/193/bottom/Customer/193_bottom_8483.jpg,193,bottom,customer,sam,640,640,180,154,446,479,0.15,384,0.086396,1.019037
 data/processed/cure_crops/193/bottom/customer/193_bottom_8484.png,data/raw/CURE_dataset/Pill_Images/193/bottom/Customer/193_bottom_8484.jpg,193,bottom,customer,sam,640,640,211,112,501,440,0.15,384,0.094534,0.952921
-data/processed/cure_crops/193/bottom/ref/193_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/193/bottom/Reference/193_ref_bottom.bmp,193,bottom,ref,classical,2976,2976,1410,1456,1830,2070,0.15,384,0.011084,
+data/processed/cure_crops/193/bottom/ref/193_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/193/bottom/Reference/193_ref_bottom.bmp,193,bottom,ref,audit,2976,2976,1234,1057,1855,2124,0.15,384,0.011084,
 data/processed/cure_crops/193/top/customer/193_top_8442.png,data/raw/CURE_dataset/Pill_Images/193/top/Customer/193_top_8442.jpg,193,top,customer,sam,2976,2976,1084,892,1910,1938,0.15,384,0.039466,0.996621
 data/processed/cure_crops/193/top/customer/193_top_8443.png,data/raw/CURE_dataset/Pill_Images/193/top/Customer/193_top_8443.jpg,193,top,customer,sam,2976,2976,849,1117,2078,1819,0.15,384,0.045628,0.984611
 data/processed/cure_crops/193/top/customer/193_top_8444.png,data/raw/CURE_dataset/Pill_Images/193/top/Customer/193_top_8444.jpg,193,top,customer,sam,2976,2976,1087,847,1796,1978,0.15,384,0.040723,1.004456
@@ -4738,7 +4738,7 @@ data/processed/cure_crops/193/top/customer/193_top_8459.png,data/raw/CURE_datase
 data/processed/cure_crops/193/top/customer/193_top_8460.png,data/raw/CURE_dataset/Pill_Images/193/top/Customer/193_top_8460.jpg,193,top,customer,sam,640,640,183,102,419,384,0.15,384,0.066133,1.016768
 data/processed/cure_crops/193/top/customer/193_top_8461.png,data/raw/CURE_dataset/Pill_Images/193/top/Customer/193_top_8461.jpg,193,top,customer,sam,640,640,207,104,435,392,0.15,384,0.066125,1.020637
 data/processed/cure_crops/193/top/customer/193_top_8462.png,data/raw/CURE_dataset/Pill_Images/193/top/Customer/193_top_8462.jpg,193,top,customer,sam,640,640,185,177,435,453,0.15,384,0.067402,0.99255
-data/processed/cure_crops/193/top/ref/193_ref_top.png,data/raw/CURE_dataset/Pill_Images/193/top/Reference/193_ref_top.bmp,193,top,ref,classical,2976,2976,1184,1421,2035,1859,0.15,384,0.008336,
+data/processed/cure_crops/193/top/ref/193_ref_top.png,data/raw/CURE_dataset/Pill_Images/193/top/Reference/193_ref_top.bmp,193,top,ref,audit,2976,2976,1135,1345,2043,1871,0.15,384,0.008336,
 data/processed/cure_crops/194/bottom/customer/194_bottom_8511.png,data/raw/CURE_dataset/Pill_Images/194/bottom/Customer/194_bottom_8511.jpg,194,bottom,customer,sam,2976,2976,1117,1126,1814,1833,0.15,384,0.025599,1.012708
 data/processed/cure_crops/194/bottom/customer/194_bottom_8512.png,data/raw/CURE_dataset/Pill_Images/194/bottom/Customer/194_bottom_8512.jpg,194,bottom,customer,sam,2976,2976,1216,1181,1886,1850,0.15,384,0.02347,1.012563
 data/processed/cure_crops/194/bottom/customer/194_bottom_8513.png,data/raw/CURE_dataset/Pill_Images/194/bottom/Customer/194_bottom_8513.jpg,194,bottom,customer,sam,2976,2976,1137,1156,1820,1838,0.15,384,0.024676,1.006828
@@ -4763,7 +4763,7 @@ data/processed/cure_crops/194/bottom/customer/194_bottom_8531.png,data/raw/CURE_
 data/processed/cure_crops/194/bottom/customer/194_bottom_8532.png,data/raw/CURE_dataset/Pill_Images/194/bottom/Customer/194_bottom_8532.jpg,194,bottom,customer,manual,640,640,282,113,433,267,0.15,384,0.390447,0.807149
 data/processed/cure_crops/194/bottom/customer/194_bottom_8533.png,data/raw/CURE_dataset/Pill_Images/194/bottom/Customer/194_bottom_8533.jpg,194,bottom,customer,sam,640,640,230,179,423,373,0.15,384,0.042737,1.003406
 data/processed/cure_crops/194/bottom/customer/194_bottom_8534.png,data/raw/CURE_dataset/Pill_Images/194/bottom/Customer/194_bottom_8534.jpg,194,bottom,customer,sam,640,640,167,126,620,476,0.15,384,0.089207,0.64802
-data/processed/cure_crops/194/bottom/ref/194_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/194/bottom/Reference/194_ref_bottom.bmp,194,bottom,ref,classical,2976,2976,1246,1208,1658,1674,0.15,384,0.006688,
+data/processed/cure_crops/194/bottom/ref/194_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/194/bottom/Reference/194_ref_bottom.bmp,194,bottom,ref,audit,2976,2976,1213,1186,1898,1847,0.15,384,0.006688,
 data/processed/cure_crops/194/top/customer/194_top_8485.png,data/raw/CURE_dataset/Pill_Images/194/top/Customer/194_top_8485.jpg,194,top,customer,sam,2976,2976,1140,1118,1805,1791,0.15,384,0.02336,1.005087
 data/processed/cure_crops/194/top/customer/194_top_8486.png,data/raw/CURE_dataset/Pill_Images/194/top/Customer/194_top_8486.jpg,194,top,customer,sam,2976,2976,1200,1192,1778,1768,0.15,384,0.017473,1.006553
 data/processed/cure_crops/194/top/customer/194_top_8487.png,data/raw/CURE_dataset/Pill_Images/194/top/Customer/194_top_8487.jpg,194,top,customer,sam,2976,2976,1127,1064,1891,1811,0.15,384,0.02998,0.999387
@@ -4790,7 +4790,7 @@ data/processed/cure_crops/194/top/customer/194_top_8507.png,data/raw/CURE_datase
 data/processed/cure_crops/194/top/customer/194_top_8508.png,data/raw/CURE_dataset/Pill_Images/194/top/Customer/194_top_8508.jpg,194,top,customer,sam,640,640,234,203,449,418,0.15,384,0.053298,1.021402
 data/processed/cure_crops/194/top/customer/194_top_8509.png,data/raw/CURE_dataset/Pill_Images/194/top/Customer/194_top_8509.jpg,194,top,customer,sam,640,640,154,268,378,595,0.15,384,0.074797,0.861767
 data/processed/cure_crops/194/top/customer/194_top_8510.png,data/raw/CURE_dataset/Pill_Images/194/top/Customer/194_top_8510.jpg,194,top,customer,sam,640,640,234,193,448,411,0.15,384,0.053105,1.012933
-data/processed/cure_crops/194/top/ref/194_ref_top.png,data/raw/CURE_dataset/Pill_Images/194/top/Reference/194_ref_top.bmp,194,top,ref,classical,2976,2976,1319,1311,1757,1768,0.15,384,0.006207,
+data/processed/cure_crops/194/top/ref/194_ref_top.png,data/raw/CURE_dataset/Pill_Images/194/top/Reference/194_ref_top.bmp,194,top,ref,audit,2976,2976,1195,1206,1776,1784,0.15,384,0.006207,
 data/processed/cure_crops/195/bottom/customer/195_bottom_8558.png,data/raw/CURE_dataset/Pill_Images/195/bottom/Customer/195_bottom_8558.jpg,195,bottom,customer,sam,2976,2976,1204,842,1912,2192,0.15,384,0.046638,1.019821
 data/processed/cure_crops/195/bottom/customer/195_bottom_8559.png,data/raw/CURE_dataset/Pill_Images/195/bottom/Customer/195_bottom_8559.jpg,195,bottom,customer,sam,2976,2976,862,1115,2074,1926,0.15,384,0.040192,1.007782
 data/processed/cure_crops/195/bottom/customer/195_bottom_8560.png,data/raw/CURE_dataset/Pill_Images/195/bottom/Customer/195_bottom_8560.jpg,195,bottom,customer,sam,2976,2976,1070,884,2136,2137,0.15,384,0.050017,1.013466
@@ -5109,7 +5109,7 @@ data/processed/cure_crops/24/top/customer/24_top_1051.png,data/raw/CURE_dataset/
 data/processed/cure_crops/24/top/customer/24_top_1052.png,data/raw/CURE_dataset/Pill_Images/24/top/Customer/24_top_1052.jpg,24,top,customer,sam,640,640,91,130,388,431,0.15,384,0.102393,1.00361
 data/processed/cure_crops/24/top/customer/24_top_1053.png,data/raw/CURE_dataset/Pill_Images/24/top/Customer/24_top_1053.jpg,24,top,customer,sam,640,640,97,211,396,507,0.15,384,0.100933,1.017855
 data/processed/cure_crops/24/top/customer/24_top_1054.png,data/raw/CURE_dataset/Pill_Images/24/top/Customer/24_top_1054.jpg,24,top,customer,sam,640,640,135,213,428,512,0.15,384,0.100352,1.01106
-data/processed/cure_crops/24/top/ref/24_ref_top.png,data/raw/CURE_dataset/Pill_Images/24/top/Reference/24_ref_top.bmp,24,top,ref,classical,2448,2448,886,1036,1373,1455,0.15,384,0.014638,
+data/processed/cure_crops/24/top/ref/24_ref_top.png,data/raw/CURE_dataset/Pill_Images/24/top/Reference/24_ref_top.bmp,24,top,ref,audit,2448,2448,884,1028,1377,1522,0.15,384,0.014638,
 data/processed/cure_crops/25/bottom/customer/25_bottom_1101.png,data/raw/CURE_dataset/Pill_Images/25/bottom/Customer/25_bottom_1101.jpg,25,bottom,customer,sam,2448,2448,918,933,1516,1534,0.15,384,0.028222,1.016013
 data/processed/cure_crops/25/bottom/customer/25_bottom_1102.png,data/raw/CURE_dataset/Pill_Images/25/bottom/Customer/25_bottom_1102.jpg,25,bottom,customer,sam,2448,2448,1019,870,1641,1496,0.15,384,0.03028,1.01493
 data/processed/cure_crops/25/bottom/customer/25_bottom_1103.png,data/raw/CURE_dataset/Pill_Images/25/bottom/Customer/25_bottom_1103.jpg,25,bottom,customer,sam,2448,2448,917,868,1581,1534,0.15,384,0.034415,0.994892
@@ -5178,7 +5178,7 @@ data/processed/cure_crops/26/bottom/customer/26_bottom_1163.png,data/raw/CURE_da
 data/processed/cure_crops/26/bottom/customer/26_bottom_1164.png,data/raw/CURE_dataset/Pill_Images/26/bottom/Customer/26_bottom_1164.jpg,26,bottom,customer,sam,640,640,156,256,386,488,0.15,384,0.061077,1.020423
 data/processed/cure_crops/26/bottom/customer/26_bottom_1165.png,data/raw/CURE_dataset/Pill_Images/26/bottom/Customer/26_bottom_1165.jpg,26,bottom,customer,sam,640,640,170,202,398,429,0.15,384,0.059121,1.021052
 data/processed/cure_crops/26/bottom/customer/26_bottom_1166.png,data/raw/CURE_dataset/Pill_Images/26/bottom/Customer/26_bottom_1166.jpg,26,bottom,customer,sam,640,640,170,100,635,427,0.15,384,0.098982,0.561563
-data/processed/cure_crops/26/bottom/ref/26_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/26/bottom/Reference/26_ref_bottom.bmp,26,bottom,ref,classical,2448,2448,965,966,1507,1278,0.15,384,0.009109,
+data/processed/cure_crops/26/bottom/ref/26_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/26/bottom/Reference/26_ref_bottom.bmp,26,bottom,ref,audit,2448,2448,916,933,1520,1532,0.15,384,0.009109,
 data/processed/cure_crops/26/top/customer/26_top_1123.png,data/raw/CURE_dataset/Pill_Images/26/top/Customer/26_top_1123.jpg,26,top,customer,sam,2448,2448,1018,925,1505,1413,0.15,384,0.018404,0.940944
 data/processed/cure_crops/26/top/customer/26_top_1124.png,data/raw/CURE_dataset/Pill_Images/26/top/Customer/26_top_1124.jpg,26,top,customer,sam,2448,2448,956,1023,1533,1590,0.15,384,0.025454,0.941492
 data/processed/cure_crops/26/top/customer/26_top_1125.png,data/raw/CURE_dataset/Pill_Images/26/top/Customer/26_top_1125.jpg,26,top,customer,sam,2448,2448,860,987,1420,1554,0.15,384,0.024701,0.954053
@@ -5277,7 +5277,7 @@ data/processed/cure_crops/28/bottom/customer/28_bottom_1267.png,data/raw/CURE_da
 data/processed/cure_crops/28/bottom/customer/28_bottom_1268.png,data/raw/CURE_dataset/Pill_Images/28/bottom/Customer/28_bottom_1268.jpg,28,bottom,customer,sam,640,640,260,153,513,416,0.15,384,0.076211,1.007952
 data/processed/cure_crops/28/bottom/customer/28_bottom_1269.png,data/raw/CURE_dataset/Pill_Images/28/bottom/Customer/28_bottom_1269.jpg,28,bottom,customer,sam,640,640,242,158,496,414,0.15,384,0.074866,1.014762
 data/processed/cure_crops/28/bottom/customer/28_bottom_1270.png,data/raw/CURE_dataset/Pill_Images/28/bottom/Customer/28_bottom_1270.jpg,28,bottom,customer,sam,640,640,238,221,510,503,0.15,384,0.087444,1.016271
-data/processed/cure_crops/28/bottom/ref/28_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/28/bottom/Reference/28_ref_bottom.bmp,28,bottom,ref,classical,2448,2448,775,921,1518,1470,0.15,384,0.030484,
+data/processed/cure_crops/28/bottom/ref/28_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/28/bottom/Reference/28_ref_bottom.bmp,28,bottom,ref,audit,2448,2448,775,899,1523,1643,0.15,384,0.030484,
 data/processed/cure_crops/28/top/customer/28_top_1216.png,data/raw/CURE_dataset/Pill_Images/28/top/Customer/28_top_1216.jpg,28,top,customer,sam,2448,2448,990,979,1541,1530,0.15,384,0.023715,0.98398
 data/processed/cure_crops/28/top/customer/28_top_1217.png,data/raw/CURE_dataset/Pill_Images/28/top/Customer/28_top_1217.jpg,28,top,customer,sam,2448,2448,885,961,1516,1595,0.15,384,0.031125,0.990707
 data/processed/cure_crops/28/top/customer/28_top_1218.png,data/raw/CURE_dataset/Pill_Images/28/top/Customer/28_top_1218.jpg,28,top,customer,sam,2448,2448,827,1013,1412,1599,0.15,384,0.026673,0.999704
@@ -5309,7 +5309,7 @@ data/processed/cure_crops/28/top/customer/28_top_1243.png,data/raw/CURE_dataset/
 data/processed/cure_crops/28/top/customer/28_top_1244.png,data/raw/CURE_dataset/Pill_Images/28/top/Customer/28_top_1244.jpg,28,top,customer,sam,640,640,193,228,526,560,0.15,384,0.12626,1.013396
 data/processed/cure_crops/28/top/customer/28_top_1245.png,data/raw/CURE_dataset/Pill_Images/28/top/Customer/28_top_1245.jpg,28,top,customer,sam,640,640,183,80,463,351,0.15,384,0.086665,1.019613
 data/processed/cure_crops/28/top/customer/28_top_1246.png,data/raw/CURE_dataset/Pill_Images/28/top/Customer/28_top_1246.jpg,28,top,customer,sam,640,640,163,118,451,408,0.15,384,0.095298,1.020311
-data/processed/cure_crops/28/top/ref/28_ref_top.png,data/raw/CURE_dataset/Pill_Images/28/top/Reference/28_ref_top.bmp,28,top,ref,classical,2448,2448,907,923,1456,1393,0.15,384,0.018432,
+data/processed/cure_crops/28/top/ref/28_ref_top.png,data/raw/CURE_dataset/Pill_Images/28/top/Reference/28_ref_top.bmp,28,top,ref,audit,2448,2448,904,914,1460,1466,0.15,384,0.018432,
 data/processed/cure_crops/29/bottom/customer/29_bottom_1293.png,data/raw/CURE_dataset/Pill_Images/29/bottom/Customer/29_bottom_1293.jpg,29,bottom,customer,sam,2448,2448,881,871,1491,1480,0.15,384,0.028852,1.020369
 data/processed/cure_crops/29/bottom/customer/29_bottom_1294.png,data/raw/CURE_dataset/Pill_Images/29/bottom/Customer/29_bottom_1294.jpg,29,bottom,customer,sam,2448,2448,931,822,1551,1442,0.15,384,0.029919,1.009264
 data/processed/cure_crops/29/bottom/customer/29_bottom_1295.png,data/raw/CURE_dataset/Pill_Images/29/bottom/Customer/29_bottom_1295.jpg,29,bottom,customer,sam,2448,2448,888,863,1535,1511,0.15,384,0.03268,1.012207
@@ -5402,7 +5402,7 @@ data/processed/cure_crops/3/top/customer/3_top_143.png,data/raw/CURE_dataset/Pil
 data/processed/cure_crops/3/top/customer/3_top_144.png,data/raw/CURE_dataset/Pill_Images/3/top/Customer/3_top_144.jpg,3,top,customer,sam,640,640,235,152,498,416,0.15,384,0.079431,1.000435
 data/processed/cure_crops/3/top/customer/3_top_145.png,data/raw/CURE_dataset/Pill_Images/3/top/Customer/3_top_145.jpg,3,top,customer,sam,640,640,195,183,469,463,0.15,384,0.052671,0.820139
 data/processed/cure_crops/3/top/customer/3_top_146.png,data/raw/CURE_dataset/Pill_Images/3/top/Customer/3_top_146.jpg,3,top,customer,sam,640,640,208,146,474,411,0.15,384,0.080823,1.005831
-data/processed/cure_crops/3/top/ref/3_ref_top.png,data/raw/CURE_dataset/Pill_Images/3/top/Reference/3_ref_top.bmp,3,top,ref,classical,2448,2448,798,1121,1240,1496,0.15,384,0.01113,
+data/processed/cure_crops/3/top/ref/3_ref_top.png,data/raw/CURE_dataset/Pill_Images/3/top/Reference/3_ref_top.bmp,3,top,ref,audit,2448,2448,786,1111,1245,1568,0.15,384,0.01113,
 data/processed/cure_crops/30/bottom/customer/30_bottom_1337.png,data/raw/CURE_dataset/Pill_Images/30/bottom/Customer/30_bottom_1337.jpg,30,bottom,customer,sam,2448,2448,1000,758,1629,1388,0.15,384,0.030805,1.007144
 data/processed/cure_crops/30/bottom/customer/30_bottom_1338.png,data/raw/CURE_dataset/Pill_Images/30/bottom/Customer/30_bottom_1338.jpg,30,bottom,customer,sam,2448,2448,952,700,1680,1421,0.15,384,0.040714,1.004188
 data/processed/cure_crops/30/bottom/customer/30_bottom_1339.png,data/raw/CURE_dataset/Pill_Images/30/bottom/Customer/30_bottom_1339.jpg,30,bottom,customer,sam,2448,2448,823,678,1538,1393,0.15,384,0.039823,1.003244
@@ -5468,7 +5468,7 @@ data/processed/cure_crops/31/bottom/customer/31_bottom_1394.png,data/raw/CURE_da
 data/processed/cure_crops/31/bottom/customer/31_bottom_1395.png,data/raw/CURE_dataset/Pill_Images/31/bottom/Customer/31_bottom_1395.jpg,31,bottom,customer,sam,640,640,112,114,456,462,0.15,384,0.136165,1.012955
 data/processed/cure_crops/31/bottom/customer/31_bottom_1396.png,data/raw/CURE_dataset/Pill_Images/31/bottom/Customer/31_bottom_1396.jpg,31,bottom,customer,sam,640,640,118,189,411,468,0.15,384,0.095273,1.006273
 data/processed/cure_crops/31/bottom/customer/31_bottom_1397.png,data/raw/CURE_dataset/Pill_Images/31/bottom/Customer/31_bottom_1397.jpg,31,bottom,customer,sam,640,640,96,177,446,530,0.15,384,0.141221,1.008306
-data/processed/cure_crops/31/bottom/ref/31_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/31/bottom/Reference/31_ref_bottom.bmp,31,bottom,ref,classical,2448,2448,964,795,1722,1372,0.15,384,0.029323,
+data/processed/cure_crops/31/bottom/ref/31_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/31/bottom/Reference/31_ref_bottom.bmp,31,bottom,ref,audit,2448,2448,951,771,1728,1550,0.15,384,0.029323,
 data/processed/cure_crops/31/top/customer/31_top_1357.png,data/raw/CURE_dataset/Pill_Images/31/top/Customer/31_top_1357.jpg,31,top,customer,sam,2448,2448,973,968,1678,1670,0.15,384,0.038371,1.004663
 data/processed/cure_crops/31/top/customer/31_top_1358.png,data/raw/CURE_dataset/Pill_Images/31/top/Customer/31_top_1358.jpg,31,top,customer,sam,2448,2448,966,1007,1717,1758,0.15,384,0.043863,1.011418
 data/processed/cure_crops/31/top/customer/31_top_1359.png,data/raw/CURE_dataset/Pill_Images/31/top/Customer/31_top_1359.jpg,31,top,customer,sam,2448,2448,899,853,1647,1602,0.15,384,0.043385,1.012416
@@ -5488,7 +5488,7 @@ data/processed/cure_crops/31/top/customer/31_top_1372.png,data/raw/CURE_dataset/
 data/processed/cure_crops/31/top/customer/31_top_1373.png,data/raw/CURE_dataset/Pill_Images/31/top/Customer/31_top_1373.jpg,31,top,customer,sam,640,640,176,73,528,415,0.15,384,0.137317,1.019873
 data/processed/cure_crops/31/top/customer/31_top_1374.png,data/raw/CURE_dataset/Pill_Images/31/top/Customer/31_top_1374.jpg,31,top,customer,sam,640,640,145,127,467,444,0.15,384,0.116521,0.997882
 data/processed/cure_crops/31/top/customer/31_top_1375.png,data/raw/CURE_dataset/Pill_Images/31/top/Customer/31_top_1375.jpg,31,top,customer,sam,640,640,156,103,492,426,0.15,384,0.124048,1.010817
-data/processed/cure_crops/31/top/ref/31_ref_top.png,data/raw/CURE_dataset/Pill_Images/31/top/Reference/31_ref_top.bmp,31,top,ref,classical,2448,2448,1009,745,1759,1328,0.15,384,0.031155,
+data/processed/cure_crops/31/top/ref/31_ref_top.png,data/raw/CURE_dataset/Pill_Images/31/top/Reference/31_ref_top.bmp,31,top,ref,audit,2448,2448,1007,726,1762,1477,0.15,384,0.031155,
 data/processed/cure_crops/32/bottom/customer/32_bottom_1419.png,data/raw/CURE_dataset/Pill_Images/32/bottom/Customer/32_bottom_1419.jpg,32,bottom,customer,sam,2448,2448,875,779,1581,1479,0.15,384,0.038578,1.010423
 data/processed/cure_crops/32/bottom/customer/32_bottom_1420.png,data/raw/CURE_dataset/Pill_Images/32/bottom/Customer/32_bottom_1420.jpg,32,bottom,customer,sam,2448,2448,958,869,1636,1545,0.15,384,0.035603,1.001386
 data/processed/cure_crops/32/bottom/customer/32_bottom_1421.png,data/raw/CURE_dataset/Pill_Images/32/bottom/Customer/32_bottom_1421.jpg,32,bottom,customer,sam,2448,2448,822,834,1483,1498,0.15,384,0.03402,0.965916
@@ -5509,7 +5509,7 @@ data/processed/cure_crops/32/bottom/customer/32_bottom_1435.png,data/raw/CURE_da
 data/processed/cure_crops/32/bottom/customer/32_bottom_1436.png,data/raw/CURE_dataset/Pill_Images/32/bottom/Customer/32_bottom_1436.jpg,32,bottom,customer,sam,640,640,105,100,443,433,0.15,384,0.127854,1.011918
 data/processed/cure_crops/32/bottom/customer/32_bottom_1437.png,data/raw/CURE_dataset/Pill_Images/32/bottom/Customer/32_bottom_1437.jpg,32,bottom,customer,sam,640,640,118,174,446,501,0.15,384,0.123164,1.014991
 data/processed/cure_crops/32/bottom/customer/32_bottom_1438.png,data/raw/CURE_dataset/Pill_Images/32/bottom/Customer/32_bottom_1438.jpg,32,bottom,customer,sam,640,640,149,54,466,362,0.15,384,0.111174,1.013197
-data/processed/cure_crops/32/bottom/ref/32_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/32/bottom/Reference/32_ref_bottom.bmp,32,bottom,ref,classical,2448,2448,788,880,1479,1457,0.15,384,0.029064,
+data/processed/cure_crops/32/bottom/ref/32_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/32/bottom/Reference/32_ref_bottom.bmp,32,bottom,ref,audit,2448,2448,779,866,1482,1570,0.15,384,0.029064,
 data/processed/cure_crops/32/top/customer/32_top_1398.png,data/raw/CURE_dataset/Pill_Images/32/top/Customer/32_top_1398.jpg,32,top,customer,sam,2448,2448,1012,883,1574,1444,0.15,384,0.024676,0.984046
 data/processed/cure_crops/32/top/customer/32_top_1399.png,data/raw/CURE_dataset/Pill_Images/32/top/Customer/32_top_1399.jpg,32,top,customer,sam,2448,2448,1081,977,1675,1571,0.15,384,0.027495,1.003766
 data/processed/cure_crops/32/top/customer/32_top_1400.png,data/raw/CURE_dataset/Pill_Images/32/top/Customer/32_top_1400.jpg,32,top,customer,sam,2448,2448,967,976,1596,1610,0.15,384,0.031002,0.997226
@@ -5557,7 +5557,7 @@ data/processed/cure_crops/33/bottom/customer/33_bottom_1484.png,data/raw/CURE_da
 data/processed/cure_crops/33/bottom/customer/33_bottom_1485.png,data/raw/CURE_dataset/Pill_Images/33/bottom/Customer/33_bottom_1485.jpg,33,bottom,customer,sam,640,640,105,106,473,470,0.15,384,0.152695,1.011316
 data/processed/cure_crops/33/bottom/customer/33_bottom_1486.png,data/raw/CURE_dataset/Pill_Images/33/bottom/Customer/33_bottom_1486.jpg,33,bottom,customer,sam,640,640,128,69,453,381,0.15,384,0.115696,1.013268
 data/processed/cure_crops/33/bottom/customer/33_bottom_1487.png,data/raw/CURE_dataset/Pill_Images/33/bottom/Customer/33_bottom_1487.jpg,33,bottom,customer,sam,640,640,193,104,515,427,0.15,384,0.118728,1.01956
-data/processed/cure_crops/33/bottom/ref/33_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/33/bottom/Reference/33_ref_bottom.bmp,33,bottom,ref,classical,2448,2448,836,982,1488,1539,0.15,384,0.027224,
+data/processed/cure_crops/33/bottom/ref/33_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/33/bottom/Reference/33_ref_bottom.bmp,33,bottom,ref,audit,2448,2448,834,971,1490,1621,0.15,384,0.027224,
 data/processed/cure_crops/33/top/customer/33_top_1439.png,data/raw/CURE_dataset/Pill_Images/33/top/Customer/33_top_1439.jpg,33,top,customer,sam,2448,2448,783,890,1524,1628,0.15,384,0.042476,0.964186
 data/processed/cure_crops/33/top/customer/33_top_1440.png,data/raw/CURE_dataset/Pill_Images/33/top/Customer/33_top_1440.jpg,33,top,customer,sam,2448,2448,738,821,1476,1556,0.15,384,0.042276,1.009401
 data/processed/cure_crops/33/top/customer/33_top_1441.png,data/raw/CURE_dataset/Pill_Images/33/top/Customer/33_top_1441.jpg,33,top,customer,sam,2448,2448,858,823,1615,1580,0.15,384,0.044623,0.987754
@@ -5646,7 +5646,7 @@ data/processed/cure_crops/35/top/customer/35_top_1529.png,data/raw/CURE_dataset/
 data/processed/cure_crops/35/top/customer/35_top_1530.png,data/raw/CURE_dataset/Pill_Images/35/top/Customer/35_top_1530.jpg,35,top,customer,sam,640,640,122,102,483,471,0.15,384,0.141216,1.007624
 data/processed/cure_crops/35/top/customer/35_top_1531.png,data/raw/CURE_dataset/Pill_Images/35/top/Customer/35_top_1531.jpg,35,top,customer,sam,640,640,166,132,580,455,0.15,384,0.1575,0.866324
 data/processed/cure_crops/35/top/customer/35_top_1532.png,data/raw/CURE_dataset/Pill_Images/35/top/Customer/35_top_1532.jpg,35,top,customer,sam,640,640,115,96,464,466,0.15,384,0.134136,1.014073
-data/processed/cure_crops/35/top/ref/35_ref_top.png,data/raw/CURE_dataset/Pill_Images/35/top/Reference/35_ref_top.bmp,35,top,ref,classical,2448,2448,828,984,1691,1508,0.15,384,0.036188,
+data/processed/cure_crops/35/top/ref/35_ref_top.png,data/raw/CURE_dataset/Pill_Images/35/top/Reference/35_ref_top.bmp,35,top,ref,audit,2448,2448,825,973,1693,1600,0.15,384,0.036188,
 data/processed/cure_crops/36/bottom/customer/36_bottom_1574.png,data/raw/CURE_dataset/Pill_Images/36/bottom/Customer/36_bottom_1574.jpg,36,bottom,customer,sam,640,640,107,175,423,493,0.15,384,0.115105,1.02042
 data/processed/cure_crops/36/bottom/customer/36_bottom_1575.png,data/raw/CURE_dataset/Pill_Images/36/bottom/Customer/36_bottom_1575.jpg,36,bottom,customer,sam,640,640,114,151,468,505,0.15,384,0.143665,1.021498
 data/processed/cure_crops/36/bottom/customer/36_bottom_1576.png,data/raw/CURE_dataset/Pill_Images/36/bottom/Customer/36_bottom_1576.jpg,36,bottom,customer,sam,640,640,129,153,460,488,0.15,384,0.125615,1.020385
@@ -5698,7 +5698,7 @@ data/processed/cure_crops/37/bottom/customer/37_bottom_1622.png,data/raw/CURE_da
 data/processed/cure_crops/37/bottom/customer/37_bottom_1623.png,data/raw/CURE_dataset/Pill_Images/37/bottom/Customer/37_bottom_1623.jpg,37,bottom,customer,sam,640,640,167,142,536,431,0.15,384,0.107212,1.020802
 data/processed/cure_crops/37/bottom/customer/37_bottom_1624.png,data/raw/CURE_dataset/Pill_Images/37/bottom/Customer/37_bottom_1624.jpg,37,bottom,customer,sam,640,640,179,139,528,399,0.15,384,0.092727,0.871266
 data/processed/cure_crops/37/bottom/customer/37_bottom_1625.png,data/raw/CURE_dataset/Pill_Images/37/bottom/Customer/37_bottom_1625.jpg,37,bottom,customer,manual,640,640,90,313,390,512,0.15,384,0.399011,0.768466
-data/processed/cure_crops/37/bottom/ref/37_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/37/bottom/Reference/37_ref_bottom.bmp,37,bottom,ref,classical,2448,2448,794,881,1563,1308,0.15,384,0.019368,
+data/processed/cure_crops/37/bottom/ref/37_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/37/bottom/Reference/37_ref_bottom.bmp,37,bottom,ref,audit,2448,2448,794,873,1565,1376,0.15,384,0.019368,
 data/processed/cure_crops/37/top/customer/37_top_1584.png,data/raw/CURE_dataset/Pill_Images/37/top/Customer/37_top_1584.jpg,37,top,customer,sam,2448,2448,875,858,1278,1545,0.15,384,0.021281,1.013431
 data/processed/cure_crops/37/top/customer/37_top_1585.png,data/raw/CURE_dataset/Pill_Images/37/top/Customer/37_top_1585.jpg,37,top,customer,sam,2448,2448,777,1006,1465,1459,0.15,384,0.022847,0.930473
 data/processed/cure_crops/37/top/customer/37_top_1587.png,data/raw/CURE_dataset/Pill_Images/37/top/Customer/37_top_1587.jpg,37,top,customer,sam,2448,2448,761,936,1571,1400,0.15,384,0.029529,0.992155
@@ -5718,7 +5718,7 @@ data/processed/cure_crops/37/top/customer/37_top_1601.png,data/raw/CURE_dataset/
 data/processed/cure_crops/37/top/customer/37_top_1602.png,data/raw/CURE_dataset/Pill_Images/37/top/Customer/37_top_1602.jpg,37,top,customer,sam,640,640,196,177,463,500,0.15,384,0.086519,1.014807
 data/processed/cure_crops/37/top/customer/37_top_1603.png,data/raw/CURE_dataset/Pill_Images/37/top/Customer/37_top_1603.jpg,37,top,customer,sam,640,640,193,113,414,487,0.15,384,0.094529,1.014396
 data/processed/cure_crops/37/top/customer/37_top_1604.png,data/raw/CURE_dataset/Pill_Images/37/top/Customer/37_top_1604.jpg,37,top,customer,sam,640,640,156,114,437,478,0.15,384,0.103545,1.018746
-data/processed/cure_crops/37/top/ref/37_ref_top.png,data/raw/CURE_dataset/Pill_Images/37/top/Reference/37_ref_top.bmp,37,top,ref,classical,2448,2448,876,1148,1678,1497,0.15,384,0.019677,
+data/processed/cure_crops/37/top/ref/37_ref_top.png,data/raw/CURE_dataset/Pill_Images/37/top/Reference/37_ref_top.bmp,37,top,ref,audit,2448,2448,875,1045,1692,1513,0.15,384,0.019677,
 data/processed/cure_crops/38/bottom/customer/38_bottom_1647.png,data/raw/CURE_dataset/Pill_Images/38/bottom/Customer/38_bottom_1647.jpg,38,bottom,customer,sam,2448,2448,1036,927,1546,1435,0.15,384,0.020246,1.009562
 data/processed/cure_crops/38/bottom/customer/38_bottom_1649.png,data/raw/CURE_dataset/Pill_Images/38/bottom/Customer/38_bottom_1649.jpg,38,bottom,customer,sam,2448,2448,846,843,1362,1358,0.15,384,0.020657,1.009073
 data/processed/cure_crops/38/bottom/customer/38_bottom_1650.png,data/raw/CURE_dataset/Pill_Images/38/bottom/Customer/38_bottom_1650.jpg,38,bottom,customer,sam,2448,2448,906,1107,1388,1594,0.15,384,0.018272,1.010701
@@ -5986,7 +5986,7 @@ data/processed/cure_crops/42/top/customer/42_top_1819.png,data/raw/CURE_dataset/
 data/processed/cure_crops/42/top/customer/42_top_1820.png,data/raw/CURE_dataset/Pill_Images/42/top/Customer/42_top_1820.jpg,42,top,customer,sam,640,640,82,0,483,495,0.15,384,0.195608,1.002923
 data/processed/cure_crops/42/top/customer/42_top_1821.png,data/raw/CURE_dataset/Pill_Images/42/top/Customer/42_top_1821.jpg,42,top,customer,manual,640,640,78,100,446,568,0.15,384,0.233406,1.006027
 data/processed/cure_crops/42/top/customer/42_top_1822.png,data/raw/CURE_dataset/Pill_Images/42/top/Customer/42_top_1822.jpg,42,top,customer,sam,640,640,40,3,389,563,0.15,384,0.210044,1.018567
-data/processed/cure_crops/42/top/ref/42_ref_top.png,data/raw/CURE_dataset/Pill_Images/42/top/Reference/42_ref_top.bmp,42,top,ref,classical,2448,2448,1265,1064,1627,1473,0.15,384,0.006614,
+data/processed/cure_crops/42/top/ref/42_ref_top.png,data/raw/CURE_dataset/Pill_Images/42/top/Reference/42_ref_top.bmp,42,top,ref,audit,2448,2448,604,914,1715,1519,0.15,384,0.006614,
 data/processed/cure_crops/43/bottom/customer/43_bottom_1867.png,data/raw/CURE_dataset/Pill_Images/43/bottom/Customer/43_bottom_1867.jpg,43,bottom,customer,manual,2448,2448,689,660,1616,1262,0.15,384,0.012556,0.347062
 data/processed/cure_crops/43/bottom/customer/43_bottom_1868.png,data/raw/CURE_dataset/Pill_Images/43/bottom/Customer/43_bottom_1868.jpg,43,bottom,customer,sam,2448,2448,809,630,1604,1797,0.15,384,0.063771,0.991944
 data/processed/cure_crops/43/bottom/customer/43_bottom_1869.png,data/raw/CURE_dataset/Pill_Images/43/bottom/Customer/43_bottom_1869.jpg,43,bottom,customer,sam,2448,2448,756,760,1906,1512,0.15,384,0.060344,1.0086
@@ -6009,7 +6009,7 @@ data/processed/cure_crops/43/bottom/customer/43_bottom_1885.png,data/raw/CURE_da
 data/processed/cure_crops/43/bottom/customer/43_bottom_1886.png,data/raw/CURE_dataset/Pill_Images/43/bottom/Customer/43_bottom_1886.jpg,43,bottom,customer,sam,640,640,40,105,463,471,0.15,384,0.141257,1.015387
 data/processed/cure_crops/43/bottom/customer/43_bottom_1887.png,data/raw/CURE_dataset/Pill_Images/43/bottom/Customer/43_bottom_1887.jpg,43,bottom,customer,sam,640,640,55,103,486,441,0.15,384,0.136672,1.017189
 data/processed/cure_crops/43/bottom/customer/43_bottom_1888.png,data/raw/CURE_dataset/Pill_Images/43/bottom/Customer/43_bottom_1888.jpg,43,bottom,customer,sam,640,640,24,146,479,521,0.15,384,0.160845,0.921736
-data/processed/cure_crops/43/bottom/ref/43_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/43/bottom/Reference/43_ref_bottom.bmp,43,bottom,ref,classical,2448,2448,554,934,1555,1684,0.15,384,0.050815,
+data/processed/cure_crops/43/bottom/ref/43_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/43/bottom/Reference/43_ref_bottom.bmp,43,bottom,ref,audit,2448,2448,536,930,1695,1701,0.15,384,0.050815,
 data/processed/cure_crops/43/top/customer/43_top_1845.png,data/raw/CURE_dataset/Pill_Images/43/top/Customer/43_top_1845.jpg,43,top,customer,sam,2448,2448,936,601,1460,1615,0.15,384,0.044814,0.916243
 data/processed/cure_crops/43/top/customer/43_top_1846.png,data/raw/CURE_dataset/Pill_Images/43/top/Customer/43_top_1846.jpg,43,top,customer,sam,2448,2448,679,759,1752,1350,0.15,384,0.050953,1.017482
 data/processed/cure_crops/43/top/customer/43_top_1847.png,data/raw/CURE_dataset/Pill_Images/43/top/Customer/43_top_1847.jpg,43,top,customer,sam,2448,2448,819,544,1490,1633,0.15,384,0.053918,0.998228
@@ -6268,7 +6268,7 @@ data/processed/cure_crops/48/top/customer/48_top_2098.png,data/raw/CURE_dataset/
 data/processed/cure_crops/48/top/customer/48_top_2099.png,data/raw/CURE_dataset/Pill_Images/48/top/Customer/48_top_2099.jpg,48,top,customer,sam,640,640,84,69,529,593,0.15,384,0.203447,1.012111
 data/processed/cure_crops/48/top/customer/48_top_2100.png,data/raw/CURE_dataset/Pill_Images/48/top/Customer/48_top_2100.jpg,48,top,customer,sam,640,640,67,163,542,550,0.15,384,0.162893,0.913207
 data/processed/cure_crops/48/top/customer/48_top_2101.png,data/raw/CURE_dataset/Pill_Images/48/top/Customer/48_top_2101.jpg,48,top,customer,sam,640,640,70,23,544,521,0.15,384,0.201665,1.006107
-data/processed/cure_crops/48/top/ref/48_ref_top.png,data/raw/CURE_dataset/Pill_Images/48/top/Reference/48_ref_top.bmp,48,top,ref,classical,2448,2448,558,574,1508,1547,0.15,384,0.040543,
+data/processed/cure_crops/48/top/ref/48_ref_top.png,data/raw/CURE_dataset/Pill_Images/48/top/Reference/48_ref_top.bmp,48,top,ref,audit,2448,2448,555,556,1511,1690,0.15,384,0.040543,
 data/processed/cure_crops/49/bottom/customer/49_bottom_2152.png,data/raw/CURE_dataset/Pill_Images/49/bottom/Customer/49_bottom_2152.jpg,49,bottom,customer,sam,2448,2448,821,627,1529,1670,0.15,384,0.046822,1.00288
 data/processed/cure_crops/49/bottom/customer/49_bottom_2153.png,data/raw/CURE_dataset/Pill_Images/49/bottom/Customer/49_bottom_2153.jpg,49,bottom,customer,sam,2448,2448,630,787,1689,1775,0.15,384,0.059219,1.021644
 data/processed/cure_crops/49/bottom/customer/49_bottom_2154.png,data/raw/CURE_dataset/Pill_Images/49/bottom/Customer/49_bottom_2154.jpg,49,bottom,customer,sam,2448,2448,545,853,1544,1838,0.15,384,0.055457,1.013063
@@ -6318,7 +6318,7 @@ data/processed/cure_crops/49/top/customer/49_top_2148.png,data/raw/CURE_dataset/
 data/processed/cure_crops/49/top/customer/49_top_2149.png,data/raw/CURE_dataset/Pill_Images/49/top/Customer/49_top_2149.jpg,49,top,customer,sam,640,640,167,20,518,468,0.15,384,0.140811,1.006353
 data/processed/cure_crops/49/top/customer/49_top_2150.png,data/raw/CURE_dataset/Pill_Images/49/top/Customer/49_top_2150.jpg,49,top,customer,sam,640,640,166,1,448,449,0.15,384,0.128645,1.000824
 data/processed/cure_crops/49/top/customer/49_top_2151.png,data/raw/CURE_dataset/Pill_Images/49/top/Customer/49_top_2151.jpg,49,top,customer,manual,640,640,178,42,515,343,0.15,384,0.160649,0.578595
-data/processed/cure_crops/49/top/ref/49_ref_top.png,data/raw/CURE_dataset/Pill_Images/49/top/Reference/49_ref_top.bmp,49,top,ref,classical,2448,2448,652,797,1833,1379,0.15,384,0.044132,
+data/processed/cure_crops/49/top/ref/49_ref_top.png,data/raw/CURE_dataset/Pill_Images/49/top/Reference/49_ref_top.bmp,49,top,ref,audit,2448,2448,643,785,1837,1478,0.15,384,0.044132,
 data/processed/cure_crops/5/bottom/customer/5_bottom_232.png,data/raw/CURE_dataset/Pill_Images/5/bottom/Customer/5_bottom_232.jpg,5,bottom,customer,sam,2448,2448,1044,1015,1628,1600,0.15,384,0.026474,0.987347
 data/processed/cure_crops/5/bottom/customer/5_bottom_234.png,data/raw/CURE_dataset/Pill_Images/5/bottom/Customer/5_bottom_234.jpg,5,bottom,customer,sam,2448,2448,901,944,1461,1512,0.15,384,0.024879,0.935784
 data/processed/cure_crops/5/bottom/customer/5_bottom_235.png,data/raw/CURE_dataset/Pill_Images/5/bottom/Customer/5_bottom_235.jpg,5,bottom,customer,sam,2448,2448,928,1027,1444,1722,0.15,384,0.027327,0.886377
@@ -6421,7 +6421,7 @@ data/processed/cure_crops/51/bottom/customer/51_bottom_2256.png,data/raw/CURE_da
 data/processed/cure_crops/51/bottom/customer/51_bottom_2257.png,data/raw/CURE_dataset/Pill_Images/51/bottom/Customer/51_bottom_2257.jpg,51,bottom,customer,sam,640,640,158,33,518,576,0.15,384,0.160835,0.998704
 data/processed/cure_crops/51/bottom/customer/51_bottom_2258.png,data/raw/CURE_dataset/Pill_Images/51/bottom/Customer/51_bottom_2258.jpg,51,bottom,customer,manual,640,640,133,142,384,568,0.15,384,0.072844,0.979031
 data/processed/cure_crops/51/bottom/customer/51_bottom_2259.png,data/raw/CURE_dataset/Pill_Images/51/bottom/Customer/51_bottom_2259.jpg,51,bottom,customer,manual,640,640,172,24,503,431,0.15,384,0.102275,0.964571
-data/processed/cure_crops/51/bottom/ref/51_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/51/bottom/Reference/51_ref_bottom.bmp,51,bottom,ref,classical,2448,2448,1039,724,1644,1761,0.15,384,0.015789,
+data/processed/cure_crops/51/bottom/ref/51_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/51/bottom/Reference/51_ref_bottom.bmp,51,bottom,ref,audit,2448,2448,864,723,1669,1764,0.15,384,0.015789,
 data/processed/cure_crops/51/top/customer/51_top_2214.png,data/raw/CURE_dataset/Pill_Images/51/top/Customer/51_top_2214.jpg,51,top,customer,sam,2448,2448,725,594,1728,1571,0.15,384,0.047363,0.892727
 data/processed/cure_crops/51/top/customer/51_top_2215.png,data/raw/CURE_dataset/Pill_Images/51/top/Customer/51_top_2215.jpg,51,top,customer,manual,2448,2448,831,599,1987,1426,0.15,384,0.489733,0.696795
 data/processed/cure_crops/51/top/customer/51_top_2216.png,data/raw/CURE_dataset/Pill_Images/51/top/Customer/51_top_2216.jpg,51,top,customer,sam,2448,2448,991,660,1361,1719,0.15,384,0.024013,0.928711
@@ -6540,7 +6540,7 @@ data/processed/cure_crops/53/top/customer/53_top_2328.png,data/raw/CURE_dataset/
 data/processed/cure_crops/53/top/customer/53_top_2329.png,data/raw/CURE_dataset/Pill_Images/53/top/Customer/53_top_2329.jpg,53,top,customer,sam,640,640,183,58,527,640,0.15,384,0.190173,0.996625
 data/processed/cure_crops/53/top/customer/53_top_2330.png,data/raw/CURE_dataset/Pill_Images/53/top/Customer/53_top_2330.jpg,53,top,customer,sam,640,640,210,51,500,635,0.15,384,0.169885,1.010441
 data/processed/cure_crops/53/top/customer/53_top_2331.png,data/raw/CURE_dataset/Pill_Images/53/top/Customer/53_top_2331.jpg,53,top,customer,sam,640,640,211,51,508,630,0.15,384,0.16811,0.999652
-data/processed/cure_crops/53/top/ref/53_ref_top.png,data/raw/CURE_dataset/Pill_Images/53/top/Reference/53_ref_top.bmp,53,top,ref,classical,2448,2448,640,1217,1654,1657,0.15,384,0.020802,
+data/processed/cure_crops/53/top/ref/53_ref_top.png,data/raw/CURE_dataset/Pill_Images/53/top/Reference/53_ref_top.bmp,53,top,ref,audit,2448,2448,602,1194,1943,1716,0.15,384,0.020802,
 data/processed/cure_crops/54/bottom/customer/54_bottom_2374.png,data/raw/CURE_dataset/Pill_Images/54/bottom/Customer/54_bottom_2374.jpg,54,bottom,customer,manual,2448,2448,1020,775,1513,1700,0.15,384,0.016454,0.919533
 data/processed/cure_crops/54/bottom/customer/54_bottom_2375.png,data/raw/CURE_dataset/Pill_Images/54/bottom/Customer/54_bottom_2375.jpg,54,bottom,customer,sam,2448,2448,648,901,1658,1610,0.15,384,0.039025,0.937382
 data/processed/cure_crops/54/bottom/customer/54_bottom_2376.png,data/raw/CURE_dataset/Pill_Images/54/bottom/Customer/54_bottom_2376.jpg,54,bottom,customer,sam,2448,2448,693,888,1702,1787,0.15,384,0.045699,1.000262
@@ -6588,7 +6588,7 @@ data/processed/cure_crops/54/top/customer/54_top_2370.png,data/raw/CURE_dataset/
 data/processed/cure_crops/54/top/customer/54_top_2371.png,data/raw/CURE_dataset/Pill_Images/54/top/Customer/54_top_2371.jpg,54,top,customer,sam,640,640,144,74,443,488,0.15,384,0.099014,1.004489
 data/processed/cure_crops/54/top/customer/54_top_2372.png,data/raw/CURE_dataset/Pill_Images/54/top/Customer/54_top_2372.jpg,54,top,customer,sam,640,640,151,74,448,492,0.15,384,0.099453,1.015777
 data/processed/cure_crops/54/top/customer/54_top_2373.png,data/raw/CURE_dataset/Pill_Images/54/top/Customer/54_top_2373.jpg,54,top,customer,sam,640,640,126,97,389,525,0.15,384,0.097783,0.990272
-data/processed/cure_crops/54/top/ref/54_ref_top.png,data/raw/CURE_dataset/Pill_Images/54/top/Reference/54_ref_top.bmp,54,top,ref,classical,2448,2448,650,820,1824,1156,0.15,384,0.030413,
+data/processed/cure_crops/54/top/ref/54_ref_top.png,data/raw/CURE_dataset/Pill_Images/54/top/Reference/54_ref_top.bmp,54,top,ref,audit,2448,2448,647,803,1832,1268,0.15,384,0.030413,
 data/processed/cure_crops/55/bottom/customer/55_bottom_2424.png,data/raw/CURE_dataset/Pill_Images/55/bottom/Customer/55_bottom_2424.jpg,55,bottom,customer,sam,2448,2448,692,847,1327,1352,0.15,384,0.023412,0.984787
 data/processed/cure_crops/55/bottom/customer/55_bottom_2425.png,data/raw/CURE_dataset/Pill_Images/55/bottom/Customer/55_bottom_2425.jpg,55,bottom,customer,sam,2448,2448,1012,647,1591,1329,0.15,384,0.026191,0.989361
 data/processed/cure_crops/55/bottom/customer/55_bottom_2426.png,data/raw/CURE_dataset/Pill_Images/55/bottom/Customer/55_bottom_2426.jpg,55,bottom,customer,manual,2448,2448,700,754,1615,1628,0.15,384,0.02617,0.986076
@@ -6615,7 +6615,7 @@ data/processed/cure_crops/55/bottom/customer/55_bottom_2446.png,data/raw/CURE_da
 data/processed/cure_crops/55/bottom/customer/55_bottom_2447.png,data/raw/CURE_dataset/Pill_Images/55/bottom/Customer/55_bottom_2447.jpg,55,bottom,customer,sam,640,640,267,202,520,475,0.15,384,0.061792,0.979071
 data/processed/cure_crops/55/bottom/customer/55_bottom_2448.png,data/raw/CURE_dataset/Pill_Images/55/bottom/Customer/55_bottom_2448.jpg,55,bottom,customer,manual,640,640,181,100,412,523,0.15,384,0.076602,0.985834
 data/processed/cure_crops/55/bottom/customer/55_bottom_2449.png,data/raw/CURE_dataset/Pill_Images/55/bottom/Customer/55_bottom_2449.jpg,55,bottom,customer,manual,640,640,218,77,481,465,0.15,384,0.061448,0.982388
-data/processed/cure_crops/55/bottom/ref/55_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/55/bottom/Reference/55_ref_bottom.bmp,55,bottom,ref,classical,2448,2448,1004,882,1734,1814,0.15,384,0.029243,
+data/processed/cure_crops/55/bottom/ref/55_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/55/bottom/Reference/55_ref_bottom.bmp,55,bottom,ref,audit,2448,2448,1001,581,1763,1855,0.15,384,0.029243,
 data/processed/cure_crops/55/top/customer/55_top_2397.png,data/raw/CURE_dataset/Pill_Images/55/top/Customer/55_top_2397.jpg,55,top,customer,manual,2448,2448,628,1149,1665,1645,0.15,384,0.074467,0.366112
 data/processed/cure_crops/55/top/customer/55_top_2398.png,data/raw/CURE_dataset/Pill_Images/55/top/Customer/55_top_2398.jpg,55,top,customer,manual,2448,2448,952,581,1479,1591,0.15,384,0.022486,0.931704
 data/processed/cure_crops/55/top/customer/55_top_2399.png,data/raw/CURE_dataset/Pill_Images/55/top/Customer/55_top_2399.jpg,55,top,customer,sam,2448,2448,1024,649,1537,1973,0.15,384,0.055858,0.950289
@@ -6905,7 +6905,7 @@ data/processed/cure_crops/60/top/customer/60_top_2659.png,data/raw/CURE_dataset/
 data/processed/cure_crops/60/top/customer/60_top_2660.png,data/raw/CURE_dataset/Pill_Images/60/top/Customer/60_top_2660.jpg,60,top,customer,sam,640,640,225,204,498,537,0.15,384,0.088999,0.987245
 data/processed/cure_crops/60/top/customer/60_top_2661.png,data/raw/CURE_dataset/Pill_Images/60/top/Customer/60_top_2661.jpg,60,top,customer,sam,640,640,175,186,477,491,0.15,384,0.088372,1.00199
 data/processed/cure_crops/60/top/customer/60_top_2662.png,data/raw/CURE_dataset/Pill_Images/60/top/Customer/60_top_2662.jpg,60,top,customer,sam,640,640,194,175,499,490,0.15,384,0.090757,1.022312
-data/processed/cure_crops/60/top/ref/60_ref_top.png,data/raw/CURE_dataset/Pill_Images/60/top/Reference/60_ref_top.bmp,60,top,ref,classical,2448,2448,920,1038,1274,1578,0.15,384,0.011367,
+data/processed/cure_crops/60/top/ref/60_ref_top.png,data/raw/CURE_dataset/Pill_Images/60/top/Reference/60_ref_top.bmp,60,top,ref,audit,2448,2448,899,1027,1283,1671,0.15,384,0.011367,
 data/processed/cure_crops/61/bottom/customer/61_bottom_2716.png,data/raw/CURE_dataset/Pill_Images/61/bottom/Customer/61_bottom_2716.jpg,61,bottom,customer,sam,2448,2448,1069,927,1570,1431,0.15,384,0.01973,0.999024
 data/processed/cure_crops/61/bottom/customer/61_bottom_2717.png,data/raw/CURE_dataset/Pill_Images/61/bottom/Customer/61_bottom_2717.jpg,61,bottom,customer,sam,2448,2448,864,846,1345,1325,0.15,384,0.018019,1.007049
 data/processed/cure_crops/61/bottom/customer/61_bottom_2718.png,data/raw/CURE_dataset/Pill_Images/61/bottom/Customer/61_bottom_2718.jpg,61,bottom,customer,sam,2448,2448,905,786,1439,1322,0.15,384,0.022378,0.985014
@@ -6983,7 +6983,7 @@ data/processed/cure_crops/62/bottom/customer/62_bottom_2786.png,data/raw/CURE_da
 data/processed/cure_crops/62/bottom/customer/62_bottom_2787.png,data/raw/CURE_dataset/Pill_Images/62/bottom/Customer/62_bottom_2787.jpg,62,bottom,customer,sam,640,640,23,130,640,551,0.15,384,0.226948,0.988068
 data/processed/cure_crops/62/bottom/customer/62_bottom_2788.png,data/raw/CURE_dataset/Pill_Images/62/bottom/Customer/62_bottom_2788.jpg,62,bottom,customer,sam,640,640,183,246,544,554,0.15,384,0.106443,0.972789
 data/processed/cure_crops/62/bottom/customer/62_bottom_2789.png,data/raw/CURE_dataset/Pill_Images/62/bottom/Customer/62_bottom_2789.jpg,62,bottom,customer,sam,640,640,0,192,640,501,0.15,384,0.228298,0.971942
-data/processed/cure_crops/62/bottom/ref/62_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/62/bottom/Reference/62_ref_bottom.bmp,62,bottom,ref,classical,2976,2976,1117,905,2008,1931,0.15,384,0.026081,
+data/processed/cure_crops/62/bottom/ref/62_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/62/bottom/Reference/62_ref_bottom.bmp,62,bottom,ref,audit,2976,2976,1117,885,2012,2073,0.15,384,0.026081,
 data/processed/cure_crops/62/top/customer/62_top_2745.png,data/raw/CURE_dataset/Pill_Images/62/top/Customer/62_top_2745.jpg,62,top,customer,manual,2976,2976,1057,1550,1832,1993,0.15,384,0.333843,0.628823
 data/processed/cure_crops/62/top/customer/62_top_2746.png,data/raw/CURE_dataset/Pill_Images/62/top/Customer/62_top_2746.jpg,62,top,customer,sam,2976,2976,892,1377,2065,1910,0.15,384,0.030143,0.971009
 data/processed/cure_crops/62/top/customer/62_top_2747.png,data/raw/CURE_dataset/Pill_Images/62/top/Customer/62_top_2747.jpg,62,top,customer,manual,2976,2976,1190,1491,1625,1715,0.15,384,0.219709,0.497715
@@ -7078,7 +7078,7 @@ data/processed/cure_crops/64/top/customer/64_top_2842.png,data/raw/CURE_dataset/
 data/processed/cure_crops/64/top/customer/64_top_2843.png,data/raw/CURE_dataset/Pill_Images/64/top/Customer/64_top_2843.jpg,64,top,customer,sam,2976,2976,621,1235,2504,2048,0.15,384,0.076224,0.997079
 data/processed/cure_crops/64/top/customer/64_top_2844.png,data/raw/CURE_dataset/Pill_Images/64/top/Customer/64_top_2844.jpg,64,top,customer,sam,2976,2976,1245,874,1829,1641,0.15,384,0.023182,0.974001
 data/processed/cure_crops/64/top/customer/64_top_2845.png,data/raw/CURE_dataset/Pill_Images/64/top/Customer/64_top_2845.jpg,64,top,customer,manual,2976,2976,1054,975,1818,1959,0.15,384,0.01788,0.973514
-data/processed/cure_crops/64/top/ref/64_ref_top.png,data/raw/CURE_dataset/Pill_Images/64/top/Reference/64_ref_top.bmp,64,top,ref,classical,2976,2976,977,740,2067,2144,0.15,384,0.031158,
+data/processed/cure_crops/64/top/ref/64_ref_top.png,data/raw/CURE_dataset/Pill_Images/64/top/Reference/64_ref_top.bmp,64,top,ref,audit,2976,2976,954,728,2238,2198,0.15,384,0.031158,
 data/processed/cure_crops/65/bottom/customer/65_bottom_2882.png,data/raw/CURE_dataset/Pill_Images/65/bottom/Customer/65_bottom_2882.jpg,65,bottom,customer,manual,2976,2976,1069,1480,1730,2126,0.15,384,0.129318,0.543759
 data/processed/cure_crops/65/bottom/customer/65_bottom_2883.png,data/raw/CURE_dataset/Pill_Images/65/bottom/Customer/65_bottom_2883.jpg,65,bottom,customer,sam,2976,2976,1076,1189,1895,2009,0.15,384,0.035121,0.956926
 data/processed/cure_crops/65/bottom/customer/65_bottom_2884.png,data/raw/CURE_dataset/Pill_Images/65/bottom/Customer/65_bottom_2884.jpg,65,bottom,customer,sam,2976,2976,977,1201,1707,1931,0.15,384,0.027946,1.018069
@@ -7148,7 +7148,7 @@ data/processed/cure_crops/66/bottom/customer/66_bottom_2943.png,data/raw/CURE_da
 data/processed/cure_crops/66/bottom/customer/66_bottom_2944.png,data/raw/CURE_dataset/Pill_Images/66/bottom/Customer/66_bottom_2944.jpg,66,bottom,customer,sam,640,640,194,0,499,423,0.15,384,0.163411,0.966703
 data/processed/cure_crops/66/bottom/customer/66_bottom_2945.png,data/raw/CURE_dataset/Pill_Images/66/bottom/Customer/66_bottom_2945.jpg,66,bottom,customer,manual,640,640,182,68,583,619,0.15,384,0.137754,0.96386
 data/processed/cure_crops/66/bottom/customer/66_bottom_2946.png,data/raw/CURE_dataset/Pill_Images/66/bottom/Customer/66_bottom_2946.jpg,66,bottom,customer,sam,640,640,139,186,517,600,0.15,384,0.140383,0.974596
-data/processed/cure_crops/66/bottom/ref/66_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/66/bottom/Reference/66_ref_bottom.bmp,66,bottom,ref,classical,2976,2976,1053,1364,1776,2444,0.15,384,0.043907,
+data/processed/cure_crops/66/bottom/ref/66_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/66/bottom/Reference/66_ref_bottom.bmp,66,bottom,ref,audit,2976,2976,1053,540,1778,2553,0.15,384,0.043907,
 data/processed/cure_crops/66/top/customer/66_top_2903.png,data/raw/CURE_dataset/Pill_Images/66/top/Customer/66_top_2903.jpg,66,top,customer,sam,2976,2976,796,1029,1787,1923,0.15,384,0.035844,0.961239
 data/processed/cure_crops/66/top/customer/66_top_2904.png,data/raw/CURE_dataset/Pill_Images/66/top/Customer/66_top_2904.jpg,66,top,customer,sam,2976,2976,1084,816,2046,1775,0.15,384,0.03639,0.970275
 data/processed/cure_crops/66/top/customer/66_top_2905.png,data/raw/CURE_dataset/Pill_Images/66/top/Customer/66_top_2905.jpg,66,top,customer,manual,2976,2976,938,1227,1946,1876,0.15,384,0.016585,0.968818
@@ -7197,7 +7197,7 @@ data/processed/cure_crops/67/top/customer/67_top_2955.png,data/raw/CURE_dataset/
 data/processed/cure_crops/67/top/customer/67_top_2956.png,data/raw/CURE_dataset/Pill_Images/67/top/Customer/67_top_2956.jpg,67,top,customer,sam,2976,2976,823,1344,2125,2062,0.15,384,0.047414,0.995632
 data/processed/cure_crops/67/top/customer/67_top_2957.png,data/raw/CURE_dataset/Pill_Images/67/top/Customer/67_top_2957.jpg,67,top,customer,sam,2976,2976,1113,855,1848,2110,0.15,384,0.045824,0.99637
 data/processed/cure_crops/67/top/customer/67_top_2958.png,data/raw/CURE_dataset/Pill_Images/67/top/Customer/67_top_2958.jpg,67,top,customer,sam,2976,2976,1098,775,1864,2098,0.15,384,0.050486,1.009097
-data/processed/cure_crops/67/top/ref/67_ref_top.png,data/raw/CURE_dataset/Pill_Images/67/top/Reference/67_ref_top.bmp,67,top,ref,classical,2976,2976,794,1145,2247,1945,0.15,384,0.03746,
+data/processed/cure_crops/67/top/ref/67_ref_top.png,data/raw/CURE_dataset/Pill_Images/67/top/Reference/67_ref_top.bmp,67,top,ref,audit,2976,2976,789,1127,2261,2072,0.15,384,0.03746,
 data/processed/cure_crops/68/bottom/customer/68_bottom_2992.png,data/raw/CURE_dataset/Pill_Images/68/bottom/Customer/68_bottom_2992.jpg,68,bottom,customer,sam,2976,2976,1104,1254,1747,1894,0.15,384,0.021658,0.904443
 data/processed/cure_crops/68/bottom/customer/68_bottom_2993.png,data/raw/CURE_dataset/Pill_Images/68/bottom/Customer/68_bottom_2993.jpg,68,bottom,customer,sam,2976,2976,1048,1106,1891,1948,0.15,384,0.037181,0.937274
 data/processed/cure_crops/68/bottom/customer/68_bottom_2994.png,data/raw/CURE_dataset/Pill_Images/68/bottom/Customer/68_bottom_2994.jpg,68,bottom,customer,sam,2976,2976,1049,1065,1955,1970,0.15,384,0.043056,0.912286
@@ -7417,7 +7417,7 @@ data/processed/cure_crops/71/top/customer/71_top_3114.png,data/raw/CURE_dataset/
 data/processed/cure_crops/71/top/customer/71_top_3115.png,data/raw/CURE_dataset/Pill_Images/71/top/Customer/71_top_3115.jpg,71,top,customer,sam,640,640,107,0,615,640,0.15,384,0.318035,0.992778
 data/processed/cure_crops/71/top/customer/71_top_3116.png,data/raw/CURE_dataset/Pill_Images/71/top/Customer/71_top_3116.jpg,71,top,customer,sam,640,640,111,0,629,618,0.15,384,0.317871,1.001762
 data/processed/cure_crops/71/top/customer/71_top_3117.png,data/raw/CURE_dataset/Pill_Images/71/top/Customer/71_top_3117.jpg,71,top,customer,sam,640,640,148,0,512,640,0.15,384,0.326733,1.008842
-data/processed/cure_crops/71/top/ref/71_ref_top.png,data/raw/CURE_dataset/Pill_Images/71/top/Reference/71_ref_top.bmp,71,top,ref,classical,2976,2976,990,885,2059,2079,0.15,384,0.036451,
+data/processed/cure_crops/71/top/ref/71_ref_top.png,data/raw/CURE_dataset/Pill_Images/71/top/Reference/71_ref_top.bmp,71,top,ref,audit,2976,2976,987,862,2064,2246,0.15,384,0.036451,
 data/processed/cure_crops/72/bottom/customer/72_bottom_3162.png,data/raw/CURE_dataset/Pill_Images/72/bottom/Customer/72_bottom_3162.jpg,72,bottom,customer,manual,2976,2976,806,1215,2128,1781,0.15,384,0.026378,0.933381
 data/processed/cure_crops/72/bottom/customer/72_bottom_3163.png,data/raw/CURE_dataset/Pill_Images/72/bottom/Customer/72_bottom_3163.jpg,72,bottom,customer,sam,2976,2976,952,736,2075,2301,0.15,384,0.061998,0.960449
 data/processed/cure_crops/72/bottom/customer/72_bottom_3164.png,data/raw/CURE_dataset/Pill_Images/72/bottom/Customer/72_bottom_3164.jpg,72,bottom,customer,manual,2976,2976,1000,921,1835,2066,0.15,384,0.024197,0.950992
@@ -8006,7 +8006,7 @@ data/processed/cure_crops/82/top/customer/82_top_3640.png,data/raw/CURE_dataset/
 data/processed/cure_crops/82/top/customer/82_top_3641.png,data/raw/CURE_dataset/Pill_Images/82/top/Customer/82_top_3641.jpg,82,top,customer,sam,640,640,157,117,516,477,0.15,384,0.147593,1.013923
 data/processed/cure_crops/82/top/customer/82_top_3642.png,data/raw/CURE_dataset/Pill_Images/82/top/Customer/82_top_3642.jpg,82,top,customer,sam,640,640,73,183,427,540,0.15,384,0.1449,1.007542
 data/processed/cure_crops/82/top/customer/82_top_3643.png,data/raw/CURE_dataset/Pill_Images/82/top/Customer/82_top_3643.jpg,82,top,customer,sam,640,640,75,113,435,473,0.15,384,0.147522,1.009051
-data/processed/cure_crops/82/top/ref/82_ref_top.png,data/raw/CURE_dataset/Pill_Images/82/top/Reference/82_ref_top.bmp,82,top,ref,classical,2976,2976,1174,1170,2035,1908,0.15,384,0.030414,
+data/processed/cure_crops/82/top/ref/82_ref_top.png,data/raw/CURE_dataset/Pill_Images/82/top/Reference/82_ref_top.bmp,82,top,ref,audit,2976,2976,1171,1154,2038,2028,0.15,384,0.030414,
 data/processed/cure_crops/83/bottom/customer/83_bottom_3689.png,data/raw/CURE_dataset/Pill_Images/83/bottom/Customer/83_bottom_3689.jpg,83,bottom,customer,sam,2976,2976,1086,1357,1876,1914,0.15,384,0.023534,0.978152
 data/processed/cure_crops/83/bottom/customer/83_bottom_3690.png,data/raw/CURE_dataset/Pill_Images/83/bottom/Customer/83_bottom_3690.jpg,83,bottom,customer,sam,2976,2976,1094,1148,1826,1973,0.15,384,0.029444,0.992671
 data/processed/cure_crops/83/bottom/customer/83_bottom_3691.png,data/raw/CURE_dataset/Pill_Images/83/bottom/Customer/83_bottom_3691.jpg,83,bottom,customer,sam,2976,2976,1161,1155,1798,1964,0.15,384,0.026366,1.004401
@@ -8350,7 +8350,7 @@ data/processed/cure_crops/9/bottom/customer/9_bottom_427.png,data/raw/CURE_datas
 data/processed/cure_crops/9/bottom/customer/9_bottom_428.png,data/raw/CURE_dataset/Pill_Images/9/bottom/Customer/9_bottom_428.jpg,9,bottom,customer,sam,640,640,264,156,521,419,0.15,384,0.077336,1.025417
 data/processed/cure_crops/9/bottom/customer/9_bottom_429.png,data/raw/CURE_dataset/Pill_Images/9/bottom/Customer/9_bottom_429.jpg,9,bottom,customer,sam,640,640,205,172,454,419,0.15,384,0.070627,1.019567
 data/processed/cure_crops/9/bottom/customer/9_bottom_430.png,data/raw/CURE_dataset/Pill_Images/9/bottom/Customer/9_bottom_430.jpg,9,bottom,customer,sam,640,640,159,148,380,369,0.15,384,0.056345,1.018185
-data/processed/cure_crops/9/bottom/ref/9_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/9/bottom/Reference/9_ref_bottom.bmp,9,bottom,ref,classical,2448,2448,761,996,1268,1397,0.15,384,0.015669,
+data/processed/cure_crops/9/bottom/ref/9_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/9/bottom/Reference/9_ref_bottom.bmp,9,bottom,ref,audit,2448,2448,759,984,1272,1490,0.15,384,0.015669,
 data/processed/cure_crops/9/top/customer/9_top_382.png,data/raw/CURE_dataset/Pill_Images/9/top/Customer/9_top_382.jpg,9,top,customer,sam,2448,2448,939,875,1516,1452,0.15,384,0.025976,0.996219
 data/processed/cure_crops/9/top/customer/9_top_384.png,data/raw/CURE_dataset/Pill_Images/9/top/Customer/9_top_384.jpg,9,top,customer,sam,2448,2448,810,714,1434,1340,0.15,384,0.03042,1.000348
 data/processed/cure_crops/9/top/customer/9_top_385.png,data/raw/CURE_dataset/Pill_Images/9/top/Customer/9_top_385.jpg,9,top,customer,sam,2448,2448,1071,956,1656,1538,0.15,384,0.026459,0.921896
@@ -8374,7 +8374,7 @@ data/processed/cure_crops/9/top/customer/9_top_402.png,data/raw/CURE_dataset/Pil
 data/processed/cure_crops/9/top/customer/9_top_403.png,data/raw/CURE_dataset/Pill_Images/9/top/Customer/9_top_403.jpg,9,top,customer,sam,640,640,156,150,410,403,0.15,384,0.073257,1.008929
 data/processed/cure_crops/9/top/customer/9_top_404.png,data/raw/CURE_dataset/Pill_Images/9/top/Customer/9_top_404.jpg,9,top,customer,sam,640,640,198,241,477,514,0.15,384,0.086584,0.996982
 data/processed/cure_crops/9/top/customer/9_top_405.png,data/raw/CURE_dataset/Pill_Images/9/top/Customer/9_top_405.jpg,9,top,customer,sam,640,640,241,242,514,517,0.15,384,0.085957,1.015305
-data/processed/cure_crops/9/top/ref/9_ref_top.png,data/raw/CURE_dataset/Pill_Images/9/top/Reference/9_ref_top.bmp,9,top,ref,classical,2448,2448,634,1083,1213,1579,0.15,384,0.019897,
+data/processed/cure_crops/9/top/ref/9_ref_top.png,data/raw/CURE_dataset/Pill_Images/9/top/Reference/9_ref_top.bmp,9,top,ref,audit,2448,2448,630,1074,1218,1653,0.15,384,0.019897,
 data/processed/cure_crops/90/bottom/customer/90_bottom_4004.png,data/raw/CURE_dataset/Pill_Images/90/bottom/Customer/90_bottom_4004.jpg,90,bottom,customer,sam,2976,2976,1214,1299,1754,1830,0.15,384,0.015024,0.926007
 data/processed/cure_crops/90/bottom/customer/90_bottom_4005.png,data/raw/CURE_dataset/Pill_Images/90/bottom/Customer/90_bottom_4005.jpg,90,bottom,customer,sam,2976,2976,1088,1297,1674,1889,0.15,384,0.018059,0.959644
 data/processed/cure_crops/90/bottom/customer/90_bottom_4007.png,data/raw/CURE_dataset/Pill_Images/90/bottom/Customer/90_bottom_4007.jpg,90,bottom,customer,sam,2976,2976,1070,1207,1673,1808,0.15,384,0.019108,0.989326
@@ -8659,7 +8659,7 @@ data/processed/cure_crops/96/bottom/customer/96_bottom_4275.png,data/raw/CURE_da
 data/processed/cure_crops/96/bottom/customer/96_bottom_4276.png,data/raw/CURE_dataset/Pill_Images/96/bottom/Customer/96_bottom_4276.jpg,96,bottom,customer,sam,640,640,169,34,597,450,0.15,384,0.201968,1.007501
 data/processed/cure_crops/96/bottom/customer/96_bottom_4277.png,data/raw/CURE_dataset/Pill_Images/96/bottom/Customer/96_bottom_4277.jpg,96,bottom,customer,sam,640,640,178,60,597,482,0.15,384,0.201965,0.885625
 data/processed/cure_crops/96/bottom/customer/96_bottom_4278.png,data/raw/CURE_dataset/Pill_Images/96/bottom/Customer/96_bottom_4278.jpg,96,bottom,customer,sam,640,640,109,61,538,489,0.15,384,0.208235,0.870973
-data/processed/cure_crops/96/bottom/ref/96_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/96/bottom/Reference/96_ref_bottom.bmp,96,bottom,ref,classical,2976,2976,1065,1119,2004,1910,0.15,384,0.03022,
+data/processed/cure_crops/96/bottom/ref/96_ref_bottom.png,data/raw/CURE_dataset/Pill_Images/96/bottom/Reference/96_ref_bottom.bmp,96,bottom,ref,audit,2976,2976,1061,1101,2006,2043,0.15,384,0.03022,
 data/processed/cure_crops/96/top/customer/96_top_4235.png,data/raw/CURE_dataset/Pill_Images/96/top/Customer/96_top_4235.jpg,96,top,customer,sam,2976,2976,1144,1324,1844,2026,0.15,384,0.025901,1.00942
 data/processed/cure_crops/96/top/customer/96_top_4236.png,data/raw/CURE_dataset/Pill_Images/96/top/Customer/96_top_4236.jpg,96,top,customer,sam,2976,2976,1097,1107,1917,1920,0.15,384,0.035145,0.998983
 data/processed/cure_crops/96/top/customer/96_top_4237.png,data/raw/CURE_dataset/Pill_Images/96/top/Customer/96_top_4237.jpg,96,top,customer,sam,2976,2976,1005,1183,1837,2011,0.15,384,0.036155,0.9104

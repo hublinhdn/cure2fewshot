@@ -646,6 +646,6 @@ evaluation queries among the epochs scored) and the last epoch's checkpoint, wit
 standard deviation reported there, not on the same digits, because the data loader's augmentation
 and the mining of triplets are not bit reproducible across driver and library versions.
 
-The 27 checkpoints of the sweep are deposited separately (CHANGELOG.md, 1.1.0 gives the record);
+The 27 checkpoints of the sweep are deposited at `10.5281/zenodo.24217212`;
 `eval_baseline.py` on each of them against the released benchmark reproduces
 `expected/retrieval_baselines.csv`.

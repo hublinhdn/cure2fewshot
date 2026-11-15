@@ -109,7 +109,14 @@ PyTorch 2.14.0 with CUDA 13.0, torchvision 0.29.0, timm 1.0.30, pytorch-metric-l
 ## Two notes on the numbers
 
 * LeViT-128S converged poorly under the shared recipe in the sweep (0.0932 mAP) and is reported
-  unchanged; the seed study shows whether that repeats across seeds on the released data.
-* The seed study's resnet18 lands well above the July figure for the same backbone. The gain has
-  three sources that the July data lacked: corrected crops, a gallery whose references are
-  tablets rather than donor background, and hardened training references of the same kind.
+  unchanged; the seed study repeats the failure at every seed on the released data (0.092 with a
+  standard deviation of 0.012 under the selection rule, 0.073 at the last epoch).
+* The seed study's resnet18 lands well above the July figure for the same backbone (0.799 against
+  0.7087, standard deviation 0.008). The gain has three sources that the July data lacked:
+  corrected crops, a gallery whose references are tablets rather than donor background, and
+  hardened training references of the same kind.
+* The retrained means sit within 0.02 mAP of the deposited checkpoints scored on the released
+  benchmark (resnet18 0.799 against 0.781, efficientnet_b0 0.759 against 0.750, convnext_small
+  0.871 against 0.871). The optimism of the selection rule is the gap to the last epoch column:
+  0.003 or less for resnet18 and efficientnet_b0, 0.010 for convnext_small, whose best scored epoch
+  is an early one (10 to 30 of 60), and 0.019 for levit_128s.

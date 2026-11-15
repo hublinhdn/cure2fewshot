@@ -2,7 +2,7 @@
 
 ## 1.1.0, 2026-11-15 (revision of the accompanying article)
 
-Zenodo Version DOI: to be recorded after the release. Concept DOI unchanged: `10.5281/zenodo.22908278`.
+Zenodo Version DOI: `10.5281/zenodo.24237489`. Concept DOI unchanged: `10.5281/zenodo.22908278`.
 The 27 checkpoints of the baseline sweep are a separate Zenodo record, `10.5281/zenodo.24217212`
 (5.6 GB, state_dicts with SHA256 checksums and their scores on the released benchmark).
 

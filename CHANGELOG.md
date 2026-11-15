@@ -1,6 +1,6 @@
 # Changelog
 
-## 1.1.0, 2026-11 (revision of the accompanying article)
+## 1.1.0, 2026-11-15 (revision of the accompanying article)
 
 Zenodo Version DOI: to be recorded after the release. Concept DOI unchanged: `10.5281/zenodo.22908278`.
 The 27 checkpoints of the baseline sweep are a separate Zenodo record, `10.5281/zenodo.24217212`
@@ -70,7 +70,8 @@ Added:
   `gallery_fewshot_K1_hardened_v2_nosuspect.csv`: the controls and the gallery without chosen
   references, for anyone who prefers to drop a flagged reference rather than repair it. Since
   the repair, no reference is flagged suspect and the file equals the gallery.
-* `tests/`: 46 unit tests on synthetic inputs, no image of the collection needed (one needs torch and is skipped without it)
+* `tests/`: 47 unit tests on synthetic inputs, no image of the collection needed (two need torch and
+  are skipped without it)
   (`python -m pytest tests`).
 * `scripts/verify.sh` checks three more files; `IGNORE_KEYS` covers the new path fields.
 
@@ -87,7 +88,15 @@ Changed:
   exposure figures of 1.0.2 are unchanged in meaning.
 * `harden_refs_v2.py` can be imported without environment variables; `main()` reads them.
 
-Verified before tagging: see the entry's closing note once the fresh clone verification has run.
+Verified before tagging, 15 November 2026, on machine B (REPRODUCE.md, "Versions used"), the machine
+that produced `expected/`, from a fresh clone of this code: the 47 unit tests pass; the 8811 crops
+regenerate pixel for pixel and `duplicate_resolution.csv` byte for byte; REPRODUCE.md steps 3 to 7
+run end to end and `verify.sh` matches 11 of 11 files with no floating point deviation (same
+machine, so the cross machine tolerance of 5e-5 measured for 1.0.1 was not re-measured); the 388
+hardened references, the 388 independent masks (the 34 frozen ones among them), the 388 ungated
+references, the eleven split, gallery and suspect files and the mask damage counts are identical
+to the run that produced `expected/`; and `eval_baseline.py` on the deposited resnet18 checkpoint
+reproduces its row of `expected/retrieval_baselines.csv` to four decimals (0.7812, 0.6408, 0.9458).
 
 ## 1.0.4, 2026-09-30
 
